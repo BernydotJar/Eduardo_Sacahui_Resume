@@ -12,7 +12,7 @@ export default {
       fontFamily: {
         body: ['Inter', 'sans-serif'],
         headline: ['Inter', 'sans-serif'],
-        code: ['monospace'],
+        code: ['JetBrains Mono', 'monospace'],
       },
       colors: {
         background: 'hsl(var(--background))',
@@ -88,10 +88,20 @@ export default {
             height: '0',
           },
         },
+        'pulse-border': {
+          '0%, 100%': { 'box-shadow': '0 0 0 0 hsl(var(--primary) / 0.7)' },
+          '50%': { 'box-shadow': '0 0 0 4px hsl(var(--primary) / 0)' },
+        },
+        'pulse-emerald': {
+          '0%, 100%': { 'box-shadow': '0 0 0 2px hsl(var(--accent) / 0.7)', 'background-color': 'hsl(var(--accent) / 0.1)'},
+          '50%': { 'box-shadow': '0 0 0 4px hsl(var(--accent) / 0)', 'background-color': 'hsl(var(--accent) / 0.3)' },
+        }
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'pulse-border': 'pulse-border 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'pulse-emerald': 'pulse-emerald 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       },
     },
   },

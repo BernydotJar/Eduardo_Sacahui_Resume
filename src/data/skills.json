@@ -1,0 +1,62 @@
+
+[
+  { "id":"python","symbol":"Py","name":"Python","level":"expert","stable":true,"tags":["backend","ml","api","automation"]},
+  { "id":"fastapi","symbol":"Fa","name":"FastAPI","level":"advanced","stable":true,"tags":["api"]},
+  { "id":"node","symbol":"Nd","name":"Node.js/Express","level":"advanced","stable":true,"tags":["api","integration"]},
+  { "id":"react","symbol":"Re","name":"React/TypeScript","level":"advanced","stable":true,"tags":["frontend","sdk"]},
+  { "id":"next","symbol":"Nx","name":"Next.js","level":"advanced","stable":true,"tags":["frontend","ssr"]},
+
+  { "id":"sql","symbol":"Sq","name":"SQL (general)","level":"advanced","stable":true,"tags":["data"]},
+  { "id":"snowflake","symbol":"Sn","name":"Snowflake","level":"advanced","stable":true,"tags":["data","analytics"]},
+  { "id":"sqlserver","symbol":"Ss","name":"SQL Server","level":"advanced","stable":true,"tags":["data"]},
+  { "id":"mysql","symbol":"My","name":"MySQL","level":"intermediate","stable":true,"tags":["data"]},
+  { "id":"dax","symbol":"Dx","name":"DAX","level":"advanced","stable":true,"tags":["analytics"]},
+  { "id":"powerquery","symbol":"Mq","name":"Power Query (M)","level":"advanced","stable":true,"tags":["etl","bi"]},
+  { "id":"fabric","symbol":"Fb","name":"Microsoft Fabric (Pipelines/Lakehouse)","level":"advanced","stable":true,"tags":["data","etl","lakehouse"]},
+  { "id":"powerbi","symbol":"Pb","name":"Power BI","level":"expert","stable":true,"tags":["bi","dashboards"]},
+  { "id":"adf","symbol":"Af","name":"Azure Data Factory","level":"advanced","stable":true,"tags":["etl"]},
+  { "id":"alteryx","symbol":"Ax","name":"Alteryx","level":"advanced","stable":true,"tags":["etl"]},
+  { "id":"spark","symbol":"Sp","name":"Apache Spark","level":"intermediate","stable":true,"tags":["etl","analytics"]},
+  { "id":"druid","symbol":"Dr","name":"Apache Druid","level":"intermediate","stable":true,"tags":["olap","timeseries"]},
+
+  { "id":"uipath","symbol":"Ui","name":"UiPath","level":"advanced","stable":true,"tags":["rpa","automation"]},
+  { "id":"powerplatform","symbol":"PP","name":"Power Platform (Automate/Apps/Dataverse)","level":"advanced","stable":true,"tags":["rpa","automation","apps"]},
+  { "id":"automationanywhere","symbol":"AA","name":"Automation Anywhere 360","level":"advanced","stable":true,"tags":["rpa"]},
+  { "id":"blueprism","symbol":"Bp","name":"Blue Prism","level":"advanced","stable":true,"tags":["rpa"]},
+  { "id":"rocketbot","symbol":"Rb","name":"Rocketbot","level":"intermediate","stable":true,"tags":["rpa"]},
+  { "id":"n8n","symbol":"Nn","name":"n8n","level":"advanced","stable":true,"tags":["automation","integration"]},
+  { "id":"zapier","symbol":"Zp","name":"Zapier","level":"advanced","stable":true,"tags":["automation"]},
+  { "id":"workato","symbol":"Wk","name":"Workato","level":"intermediate","stable":true,"tags":["automation"]},
+  { "id":"copilotstudio","symbol":"Cs","name":"Microsoft Copilot Studio","level":"advanced","stable":true,"tags":["ai","agents"]},
+
+  { "id":"openai","symbol":"Ai","name":"OpenAI/Azure OpenAI (LLM/RAG)","level":"advanced","stable":true,"tags":["ai","nlp","rag"]},
+  { "id":"pgvector","symbol":"Pg","name":"pgvector / Embeddings","level":"advanced","stable":true,"tags":["ai","rag","postgres"]},
+  { "id":"postgres","symbol":"Ps","name":"PostgreSQL","level":"advanced","stable":true,"tags":["data"]},
+  { "id":"rabbitmq","symbol":"Rq","name":"RabbitMQ","level":"intermediate","stable":true,"tags":["messaging"]},
+
+  { "id":"kubernetes","symbol":"K8","name":"Kubernetes","level":"intermediate","stable":true,"tags":["platform"]},
+  { "id":"helm","symbol":"He","name":"Helm","level":"intermediate","stable":true,"tags":["platform"]},
+  { "id":"prometheus","symbol":"Pr","name":"Prometheus","level":"advanced","stable":true,"tags":["observability"]},
+  { "id":"grafana","symbol":"Gf","name":"Grafana","level":"advanced","stable":true,"tags":["observability"]},
+  { "id":"elk","symbol":"Ek","name":"ELK (Elasticsearch/Logstash/Kibana)","level":"advanced","stable":true,"tags":["observability"]},
+
+  { "id":"git","symbol":"Gt","name":"Git","level":"advanced","stable":true,"tags":["devops"]},
+  { "id":"azuredevops","symbol":"Az","name":"Azure DevOps / VSTS","level":"advanced", "stable":true, "tags":["ci","cd"]},
+  { "id":"githubactions","symbol":"Gh","name":"GitHub Actions","level":"advanced","stable":true,"tags":["ci","cd"]},
+  { "id":"jira","symbol":"Jr","name":"Jira","level":"advanced","stable":true,"tags":["delivery","reporting"]},
+  { "id":"clickup","symbol":"Cu","name":"ClickUp","level":"intermediate","stable":true,"tags":["delivery"]},
+
+  { "id":"abbyenlp","symbol":"Ay","name":"ABBYY OCR","level":"advanced","stable":true,"tags":["ocr","doc-ai"]},
+  { "id":"sap","symbol":"Sa","name":"SAP/HANA integrations","level":"advanced","stable":true,"tags":["erp"]},
+  { "id":"servicenow","symbol":"Snw","name":"ServiceNow (actions/runbooks)","level":"intermediate","stable":true,"tags":["ops"]},
+  { "id":"whatsapp","symbol":"Wa","name":"WhatsApp Notifications","level":"intermediate","stable":true,"tags":["comm"]},
+
+  { "id":"aws","symbol":"Aw","name":"AWS","level":"advanced","stable":true,"tags":["cloud"]},
+  { "id":"azure","symbol":"Azr","name":"Azure","level":"advanced","stable":true,"tags":["cloud"]},
+
+  { "id":"htmlcss","symbol":"Hc","name":"HTML/CSS","level":"advanced","stable":true,"tags":["frontend"]},
+  { "id":"vba","symbol":"Vb","name":"VBA","level":"intermediate","stable":true,"tags":["automation"]},
+
+  { "id":"masters","symbol":"Mb","name":"Master in Business Psychology","level":"education","stable":false,"tags":["education"]},
+  { "id":"bba","symbol":"Ba","name":"B.B.A.","level":"education","stable":false,"tags":["education"]}
+]

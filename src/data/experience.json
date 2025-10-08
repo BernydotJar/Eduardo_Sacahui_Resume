@@ -1,0 +1,69 @@
+
+[
+  {
+    "company":"Edwards Lifesciences",
+    "role":"Platform Architect",
+    "when":"2023–Present",
+    "highlights":[
+      "Remediated mission-critical bots with ABBYY engineers; restored throughput and stability.",
+      "UiPath–Power Platform convergence strategy; optimized license spend & platform fit.",
+      "Power Automate governance (security, naming, exception strategy) and Power BI capacity dashboards.",
+      "Shipped LLM/RAG features with evals, guardrails, and telemetry tied to clinical KPIs.",
+      "API-first services (FastAPI/Node); SDKs/Postman; offshore team leadership; CI/CD + testing."
+    ],
+    "skills":["uipath","powerplatform","python","fastapi","node","react","fabric","powerbi","snowflake","kubernetes","prometheus","grafana","elk"]
+  },
+  {
+    "company":"UiPath (United States)",
+    "role":"Technical Delivery Manager",
+    "when":"2022–2023",
+    "highlights":[
+      "Orchestrator on AKS/EKS/on-prem via custom Helm; HA, autoscaling, blue/green, DR runbooks.",
+      "Observability (Prometheus/Grafana/ELK) with SLOs/synthetics; MTTR down.",
+      "Security: RBAC, Key Vault, TLS rotation, network policies, audit trails.",
+      "ETL from Orchestrator telemetry into Snowflake/Fabric for throughput/SLA/cost dashboards.",
+      "Coached teams on REFramework, idempotency, CI/CD; led SEV incidents and RCAs."
+    ],
+    "skills":["uipath","kubernetes","helm","prometheus","grafana","elk","snowflake","fabric","azure","aws"]
+  },
+  {
+    "company":"LCH (Low Code Human)",
+    "role":"CEO & Principal Engineer",
+    "when":"2023–Present",
+    "highlights":[
+      "Led offshore Python team; FastAPI + embeddings; SDKs for React teams.",
+      "Cost/latency SLOs, canary/blue-green; telemetry wired to product & GTM."
+    ],
+    "skills":["python","fastapi","pgvector","openai","react","node","githubactions","jira"]
+  },
+  {
+    "company":"Roboyo",
+    "role":"RPA / Power Automate Senior Developer",
+    "when":"2021–2022",
+    "highlights":[
+      "Built/maintained 200+ automations (Cloud/Desktop, SAP HANA).",
+      "Designed CoE playbooks; integrated external APIs & legacy ERPs."
+    ],
+    "skills":["powerplatform","sap","powerbi","sqlserver"]
+  },
+  {
+    "company":"TEAM International",
+    "role":"RPA Solution Architect",
+    "when":"2020–2021",
+    "highlights":[
+      "Scaled RPA on AWS/Azure; defined CoE strategy & governance.",
+      "Autotask ➜ Jira migration; **Medallion** Lakehouse (Bronze/Silver/Gold) in Fabric."
+    ],
+    "skills":["uipath","automationanywhere","powerplatform","fabric","snowflake","aws","azure","jira"]
+  },
+  {
+    "company":"Newell • KBS • Engeform Brasil • Avianca • Capgemini • Claro • OneLink BPO",
+    "role":"Senior Developer / Team Lead",
+    "when":"2016–2020",
+    "highlights":[
+      "AP/AR SAP automations; finance/HR/IT automations across multiple clients.",
+      "ABBYY OCR doc-processing; WhatsApp notifications; Power BI dashboards; governance."
+    ],
+    "skills":["blueprism","uipath","automationanywhere","sqlserver","abbyenlp","whatsapp","powerbi"]
+  }
+]

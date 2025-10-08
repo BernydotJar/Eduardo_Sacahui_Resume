@@ -1,0 +1,73 @@
+
+[
+  {
+    "id":"ops-second-brain",
+    "title":"Ops Second Brain",
+    "skills":["python","fastapi","pgvector","react","servicenow","jira","prometheus","grafana","elk","openai"],
+    "stack":"FastAPI, OpenAI/Azure OpenAI, pgvector, React, Jira/ServiceNow, Prometheus, Grafana, ELK",
+    "summary":"Semantic SOP guidance with context actions (Jira/ServiceNow) and SLOs.",
+    "outcomes":["MTTR ↓ 35%","FCR ↑","Calmer releases"]
+  },
+  {
+    "id":"rag-knowledge-services",
+    "title":"RAG Knowledge Services",
+    "skills":["python","fastapi","pgvector","openai","postgres"],
+    "stack":"FastAPI, embeddings, guardrails, evals, Postgres/pgvector",
+    "summary":"Policy-aware retrieval, prompt evals & guardrails; published SDKs and Postman collections.",
+    "outcomes":["Answer accuracy ↑","Latency SLO met"]
+  },
+  {
+    "id":"orchestrator-k8s",
+    "title":"UiPath Orchestrator on Kubernetes",
+    "skills":["uipath","kubernetes","helm","prometheus","grafana","elk","azure","aws"],
+    "stack":"AKS/EKS/on-prem, custom Helm, HA, autoscaling, blue/green, DR runbooks",
+    "summary":"Enterprise-grade deploys with observability + SLOs; RBAC, cert rotation, policies.",
+    "outcomes":["Availability ↑","MTTR ↓","Upgrade risk ↓"]
+  },
+  {
+    "id":"pentaho-to-powerbi",
+    "title":"Pentaho ➜ Power BI / Fabric",
+    "skills":["fabric","powerbi","powerquery","snowflake","spark"],
+    "stack":"Fabric Pipelines, Power BI Dataflows, DAX/RLS",
+    "summary":"Rebuilt Pentaho ETL into Fabric+Power BI with governed semantic models.",
+    "outcomes":["TCO ↓ ~30%","Refresh time ↓ ~40%"]
+  },
+  {
+    "id":"alteryx-to-powerautomate",
+    "title":"Alteryx ➜ Power Automate Cloud + Power BI",
+    "skills":["powerplatform","powerbi","fabric"],
+    "stack":"PAC orchestrations feeding Power BI models; error handling + alerts",
+    "summary":"License reduction and SLA improvements through re-platforming.",
+    "outcomes":["License cost ↓","SLA attainment ↑","Manual steps eliminated"]
+  },
+  {
+    "id":"autotask-to-jira-fabric",
+    "title":"Autotask ➜ Jira + Fabric Lakehouse + Power BI",
+    "skills":["jira","fabric","powerbi","druid","sqlserver"],
+    "stack":"Jira REST, Fabric Lakehouse (Medallion), Power BI",
+    "summary":"Unified KPIs and self-service analytics across engineering & service.",
+    "outcomes":["Cycle time to insight ↓","Adoption ↑ 2–3×"]
+  },
+  {
+    "id":"roboyo-portfolio",
+    "title":"Power Automate at Scale (200+ automations)",
+    "skills":["powerplatform","sap","sqlserver","powerbi"],
+    "stack":"Power Automate Cloud/Desktop (SAP HANA), governance & CoE playbooks",
+    "summary":"Large-scale maintenance and new automations with enterprise standards.",
+    "outcomes":["Cycle time ↓","Defects ↓"]
+  },
+  {
+    "id":"haceb-enablement",
+    "title":"Haceb Training & Enablement",
+    "skills":["powerplatform","powerbi","copilotstudio"],
+    "stack":"Workshops, hands-on labs (invoice approvals, onboarding, Copilot integrations)",
+    "summary":"Tailored learning paths for IT & citizen developers."
+  },
+  {
+    "id":"legacy-cases",
+    "title":"Legacy RPA Cases (2016–2020)",
+    "skills":["uipath","automationanywhere","blueprism","sqlserver","abbyenlp","whatsapp","sap"],
+    "stack":"ABBYY OCR → ERP posts; WhatsApp notifications; SAP automations",
+    "summary":"Finance/HR/IT automations across Newell, KBS, Engeform, Avianca, Claro, OneLink, Capgemini."
+  }
+]
