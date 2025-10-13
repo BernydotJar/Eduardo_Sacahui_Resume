@@ -21,7 +21,7 @@
   { "id":"kubernetes","symbol":"K8","name":"Kubernetes","level":"intermediate","stable":true,"tags":["platform"], "row": 4, "col": 5 },
   { "id":"helm","symbol":"He","name":"Helm","level":"intermediate","stable":true,"tags":["platform"], "row": 4, "col": 6 },
   { "id":"githubactions","symbol":"Gh","name":"GitHub Actions","level":"advanced","stable":true,"tags":["ci","cd"], "row": 4, "col": 7 },
-  { "id":"alteryx","symbol":"Ax","name":"Alteryx","level":"advanced","stable":true,"tags":["etl"], "row": 4, "col": 8 },
+  { "id":"alteryx","symbol":"Ax","name":"Alteryx (ETL)","level":"advanced","stable":true,"tags":["etl", "data"], "row": 4, "col": 8 },
   { "id":"adf","symbol":"Af","name":"Azure Data Factory","level":"advanced","stable":true,"tags":["etl"], "row": 4, "col": 9 },
   { "id":"sap","symbol":"Sa","name":"SAP/HANA integrations","level":"advanced","stable":true,"tags":["erp"], "row": 4, "col": 10 },
   { "id":"jira","symbol":"Jr","name":"Jira","level":"advanced","stable":true,"tags":["delivery","reporting"], "row": 4, "col": 11 },
@@ -69,5 +69,10 @@
   { "id":"masters","symbol":"Mb","name":"Master in Business Psychology","level":"education","stable":false,"tags":["education"], "row": 7, "col": 4 },
   { "id":"bba","symbol":"Ba","name":"B.B.A.","level":"education","stable":false,"tags":["education"], "row": 7, "col": 5 },
   { "id":"netsuite",  "symbol":"Ns", "name":"NetSuite (ERP)", "level":"intermediate", "stable": true, "tags":["erp","finance"], "row": 7, "col": 1},
-  { "id":"whatsappapi", "symbol":"Wa", "name":"WhatsApp Business API", "level":"advanced", "stable": true, "tags":["comm","integration"], "row": 4, "col": 18 }
+  { "id":"whatsappapi", "symbol":"Wa", "name":"WhatsApp Business API", "level":"advanced", "stable": true, "tags":["comm","integration"], "row": 4, "col": 18 },
+  { "id":"arcgis", "symbol":"Ag", "name":"ArcGIS / ArcPy", "level":"advanced", "stable": true, "tags":["gis","python","automation"], "row": 5, "col": 14 },
+  { "id":"uipathtestmgr", "symbol":"Tm", "name":"UiPath Test Manager", "level":"advanced", "stable": true, "tags":["qa","testing","uipath"], "row": 5, "col": 15 },
+  { "id":"dynamicsgp", "symbol":"Gp", "name":"Microsoft Dynamics GP", "level":"intermediate", "stable": true, "tags":["erp","finance"], "row": 7, "col": 2 }
 ]
+
+    

@@ -32,9 +32,25 @@
       "Observability (Prometheus/Grafana/ELK) with SLOs/synthetics; MTTR down.",
       "Security: RBAC, Key Vault, TLS rotation, network policies, audit trails.",
       "ETL from Orchestrator telemetry into Snowflake/Fabric for throughput/SLA/cost dashboards.",
-      "Coached teams on REFramework, idempotency, CI/CD; led SEV incidents and RCAs."
+      "Coached teams on REFramework, idempotency, CI/CD; led SEV incidents and RCAs.",
+      "Zebra: despliegue de UiPath Test Manager y puertas de calidad.",
+      "Love’s: automatizaciones retail (backoffice) con colas y SLOs.",
+      "DFCI: madurez de CoE y gobierno técnico.",
+      "UCare / Regeneron / AdaptHealth / McLaren / Tarpon Health / CareCentrix / Help at Home: portfolio de automatizaciones con observabilidad y auditoría."
     ],
-    "skills":["uipath","kubernetes","helm","prometheus","grafana","elk","snowflake","fabric","azure","aws"]
+    "skills":["uipath","kubernetes","helm","prometheus","grafana","elk","snowflake","fabric","azure","aws","uipathtestmgr","governance","queues","powerbi","monitoring"],
+    "projects":[
+      "zebra-uipath-testmgr",
+      "loves-retail-rpa",
+      "dfci-coe-advancement",
+      "ucare-payer-rpa",
+      "regeneron-rpa",
+      "adapthealth-order-intake",
+      "mclaren-revenue-cycle",
+      "tarpon-health-rpa",
+      "carecentrix-auth",
+      "help-at-home-rpa"
+    ]
   },
   {
     "company":"Haceb (vía LCH Consulting)",
@@ -115,12 +131,16 @@
     "highlights":[
       "Cabify Argentina: OCR ABBYY + Blue Prism + WhatsApp APIs para admisión de conductores.",
       "Banco Ciudad (AR): automatizaciones de back-office con Blue Prism; monitoreo y métricas.",
-      "Diseño de estándares y plantillas (objets, queues, reintentos, logging) y tableros de control."
+      "Diseño de estándares y plantillas (objets, queues, reintentos, logging) y tableros de control.",
+      "Claro Andinas: front-office helper con AA y reporting."
     ],
     "projects":[
       "cabify-driver-onboarding",
-      "bancociudad-blueprism"
+      "bancociudad-blueprism",
+      "claro-andinas-frontoffice"
     ],
-    "skills":["blueprism","abbyenlp","whatsappapi","sqlserver","powerbi","javascript", "vsts", "visualstudio", "bpm"]
+    "skills":["blueprism","abbyenlp","whatsappapi","sqlserver","powerbi","javascript", "vsts", "visualstudio", "bpm", "automationanywhere"]
   }
 ]
+
+    

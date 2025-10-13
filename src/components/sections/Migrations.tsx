@@ -5,6 +5,7 @@ const migrationIds = [
   'pentaho-to-powerbi',
   'alteryx-to-powerautomate',
   'autotask-to-jira-fabric',
+  'project-enola-migration',
 ];
 
 const signatureMigrations = projects.filter(p => migrationIds.includes(p.id));
@@ -32,3 +33,5 @@ const Migrations = ({ onCardClick }: MigrationsProps) => {
 };
 
 export default Migrations;
+
+    
