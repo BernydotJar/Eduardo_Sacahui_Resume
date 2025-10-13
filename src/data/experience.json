@@ -26,6 +26,19 @@
     ],
     "skills":["uipath","kubernetes","helm","prometheus","grafana","elk","snowflake","fabric","azure","aws"]
   },
+    {
+    "company":"Team International",
+    "role":"RPA Team Lead / Senior Developer",
+    "when":"2020–2022",
+    "highlights":[
+      "Ran RPA office/CoE and consulting practice; backlog and release mgmt (Jira/ClickUp).",
+      "Hands-on with Blue Prism, UiPath, Automation Anywhere, WorkFusion, Power Platform, Python RPA Framework, Rocketbot.",
+      "KBS: delivered 12 finance automations; governance & security standards.",
+      "Newell: PTP/AP integration (SAP + email automation)."
+    ],
+    "projects":["kbs-finance-12-automations","newell-ptp-integration"],
+    "skills":["blueprism","uipath","automationanywhere","workfusion","powerplatform","pythonrpa","rocketbot","jira","clickup","visualstudio","excel","powerquery"]
+  },
   {
     "company":"LCH (Low Code Human)",
     "role":"CEO & Principal Engineer",
@@ -46,25 +59,16 @@
     ],
     "skills":["powerplatform","sap","powerbi","sqlserver"]
   },
-  {
-    "company":"TEAM International",
-    "role":"RPA Solution Architect",
-    "when":"2020–2021",
+    {
+    "company":"Symphony LAM",
+    "role":"RPA Senior Consultant",
+    "when":"2018–2020",
     "highlights":[
-      "Scaled RPA on AWS/Azure; defined CoE strategy & governance.",
-      "Autotask ➜ Jira migration; **Medallion** Lakehouse (Bronze/Silver/Gold) in Fabric."
+      "Cabify Argentina: ABBYY OCR + RPA + WhatsApp notifications; ERP updates.",
+      "Engeform Brasil: architected RPA CoE; trained team; delivered HR/Finance/IT automations."
     ],
-    "skills":["uipath","automationanywhere","powerplatform","fabric","snowflake","aws","azure","jira"]
-  },
-  {
-    "company":"Newell • KBS • Engeform Brasil • Avianca • Capgemini • Claro • OneLink BPO",
-    "role":"Senior Developer / Team Lead",
-    "when":"2016–2020",
-    "highlights":[
-      "AP/AR SAP automations; finance/HR/IT automations across multiple clients.",
-      "ABBYY OCR doc-processing; WhatsApp notifications; Power BI dashboards; governance."
-    ],
-    "skills":["blueprism","uipath","automationanywhere","sqlserver","abbyenlp","whatsapp","powerbi"]
+    "projects":["cabify-agent-onboarding","engeform-rpa-coe"],
+    "skills":["blueprism","abbyenlp","sqlserver","javascript","powerbi","git","azure","vsts","visualstudio","bpm"]
   },
   {
     "company":"Onelink BPO — Colombia & Guatemala",
@@ -100,3 +104,5 @@
     "skills":["uipath","java","php","sqlserver","as400","citrix","htmlcss"]
   }
 ]
+
+    

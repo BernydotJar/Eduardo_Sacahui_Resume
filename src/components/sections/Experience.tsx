@@ -3,8 +3,8 @@ import { experience } from '@/lib/data';
 import TimelineItem from '@/components/ui/TimelineItem';
 import { Accordion } from '@/components/ui/accordion';
 
-const currentExperience = experience.filter(exp => parseInt(exp.when.split('–')[0]) >= 2020 || exp.when.includes('Present'));
-const earlyExperience = experience.filter(exp => parseInt(exp.when.split('–')[0]) < 2020);
+const currentExperience = experience.filter(exp => (exp.when.includes('Present') || parseInt(exp.when.split('–')[0]) >= 2020));
+const earlyExperience = experience.filter(exp => !currentExperience.includes(exp));
 
 
 const Experience = () => {
@@ -18,15 +18,15 @@ const Experience = () => {
         <div>
             <h3 className="text-2xl font-semibold mb-6 text-center text-primary">Recent Experience (2020–Present)</h3>
             <Accordion type="single" collapsible className="w-full">
-                {currentExperience.map((exp, index) => (
+                {currentExperience.sort((a, b) => parseInt(b.when.split('–')[0]) - parseInt(a.when.split('–')[0])).map((exp, index) => (
                     <TimelineItem key={index} experience={exp} />
                 ))}
             </Accordion>
         </div>
         <div>
-            <h3 className="text-2xl font-semibold mb-6 text-center text-primary">Early Career (2014–2018)</h3>
+            <h3 className="text-2xl font-semibold mb-6 text-center text-primary">Early Career (2014–2020)</h3>
             <Accordion type="single" collapsible className="w-full">
-                {earlyExperience.map((exp, index) => (
+                {earlyExperience.sort((a, b) => parseInt(b.when.split('–')[0]) - parseInt(a.when.split('–')[0])).map((exp, index) => (
                     <TimelineItem key={index} experience={exp} />
                 ))}
             </Accordion>
@@ -37,3 +37,5 @@ const Experience = () => {
 };
 
 export default Experience;
+
+    

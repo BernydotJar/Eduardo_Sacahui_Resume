@@ -14,16 +14,16 @@
   { "id":"git","symbol":"Gt","name":"Git","level":"advanced","stable":true,"tags":["devops"], "row": 2, "col": 18 },
 
   { "id":"powerplatform","symbol":"PP","name":"Power Platform (Automate/Apps/Dataverse)","level":"advanced","stable":true,"tags":["rpa","automation","apps"], "row": 3, "col": 1 },
-  { "id":"powerbi","symbol":"Pb","name":"Power BI","level":"expert","stable":true,"tags":["bi", "dashboards"]},
+  { "id":"powerbi","symbol":"Pb","name":"Power BI","level":"expert","stable":true,"tags":["bi", "dashboards"], "row": 3, "col": 2 },
   { "id":"copilotstudio","symbol":"Cs","name":"Microsoft Copilot Studio","level":"advanced","stable":true,"tags":["ai","agents"], "row": 3, "col": 13 },
   { "id":"fabric","symbol":"Fb","name":"Microsoft Fabric (Pipelines/Lakehouse)","level":"advanced","stable":true,"tags":["data","etl","lakehouse"], "row": 3, "col": 14 },
-  { "id":"sqlserver","symbol":"Ss","name":"SQL Server","level":"advanced","stable":true,"tags":["data"]},
+  { "id":"sqlserver","symbol":"Ss","name":"SQL Server","level":"advanced","stable":true,"tags":["data"], "row": 3, "col": 15 },
   { "id":"mysql","symbol":"My","name":"MySQL","level":"intermediate","stable":true,"tags":["data"], "row": 3, "col": 16 },
   { "id":"postgres","symbol":"Ps","name":"PostgreSQL","level":"advanced","stable":true,"tags":["data"], "row": 3, "col": 17 },
-  { "id":"vsts","symbol":"Vs","name":"VSTS / Azure DevOps","level":"advanced","stable":true,"tags":["ci","delivery"]},
+  { "id":"vsts","symbol":"Vs","name":"VSTS / Azure DevOps","level":"advanced","stable":true,"tags":["ci","delivery"], "row": 3, "col": 18 },
 
-  { "id":"uipath","symbol":"Ui","name":"UiPath","level":"advanced","stable":true,"tags":["rpa","automation"]},
-  { "id":"automationanywhere","symbol":"AA","name":"Automation Anywhere","level":"advanced","stable":true,"tags":["rpa"]},
+  { "id":"uipath","symbol":"Ui","name":"UiPath","level":"advanced","stable":true,"tags":["rpa","automation"], "row": 4, "col": 1 },
+  { "id":"automationanywhere","symbol":"AA","name":"Automation Anywhere","level":"advanced","stable":true,"tags":["rpa"], "row": 4, "col": 2 },
   { "id":"aws","symbol":"Aw","name":"AWS","level":"advanced","stable":true,"tags":["cloud"], "row": 4, "col": 3 },
   { "id":"azure","symbol":"Azr","name":"Azure","level":"advanced","stable":true,"tags":["cloud"], "row": 4, "col": 4 },
   { "id":"kubernetes","symbol":"K8","name":"Kubernetes","level":"intermediate","stable":true,"tags":["platform"], "row": 4, "col": 5 },
@@ -41,6 +41,16 @@
   { "id":"servicenow","symbol":"Snw","name":"ServiceNow (actions/runbooks)","level":"intermediate","stable":true,"tags":["ops"], "row": 4, "col": 17 },
   { "id":"whatsapp","symbol":"Wa","name":"WhatsApp Notifications","level":"intermediate","stable":true,"tags":["comm"], "row": 4, "col": 18 },
 
+  { "id":"java","symbol":"Ja","name":"Java","level":"intermediate","stable":true,"tags":["backend","legacy"], "row": 5, "col": 1 },
+  { "id":"php","symbol":"Ph","name":"PHP","level":"intermediate","stable":true,"tags":["web","legacy"], "row": 5, "col": 2 },
+  { "id":"as400","symbol":"A4","name":"IBM AS/400","level":"intermediate","stable":true,"tags":["legacy","erp"], "row": 5, "col": 3 },
+  { "id":"citrix","symbol":"Cx","name":"Citrix","level":"intermediate","stable":true,"tags":["virtualization","rpa"], "row": 5, "col": 4 },
+  { "id":"visualstudio","symbol":"VsX","name":"Visual Studio","level":"advanced","stable":true,"tags":["devtools"], "row": 5, "col": 5 },
+  { "id":"vscode","symbol":"Vc","name":"Visual Studio Code","level":"advanced", "stable":true, "tags":["devtools"], "row": 5, "col": 6 },
+  { "id":"eclipse","symbol":"Ec","name":"Eclipse","level":"intermediate", "stable":true, "tags":["devtools"], "row": 5, "col": 7 },
+  { "id":"notepadpp","symbol":"Np","name":"Notepad++","level":"intermediate", "stable":true, "tags":["devtools"], "row": 5, "col": 8 },
+  { "id":"plsql","symbol":"Pl","name":"PL/SQL","level":"intermediate", "stable":true, "tags":["data","sql"], "row": 5, "col": 9 },
+
   { "id":"blueprism","symbol":"Bp","name":"Blue Prism","level":"advanced","stable":true,"tags":["rpa"], "row": 6, "col": 4 },
   { "id":"rocketbot","symbol":"Rb","name":"Rocketbot","level":"intermediate","stable":true,"tags":["rpa"], "row": 6, "col": 5 },
   { "id":"abbyenlp","symbol":"Ay","name":"ABBYY OCR","level":"advanced","stable":true,"tags":["ocr","doc-ai"], "row": 6, "col": 6 },
@@ -52,13 +62,14 @@
   { "id":"prometheus","symbol":"Pr","name":"Prometheus","level":"advanced","stable":true,"tags":["observability"], "row": 6, "col": 12 },
   { "id":"grafana","symbol":"Gf","name":"Grafana","level":"advanced","stable":true,"tags":["observability"], "row": 6, "col": 13 },
   { "id":"elk","symbol":"Ek","name":"ELK (Elasticsearch/Logstash/Kibana)","level":"advanced","stable":true,"tags":["observability"], "row": 6, "col": 14 },
-  
+  { "id":"workfusion","symbol":"Wf","name":"WorkFusion RPA","level":"intermediate","stable": true,"tags":["rpa","automation"], "row": 6, "col": 15 },
+  { "id":"pythonrpa","symbol":"PyR","name":"Python RPA Framework","level":"intermediate","stable": true,"tags":["rpa","python"], "row": 6, "col": 16 },
+  { "id":"excel","symbol":"Ex","name":"Excel (Power Query)","level":"advanced","stable": true,"tags":["data","etl"], "row": 6, "col": 17 },
+  { "id":"bpm","symbol":"Bm","name":"BPM / Process Automation","level":"advanced","stable": true,"tags":["process","ops"], "row": 6, "col": 18 },
+
   { "id":"masters","symbol":"Mb","name":"Master in Business Psychology","level":"education","stable":false,"tags":["education"], "row": 7, "col": 4 },
   { "id":"bba","symbol":"Ba","name":"B.B.A.","level":"education","stable":false,"tags":["education"], "row": 7, "col": 5 },
-  
-  { "id":"java","symbol":"Ja","name":"Java","level":"intermediate","stable":true,"tags":["backend","legacy"], "row": 5, "col": 1 },
-  { "id":"php","symbol":"Ph","name":"PHP","level":"intermediate","stable":true,"tags":["web","legacy"], "row": 5, "col": 2 },
-  { "id":"as400","symbol":"A4","name":"IBM AS/400","level":"intermediate","stable":true,"tags":["legacy","erp"], "row": 5, "col": 3 },
-  { "id":"citrix","symbol":"Cx","name":"Citrix","level":"intermediate","stable":true,"tags":["virtualization","rpa"], "row": 5, "col": 4 },
-  { "id":"visualstudio","symbol":"VsX","name":"Visual Studio","level":"advanced","stable":true,"tags":["devtools"], "row": 5, "col": 5 }
+  { "id":"coaching","symbol":"Co","name":"Coaching & Mentoring","level":"advanced","stable": true,"tags":["leadership"], "row": 7, "col": 6 }
 ]
+
+    
