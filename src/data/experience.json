@@ -30,10 +30,9 @@
     "when":"2022–2023",
     "highlights":[
       "Managed Orchestrator deployments on AKS/EKS and on-prem using custom Helm charts, ensuring HA, autoscaling, and DR readiness.",
-      "Engineered robust observability stacks (Prometheus/Grafana/ELK) with SLOs, reducing MTTR in a heavily regulated healthcare client environment.",
+      "Engineered robust observability stacks (Prometheus/Grafana/ELK) with SLOs, reducing MTTR in heavily regulated healthcare client environments.",
       "Enforced stringent security controls including RBAC, CyberArk/Key Vault integration for secrets management, TLS rotation, and network policies.",
-      "Architected and delivered complex RPA portfolios for numerous healthcare clients (UCare, Regeneron, AdaptHealth, etc.), focusing on compliance, auditability, and integration with clinical systems.",
-      "Led SEV incidents and post-mortems, coached teams on advanced REFramework patterns, and drove CoE maturity for clients like Dana-Farber Cancer Institute."
+      "Architected and delivered complex RPA portfolios for numerous clients including **Zebra Technologies, Love's, Dana-Farber Cancer Institute, UCare, Regeneron, AdaptHealth, McLaren Health, Tarpon Health, CareCentrix, and Help at Home**, focusing on compliance, auditability, and integration with clinical systems in the challenging healthcare sector."
     ],
     "skills":["uipath","kubernetes","helm","prometheus","grafana","elk","snowflake","fabric","azure","aws","uipathtestmgr","governance","queues","powerbi","monitoring"],
     "projects":[
