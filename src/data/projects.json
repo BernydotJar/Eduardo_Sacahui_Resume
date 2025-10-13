@@ -161,34 +161,15 @@
     "outcomes":["Transaction throughput ↑ ~60%","Turnaround time ↓"]
   },
   {
-    "id":"cabify-agent-onboarding",
-    "title":"Cabify — Driver Authorization & Onboarding",
-    "when":"2020",
-    "client":"Cabify Argentina (Symphony LAM)",
-    "skills":["blueprism","vscode","sqlserver","javascript","powerbi","git","azure","abbyenlp","whatsapp","rpa","python"],
-    "stack":"Blue Prism, ABBYY OCR → web review UI, SQL Server, JS, Power BI, Git, Azure services; WhatsApp status notifications; ERP posting.",
-    "summary":"RPA + full-stack solution to validate documents with ABBYY OCR, present a review UI, and auto-update ERP; drivers are notified via WhatsApp.",
-    "outcomes":["Throughput ↑","Manual review time ↓","Onboarding lead time ↓"]
-  },
-  {
-    "id":"engeform-rpa-coe",
-    "title":"Engeform Brasil — RPA CoE & Delivery",
-    "when":"2018–2019",
-    "client":"Engeform Brasil (Symphony LAM)",
-    "skills":["blueprism","visualstudio","sqlserver","vsts","powerbi","bpm"],
-    "stack":"Blue Prism, VS, SQL Server, VSTS, Power BI; CoE playbooks and training.",
-    "summary":"Solution architect for an enterprise RPA CoE; trained team and delivered scalable robots across HR, Finance & IT.",
-    "outcomes":["Governed delivery model","Faster release cadence","Defects ↓"]
-  },
-  {
-    "id":"kbs-finance-12-automations",
-    "title":"KBS — 12 Finance Automations",
-    "when":"2021–2022",
-    "client":"KBS (Team International)",
-    "skills":["automationanywhere","visualstudio","excel","javascript","powerquery","jira","security"],
-    "stack":"AA360, VS, Excel/Power Query, JavaScript; governance + security baked in.",
-    "summary":"Automated a dozen finance processes and ERP integrations using AA360; set up governance and design reviews.",
-    "outcomes":["Cycle time ↓","SLA attainment ↑","Manual work eliminated"]
+    "id":"cabify-driver-onboarding",
+    "aliases": ["cabify-agent-onboarding"],
+    "title":"Cabify Argentina — Admisión de Conductores (OCR + APIs)",
+    "when":"2019–2020",
+    "client":"Cabify (Argentina) — Cognition HQ (antes Symphony LAM)",
+    "skills":["blueprism","abbyenlp","whatsappapi","sqlserver","javascript","powerbi"],
+    "stack":"Blue Prism; ABBYY OCR para documentos; Web/API integration; notificaciones por WhatsApp; reporting en Power BI.",
+    "summary":"Automatización integral del onboarding de conductores: extracción OCR, validación, alta en sistemas y notificación por WhatsApp.",
+    "outcomes":["Tiempo de onboarding ↓","Errores de captura ↓","Trazabilidad ↑"]
   },
   {
     "id":"newell-ptp-integration",
@@ -239,5 +220,25 @@
     "stack":"UiPath + selectores robustos; PAC para eventos; Power Apps como front interno.",
     "summary":"Automatizaciones sobre portales y formularios web: extracción, validaciones y posting.",
     "outcomes":["Throughput ↑","Re-trabajo ↓","SLA de operación ↑"]
+  },
+  {
+    "id":"kbs-netsuite-aa",
+    "title":"KBS — Automatizaciones sobre NetSuite (AA360)",
+    "when":"2021–2022",
+    "client":"KBS (Team International)",
+    "skills":["automationanywhere","netsuite","sqlserver","jira","powerbi"],
+    "stack":"Automation Anywhere 360 con conectores y scripts; orquestación por colas; auditoría y reportes.",
+    "summary":"Automatización de procesos financieros en NetSuite: ingestión de transacciones, conciliaciones y notificaciones.",
+    "outcomes":["AHT ↓","SLA attainment ↑","Errores ↓"]
+  },
+  {
+    "id":"bancociudad-blueprism",
+    "title":"Banco Ciudad — Automatizaciones Back-Office (Blue Prism)",
+    "when":"2019",
+    "client":"Banco Ciudad (Argentina) — Cognition HQ (antes Symphony LAM)",
+    "skills":["blueprism","sqlserver","javascript","powerbi"],
+    "stack":"Blue Prism para procesos de back-office (validaciones, conciliaciones/altas), integración con apps internas y reporting.",
+    "summary":"Automatizaciones bancarias de soporte operativo y cumplimiento; monitoreo y métricas de ejecución.",
+    "outcomes":["Tiempos de ciclo ↓","Tareas manuales ↓","Calidad de datos ↑"]
   }
 ]

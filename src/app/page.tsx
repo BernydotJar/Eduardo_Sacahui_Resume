@@ -12,6 +12,7 @@ import Education from '@/components/sections/Education';
 import Contact from '@/components/sections/Contact';
 import DetailDrawer from '@/components/DetailDrawer';
 import { AnimatePresence } from 'framer-motion';
+import { projects } from '@/lib/data';
 
 type DrawerContent = {
   type: 'skill' | 'project';
@@ -32,6 +33,17 @@ export default function Home() {
       try {
         const [type, id] = hash.split('=');
         if ((type === 'skill' || type === 'project') && id) {
+          // Check for aliases in projects
+          if (type === 'project') {
+            const project = projects.find(p => p.aliases?.includes(id));
+            if (project) {
+              const newHash = `#project=${project.id}`;
+              // Update URL without triggering another hash change, then set state
+              history.replaceState(null, '', newHash);
+              setDrawerContent({ type: 'project', id: project.id });
+              return;
+            }
+          }
           setDrawerContent({ type, id });
         } else {
           setDrawerContent(null);

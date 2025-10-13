@@ -58,10 +58,11 @@
       "Ran RPA office/CoE and consulting practice; backlog and release mgmt (Jira/ClickUp).",
       "Hands-on with Blue Prism, UiPath, Automation Anywhere, WorkFusion, Power Platform, Python RPA Framework, Rocketbot.",
       "KBS: delivered 12 finance automations; governance & security standards.",
-      "Newell: PTP/AP integration (SAP + email automation)."
+      "Newell: PTP/AP integration (SAP + email automation).",
+      "KBS: automatizaciones financieras sobre NetSuite con Automation Anywhere (AA360): colas, validaciones, conciliaciones."
     ],
-    "projects":["kbs-finance-12-automations","newell-ptp-integration"],
-    "skills":["blueprism","uipath","automationanywhere","workfusion","powerplatform","pythonrpa","rocketbot","jira","clickup","visualstudio","excel","powerquery"]
+    "projects":["kbs-finance-12-automations","newell-ptp-integration","kbs-netsuite-aa"],
+    "skills":["blueprism","uipath","automationanywhere","workfusion","powerplatform","pythonrpa","rocketbot","jira","clickup","visualstudio","excel","powerquery","automationanywhere","netsuite","sqlserver","jira","powerbi"]
   },
   {
     "company":"Roboyo",
@@ -72,17 +73,6 @@
       "Designed CoE playbooks; integrated external APIs & legacy ERPs."
     ],
     "skills":["powerplatform","sap","powerbi","sqlserver"]
-  },
-  {
-    "company":"Symphony LAM",
-    "role":"RPA Senior Consultant",
-    "when":"2018–2020",
-    "highlights":[
-      "Cabify Argentina: ABBYY OCR + RPA + WhatsApp notifications; ERP updates.",
-      "Engeform Brasil: architected RPA CoE; trained team; delivered HR/Finance/IT automations."
-    ],
-    "projects":["cabify-agent-onboarding","engeform-rpa-coe"],
-    "skills":["blueprism","abbyenlp","sqlserver","javascript","powerbi","git","azure","vsts","visualstudio","bpm"]
   },
   {
     "company":"Onelink BPO — Colombia & Guatemala",
@@ -116,5 +106,21 @@
       "nokia-pos-download"
     ],
     "skills":["uipath","java","php","sqlserver","as400","citrix","htmlcss"]
+  },
+  {
+    "company":"Cognition HQ (antes Symphony LAM)",
+    "display_company_override":"Cognition HQ (antes Symphony LAM)",
+    "role":"RPA Senior Consultant / Solution Architect",
+    "when":"2018–2020",
+    "highlights":[
+      "Cabify Argentina: OCR ABBYY + Blue Prism + WhatsApp APIs para admisión de conductores.",
+      "Banco Ciudad (AR): automatizaciones de back-office con Blue Prism; monitoreo y métricas.",
+      "Diseño de estándares y plantillas (objets, queues, reintentos, logging) y tableros de control."
+    ],
+    "projects":[
+      "cabify-driver-onboarding",
+      "bancociudad-blueprism"
+    ],
+    "skills":["blueprism","abbyenlp","whatsappapi","sqlserver","powerbi","javascript", "vsts", "visualstudio", "bpm"]
   }
 ]

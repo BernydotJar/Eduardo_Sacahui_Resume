@@ -21,6 +21,7 @@ export interface Project {
   when?: string;
   client?: string;
   methodology?: string;
+  aliases?: string[];
 }
 
 export interface Experience {
@@ -31,6 +32,7 @@ export interface Experience {
   skills: string[];
   projects?: string[];
   display_role_override?: string;
+  display_company_override?: string;
   notes?: string;
 }
 

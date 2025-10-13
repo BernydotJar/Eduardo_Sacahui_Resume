@@ -15,6 +15,7 @@ const TimelineItem = ({ experience }: TimelineItemProps) => {
     const techUsed = skills.filter(skill => experience.skills.includes(skill.id));
     const relatedProjects = experience.projects ? projects.filter(p => experience.projects?.includes(p.id)) : [];
     const role = experience.display_role_override || experience.role;
+    const company = experience.display_company_override || experience.company;
     
   return (
     <AccordionItem value={experience.company + experience.role}>
@@ -22,7 +23,7 @@ const TimelineItem = ({ experience }: TimelineItemProps) => {
             <div className='flex justify-between items-center w-full pr-4'>
                 <div className='text-left'>
                     <h3 className="text-lg font-semibold">{role}</h3>
-                    <p className="text-sm text-muted-foreground">{experience.company}</p>
+                    <p className="text-sm text-muted-foreground">{company}</p>
                 </div>
                 <p className="text-sm text-muted-foreground font-mono shrink-0">{experience.when}</p>
             </div>
