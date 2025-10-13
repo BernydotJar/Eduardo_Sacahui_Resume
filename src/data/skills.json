@@ -1,7 +1,7 @@
 
 [
   { "id":"python","symbol":"Py","name":"Python","level":"expert","stable":true,"tags":["backend","ml","api","automation"], "row": 1, "col": 1 },
-  { "id":"htmlcss","symbol":"Hc","name":"HTML/CSS","level":"advanced","stable":true,"tags":["frontend"], "row": 1, "col": 2 },
+  { "id":"htmlcss","symbol":"Hc","name":"HTML/CSS/JS","level":"advanced","stable":true,"tags":["frontend"], "row": 1, "col": 2 },
   { "id":"vba","symbol":"Vb","name":"VBA","level":"intermediate","stable":true,"tags":["automation"], "row": 1, "col": 18 },
 
   { "id":"react","symbol":"Re","name":"React/TypeScript","level":"advanced","stable":true,"tags":["frontend","sdk"], "row": 2, "col": 1 },
@@ -14,16 +14,16 @@
   { "id":"git","symbol":"Gt","name":"Git","level":"advanced","stable":true,"tags":["devops"], "row": 2, "col": 18 },
 
   { "id":"powerplatform","symbol":"PP","name":"Power Platform (Automate/Apps/Dataverse)","level":"advanced","stable":true,"tags":["rpa","automation","apps"], "row": 3, "col": 1 },
-  { "id":"powerbi","symbol":"Pb","name":"Power BI","level":"expert","stable":true,"tags":["bi","dashboards"], "row": 3, "col": 2 },
+  { "id":"powerbi","symbol":"Pb","name":"Power BI","level":"expert","stable":true,"tags":["bi", "dashboards"]},
   { "id":"copilotstudio","symbol":"Cs","name":"Microsoft Copilot Studio","level":"advanced","stable":true,"tags":["ai","agents"], "row": 3, "col": 13 },
   { "id":"fabric","symbol":"Fb","name":"Microsoft Fabric (Pipelines/Lakehouse)","level":"advanced","stable":true,"tags":["data","etl","lakehouse"], "row": 3, "col": 14 },
-  { "id":"sqlserver","symbol":"Ss","name":"SQL Server","level":"advanced","stable":true,"tags":["data"], "row": 3, "col": 15 },
+  { "id":"sqlserver","symbol":"Ss","name":"SQL Server","level":"advanced","stable":true,"tags":["data"]},
   { "id":"mysql","symbol":"My","name":"MySQL","level":"intermediate","stable":true,"tags":["data"], "row": 3, "col": 16 },
   { "id":"postgres","symbol":"Ps","name":"PostgreSQL","level":"advanced","stable":true,"tags":["data"], "row": 3, "col": 17 },
-  { "id":"azuredevops","symbol":"Az","name":"Azure DevOps / VSTS","level":"advanced", "stable":true, "tags":["ci","cd"], "row": 3, "col": 18 },
+  { "id":"vsts","symbol":"Vs","name":"VSTS / Azure DevOps","level":"advanced","stable":true,"tags":["ci","delivery"]},
 
-  { "id":"uipath","symbol":"Ui","name":"UiPath","level":"advanced","stable":true,"tags":["rpa","automation"], "row": 4, "col": 1 },
-  { "id":"automationanywhere","symbol":"AA","name":"Automation Anywhere 360","level":"advanced","stable":true,"tags":["rpa"], "row": 4, "col": 2 },
+  { "id":"uipath","symbol":"Ui","name":"UiPath","level":"advanced","stable":true,"tags":["rpa","automation"]},
+  { "id":"automationanywhere","symbol":"AA","name":"Automation Anywhere","level":"advanced","stable":true,"tags":["rpa"]},
   { "id":"aws","symbol":"Aw","name":"AWS","level":"advanced","stable":true,"tags":["cloud"], "row": 4, "col": 3 },
   { "id":"azure","symbol":"Azr","name":"Azure","level":"advanced","stable":true,"tags":["cloud"], "row": 4, "col": 4 },
   { "id":"kubernetes","symbol":"K8","name":"Kubernetes","level":"intermediate","stable":true,"tags":["platform"], "row": 4, "col": 5 },
@@ -54,7 +54,11 @@
   { "id":"elk","symbol":"Ek","name":"ELK (Elasticsearch/Logstash/Kibana)","level":"advanced","stable":true,"tags":["observability"], "row": 6, "col": 14 },
   
   { "id":"masters","symbol":"Mb","name":"Master in Business Psychology","level":"education","stable":false,"tags":["education"], "row": 7, "col": 4 },
-  { "id":"bba","symbol":"Ba","name":"B.B.A.","level":"education","stable":false,"tags":["education"], "row": 7, "col": 5 }
+  { "id":"bba","symbol":"Ba","name":"B.B.A.","level":"education","stable":false,"tags":["education"], "row": 7, "col": 5 },
+  
+  { "id":"java","symbol":"Ja","name":"Java","level":"intermediate","stable":true,"tags":["backend","legacy"], "row": 5, "col": 1 },
+  { "id":"php","symbol":"Ph","name":"PHP","level":"intermediate","stable":true,"tags":["web","legacy"], "row": 5, "col": 2 },
+  { "id":"as400","symbol":"A4","name":"IBM AS/400","level":"intermediate","stable":true,"tags":["legacy","erp"], "row": 5, "col": 3 },
+  { "id":"citrix","symbol":"Cx","name":"Citrix","level":"intermediate","stable":true,"tags":["virtualization","rpa"], "row": 5, "col": 4 },
+  { "id":"visualstudio","symbol":"VsX","name":"Visual Studio","level":"advanced","stable":true,"tags":["devtools"], "row": 5, "col": 5 }
 ]
-
-    

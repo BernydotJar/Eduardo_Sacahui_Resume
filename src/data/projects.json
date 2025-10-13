@@ -69,5 +69,95 @@
     "skills":["uipath","automationanywhere","blueprism","sqlserver","abbyenlp","whatsapp","sap"],
     "stack":"ABBYY OCR → ERP posts; WhatsApp notifications; SAP automations",
     "summary":"Finance/HR/IT automations across Newell, KBS, Engeform, Avianca, Claro, OneLink, Capgemini."
+  },
+  {
+    "id":"avianca-redispatch",
+    "title":"Avianca – Ticket Re-dispatch Automation",
+    "when":"2017–2018",
+    "client":"Avianca Airlines (Onelink BPO, Colombia)",
+    "skills":["uipath","sqlserver","vsts","powerbi"],
+    "summary":"Robotized redispatch of international/national/commercial flights when an operational event occurs.",
+    "methodology":"Scrum",
+    "outcomes":["AHT –3 min per consultant","≈$20k/month savings","Faster customer resolution"]
+  },
+  {
+    "id":"claro-front-office",
+    "title":"Claro – Front-Office Advisor Helper",
+    "when":"2017",
+    "client":"Claro Communications (Onelink BPO, Colombia)",
+    "skills":["automationanywhere","sqlserver","vsts","powerbi","htmlcss"],
+    "summary":"Advisor console to surface relevant account info in one view.",
+    "methodology":"Scrum",
+    "outcomes":["Advisor response time ↓","AHT ↓","First-contact experience ↑"]
+  },
+  {
+    "id":"pepsi-finance-rpa",
+    "title":"Pepsi – Finance Process Automations",
+    "when":"2016–2017",
+    "client":"Pepsi (Onelink BPO, Guatemala)",
+    "skills":["uipath","sqlserver","vsts","powerbi"],
+    "summary":"Automated invoice sending, inventory/product integrations, and invoice payments.",
+    "methodology":"Scrum",
+    "outcomes":["Cycle time ↓","Error rate ↓","Cash-flow visibility ↑"]
+  },
+  {
+    "id":"intlpaper-statements",
+    "title":"International Paper – Statement Dispatch",
+    "when":"2016",
+    "client":"International Paper (Capgemini BPO)",
+    "skills":["java","vba","uipath","sqlserver"],
+    "summary":"Automated statement sending for customers with past-due invoices.",
+    "methodology":"Scrum",
+    "outcomes":["≈$75k/month collections lift"]
+  },
+  {
+    "id":"avon-sla-bpm",
+    "title":"Avon APAC/EMLA – SLA & Attendance Automation",
+    "when":"2015–2016",
+    "client":"Avon Finance & Shared Services (Capgemini BPO)",
+    "skills":["uipath","sqlserver","as400"],
+    "summary":"Automated SLA tracking for >90-day invoices and attendance for ~250 employees.",
+    "methodology":"Scrum",
+    "outcomes":["SLA compliance ↑","Back-office effort ↓"]
+  },
+  {
+    "id":"generalmills-sl-web",
+    "title":"General Mills – Service-Level Web Portal",
+    "when":"2015",
+    "client":"General Mills",
+    "skills":["sqlserver","htmlcss","php","javascript"],
+    "summary":"Web portal for service-level and response-time queries used by management.",
+    "methodology":"Scrum",
+    "outcomes":["Self-service reporting ↑","Manager time saved"]
+  },
+  {
+    "id":"officedepot-ar",
+    "title":"Office Depot – AR Invoice Retrieval",
+    "when":"2015",
+    "client":"Office Depot",
+    "skills":["uipath","sqlserver","java","htmlcss","as400"],
+    "summary":"On-demand & batch retrieval for +60/+90 day invoices < $1,000.",
+    "methodology":"Scrum",
+    "outcomes":["Collector time ↓","Collections rate ↑"]
+  },
+  {
+    "id":"generalmills-reminders",
+    "title":"General Mills – Outstanding Balance Reminders",
+    "when":"2014",
+    "client":"General Mills",
+    "skills":["uipath","sqlserver"],
+    "summary":"Automated reminder emails every 15 days for balances under $1,000.",
+    "methodology":"Scrum",
+    "outcomes":["≈$1M annual collections estimated"]
+  },
+  {
+    "id":"nokia-pos-download",
+    "title":"Nokia – POS Download Robot",
+    "when":"2014",
+    "client":"Nokia",
+    "skills":["uipath","sqlserver","citrix"],
+    "summary":"Automated PoS downloads for analyst teams.",
+    "methodology":"Scrum",
+    "outcomes":["Transaction throughput ↑ ~60%","Turnaround time ↓"]
   }
 ]

@@ -65,5 +65,38 @@
       "ABBYY OCR doc-processing; WhatsApp notifications; Power BI dashboards; governance."
     ],
     "skills":["blueprism","uipath","automationanywhere","sqlserver","abbyenlp","whatsapp","powerbi"]
+  },
+  {
+    "company":"Onelink BPO — Colombia & Guatemala",
+    "role":"RPA Senior Lead Developer / RPA Developer",
+    "when":"2016–2018",
+    "highlights":[
+      "Avianca: redispatch automation for flight tickets (operational events).",
+      "Claro: front-office helper to surface customer data, AHT reduction.",
+      "Pepsi: finance automations—invoice sending, inventory integration, payments."
+    ],
+    "projects":["avianca-redispatch","claro-front-office","pepsi-finance-rpa"],
+    "skills":["uipath","automationanywhere","sqlserver","vsts","powerbi","htmlcss"]
+  },
+  {
+    "company":"Capgemini BPO",
+    "role":"RPA Analyst / Web Developer",
+    "when":"2014–2016",
+    "highlights":[
+      "International Paper: statement sending robot for delinquent AR.",
+      "Avon APAC/EMLA: SLA (>90d) & attendance automation (~250 users).",
+      "General Mills: service-level web portal and reminder automation.",
+      "Office Depot: AR invoice retrieval (on-demand & batch).",
+      "Nokia: PoS download robot (Citrix)."
+    ],
+    "projects":[
+      "intlpaper-statements",
+      "avon-sla-bpm",
+      "generalmills-sl-web",
+      "officedepot-ar",
+      "generalmills-reminders",
+      "nokia-pos-download"
+    ],
+    "skills":["uipath","java","php","sqlserver","as400","citrix","htmlcss"]
   }
 ]

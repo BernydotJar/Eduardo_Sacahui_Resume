@@ -15,7 +15,8 @@ const levelColorMap: { [key: string]: string } = {
   expert: 'border-primary shadow-primary/20',
   advanced: 'border-accent shadow-accent/20',
   intermediate: 'border-secondary',
-  education: 'border-muted/30'
+  education: 'border-muted/30',
+  legacy: 'border-muted/50'
 };
 
 const SkillTile = ({ skill, onClick }: SkillTileProps) => {

@@ -1,3 +1,4 @@
+
 "use client";
 
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from "@/components/ui/sheet";
@@ -8,6 +9,7 @@ import type { Skill, Project, Experience } from "@/lib/types";
 import { medallionArchitecture } from "@/data/medallion";
 import { Button } from "./ui/button";
 import { Download } from "lucide-react";
+import Link from "next/link";
 
 interface DetailDrawerProps {
   content: { type: 'skill'; id: string } | { type: 'project'; id: string };
@@ -43,6 +45,8 @@ const DetailDrawer = ({ content, isOpen, onClose }: DetailDrawerProps) => {
     }
   }
 
+  const projectDetails = mainContent && content.type === 'project' ? (mainContent as Project) : null;
+
   return (
     <Sheet open={isOpen} onOpenChange={(open) => !open && onClose()}>
       <SheetContent className="w-full md:w-3/5 lg:w-1/2 xl:w-2/5 p-0" side="right">
@@ -53,16 +57,37 @@ const DetailDrawer = ({ content, isOpen, onClose }: DetailDrawerProps) => {
               <SheetDescription>{description}</SheetDescription>
             </SheetHeader>
             <div className="mt-6 space-y-8">
-              {content.type === 'project' && mainContent && (
+              {projectDetails && (
                   <div>
-                      <h3 className="font-semibold text-lg mb-2">Project Details</h3>
-                      <div className="text-sm space-y-2 text-muted-foreground">
-                          <p><strong className="text-foreground">Stack:</strong> {(mainContent as Project).stack}</p>
-                          {(mainContent as Project).outcomes && (
-                            <div className="flex flex-wrap gap-2 pt-2">
-                                {(mainContent as Project).outcomes?.map(o => <Badge key={o} variant="secondary">{o}</Badge>)}
+                      <h3 className="font-semibold text-lg mb-4">Project Details</h3>
+                      <div className="text-sm space-y-4 text-muted-foreground">
+                          {projectDetails.client && <p><strong className="text-foreground font-semibold">Client:</strong> {projectDetails.client}</p>}
+                          {projectDetails.when && <p><strong className="text-foreground font-semibold">When:</strong> {projectDetails.when}</p>}
+                          {projectDetails.stack && <p><strong className="text-foreground font-semibold">Stack:</strong> {projectDetails.stack}</p>}
+                          {projectDetails.methodology && <p><strong className="text-foreground font-semibold">Methodology:</strong> {projectDetails.methodology}</p>}
+                          
+                          {projectDetails.outcomes && (
+                            <div>
+                                <strong className="text-foreground font-semibold">Outcomes:</strong>
+                                <div className="flex flex-wrap gap-2 pt-2">
+                                    {projectDetails.outcomes?.map(o => <Badge key={o} variant="secondary">{o}</Badge>)}
+                                </div>
                             </div>
                           )}
+                           <div>
+                                <strong className="text-foreground font-semibold">Skills:</strong>
+                                <div className="flex flex-wrap gap-2 pt-2">
+                                    {projectDetails.skills.map(skillId => {
+                                        const skill = skills.find(s => s.id === skillId);
+                                        return skill ? (
+                                            <Link key={skillId} href={`#skill=${skill.id}`} scroll={false}>
+                                                <Badge variant="outline" className="cursor-pointer hover:bg-accent/20">{skill.name}</Badge>
+                                            </Link>
+                                        ) : null;
+                                    })}
+                                </div>
+                           </div>
+
                           {content.id === 'rag-knowledge-services' && (
                               <Button variant="link" asChild className="px-0">
                                   <a href="/postman-collection.json" download><Download className="mr-2 h-4 w-4" />Download Postman Collection</a>
@@ -82,16 +107,18 @@ const DetailDrawer = ({ content, isOpen, onClose }: DetailDrawerProps) => {
                   <h3 className="font-semibold text-lg mb-4">Related Projects</h3>
                   <div className="space-y-4">
                     {relatedProjects.map(project => (
-                      <div key={project.id} className="p-4 border rounded-lg">
-                        <h4 className="font-semibold">{project.title}</h4>
-                        <p className="text-sm text-muted-foreground mt-1">{project.summary}</p>
-                        <div className="mt-2 flex flex-wrap gap-1">
-                          {project.skills.map(skillId => {
-                            const skill = skills.find(s => s.id === skillId);
-                            return skill ? <Badge key={skillId} variant="outline" className="text-xs">{skill.name}</Badge> : null;
-                          })}
+                      <Link key={project.id} href={`#project=${project.id}`} scroll={false} className="block text-left">
+                        <div className="p-4 border rounded-lg hover:border-primary transition-colors">
+                          <h4 className="font-semibold">{project.title}</h4>
+                          <p className="text-sm text-muted-foreground mt-1">{project.summary}</p>
+                          <div className="mt-2 flex flex-wrap gap-1">
+                            {project.skills.map(skillId => {
+                              const skill = skills.find(s => s.id === skillId);
+                              return skill ? <Badge key={skillId} variant="outline" className="text-xs">{skill.name}</Badge> : null;
+                            })}
+                          </div>
                         </div>
-                      </div>
+                      </Link>
                     ))}
                   </div>
                 </div>

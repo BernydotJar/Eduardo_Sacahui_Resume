@@ -1,4 +1,5 @@
 
+
 export interface Skill {
   id: string;
   symbol: string;
@@ -14,9 +15,12 @@ export interface Project {
   id: string;
   title: string;
   skills: string[];
-  stack: string;
+  stack?: string;
   summary: string;
   outcomes?: string[];
+  when?: string;
+  client?: string;
+  methodology?: string;
 }
 
 export interface Experience {
@@ -25,6 +29,7 @@ export interface Experience {
   when: string;
   highlights: string[];
   skills: string[];
+  projects?: string[];
 }
 
 export interface Education {
