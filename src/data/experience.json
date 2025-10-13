@@ -15,11 +15,12 @@
   },
   {
     "company":"LCH (Low Code Human)",
-    "role":"CEO & Principal Engineer",
+    "role":"CEO & Principal Python Engineer",
     "when":"2023–Present",
     "highlights":[
-      "Led offshore Python team; FastAPI + embeddings; SDKs for React teams.",
-      "Cost/latency SLOs, canary/blue-green; telemetry wired to product & GTM."
+      "Led offshore Python team in building backend services using FastAPI and vector databases for RAG applications.",
+      "Published SDKs for React development teams and managed API lifecycle with cost and latency SLOs.",
+      "Implemented advanced deployment strategies like canary and blue-green releases, with comprehensive telemetry."
     ],
     "skills":["python","fastapi","pgvector","openai","react","node","githubactions","jira"]
   },
@@ -28,15 +29,11 @@
     "role":"Technical Delivery Manager",
     "when":"2022–2023",
     "highlights":[
-      "Orchestrator on AKS/EKS/on-prem via custom Helm; HA, autoscaling, blue/green, DR runbooks.",
-      "Observability (Prometheus/Grafana/ELK) with SLOs/synthetics; MTTR down.",
-      "Security: RBAC, Key Vault, TLS rotation, network policies, audit trails.",
-      "ETL from Orchestrator telemetry into Snowflake/Fabric for throughput/SLA/cost dashboards.",
-      "Coached teams on REFramework, idempotency, CI/CD; led SEV incidents and RCAs.",
-      "Zebra: despliegue de UiPath Test Manager y puertas de calidad.",
-      "Love’s: automatizaciones retail (backoffice) con colas y SLOs.",
-      "DFCI: madurez de CoE y gobierno técnico.",
-      "UCare / Regeneron / AdaptHealth / McLaren / Tarpon Health / CareCentrix / Help at Home: portfolio de automatizaciones con observabilidad y auditoría."
+      "Managed Orchestrator deployments on AKS/EKS and on-prem using custom Helm charts, ensuring HA, autoscaling, and DR readiness.",
+      "Engineered robust observability stacks (Prometheus/Grafana/ELK) with SLOs, reducing MTTR in a heavily regulated healthcare client environment.",
+      "Enforced stringent security controls including RBAC, CyberArk/Key Vault integration for secrets management, TLS rotation, and network policies.",
+      "Architected and delivered complex RPA portfolios for numerous healthcare clients (UCare, Regeneron, AdaptHealth, etc.), focusing on compliance, auditability, and integration with clinical systems.",
+      "Led SEV incidents and post-mortems, coached teams on advanced REFramework patterns, and drove CoE maturity for clients like Dana-Farber Cancer Institute."
     ],
     "skills":["uipath","kubernetes","helm","prometheus","grafana","elk","snowflake","fabric","azure","aws","uipathtestmgr","governance","queues","powerbi","monitoring"],
     "projects":[
@@ -53,28 +50,31 @@
     ]
   },
   {
-    "company":"Haceb (vía LCH Consulting)",
+    "company":"Haceb (via LCH Consulting)",
     "role":"Principal Consultant / Pod Lead — RPA",
     "display_role_override":"RPA Principal Consultant (via LCH)",
     "when":"2022–2024",
     "highlights":[
-      "Lideré un pod RPA centrado en UiPath y Power Platform (PAC/Power Apps) para SAP, SharePoint y portales web.",
-      "Definí estándares de desarrollo (excepciones, idempotencia, reintentos, logging estructurado) y gobierno (versionado, auditoría).",
-      "Orquesté flujos PAC para aprobaciones y notificaciones; creé apps internas en Power Apps para autoservicio.",
-      "Publiqué métricas y KPIs en Power BI (SLA, AHT, throughput) y gestioné la mejora continua con stakeholders."
+      "Led an RPA pod focused on UiPath and Power Platform (PAC/Power Apps) for SAP, SharePoint, and web portals.",
+      "Defined development standards (exceptions, idempotency, retries, structured logging) and governance (versioning, audit).",
+      "Orchestrated PAC flows for approvals and notifications; created internal apps in Power Apps for self-service.",
+      "Published metrics and KPIs in Power BI (SLA, AHT, throughput) and managed continuous improvement with stakeholders."
     ],
     "projects":["haceb-rpa-suite","haceb-sap-invoice-bot","haceb-sharepoint-workflows","haceb-web-automation"],
     "skills":["uipath","powerautomatecloud","powerapps","sap","sharepoint","browserautomation","powerbi","sqlserver"]
   },
-  {
-    "company":"Fragomen",
-    "role":"Solution Architect (Fixed-term, 6 meses)",
-    "when":"2022",
-    "highlights":[
-      "Arquitectura y gobierno de automatización en engagement de corta duración."
+    {
+    "company": "Fragomen",
+    "role": "Solution Architect (Fixed-term, 6 months)",
+    "when": "2022",
+    "highlights": [
+      "Led discovery sessions to identify high-value automation opportunities in document-heavy legal workflows, such as petition drafting and evidence management.",
+      "Designed a scalable architecture using UiPath and Power Platform to handle sensitive client data, incorporating OCR for document intake and validation.",
+      "Established governance standards for automation in a highly regulated legal environment, ensuring compliance and data privacy.",
+      "Developed a strategic roadmap for phasing in automations, starting with internal case management and expanding to client-facing portals."
     ],
-    "projects":["fragomen-sol-arch-2022"],
-    "skills":["architecture","uipath","powerplatform","governance"]
+    "projects": ["fragomen-sol-arch-2022"],
+    "skills": ["architecture", "uipath", "powerplatform", "governance"]
   },
   {
     "company":"Team International",
@@ -85,7 +85,7 @@
       "Hands-on with Blue Prism, UiPath, Automation Anywhere, WorkFusion, Power Platform, Python RPA Framework, Rocketbot.",
       "KBS: delivered 12 finance automations; governance & security standards.",
       "Newell: PTP/AP integration (SAP + email automation).",
-      "KBS: automatizaciones financieras sobre NetSuite con Automation Anywhere (AA360): colas, validaciones, conciliaciones."
+      "KBS: financial automations on NetSuite with Automation Anywhere (AA360): queues, validations, reconciliations."
     ],
     "projects":["kbs-finance-12-automations","newell-ptp-integration","kbs-netsuite-aa"],
     "skills":["blueprism","uipath","automationanywhere","workfusion","powerplatform","pythonrpa","rocketbot","jira","clickup","visualstudio","excel","powerquery","automationanywhere","netsuite","sqlserver","jira","powerbi"]
@@ -99,6 +99,25 @@
       "Designed CoE playbooks; integrated external APIs & legacy ERPs."
     ],
     "skills":["powerplatform","sap","powerbi","sqlserver"]
+  },
+    {
+    "company": "Cognition HQ (formerly Symphony LAM)",
+    "display_company_override": "Cognition HQ (formerly Symphony LAM)",
+    "role": "RPA Senior Consultant / Solution Architect",
+    "when": "2018–2020",
+    "highlights": [
+      "Cabify Argentina: OCR ABBYY + Blue Prism + WhatsApp APIs for driver onboarding.",
+      "Banco Ciudad (AR): back-office automations with Blue Prism; monitoring and metrics.",
+      "Designed standards and templates (objects, queues, retries, logging) and control dashboards.",
+      "Claro Andinas: front-office helper with AA and reporting."
+    ],
+    "projects": [
+      "cabify-driver-onboarding",
+      "bancociudad-blueprism",
+      "claro-andinas-frontoffice",
+      "engeform-rpa-coe"
+    ],
+    "skills": ["blueprism", "abbyenlp","whatsappapi", "sqlserver", "powerbi", "javascript", "vsts", "visualstudio", "bpm", "automationanywhere"]
   },
   {
     "company":"Onelink BPO — Colombia & Guatemala",
@@ -128,27 +147,9 @@
       "avon-sla-bpm",
       "generalmills-sl-web",
       "officedepot-ar",
-  "generalmills-reminders",
+      "generalmills-reminders",
       "nokia-pos-download"
     ],
     "skills":["uipath","java","php","sqlserver","as400","citrix","htmlcss"]
-  },
-  {
-    "company":"Cognition HQ (antes Symphony LAM)",
-    "display_company_override":"Cognition HQ (antes Symphony LAM)",
-    "role":"RPA Senior Consultant / Solution Architect",
-    "when":"2018–2020",
-    "highlights":[
-      "Cabify Argentina: OCR ABBYY + Blue Prism + WhatsApp APIs para admisión de conductores.",
-      "Banco Ciudad (AR): automatizaciones de back-office con Blue Prism; monitoreo y métricas.",
-      "Diseño de estándares y plantillas (objets, queues, reintentos, logging) y tableros de control.",
-      "Claro Andinas: front-office helper con AA y reporting."
-    ],
-    "projects":[
-      "cabify-driver-onboarding",
-      "bancociudad-blueprism",
-      "claro-andinas-frontoffice"
-    ],
-    "skills":["blueprism","abbyenlp","whatsappapi","sqlserver","powerbi","javascript", "vsts", "visualstudio", "bpm", "automationanywhere"]
   }
 ]

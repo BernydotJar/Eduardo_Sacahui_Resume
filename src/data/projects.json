@@ -35,9 +35,9 @@
   {
     "id":"alteryx-to-powerautomate",
     "title":"Alteryx ➜ Power Automate Cloud + Power BI",
-    "skills":["powerplatform","powerbi","fabric"],
+    "skills":["alteryx","powerplatform","powerbi","fabric","sql"],
     "stack":"PAC orchestrations feeding Power BI models; error handling + alerts",
-    "summary":"License reduction and SLA improvements through re-platforming.",
+    "summary":"License reduction and SLA improvements through re-platforming from Alteryx to Power Platform.",
     "outcomes":["License cost ↓","SLA attainment ↑","Manual steps eliminated"]
   },
   {
@@ -163,33 +163,33 @@
   {
     "id":"cabify-driver-onboarding",
     "aliases": ["cabify-agent-onboarding"],
-    "title":"Cabify Argentina — Admisión de Conductores (OCR + APIs)",
+    "title":"Cabify Argentina — Driver Onboarding (OCR + APIs)",
     "when":"2019–2020",
-    "client":"Cabify (Argentina) — Cognition HQ (antes Symphony LAM)",
+    "client":"Cabify (Argentina) — Cognition HQ (formerly Symphony LAM)",
     "skills":["blueprism","abbyenlp","whatsappapi","sqlserver","javascript","powerbi"],
-    "stack":"Blue Prism; ABBYY OCR para documentos; Web/API integration; notificaciones por WhatsApp; reporting en Power BI.",
-    "summary":"Automatización integral del onboarding de conductores: extracción OCR, validación, alta en sistemas y notificación por WhatsApp.",
-    "outcomes":["Tiempo de onboarding ↓","Errores de captura ↓","Trazabilidad ↑"]
+    "stack":"Blue Prism; ABBYY OCR for documents; Web/API integration; WhatsApp notifications; reporting in Power BI.",
+    "summary":"End-to-end driver onboarding automation: OCR extraction, validation, system updates, and WhatsApp notifications.",
+    "outcomes":["Onboarding time ↓","Capture errors ↓","Traceability ↑"]
   },
   {
     "id":"bancociudad-blueprism",
-    "title":"Banco Ciudad — Automatizaciones Back-Office (Blue Prism)",
+    "title":"Banco Ciudad — Back-Office Automations (Blue Prism)",
     "when":"2019",
-    "client":"Banco Ciudad (Argentina) — Cognition HQ (antes Symphony LAM)",
+    "client":"Banco Ciudad (Argentina) — Cognition HQ (formerly Symphony LAM)",
     "skills":["blueprism","sqlserver","javascript","powerbi"],
-    "stack":"Blue Prism para procesos de back-office (validaciones, conciliaciones/altas), integración con apps internas y reporting.",
-    "summary":"Automatizaciones bancarias de soporte operativo y cumplimiento; monitoreo y métricas de ejecución.",
-    "outcomes":["Tiempos de ciclo ↓","Tareas manuales ↓","Calidad de datos ↑"]
+    "stack":"Blue Prism for back-office processes (validations, reconciliations/entries), integration with internal apps, and reporting.",
+    "summary":"Banking automations for operational support and compliance; execution monitoring and metrics.",
+    "outcomes":["Cycle times ↓","Manual tasks ↓","Data quality ↑"]
   },
   {
     "id":"kbs-netsuite-aa",
-    "title":"KBS — Automatizaciones sobre NetSuite (AA360)",
+    "title":"KBS — Automations on NetSuite (AA360)",
     "when":"2021–2022",
     "client":"KBS (Team International)",
     "skills":["automationanywhere","netsuite","sqlserver","jira","powerbi"],
-    "stack":"Automation Anywhere 360 con conectores y scripts; orquestación por colas; auditoría y reportes.",
-    "summary":"Automatización de procesos financieros en NetSuite: ingestión de transacciones, conciliaciones y notificaciones.",
-    "outcomes":["AHT ↓","SLA attainment ↑","Errores ↓"]
+    "stack":"Automation Anywhere 360 with connectors and scripts; queue orchestration; audit and reports.",
+    "summary":"Automation of financial processes in NetSuite: transaction ingestion, reconciliations, and notifications.",
+    "outcomes":["AHT ↓","SLA attainment ↑","Errors ↓"]
   },
   {
     "id":"newell-ptp-integration",
@@ -203,13 +203,13 @@
   },
   {
     "id":"haceb-rpa-suite",
-    "title":"Haceb — RPA Suite (vía LCH)",
+    "title":"Haceb — RPA Suite (via LCH)",
     "when":"2022–2024",
     "client":"Haceb (Medellín, Colombia)",
     "skills":["uipath","powerautomatecloud","powerapps","sap","sharepoint","browserautomation","sqlserver","powerbi"],
-    "stack":"UiPath Orchestrator & Robots; Power Automate Cloud; Power Apps; integraciones con SAP, SharePoint y portales web; reporting en Power BI.",
-    "summary":"Programa RPA para operaciones financieras/operativas: bots UiPath y flujos PAC; apps internas en Power Apps; métricas operativas en Power BI.",
-    "outcomes":["AHT ↓","SLA attainment ↑","Trabajo manual ↓","Trazabilidad y auditoría ↑"]
+    "stack":"UiPath Orchestrator & Robots; Power Automate Cloud; Power Apps; integrations with SAP, SharePoint and web portals; reporting in Power BI.",
+    "summary":"RPA program for financial/operational tasks: UiPath bots and PAC flows; internal apps in Power Apps; operational metrics in Power BI.",
+    "outcomes":["AHT ↓","SLA attainment ↑","Manual work ↓","Traceability and auditability ↑"]
   },
   {
     "id":"haceb-sap-invoice-bot",
@@ -217,9 +217,9 @@
     "when":"2022–2023",
     "client":"Haceb",
     "skills":["uipath","sap","sqlserver","browserautomation"],
-    "stack":"UiPath + SAP GUI/Web; colas y reintentos; validaciones y logs estructurados.",
-    "summary":"Automatización de lectura/registro de documentos e integración con SAP y fuentes web.",
-    "outcomes":["Errores ↓","Tiempo de ciclo ↓","Trazabilidad ↑"]
+    "stack":"UiPath + SAP GUI/Web; queues and retries; validations and structured logs.",
+    "summary":"Automation of document reading/registration and integration with SAP and web sources.",
+    "outcomes":["Errors ↓","Cycle time ↓","Traceability ↑"]
   },
   {
     "id":"haceb-sharepoint-workflows",
@@ -227,9 +227,9 @@
     "when":"2023",
     "client":"Haceb",
     "skills":["sharepoint","powerautomatecloud","powerapps","powerbi"],
-    "stack":"SharePoint lists/libraries; Power Automate (aprobaciones, notificaciones, SLA); Power Apps (captura y autoservicio); paneles en Power BI.",
-    "summary":"Digitalización de flujos documentales con aprobaciones, metadatos y tableros.",
-    "outcomes":["Aprobaciones más rápidas","Visibilidad del estado ↑","Satisfacción del usuario ↑"]
+    "stack":"SharePoint lists/libraries; Power Automate (approvals, notifications, SLA); Power Apps (capture and self-service); Power BI dashboards.",
+    "summary":"Digitization of document flows with approvals, metadata, and dashboards.",
+    "outcomes":["Faster approvals","Status visibility ↑","User satisfaction ↑"]
   },
   {
     "id":"haceb-web-automation",
@@ -237,9 +237,9 @@
     "when":"2022–2024",
     "client":"Haceb",
     "skills":["browserautomation","uipath","powerautomatecloud","powerapps"],
-    "stack":"UiPath + selectores robustos; PAC para eventos; Power Apps como front interno.",
-    "summary":"Automatizaciones sobre portales y formularios web: extracción, validaciones y posting.",
-    "outcomes":["Throughput ↑","Re-trabajo ↓","SLA de operación ↑"]
+    "stack":"UiPath + robust selectors; PAC for events; Power Apps as an internal front-end.",
+    "summary":"Automations on portals and web forms: extraction, validations, and posting.",
+    "outcomes":["Throughput ↑","Rework ↓","Operation SLA ↑"]
   },
   {
     "id":"engeform-rpa-coe",
@@ -263,33 +263,33 @@
   },
   {
     "id":"zebra-uipath-testmgr",
-    "title":"Zebra — QA en RPA con UiPath Test Manager",
+    "title":"Zebra — QA in RPA with UiPath Test Manager",
     "when":"2022–2023",
     "client":"Zebra Technologies",
     "skills":["uipath","uipathtestmgr","azure","jira","ci"],
-    "stack":"UiPath Test Manager + pipelines CI; trazabilidad casos→defectos; gates de calidad.",
-    "summary":"Implementación de pruebas orquestadas para robots críticos, con reporting de cobertura/defectos.",
-    "outcomes":["Defectos de regresión ↓","Cobertura de pruebas ↑","Lead time de releases ↓"]
+    "stack":"UiPath Test Manager + CI pipelines; case→defect traceability; quality gates.",
+    "summary":"Implementation of orchestrated tests for critical robots, with coverage/defect reporting.",
+    "outcomes":["Regression defects ↓","Test coverage ↑","Release lead time ↓"]
   },
   {
     "id":"loves-retail-rpa",
-    "title":"Love’s — Automatizaciones Retail (RPA)",
+    "title":"Love’s — Retail Automations (RPA)",
     "when":"2022–2023",
     "client":"Love’s",
     "skills":["uipath","powerautomatecloud","sqlserver","email","monitoring"],
-    "stack":"Bots UiPath + flujos PAC; colas, reintentos, logging estructurado; alarmas SLO.",
-    "summary":"Backoffice retail (validaciones, conciliaciones, notificaciones).",
-    "outcomes":["AHT ↓","Errores ↓","SLA attainment ↑"]
+    "stack":"UiPath bots + PAC flows; queues, retries, structured logging; SLO alarms.",
+    "summary":"Retail back-office (validations, reconciliations, notifications).",
+    "outcomes":["AHT ↓","Errors ↓","SLA attainment ↑"]
   },
   {
     "id":"dfci-coe-advancement",
-    "title":"Dana-Farber Cancer Institute — Aceleración de CoE",
+    "title":"Dana-Farber Cancer Institute — CoE Acceleration",
     "when":"2022–2023",
     "client":"DFCI",
     "skills":["uipath","governance","security","powerbi","ci"],
-    "stack":"Estándares de codificación; revisiones; métricas de calidad; seguridad y auditoría.",
-    "summary":"Madurez de CoE: gobierno, bibliotecas reutilizables y tableros de valor.",
-    "outcomes":["Velocidad ↑","Defectos ↓","Reuso de componentes ↑"]
+    "stack":"Coding standards; reviews; quality metrics; security and audit.",
+    "summary":"CoE maturity: governance, reusable libraries, and value dashboards.",
+    "outcomes":["Velocity ↑","Defects ↓","Component reuse ↑"]
   },
   {
     "id":"ucare-payer-rpa",
@@ -297,69 +297,69 @@
     "when":"2022–2023",
     "client":"UCare",
     "skills":["uipath","queues","sqlserver","email"],
-    "stack":"UiPath REFramework con colas y excepciones; reconciliaciones y comunicaciones.",
-    "summary":"Automatizaciones para operaciones de aseguradora.",
-    "outcomes":["Tiempo de ciclo ↓","Backlog ↓"]
+    "stack":"UiPath REFramework with queues and exceptions; reconciliations and communications.",
+    "summary":"Automations for payer operations.",
+    "outcomes":["Cycle time ↓","Backlog ↓"]
   },
   {
     "id":"regeneron-rpa",
-    "title":"Regeneron — Soporte Operativo con RPA",
+    "title":"Regeneron — Operational Support with RPA",
     "when":"2022–2023",
     "client":"Regeneron",
     "skills":["uipath","security","monitoring"],
-    "stack":"Bots con auditoría y observabilidad; cumplimiento en entorno regulado.",
-    "summary":"Procesos operativos con control y trazabilidad.",
-    "outcomes":["Trazabilidad ↑","MTTR ↓"]
+    "stack":"Bots with audit and observability; compliance in a regulated environment.",
+    "summary":"Operational processes with control and traceability.",
+    "outcomes":["Traceability ↑","MTTR ↓"]
   },
   {
     "id":"adapthealth-order-intake",
-    "title":"AdaptHealth — Intake & Finanzas",
+    "title":"AdaptHealth — Intake & Finance",
     "when":"2022–2023",
     "client":"AdaptHealth",
     "skills":["uipath","email","sap","sqlserver"],
-    "stack":"Extracción/validación de pedidos, conciliaciones y posting ERP.",
-    "summary":"Reducción de trabajo manual en intake y finanzas.",
-    "outcomes":["AHT ↓","Errores ↓"]
+    "stack":"Order extraction/validation, reconciliations, and ERP posting.",
+    "summary":"Reduction of manual work in intake and finance.",
+    "outcomes":["AHT ↓","Errors ↓"]
   },
   {
     "id":"mclaren-revenue-cycle",
-    "title":"McLaren — Revenue Cycle Automatizado",
+    "title":"McLaren — Automated Revenue Cycle",
     "when":"2022–2023",
     "client":"McLaren Health",
     "skills":["uipath","security","powerbi"],
-    "stack":"Bots con controles; dashboards operativos.",
-    "summary":"Automatizaciones orientadas a ciclo de ingresos.",
-    "outcomes":["Cobranza más rápida","Excepciones ↓"]
+    "stack":"Bots with controls; operational dashboards.",
+    "summary":"Automations geared towards revenue cycle.",
+    "outcomes":["Faster collections","Exceptions ↓"]
   },
   {
     "id":"tarpon-health-rpa",
-    "title":"Tarpon Health — Operaciones Automatizadas",
+    "title":"Tarpon Health — Automated Operations",
     "when":"2022–2023",
     "client":"Tarpon Health",
     "skills":["uipath","email","queues"],
-    "stack":"Orquestación con colas, idempotencia y alertas.",
-    "summary":"Procesos operativos con resiliencia y alerting.",
-    "outcomes":["SLA ↑","Re-trabajo ↓"]
+    "stack":"Orchestration with queues, idempotency, and alerts.",
+    "summary":"Operational processes with resilience and alerting.",
+    "outcomes":["SLA ↑","Rework ↓"]
   },
   {
     "id":"carecentrix-auth",
-    "title":"CareCentrix — Autorizaciones & Notificaciones",
+    "title":"CareCentrix — Authorizations & Notifications",
     "when":"2022–2023",
     "client":"CareCentrix",
     "skills":["uipath","email","monitoring"],
-    "stack":"Gestión de autorizaciones con notificaciones y auditoría.",
-    "summary":"Automatización de flujos de autorización.",
-    "outcomes":["Tiempo de respuesta ↓","Errores ↓"]
+    "stack":"Authorization management with notifications and audit.",
+    "summary":"Automation of authorization flows.",
+    "outcomes":["Response time ↓","Errors ↓"]
   },
   {
     "id":"help-at-home-rpa",
-    "title":"Help at Home — RPA Operativo",
+    "title":"Help at Home — RPA for Operations",
     "when":"2022–2023",
     "client":"Help at Home",
     "skills":["uipath","queues","powerbi"],
-    "stack":"Bots con colas y reporting de capacidad.",
-    "summary":"Digitalización de tareas repetitivas para operaciones.",
-    "outcomes":["Throughput ↑","Visibilidad ↑"]
+    "stack":"Bots with queues and capacity reporting.",
+    "summary":"Digitization of repetitive tasks for operations.",
+    "outcomes":["Throughput ↑","Visibility ↑"]
   },
   {
     "id":"verniext-arcgis",
@@ -367,10 +367,10 @@
     "when":"2021–2022",
     "client":"Verniext",
     "skills":["arcgis","python","arcpy","powerautomatecloud"],
-    "stack":"ArcPy para modelos GeoValidation; publicación de capas; alertas y logs.",
-    "summary":"Automatización de actualización/ publicación GIS (capas/locators) con Python + PAC.",
-    "outcomes":["Tiempo de proceso ↓ 80%","Monitoreo detallado por logs"],
-    "notes":"Basado en PDD: verificación de permisos, ejecución secuencial, publicación, notificaciones." 
+    "stack":"ArcPy for GeoValidation models; layer publication; alerts and logs.",
+    "summary":"Automation of GIS update/publication (layers/locators) with Python + PAC.",
+    "outcomes":["Process time ↓ 80%","Detailed monitoring via logs"],
+    "notes":"Based on PDD: permission checks, sequential execution, publication, notifications." 
   },
   {
     "id":"claro-andinas-frontoffice",
@@ -378,39 +378,28 @@
     "when":"2017",
     "client":"Claro Andinas",
     "skills":["automationanywhere","sqlserver","htmlcss","powerbi"],
-    "stack":"AA + consola web; KPIs en Power BI.",
-    "summary":"Vista 360 para asesores; menor AHT.",
+    "stack":"AA + web console; KPIs in Power BI.",
+    "summary":"360 view for advisors; lower AHT.",
     "outcomes":["AHT ↓","FCR ↑"]
   },
   {
     "id":"dynamics-gp-automation",
-    "title":"Automatizaciones sobre Microsoft Dynamics GP",
+    "title":"Automations on Microsoft Dynamics GP",
     "when":"2019–2021",
     "client":"—",
     "skills":["dynamicsgp","uipath","powerautomatecloud","sqlserver"],
-    "stack":"Robots y flujos para postings, conciliaciones y reportes.",
-    "summary":"Ejecución segura y auditable sobre GP.",
-    "outcomes":["Errores ↓","Ciclos ↓"]
+    "stack":"Robots and flows for postings, reconciliations, and reports.",
+    "summary":"Secure and auditable execution on GP.",
+    "outcomes":["Errors ↓","Cycles ↓"]
   },
   {
     "id":"fragomen-sol-arch-2022",
-    "title":"Fragomen — Solution Architect (Fixed-term, 6 meses)",
+    "title":"Fragomen — Solution Architect (Fixed-term)",
     "when":"2022",
     "client":"Fragomen",
     "skills":["architecture","uipath","powerplatform","governance"],
-    "stack":"Descubrimiento, estándares de desarrollo, revisiones y roadmap.",
-    "summary":"Arquitectura y gobierno de automatización en engagement de corta duración.",
-    "outcomes":["Calidad ↑","Velocidad de entrega ↑"]
-  },
-  {
-    "id":"project-enola-migration",
-    "title":"Project Enola — Migración Alteryx → Power BI + Power Automate",
-    "when":"2023–2024",
-    "client":"—",
-    "skills":["alteryx","powerbi","powerautomatecloud","fabric","sql"],
-    "stack":"Sustitución de flujos Alteryx por pipelines/flows, mapeos de cliente y ARR, dashboards PBI.",
-    "summary":"Modernización de ETL y reporting con governance y refrescos mensuales.",
-    "outcomes":["Coste de licencias ↓","Tiempos de refresh ↓","Self-service BI ↑"],
-    "notes":"Guía de usuario y flujos de transformación documentados (A1…E2, D1…D3)."
+    "stack":"Discovery, development standards, reviews, and roadmap.",
+    "summary":"Automation architecture and governance in a short-term engagement.",
+    "outcomes":["Quality ↑","Delivery speed ↑"]
   }
 ]
