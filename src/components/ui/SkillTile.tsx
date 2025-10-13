@@ -40,7 +40,7 @@ const SkillTile = ({ skill, onClick }: SkillTileProps) => {
       )}
       <div className="flex justify-between items-start">
         <span className="font-code text-3xl font-bold text-foreground/80">{skill.symbol}</span>
-        <span className="text-xs text-muted-foreground">{skill.level}</span>
+        <span className="text-[10px] text-muted-foreground capitalize">{skill.level}</span>
       </div>
       <div className="absolute bottom-2 left-2 right-2">
         <p className="text-sm font-semibold truncate text-foreground">{skill.name}</p>
@@ -50,5 +50,3 @@ const SkillTile = ({ skill, onClick }: SkillTileProps) => {
 };
 
 export default SkillTile;
-
-    
