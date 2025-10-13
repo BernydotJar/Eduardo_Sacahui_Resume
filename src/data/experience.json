@@ -67,6 +67,16 @@
     "skills":["uipath","powerautomatecloud","powerapps","sap","sharepoint","browserautomation","powerbi","sqlserver"]
   },
   {
+    "company":"Fragomen",
+    "role":"Solution Architect (Fixed-term, 6 meses)",
+    "when":"2022",
+    "highlights":[
+      "Arquitectura y gobierno de automatización en engagement de corta duración."
+    ],
+    "projects":["fragomen-sol-arch-2022"],
+    "skills":["architecture","uipath","powerplatform","governance"]
+  },
+  {
     "company":"Team International",
     "role":"RPA Team Lead / Senior Developer",
     "when":"2020–2022",
@@ -118,7 +128,7 @@
       "avon-sla-bpm",
       "generalmills-sl-web",
       "officedepot-ar",
-      "generalmills-reminders",
+  "generalmills-reminders",
       "nokia-pos-download"
     ],
     "skills":["uipath","java","php","sqlserver","as400","citrix","htmlcss"]
@@ -142,5 +152,3 @@
     "skills":["blueprism","abbyenlp","whatsappapi","sqlserver","powerbi","javascript", "vsts", "visualstudio", "bpm", "automationanywhere"]
   }
 ]
-
-    
