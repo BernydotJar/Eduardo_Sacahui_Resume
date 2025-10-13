@@ -1,3 +1,4 @@
+
 export interface Skill {
   id: string;
   symbol: string;
@@ -5,6 +6,8 @@ export interface Skill {
   level: string;
   stable: boolean;
   tags: string[];
+  row: number;
+  col: number;
 }
 
 export interface Project {
@@ -35,3 +38,5 @@ export interface Award {
     title: string;
     date: string;
 }
+
+    

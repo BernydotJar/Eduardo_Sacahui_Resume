@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from 'react';
@@ -6,6 +7,7 @@ import SkillTile from '@/components/ui/SkillTile';
 import { Input } from '@/components/ui/input';
 import { Search } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { cn } from '@/lib/utils';
 
 interface SkillsProps {
   onTileClick: (skillId: string) => void;
@@ -28,6 +30,8 @@ const Skills = ({ onTileClick }: SkillsProps) => {
     const matchesTags = activeTags.length === 0 || activeTags.every(tag => skill.tags.includes(tag));
     return matchesSearch && matchesTags;
   });
+
+  const isFiltering = searchTerm || activeTags.length > 0;
 
   return (
     <section id="skills" className="container">
@@ -64,7 +68,12 @@ const Skills = ({ onTileClick }: SkillsProps) => {
         </div>
       </div>
       
-      <div className="grid grid-cols-[repeat(auto-fill,minmax(120px,1fr))] gap-2">
+      <div className={cn(
+        "relative grid gap-1",
+        isFiltering 
+          ? "grid-cols-[repeat(auto-fill,minmax(120px,1fr))]"
+          : "grid-cols-18 grid-rows-7"
+      )}>
         <AnimatePresence>
           {filteredSkills.map((skill, index) => (
             <motion.div
@@ -74,6 +83,10 @@ const Skills = ({ onTileClick }: SkillsProps) => {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.8 }}
               transition={{ duration: 0.2, delay: index * 0.02 }}
+              className={cn(
+                "min-h-[100px]",
+                !isFiltering && `col-start-${skill.col} row-start-${skill.row}`
+              )}
             >
               <SkillTile skill={skill} onClick={() => onTileClick(skill.id)} />
             </motion.div>
@@ -88,3 +101,5 @@ const Skills = ({ onTileClick }: SkillsProps) => {
 };
 
 export default Skills;
+
+    
