@@ -1,4 +1,5 @@
 
+
 import type { Experience } from '@/lib/types';
 import { AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Badge } from '@/components/ui/badge';
@@ -13,13 +14,14 @@ const TimelineItem = ({ experience }: TimelineItemProps) => {
     
     const techUsed = skills.filter(skill => experience.skills.includes(skill.id));
     const relatedProjects = experience.projects ? projects.filter(p => experience.projects?.includes(p.id)) : [];
+    const role = experience.display_role_override || experience.role;
     
   return (
     <AccordionItem value={experience.company + experience.role}>
         <AccordionTrigger>
             <div className='flex justify-between items-center w-full pr-4'>
                 <div className='text-left'>
-                    <h3 className="text-lg font-semibold">{experience.role}</h3>
+                    <h3 className="text-lg font-semibold">{role}</h3>
                     <p className="text-sm text-muted-foreground">{experience.company}</p>
                 </div>
                 <p className="text-sm text-muted-foreground font-mono shrink-0">{experience.when}</p>
@@ -42,7 +44,7 @@ const TimelineItem = ({ experience }: TimelineItemProps) => {
                         <div className="flex flex-wrap gap-2">
                             {relatedProjects.map(project => (
                                 <Link key={project.id} href={`#project=${project.id}`} scroll={false}>
-                                    <Badge variant="outline" className="cursor-pointer hover:bg-accent/20">{project.title.split('–')[0].trim()}</Badge>
+                                    <Badge variant="outline" className="cursor-pointer hover:bg-accent/20">{project.title.split('—')[0].trim()}</Badge>
                                 </Link>
                             ))}
                         </div>

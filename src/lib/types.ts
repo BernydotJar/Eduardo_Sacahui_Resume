@@ -30,6 +30,8 @@ export interface Experience {
   highlights: string[];
   skills: string[];
   projects?: string[];
+  display_role_override?: string;
+  notes?: string;
 }
 
 export interface Education {
@@ -43,5 +45,3 @@ export interface Award {
     title: string;
     date: string;
 }
-
-    

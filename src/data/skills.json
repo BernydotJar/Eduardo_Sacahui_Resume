@@ -2,8 +2,8 @@
 [
   { "id":"python","symbol":"Py","name":"Python","level":"expert","stable":true,"tags":["backend","ml","api","automation"], "row": 1, "col": 1 },
   { "id":"htmlcss","symbol":"Hc","name":"HTML/CSS/JS","level":"advanced","stable":true,"tags":["frontend"], "row": 1, "col": 2 },
+  { "id":"javascript","symbol":"Js","name":"JavaScript","level":"advanced","stable":true,"tags":["frontend","backend"], "row": 1, "col": 17 },
   { "id":"vba","symbol":"Vb","name":"VBA","level":"intermediate","stable":true,"tags":["automation"], "row": 1, "col": 18 },
-
   { "id":"react","symbol":"Re","name":"React/TypeScript","level":"advanced","stable":true,"tags":["frontend","sdk"], "row": 2, "col": 1 },
   { "id":"next","symbol":"Nx","name":"Next.js","level":"advanced","stable":true,"tags":["frontend","ssr"], "row": 2, "col": 2 },
   { "id":"node","symbol":"Nd","name":"Node.js/Express","level":"advanced","stable":true,"tags":["api","integration"], "row": 2, "col": 13 },
@@ -12,7 +12,6 @@
   { "id":"dax","symbol":"Dx","name":"DAX","level":"advanced","stable":true,"tags":["analytics"], "row": 2, "col": 16 },
   { "id":"powerquery","symbol":"Mq","name":"Power Query (M)","level":"advanced","stable":true,"tags":["etl","bi"], "row": 2, "col": 17 },
   { "id":"git","symbol":"Gt","name":"Git","level":"advanced","stable":true,"tags":["devops"], "row": 2, "col": 18 },
-
   { "id":"powerplatform","symbol":"PP","name":"Power Platform (Automate/Apps/Dataverse)","level":"advanced","stable":true,"tags":["rpa","automation","apps"], "row": 3, "col": 1 },
   { "id":"powerbi","symbol":"Pb","name":"Power BI","level":"expert","stable":true,"tags":["bi", "dashboards"], "row": 3, "col": 2 },
   { "id":"copilotstudio","symbol":"Cs","name":"Microsoft Copilot Studio","level":"advanced","stable":true,"tags":["ai","agents"], "row": 3, "col": 13 },
@@ -21,7 +20,6 @@
   { "id":"mysql","symbol":"My","name":"MySQL","level":"intermediate","stable":true,"tags":["data"], "row": 3, "col": 16 },
   { "id":"postgres","symbol":"Ps","name":"PostgreSQL","level":"advanced","stable":true,"tags":["data"], "row": 3, "col": 17 },
   { "id":"vsts","symbol":"Vs","name":"VSTS / Azure DevOps","level":"advanced","stable":true,"tags":["ci","delivery"], "row": 3, "col": 18 },
-
   { "id":"uipath","symbol":"Ui","name":"UiPath","level":"advanced","stable":true,"tags":["rpa","automation"], "row": 4, "col": 1 },
   { "id":"automationanywhere","symbol":"AA","name":"Automation Anywhere","level":"advanced","stable":true,"tags":["rpa"], "row": 4, "col": 2 },
   { "id":"aws","symbol":"Aw","name":"AWS","level":"advanced","stable":true,"tags":["cloud"], "row": 4, "col": 3 },
@@ -40,7 +38,6 @@
   { "id":"rabbitmq","symbol":"Rq","name":"RabbitMQ","level":"intermediate","stable":true,"tags":["messaging"], "row": 4, "col": 16 },
   { "id":"servicenow","symbol":"Snw","name":"ServiceNow (actions/runbooks)","level":"intermediate","stable":true,"tags":["ops"], "row": 4, "col": 17 },
   { "id":"whatsapp","symbol":"Wa","name":"WhatsApp Notifications","level":"intermediate","stable":true,"tags":["comm"], "row": 4, "col": 18 },
-
   { "id":"java","symbol":"Ja","name":"Java","level":"intermediate","stable":true,"tags":["backend","legacy"], "row": 5, "col": 1 },
   { "id":"php","symbol":"Ph","name":"PHP","level":"intermediate","stable":true,"tags":["web","legacy"], "row": 5, "col": 2 },
   { "id":"as400","symbol":"A4","name":"IBM AS/400","level":"intermediate","stable":true,"tags":["legacy","erp"], "row": 5, "col": 3 },
@@ -50,7 +47,10 @@
   { "id":"eclipse","symbol":"Ec","name":"Eclipse","level":"intermediate", "stable":true, "tags":["devtools"], "row": 5, "col": 7 },
   { "id":"notepadpp","symbol":"Np","name":"Notepad++","level":"intermediate", "stable":true, "tags":["devtools"], "row": 5, "col": 8 },
   { "id":"plsql","symbol":"Pl","name":"PL/SQL","level":"intermediate", "stable":true, "tags":["data","sql"], "row": 5, "col": 9 },
-
+  { "id":"powerautomatecloud","symbol":"Pac","name":"Power Automate Cloud","level":"advanced","stable":true,"tags":["automation","flows"], "row": 5, "col": 10},
+  { "id":"powerapps","symbol":"Pa","name":"Power Apps","level":"advanced","stable":true,"tags":["apps","lowcode"], "row": 5, "col": 11},
+  { "id":"sharepoint","symbol":"Sh","name":"SharePoint (Sites/Lists)","level":"advanced","stable":true,"tags":["collab","content","workflows"], "row": 5, "col": 12},
+  { "id":"browserautomation","symbol":"Br","name":"Browser Automation (UiPath/JS)","level":"advanced","stable":true,"tags":["rpa","web"], "row": 5, "col": 13},
   { "id":"blueprism","symbol":"Bp","name":"Blue Prism","level":"advanced","stable":true,"tags":["rpa"], "row": 6, "col": 4 },
   { "id":"rocketbot","symbol":"Rb","name":"Rocketbot","level":"intermediate","stable":true,"tags":["rpa"], "row": 6, "col": 5 },
   { "id":"abbyenlp","symbol":"Ay","name":"ABBYY OCR","level":"advanced","stable":true,"tags":["ocr","doc-ai"], "row": 6, "col": 6 },
@@ -66,10 +66,7 @@
   { "id":"pythonrpa","symbol":"PyR","name":"Python RPA Framework","level":"intermediate","stable": true,"tags":["rpa","python"], "row": 6, "col": 16 },
   { "id":"excel","symbol":"Ex","name":"Excel (Power Query)","level":"advanced","stable": true,"tags":["data","etl"], "row": 6, "col": 17 },
   { "id":"bpm","symbol":"Bm","name":"BPM / Process Automation","level":"advanced","stable": true,"tags":["process","ops"], "row": 6, "col": 18 },
-
   { "id":"masters","symbol":"Mb","name":"Master in Business Psychology","level":"education","stable":false,"tags":["education"], "row": 7, "col": 4 },
   { "id":"bba","symbol":"Ba","name":"B.B.A.","level":"education","stable":false,"tags":["education"], "row": 7, "col": 5 },
   { "id":"coaching","symbol":"Co","name":"Coaching & Mentoring","level":"advanced","stable": true,"tags":["leadership"], "row": 7, "col": 6 }
 ]
-
-    

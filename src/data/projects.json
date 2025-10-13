@@ -199,7 +199,45 @@
     "stack":"Blue Prism; SAP web automation + email processing; Scrum delivery.",
     "summary":"Automated procure-to-pay vendor flows integrating SAP web steps and email handling.",
     "outcomes":["AHT ↓","Error rate ↓"]
+  },
+  {
+    "id":"haceb-rpa-suite",
+    "title":"Haceb — RPA Suite (vía LCH)",
+    "when":"2022–2024",
+    "client":"Haceb (Medellín, Colombia)",
+    "skills":["uipath","powerautomatecloud","powerapps","sap","sharepoint","browserautomation","sqlserver","powerbi"],
+    "stack":"UiPath Orchestrator & Robots; Power Automate Cloud; Power Apps; integraciones con SAP, SharePoint y portales web; reporting en Power BI.",
+    "summary":"Programa RPA para operaciones financieras/operativas: bots UiPath y flujos PAC; apps internas en Power Apps; métricas operativas en Power BI.",
+    "outcomes":["AHT ↓","SLA attainment ↑","Trabajo manual ↓","Trazabilidad y auditoría ↑"]
+  },
+  {
+    "id":"haceb-sap-invoice-bot",
+    "title":"Haceb — SAP Invoice & Documents Bot",
+    "when":"2022–2023",
+    "client":"Haceb",
+    "skills":["uipath","sap","sqlserver","browserautomation"],
+    "stack":"UiPath + SAP GUI/Web; colas y reintentos; validaciones y logs estructurados.",
+    "summary":"Automatización de lectura/registro de documentos e integración con SAP y fuentes web.",
+    "outcomes":["Errores ↓","Tiempo de ciclo ↓","Trazabilidad ↑"]
+  },
+  {
+    "id":"haceb-sharepoint-workflows",
+    "title":"Haceb — SharePoint Workflows + PAC",
+    "when":"2023",
+    "client":"Haceb",
+    "skills":["sharepoint","powerautomatecloud","powerapps","powerbi"],
+    "stack":"SharePoint lists/libraries; Power Automate (aprobaciones, notificaciones, SLA); Power Apps (captura y autoservicio); paneles en Power BI.",
+    "summary":"Digitalización de flujos documentales con aprobaciones, metadatos y tableros.",
+    "outcomes":["Aprobaciones más rápidas","Visibilidad del estado ↑","Satisfacción del usuario ↑"]
+  },
+  {
+    "id":"haceb-web-automation",
+    "title":"Haceb — Web Automation & Integrations",
+    "when":"2022–2024",
+    "client":"Haceb",
+    "skills":["browserautomation","uipath","powerautomatecloud","powerapps"],
+    "stack":"UiPath + selectores robustos; PAC para eventos; Power Apps como front interno.",
+    "summary":"Automatizaciones sobre portales y formularios web: extracción, validaciones y posting.",
+    "outcomes":["Throughput ↑","Re-trabajo ↓","SLA de operación ↑"]
   }
 ]
-
-    

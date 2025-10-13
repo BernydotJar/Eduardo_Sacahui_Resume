@@ -14,6 +14,16 @@
     "skills":["uipath","powerplatform","python","fastapi","node","react","fabric","powerbi","snowflake","kubernetes","prometheus","grafana","elk"]
   },
   {
+    "company":"LCH (Low Code Human)",
+    "role":"CEO & Principal Engineer",
+    "when":"2023–Present",
+    "highlights":[
+      "Led offshore Python team; FastAPI + embeddings; SDKs for React teams.",
+      "Cost/latency SLOs, canary/blue-green; telemetry wired to product & GTM."
+    ],
+    "skills":["python","fastapi","pgvector","openai","react","node","githubactions","jira"]
+  },
+  {
     "company":"UiPath (United States)",
     "role":"Technical Delivery Manager",
     "when":"2022–2023",
@@ -26,7 +36,21 @@
     ],
     "skills":["uipath","kubernetes","helm","prometheus","grafana","elk","snowflake","fabric","azure","aws"]
   },
-    {
+  {
+    "company":"Haceb (vía LCH Consulting)",
+    "role":"Principal Consultant / Pod Lead — RPA",
+    "display_role_override":"RPA Principal Consultant (via LCH)",
+    "when":"2022–2024",
+    "highlights":[
+      "Lideré un pod RPA centrado en UiPath y Power Platform (PAC/Power Apps) para SAP, SharePoint y portales web.",
+      "Definí estándares de desarrollo (excepciones, idempotencia, reintentos, logging estructurado) y gobierno (versionado, auditoría).",
+      "Orquesté flujos PAC para aprobaciones y notificaciones; creé apps internas en Power Apps para autoservicio.",
+      "Publiqué métricas y KPIs en Power BI (SLA, AHT, throughput) y gestioné la mejora continua con stakeholders."
+    ],
+    "projects":["haceb-rpa-suite","haceb-sap-invoice-bot","haceb-sharepoint-workflows","haceb-web-automation"],
+    "skills":["uipath","powerautomatecloud","powerapps","sap","sharepoint","browserautomation","powerbi","sqlserver"]
+  },
+  {
     "company":"Team International",
     "role":"RPA Team Lead / Senior Developer",
     "when":"2020–2022",
@@ -40,16 +64,6 @@
     "skills":["blueprism","uipath","automationanywhere","workfusion","powerplatform","pythonrpa","rocketbot","jira","clickup","visualstudio","excel","powerquery"]
   },
   {
-    "company":"LCH (Low Code Human)",
-    "role":"CEO & Principal Engineer",
-    "when":"2023–Present",
-    "highlights":[
-      "Led offshore Python team; FastAPI + embeddings; SDKs for React teams.",
-      "Cost/latency SLOs, canary/blue-green; telemetry wired to product & GTM."
-    ],
-    "skills":["python","fastapi","pgvector","openai","react","node","githubactions","jira"]
-  },
-  {
     "company":"Roboyo",
     "role":"RPA / Power Automate Senior Developer",
     "when":"2021–2022",
@@ -59,7 +73,7 @@
     ],
     "skills":["powerplatform","sap","powerbi","sqlserver"]
   },
-    {
+  {
     "company":"Symphony LAM",
     "role":"RPA Senior Consultant",
     "when":"2018–2020",
@@ -104,5 +118,3 @@
     "skills":["uipath","java","php","sqlserver","as400","citrix","htmlcss"]
   }
 ]
-
-    
