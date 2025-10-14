@@ -15,7 +15,6 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
-import { sendContactMessage } from "@/app/actions/contact";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 
 const formSchema = z.object({
@@ -23,6 +22,14 @@ const formSchema = z.object({
   email: z.string().email("Invalid email address."),
   message: z.string().min(10, "Message must be at least 10 characters."),
 });
+
+const simulateContactSubmit = async (
+  values: z.infer<typeof formSchema>
+): Promise<{ success: boolean; message?: string }> => {
+  await new Promise((resolve) => setTimeout(resolve, 400));
+  console.info("Contact form submission:", values);
+  return { success: true };
+};
 
 const Contact = () => {
     const { toast } = useToast();
@@ -36,7 +43,7 @@ const Contact = () => {
     });
 
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
-        const result = await sendContactMessage(values);
+        const result = await simulateContactSubmit(values);
         if (result.success) {
             toast({
                 title: "Message Sent!",

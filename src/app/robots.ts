@@ -1,7 +1,11 @@
 import { MetadataRoute } from 'next'
- 
+
+export const dynamic = 'force-static';
+
 export default function robots(): MetadataRoute.Robots {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://sacahui-portfolio.vercel.app';
+  const siteUrl =
+    process.env.NEXT_PUBLIC_SITE_URL ||
+    'https://eduardosacahui.github.io/Eduardo_Sacahui_Resume';
   
   return {
     rules: {
