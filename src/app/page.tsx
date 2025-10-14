@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect } from 'react';
@@ -13,6 +14,7 @@ import Contact from '@/components/sections/Contact';
 import DetailDrawer from '@/components/DetailDrawer';
 import { AnimatePresence } from 'framer-motion';
 import { projects } from '@/lib/data';
+import Tour from '@/components/Tour';
 
 type DrawerContent = {
   type: 'skill' | 'project';
@@ -21,6 +23,7 @@ type DrawerContent = {
 
 export default function Home() {
   const [drawerContent, setDrawerContent] = useState<DrawerContent | null>(null);
+  const [isTourActive, setIsTourActive] = useState(false);
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -82,15 +85,21 @@ export default function Home() {
   
   return (
     <div className="flex min-h-screen flex-col bg-background">
-      <Header />
+      <Header onStartTour={() => setIsTourActive(true)} />
       <main className="flex-grow">
         <Hero />
-        <Skills onTileClick={(id) => openDrawer('skill', id)} />
-        <Migrations onCardClick={(id) => openDrawer('project', id)} />
-        <Experience />
-        <CaseStudies onCardClick={(id) => openDrawer('project', id)} />
-        <Education />
-        <Contact />
+        <div id="tour-step-1">
+          <Skills onTileClick={(id) => openDrawer('skill', id)} />
+        </div>
+        <div id="tour-step-2">
+          <Migrations onCardClick={(id) => openDrawer('project', id)} />
+        </div>
+        <div id="tour-step-3">
+          <Experience />
+        </div>
+        <div id="tour-step-4">
+          <Contact />
+        </div>
       </main>
       <Footer />
       <AnimatePresence>
@@ -102,6 +111,7 @@ export default function Home() {
           />
         )}
       </AnimatePresence>
+      {isTourActive && <Tour onComplete={() => setIsTourActive(false)} />}
     </div>
   );
 }

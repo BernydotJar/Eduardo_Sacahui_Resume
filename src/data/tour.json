@@ -1,0 +1,45 @@
+
+[
+  {
+    "id": "intro",
+    "targetId": "hero",
+    "title": "Welcome to the Tech Tour!",
+    "content": "This portfolio is built with Next.js (App Router), TypeScript, and ShadCN UI. All data is managed in simple JSON files. Let's see how it works.",
+    "popoverSide": "bottom"
+  },
+  {
+    "id": "skills-grid",
+    "targetId": "tour-step-1",
+    "title": "1. The Periodic Table of Skills",
+    "content": "This isn't a static image. It's a responsive CSS Grid layout where each skill's position is defined in skills.json. It uses Framer Motion for layout animations and Tailwind CSS for styling.",
+    "popoverSide": "bottom"
+  },
+  {
+    "id": "deep-linking",
+    "targetId": "tour-step-2",
+    "title": "2. Deep-Linking and State",
+    "content": "Clicking a skill or project updates the URL hash (e.g., #skill=python). A useEffect hook listens for hash changes to open the detail drawer, making the app's state shareable and bookmarkable.",
+    "popoverSide": "top"
+  },
+  {
+    "id": "dynamic-timeline",
+    "targetId": "tour-step-3",
+    "title": "3. Dynamic Timeline Component",
+    "content": "The experience timeline is dynamically generated from experience.json. It uses Radix UI's Accordion component (via ShadCN) to create expandable sections for each role.",
+    "popoverSide": "top"
+  },
+  {
+    "id": "server-actions",
+    "targetId": "tour-step-4",
+    "title": "4. Next.js Server Actions",
+    "content": "The contact form doesn't use a traditional API endpoint. It uses a Next.js Server Action ('use server') to securely process the form data on the server, with validation via Zod.",
+    "popoverSide": "top"
+  },
+  {
+    "id": "easter-egg",
+    "targetId": "footer",
+    "title": "5. Context for Fun",
+    "content": "Click the beaker icon! The 'science' animation is managed globally using React Context. This avoids prop-drilling and provides a clean way to trigger the effect from anywhere.",
+    "popoverSide": "top"
+  }
+]
