@@ -1,36 +1,6 @@
-<<<<<<< HEAD
-# Firebase build and deployment files
-/firebase-debug.log
-/firebase-debug.*.log
-.firebaserc
+# See https://help.github.com/articles/ignoring-files/ for guidance.
 
-# Firebase Hosting
-/firebase.json
-*.cache
-hosting/.cache
-
-# Firebase Functions
-/functions/node_modules/
-/functions/.env
-/functions/package-lock.json
-
-# Firebase Emulators
-/firebase-*.zip
-/.firebase/
-/emulator-ui/
-
-# Logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Environment files (local configs)
-/.env.*
-=======
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
+# Dependencies
 /node_modules
 /.pnp
 .pnp.*
@@ -40,37 +10,42 @@ yarn-error.log*
 !.yarn/releases
 !.yarn/versions
 
-# testing
-/coverage
-
-# next.js
+# Build outputs
 /.next/
 /out/
-
-# production
 /build
+.npm-cache/
+.genkit/*
 
-# misc
-.DS_Store
-*.pem
-
-# debug
+# Logs & debugging
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# vercel
-.vercel
-
-# typescript
-*.tsbuildinfo
-next-env.d.ts
-
-.genkit/*
+# Environment & config
 .env*
-
-# firebase
+/firebase-debug.log
+/firebase-debug.*.log
 firebase-debug.log
 firestore-debug.log
->>>>>>> ecacaab (Initialized workspace with Firebase Studio)
+.firebaserc
+
+# Firebase Hosting/Functions/Emulators
+/firebase.json
+*.cache
+hosting/.cache
+/functions/node_modules/
+/functions/.env
+/functions/package-lock.json
+/firebase-*.zip
+/.firebase/
+/emulator-ui/
+
+# Tooling
+.DS_Store
+.vercel
+*.pem
+*.tsbuildinfo
+next-env.d.ts
