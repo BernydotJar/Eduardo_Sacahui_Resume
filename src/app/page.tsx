@@ -97,6 +97,8 @@ export default function Home() {
         <div id="tour-step-3">
           <Experience />
         </div>
+        <CaseStudies onCardClick={(id) => openDrawer('project', id)} />
+        <Education />
         <div id="tour-step-4">
           <Contact />
         </div>

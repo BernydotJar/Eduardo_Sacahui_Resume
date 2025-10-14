@@ -2,9 +2,9 @@ import { projects } from '@/lib/data';
 import CaseStudyCard from '@/components/ui/CaseStudyCard';
 
 const caseStudyIds = [
-    'ops-second-brain',
-    'rag-knowledge-services',
-    'orchestrator-k8s',
+  'pentaho-to-powerbi',
+  'alteryx-to-powerautomate',
+  'autotask-to-jira-fabric'
 ];
 
 const caseStudies = projects.filter(p => caseStudyIds.includes(p.id));
@@ -14,6 +14,8 @@ interface CaseStudiesProps {
 }
 
 const CaseStudies = ({ onCardClick }: CaseStudiesProps) => {
+    if (caseStudies.length === 0) return null;
+    
     return (
         <section id="casestudies" className="bg-secondary">
             <div className="container">
