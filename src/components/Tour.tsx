@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useRef } from 'react';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Button } from '@/components/ui/button';
 import tourData from '@/data/tour.json';
@@ -14,6 +14,7 @@ interface TourProps {
 const Tour = ({ onComplete }: TourProps) => {
   const [currentStep, setCurrentStep] = useState(0);
   const [popoverOpen, setPopoverOpen] = useState(false);
+  const triggerRef = useRef<HTMLDivElement>(null);
 
   const step = useMemo(() => tourData[currentStep], [currentStep]);
   const targetElement = useMemo(() => {
@@ -22,6 +23,15 @@ const Tour = ({ onComplete }: TourProps) => {
   }, [step]);
   
   useEffect(() => {
+    if (targetElement && triggerRef.current) {
+      const rect = targetElement.getBoundingClientRect();
+      triggerRef.current.style.position = 'absolute';
+      triggerRef.current.style.top = `${window.scrollY + rect.top}px`;
+      triggerRef.current.style.left = `${window.scrollX + rect.left}px`;
+      triggerRef.current.style.width = `${rect.width}px`;
+      triggerRef.current.style.height = `${rect.height}px`;
+    }
+
     setPopoverOpen(true);
     if (targetElement) {
       targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -63,7 +73,7 @@ const Tour = ({ onComplete }: TourProps) => {
   return (
     <Popover open={popoverOpen} onOpenChange={setPopoverOpen}>
       <PopoverTrigger asChild>
-        <div style={{ position: 'absolute', top: 0, left: 0, pointerEvents: 'none' }} />
+        <div ref={triggerRef} className="pointer-events-none z-[100]" />
       </PopoverTrigger>
       <PopoverContent
         side={step.popoverSide as "top" | "bottom" | "left" | "right"}
@@ -71,21 +81,6 @@ const Tour = ({ onComplete }: TourProps) => {
         className="w-80 z-[101]"
         onInteractOutside={(e) => e.preventDefault()}
         sideOffset={15}
-        ref={(node) => {
-            if (node) {
-              const rect = targetElement.getBoundingClientRect();
-              const top = window.scrollY + rect.top + rect.height / 2 - node.offsetHeight / 2;
-              const left = window.scrollX + rect.left + rect.width / 2 - node.offsetWidth / 2;
-              
-              if(step.popoverSide === 'top') {
-                 node.style.top = `${window.scrollY + rect.top - node.offsetHeight - 15}px`;
-                 node.style.left = `${left}px`;
-              } else if (step.popoverSide === 'bottom') {
-                 node.style.top = `${window.scrollY + rect.bottom + 15}px`;
-                 node.style.left = `${left}px`;
-              }
-            }
-          }}
       >
         <div className="space-y-4">
             <div className="flex justify-between items-center">
