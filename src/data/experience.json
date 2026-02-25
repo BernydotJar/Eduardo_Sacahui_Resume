@@ -4,7 +4,7 @@
     "role": "AI Solution Architect + Technical Product Owner (Hands-on)",
     "when": "2026",
     "highlights": [
-      "Diseñe y construí un MVP ejecutivo \"panels-first\" (no chat-first) con módulos: Today Brief, Calendar & Prep, Meetings Hub, Action Center y EA Triage.",
+      "Diseñé y construí un MVP ejecutivo \"panels-first\" (no chat-first) con módulos: Today Brief, Calendar & Prep, Meetings Hub, Action Center y EA Triage.",
       "Implementé arquitectura segura con Next.js + Node/Express API, donde backend es dueño de OAuth Google, refresh tokens, scopes mínimos y autorización por usuario.",
       "Integré Google Calendar (read-only) con fallback controlado, manejo de disponibilidad, conflictos y calendar hygiene checks (overlaps, missing details, no buffers, remote mismatch).",
       "Implementé orquestación AI con n8n demoted: solo payloads autorizados y minimizados; sin tokens long-lived en n8n.",
