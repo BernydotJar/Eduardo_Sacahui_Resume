@@ -28,6 +28,11 @@ const Skills = ({ onTileClick }: SkillsProps) => {
     );
   };
 
+  const clearFilters = () => {
+    setSearchTerm('');
+    setActiveTags([]);
+  };
+
   const filteredSkills = skills.filter(skill => {
     const matchesSearch = skill.name.toLowerCase().includes(searchTerm.toLowerCase()) || skill.symbol.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesTags = activeTags.length === 0 || activeTags.every(tag => skill.tags.includes(tag));
@@ -60,7 +65,7 @@ const Skills = ({ onTileClick }: SkillsProps) => {
               key={tag}
               type="button"
               onClick={() => toggleTag(tag)}
-              className={`px-3 py-1 text-sm rounded-full border transition-colors ${
+              className={`px-3 py-1 text-sm rounded-full border transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background ${
                 activeTags.includes(tag)
                   ? 'bg-primary text-primary-foreground border-primary'
                   : 'bg-secondary text-secondary-foreground border-secondary hover:bg-muted'
@@ -93,7 +98,7 @@ const Skills = ({ onTileClick }: SkillsProps) => {
       
       <div className={cn("relative", !isFiltering && "overflow-x-auto pb-2")}>
         <div className={cn(
-          "relative grid gap-1",
+          "relative grid gap-2",
           isFiltering
             ? "grid-cols-[repeat(auto-fill,minmax(120px,1fr))]"
             : "grid-cols-18 grid-rows-7 min-w-[960px]"
@@ -119,7 +124,16 @@ const Skills = ({ onTileClick }: SkillsProps) => {
         </div>
       </div>
       {filteredSkills.length === 0 && (
-        <p className="text-center text-muted-foreground mt-8">{dict.skills.noSkillsFound}</p>
+        <div className="mt-8 text-center">
+          <p className="text-muted-foreground">{dict.skills.noSkillsFound}</p>
+          <button
+            type="button"
+            onClick={clearFilters}
+            className="mt-3 inline-flex items-center rounded-md border border-border px-3 py-1.5 text-sm text-foreground transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          >
+            {dict.skills.clearFilters}
+          </button>
+        </div>
       )}
     </section>
   );

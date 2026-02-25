@@ -15,6 +15,7 @@ export const isLocale = (value: string): value is Locale =>
 export type TranslationDictionary = {
   app: {
     language: string;
+    languageSelector: string;
   };
   header: {
     nav: {
@@ -26,6 +27,8 @@ export type TranslationDictionary = {
     };
     tourTech: string;
     contactMe: string;
+    goToTop: string;
+    menuToggle: string;
   };
   hero: {
     title: string;
@@ -48,6 +51,7 @@ export type TranslationDictionary = {
       intermediate: string;
     };
     noSkillsFound: string;
+    clearFilters: string;
     ariaViewSkillDetails: string;
   };
   migrations: {
@@ -129,6 +133,7 @@ export const translations: Record<Locale, TranslationDictionary> = {
   en: {
     app: {
       language: 'Language',
+      languageSelector: 'Language selector',
     },
     header: {
       nav: {
@@ -140,6 +145,8 @@ export const translations: Record<Locale, TranslationDictionary> = {
       },
       tourTech: 'Tour the Tech',
       contactMe: 'Contact Me',
+      goToTop: 'Go to top',
+      menuToggle: 'Toggle menu',
     },
     hero: {
       title: 'AI Solution Architect & Technical Product Owner (Hands-on)',
@@ -163,6 +170,7 @@ export const translations: Record<Locale, TranslationDictionary> = {
         intermediate: 'Intermediate',
       },
       noSkillsFound: 'No skills found. Try adjusting your search or filters.',
+      clearFilters: 'Clear filters',
       ariaViewSkillDetails: 'View details for',
     },
     migrations: {
@@ -205,7 +213,7 @@ export const translations: Record<Locale, TranslationDictionary> = {
       preferDirectEmail: 'Prefer direct email?',
       toastSuccessTitle: 'Message Sent!',
       toastSuccessDescription:
-        "Thanks for reaching out. I'll get back to you soon.",
+        'Your email client should open shortly to send the message.',
       toastErrorTitle: 'Uh oh! Something went wrong.',
       toastErrorDescription: 'There was a problem with your request.',
       validation: {
@@ -275,6 +283,7 @@ export const translations: Record<Locale, TranslationDictionary> = {
   es: {
     app: {
       language: 'Idioma',
+      languageSelector: 'Selector de idioma',
     },
     header: {
       nav: {
@@ -286,6 +295,8 @@ export const translations: Record<Locale, TranslationDictionary> = {
       },
       tourTech: 'Recorrido Técnico',
       contactMe: 'Contáctame',
+      goToTop: 'Ir al inicio',
+      menuToggle: 'Abrir o cerrar menú',
     },
     hero: {
       title: 'Arquitecto de Soluciones AI y Product Owner Técnico (Hands-on)',
@@ -311,6 +322,7 @@ export const translations: Record<Locale, TranslationDictionary> = {
       },
       noSkillsFound:
         'No se encontraron habilidades. Ajusta la búsqueda o los filtros.',
+      clearFilters: 'Limpiar filtros',
       ariaViewSkillDetails: 'Ver detalles de',
     },
     migrations: {
@@ -353,7 +365,7 @@ export const translations: Record<Locale, TranslationDictionary> = {
       preferDirectEmail: '¿Prefieres correo directo?',
       toastSuccessTitle: '¡Mensaje enviado!',
       toastSuccessDescription:
-        'Gracias por escribir. Te responderé lo antes posible.',
+        'Tu cliente de correo debería abrirse en breve para enviar el mensaje.',
       toastErrorTitle: 'Algo salió mal.',
       toastErrorDescription: 'Hubo un problema con tu solicitud.',
       validation: {
@@ -423,6 +435,7 @@ export const translations: Record<Locale, TranslationDictionary> = {
   pt: {
     app: {
       language: 'Idioma',
+      languageSelector: 'Seletor de idioma',
     },
     header: {
       nav: {
@@ -434,6 +447,8 @@ export const translations: Record<Locale, TranslationDictionary> = {
       },
       tourTech: 'Tour Técnico',
       contactMe: 'Contato',
+      goToTop: 'Voltar ao topo',
+      menuToggle: 'Abrir ou fechar menu',
     },
     hero: {
       title: 'Arquiteto de Soluções AI e Product Owner Técnico (Hands-on)',
@@ -459,6 +474,7 @@ export const translations: Record<Locale, TranslationDictionary> = {
       },
       noSkillsFound:
         'Nenhuma habilidade encontrada. Ajuste sua busca ou filtros.',
+      clearFilters: 'Limpar filtros',
       ariaViewSkillDetails: 'Ver detalhes de',
     },
     migrations: {
@@ -502,7 +518,7 @@ export const translations: Record<Locale, TranslationDictionary> = {
       preferDirectEmail: 'Prefere e-mail direto?',
       toastSuccessTitle: 'Mensagem enviada!',
       toastSuccessDescription:
-        'Obrigado pelo contato. Vou responder em breve.',
+        'Seu cliente de e-mail deve abrir em instantes para enviar a mensagem.',
       toastErrorTitle: 'Algo deu errado.',
       toastErrorDescription: 'Houve um problema com sua solicitação.',
       validation: {

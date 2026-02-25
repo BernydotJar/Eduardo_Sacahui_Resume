@@ -39,11 +39,22 @@ const levelLabelMap: Record<Locale, Record<string, string>> = {
   },
 };
 
+const getDeterministicDelay = (value: string) => {
+  let hash = 0;
+  for (let i = 0; i < value.length; i += 1) {
+    hash = (hash << 5) - hash + value.charCodeAt(i);
+    hash |= 0;
+  }
+  const positiveHash = Math.abs(hash);
+  return (positiveHash % 5) * 0.1;
+};
+
 const SkillTile = ({ skill, onClick }: SkillTileProps) => {
   const { isEasterEggActive } = useEasterEgg();
   const shouldReduceMotion = useReducedMotion();
   const { locale, dict } = useLanguage();
   const displayLevel = levelLabelMap[locale][skill.level] || skill.level;
+  const pulseDelay = `${getDeterministicDelay(skill.id)}s`;
 
   return (
     <motion.button
@@ -55,17 +66,25 @@ const SkillTile = ({ skill, onClick }: SkillTileProps) => {
         levelColorMap[skill.level] || 'border-muted',
         'hover:bg-accent/10 hover:border-accent hover:shadow-[0_0_15px_hsl(var(--accent))] focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background'
       )}
-      whileHover={shouldReduceMotion ? undefined : { scale: 1.05 }}
-      whileTap={shouldReduceMotion ? undefined : { scale: 0.95 }}
+      whileHover={
+        shouldReduceMotion
+          ? undefined
+          : { scale: 1.04, transition: { type: 'spring', stiffness: 400, damping: 20 } }
+      }
+      whileTap={
+        shouldReduceMotion
+          ? undefined
+          : { scale: 0.97, transition: { type: 'spring', stiffness: 600, damping: 15 } }
+      }
     >
       {isEasterEggActive && !shouldReduceMotion && (
          <motion.div 
             className="absolute inset-0 animate-pulse-emerald rounded-lg"
-            style={{ animationDelay: `${Math.random() * 0.5}s` }}
+            style={{ animationDelay: pulseDelay }}
         />
       )}
       <div className='relative'>
-        <div className="text-[10px] text-muted-foreground capitalize">{displayLevel}</div>
+        <div className="text-[11px] text-muted-foreground capitalize leading-none">{displayLevel}</div>
         <span className="font-code text-3xl font-bold text-foreground/80">{skill.symbol}</span>
       </div>
       <div className="relative">

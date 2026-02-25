@@ -31,7 +31,7 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
         
         <div className="container relative z-10 pt-20 pb-16 text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+            <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-bold tracking-tight text-foreground">
                 {heroInfo.name}
             </h1>
             <p className="mt-6 max-w-3xl mx-auto text-lg text-muted-foreground sm:text-xl">
@@ -45,11 +45,11 @@ const Hero = () => {
             </div>
             <div className="mt-8 flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
                 <div className="flex items-center gap-2">
-                    <MapPin className="h-4 w-4" />
+                    <MapPin className="h-4 w-4" aria-hidden="true" />
                     <span>{dict.hero.location}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                    <Mail className="h-4 w-4" />
+                    <Mail className="h-4 w-4" aria-hidden="true" />
                     <a href={`mailto:${heroEmail}`} className="hover:text-primary">{heroEmail}</a>
                 </div>
             </div>
@@ -61,7 +61,7 @@ const Hero = () => {
             <div className="mt-10 flex gap-4 justify-center">
                 <Button size="lg" asChild>
                     <a href="/Eduardo_Sacahui_Resume.pdf" download>
-                        <Download className="mr-2 h-4 w-4" />
+                        <Download className="mr-2 h-5 w-5" aria-hidden="true" />
                         {dict.hero.downloadCv}
                     </a>
                 </Button>
@@ -69,7 +69,7 @@ const Hero = () => {
                     <a href="#contact">{dict.hero.contactMe}</a>
                 </Button>
             </div>
-             <div className="mt-8 max-w-4xl mx-auto">
+             <div className="mt-8 max-w-4xl mx-auto border-t border-border/60 pt-6">
                 <p className="text-sm font-semibold text-muted-foreground mb-4">{dict.hero.awardsAndCertifications}</p>
                 <div className="flex flex-wrap justify-center gap-2">
                     {heroInfo.badges.map((badge, index) => (

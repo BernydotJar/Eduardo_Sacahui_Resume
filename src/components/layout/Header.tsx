@@ -44,19 +44,19 @@ const Header = ({ onStartTour }: HeaderProps) => {
     return (
         <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
             <div className="container flex h-14 max-w-screen-2xl items-center">
-                <a href="#" className="mr-6 flex items-center space-x-2">
-                    <Code className="h-6 w-6 text-primary" />
+                <a href="#" className="mr-6 flex items-center space-x-2" aria-label={dict.header.goToTop}>
+                    <Code className="h-6 w-6 text-primary" aria-hidden="true" />
                     <span className="hidden font-bold sm:inline-block">Eduardo Sacahui</span>
                 </a>
                 <nav className="hidden md:flex items-center gap-6 text-sm">
                     {navLinks.map(link => (
-                        <a key={link.href} href={link.href} className="transition-colors hover:text-foreground/80 text-foreground/60">{link.label}</a>
+                        <a key={link.href} href={link.href} className="transition-colors hover:text-foreground text-foreground/80">{link.label}</a>
                     ))}
                 </nav>
                 <div className="flex flex-1 items-center justify-end gap-2">
                     <div className="hidden md:block">
                         <Select value={locale} onValueChange={handleLocaleChange}>
-                            <SelectTrigger className="h-9 w-[132px]">
+                            <SelectTrigger className="h-9 w-[132px]" aria-label={dict.app.languageSelector}>
                                 <SelectValue placeholder={dict.app.language} />
                             </SelectTrigger>
                             <SelectContent>
@@ -84,18 +84,19 @@ const Header = ({ onStartTour }: HeaderProps) => {
                                 aria-controls="mobile-nav"
                             >
                                 <Menu className="h-4 w-4" />
+                                <span className="sr-only">{dict.header.menuToggle}</span>
                             </Button>
                         </SheetTrigger>
                         <SheetContent side="left">
                             <nav id="mobile-nav" className="grid gap-6 text-lg font-medium mt-8">
-                                <a href="#" className="flex items-center gap-2 text-lg font-semibold" onClick={handleNavClick}>
-                                     <Code className="h-6 w-6 text-primary" />
+                                <a href="#" className="flex items-center gap-2 text-lg font-semibold" onClick={handleNavClick} aria-label={dict.header.goToTop}>
+                                     <Code className="h-6 w-6 text-primary" aria-hidden="true" />
                                     <span>Eduardo Sacahui</span>
                                 </a>
                                 <div className="space-y-2">
                                     <p className="text-sm text-muted-foreground">{dict.app.language}</p>
                                     <Select value={locale} onValueChange={handleLocaleChange}>
-                                        <SelectTrigger className="w-full">
+                                        <SelectTrigger className="w-full" aria-label={dict.app.languageSelector}>
                                             <SelectValue placeholder={dict.app.language} />
                                         </SelectTrigger>
                                         <SelectContent>

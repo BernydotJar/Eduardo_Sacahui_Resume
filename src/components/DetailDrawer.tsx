@@ -71,7 +71,7 @@ const DetailDrawer = ({ content, isOpen, onClose }: DetailDrawerProps) => {
         <ScrollArea className="h-full">
           <div className="p-6">
             <SheetHeader>
-              <SheetTitle ref={titleRef} className="text-2xl text-primary focus:outline-none" tabIndex={-1}>{title}</SheetTitle>
+              <SheetTitle ref={titleRef} className="text-2xl text-primary" tabIndex={-1}>{title}</SheetTitle>
               <SheetDescription>{description}</SheetDescription>
             </SheetHeader>
             <div className="mt-6 space-y-8">
@@ -108,7 +108,7 @@ const DetailDrawer = ({ content, isOpen, onClose }: DetailDrawerProps) => {
 
                           {content.id === 'rag-knowledge-services' && (
                               <Button variant="link" asChild className="px-0">
-                                  <a href="postman-collection.json" download><Download className="mr-2 h-4 w-4" />{dict.drawer.downloadPostmanCollection}</a>
+                                  <a href="/postman-collection.json" download><Download className="mr-2 h-4 w-4" />{dict.drawer.downloadPostmanCollection}</a>
                               </Button>
                           )}
                            {content.id === 'autotask-to-jira-fabric' && (

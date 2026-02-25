@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import tourData from '@/data/tour.json';
 import { X, ArrowRight, ArrowLeft } from 'lucide-react';
 import { useLanguage } from '@/components/context/LanguageContext';
+import { useReducedMotion } from 'framer-motion';
 
 interface TourProps {
   onComplete: () => void;
@@ -17,6 +18,7 @@ const Tour = ({ onComplete }: TourProps) => {
   const [popoverOpen, setPopoverOpen] = useState(false);
   const triggerRef = useRef<HTMLDivElement>(null);
   const { dict } = useLanguage();
+  const shouldReduceMotion = useReducedMotion();
 
   const step = useMemo(() => tourData[currentStep], [currentStep]);
   const translatedStep = useMemo(
@@ -40,18 +42,19 @@ const Tour = ({ onComplete }: TourProps) => {
 
     setPopoverOpen(true);
     if (targetElement) {
-      targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      targetElement.style.transition = 'box-shadow 0.3s ease-in-out';
-      targetElement.style.boxShadow = '0 0 0 4px hsl(var(--primary))';
-      targetElement.style.borderRadius = '8px';
+      targetElement.scrollIntoView({
+        behavior: shouldReduceMotion ? 'auto' : 'smooth',
+        block: 'center',
+      });
+      targetElement.classList.add('tour-highlighted');
     }
 
     return () => {
       if (targetElement) {
-        targetElement.style.boxShadow = '';
+        targetElement.classList.remove('tour-highlighted');
       }
     };
-  }, [currentStep, targetElement]);
+  }, [shouldReduceMotion, targetElement]);
 
   const handleNext = () => {
     if (currentStep < tourData.length - 1) {
