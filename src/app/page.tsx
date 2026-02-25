@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useCallback, useLayoutEffect, useState } from 'react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Hero from '@/components/sections/Hero';
@@ -25,44 +25,42 @@ export default function Home() {
   const [drawerContent, setDrawerContent] = useState<DrawerContent | null>(null);
   const [isTourActive, setIsTourActive] = useState(false);
 
-  useEffect(() => {
-    const handleHashChange = () => {
-      const hash = window.location.hash.slice(1);
-      if (!hash) {
-        setDrawerContent(null);
-        return;
-      }
-      
-      try {
-        const [type, id] = hash.split('=');
-        if ((type === 'skill' || type === 'project') && id) {
-          // Check for aliases in projects
-          if (type === 'project') {
-            const project = projects.find(p => p.aliases?.includes(id));
-            if (project) {
-              const newHash = `#project=${project.id}`;
-              // Update URL without triggering another hash change, then set state
-              history.replaceState(null, '', newHash);
-              setDrawerContent({ type: 'project', id: project.id });
-              return;
-            }
-          }
-          setDrawerContent({ type, id });
-        } else {
-          setDrawerContent(null);
-        }
-      } catch (error) {
-        setDrawerContent(null);
-      }
-    };
+  const parseHash = useCallback(() => {
+    const hash = window.location.hash.slice(1);
+    if (!hash) {
+      setDrawerContent(null);
+      return;
+    }
 
-    handleHashChange();
-    window.addEventListener('hashchange', handleHashChange);
+    try {
+      const [type, id] = hash.split('=');
+      if ((type === 'skill' || type === 'project') && id) {
+        if (type === 'project') {
+          const project = projects.find((p) => p.aliases?.includes(id));
+          if (project) {
+            const newHash = `#project=${project.id}`;
+            history.replaceState(null, '', newHash);
+            setDrawerContent({ type: 'project', id: project.id });
+            return;
+          }
+        }
+        setDrawerContent({ type, id });
+      } else {
+        setDrawerContent(null);
+      }
+    } catch {
+      setDrawerContent(null);
+    }
+  }, []);
+
+  useLayoutEffect(() => {
+    parseHash();
+    window.addEventListener('hashchange', parseHash);
 
     return () => {
-      window.removeEventListener('hashchange', handleHashChange);
+      window.removeEventListener('hashchange', parseHash);
     };
-  }, []);
+  }, [parseHash]);
 
   const openDrawer = (type: 'skill' | 'project', id: string) => {
     const newHash = `#${type}=${id}`;
@@ -75,10 +73,8 @@ export default function Home() {
   };
 
   const closeDrawer = () => {
-    // Check if there is content in drawer before changing hash
     if (drawerContent) {
-      // Using history.pushState to avoid triggering hashchange and creating a loop
-      history.pushState("", document.title, window.location.pathname + window.location.search);
+      history.replaceState(null, '', window.location.pathname + window.location.search);
     }
     setDrawerContent(null);
   };

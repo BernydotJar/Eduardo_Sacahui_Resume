@@ -63,9 +63,7 @@ const prompt = ai.definePrompt({
   Given a database schema, you will generate API and data layer code in the specified language and framework.
 
   Database Schema:
-  ```
   {{{databaseSchema}}}
-  ```
 
   Language: {{{language}}}
   Framework: {{{framework}}}

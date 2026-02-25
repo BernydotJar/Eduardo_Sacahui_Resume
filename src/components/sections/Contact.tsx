@@ -23,11 +23,16 @@ const formSchema = z.object({
   message: z.string().min(10, "Message must be at least 10 characters."),
 });
 
+const contactRecipient = ["eduardo", ".sacahui", "@", "gmail", ".com"].join("");
+
 const simulateContactSubmit = async (
   values: z.infer<typeof formSchema>
 ): Promise<{ success: boolean; message?: string }> => {
-  await new Promise((resolve) => setTimeout(resolve, 400));
-  console.info("Contact form submission:", values);
+  const subject = encodeURIComponent(`Portfolio contact from ${values.name}`);
+  const body = encodeURIComponent(
+    `Name: ${values.name}\nEmail: ${values.email}\n\n${values.message}`
+  );
+  window.location.href = `mailto:${contactRecipient}?subject=${subject}&body=${body}`;
   return { success: true };
 };
 
@@ -65,6 +70,9 @@ const Contact = () => {
                 <CardHeader className="text-center">
                     <CardTitle className="text-3xl font-bold tracking-tight sm:text-4xl">Contact Me</CardTitle>
                     <p className="mt-4 text-lg text-muted-foreground">Have a question or want to work together?</p>
+                    <p className="mt-2 text-sm text-muted-foreground">
+                      This static site opens your email client to send your message.
+                    </p>
                 </CardHeader>
                 <CardContent>
                     <Form {...form}>
@@ -111,6 +119,12 @@ const Contact = () => {
                             <Button type="submit" disabled={form.formState.isSubmitting}>
                                 {form.formState.isSubmitting ? "Sending..." : "Send Message"}
                             </Button>
+                            <p className="text-sm text-muted-foreground">
+                              Prefer direct email?{" "}
+                              <a href={`mailto:${contactRecipient}`} className="text-primary underline underline-offset-4">
+                                {contactRecipient}
+                              </a>
+                            </p>
                         </form>
                     </Form>
                 </CardContent>

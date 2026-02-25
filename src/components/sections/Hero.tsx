@@ -7,7 +7,8 @@ const heroInfo = {
   name: "Eduardo Sacahui",
   title: "AI Solution Architect & Technical Product Owner (Hands-on)",
   location: "Remote — Colombia / Guatemala (AMER)",
-  email: "eduardo.sacahui@gmail.com",
+  emailUser: ["eduardo", ".sacahui"].join(""),
+  emailDomain: ["gmail", ".com"].join(""),
   summary:
     "Arquitecto de Soluciones AI y Product Owner técnico con enfoque hands-on en entrega rápida de productos. Lidero definición funcional, arquitectura y desarrollo end-to-end de plataformas inteligentes basadas en LLMs, integraciones Google Workspace y orquestación con n8n bajo principios de seguridad (least privilege, backend-owned OAuth, trazabilidad y validación estricta de JSON). Capaz de convertir visión ejecutiva en MVPs demoables y rutas claras a producción, cubriendo UX, backend, calidad y operación.",
   languages: ["Spanish (Native)", "English (Proficient)", "Portuguese (Proficient)"],
@@ -20,6 +21,8 @@ const heroInfo = {
     "Harvard ManageMentor — Coaching"
   ],
 };
+
+const heroEmail = `${heroInfo.emailUser}@${heroInfo.emailDomain}`;
 
 const Hero = () => {
   return (
@@ -47,7 +50,7 @@ const Hero = () => {
                 </div>
                 <div className="flex items-center gap-2">
                     <Mail className="h-4 w-4" />
-                    <a href={`mailto:${heroInfo.email}`} className="hover:text-primary">{heroInfo.email}</a>
+                    <a href={`mailto:${heroEmail}`} className="hover:text-primary">{heroEmail}</a>
                 </div>
             </div>
             <div className="mt-4 flex justify-center gap-2">

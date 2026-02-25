@@ -6,7 +6,7 @@ import { skills } from '@/lib/data';
 import SkillTile from '@/components/ui/SkillTile';
 import { Input } from '@/components/ui/input';
 import { Search } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
 interface SkillsProps {
@@ -18,6 +18,7 @@ const allTags = [...new Set(skills.flatMap(s => s.tags))];
 const Skills = ({ onTileClick }: SkillsProps) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [activeTags, setActiveTags] = useState<string[]>([]);
+  const shouldReduceMotion = useReducedMotion();
 
   const toggleTag = (tag: string) => {
     setActiveTags(prev => 
@@ -55,6 +56,7 @@ const Skills = ({ onTileClick }: SkillsProps) => {
           {allTags.map(tag => (
             <button 
               key={tag}
+              type="button"
               onClick={() => toggleTag(tag)}
               className={`px-3 py-1 text-sm rounded-full border transition-colors ${
                 activeTags.includes(tag)
@@ -67,31 +69,52 @@ const Skills = ({ onTileClick }: SkillsProps) => {
           ))}
         </div>
       </div>
+
+      <p className="text-center text-xs text-muted-foreground -mt-4 mb-3">
+        Filter behavior: all selected tags must match.
+      </p>
+
+      <div className="mb-6 flex flex-wrap items-center justify-center gap-4 text-xs text-muted-foreground">
+        <span className="inline-flex items-center gap-2">
+          <span className="h-2.5 w-2.5 rounded-full bg-primary" />
+          Expert
+        </span>
+        <span className="inline-flex items-center gap-2">
+          <span className="h-2.5 w-2.5 rounded-full bg-accent" />
+          Advanced
+        </span>
+        <span className="inline-flex items-center gap-2">
+          <span className="h-2.5 w-2.5 rounded-full bg-secondary" />
+          Intermediate
+        </span>
+      </div>
       
-      <div className={cn(
-        "relative grid gap-1",
-        isFiltering 
-          ? "grid-cols-[repeat(auto-fill,minmax(120px,1fr))]"
-          : "grid-cols-18 grid-rows-7"
-      )}>
-        <AnimatePresence>
-          {filteredSkills.map((skill, index) => (
-            <motion.div
-              key={skill.id}
-              layout
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.8 }}
-              transition={{ duration: 0.2, delay: index * 0.02 }}
-              className={cn(
-                "min-h-[100px]",
-                !isFiltering && `col-start-${skill.col} row-start-${skill.row}`
-              )}
-            >
-              <SkillTile skill={skill} onClick={() => onTileClick(skill.id)} />
-            </motion.div>
-          ))}
-        </AnimatePresence>
+      <div className={cn("relative", !isFiltering && "overflow-x-auto pb-2")}>
+        <div className={cn(
+          "relative grid gap-1",
+          isFiltering
+            ? "grid-cols-[repeat(auto-fill,minmax(120px,1fr))]"
+            : "grid-cols-18 grid-rows-7 min-w-[960px]"
+        )}>
+          <AnimatePresence>
+            {filteredSkills.map((skill, index) => (
+              <motion.div
+                key={skill.id}
+                layout={!shouldReduceMotion}
+                initial={shouldReduceMotion ? undefined : { opacity: 0, scale: 0.8 }}
+                animate={shouldReduceMotion ? { opacity: 1 } : { opacity: 1, scale: 1 }}
+                exit={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, scale: 0.8 }}
+                transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.2, delay: index * 0.02 }}
+                className={cn(
+                  "min-h-[100px]",
+                  !isFiltering && `col-start-${skill.col} row-start-${skill.row}`
+                )}
+              >
+                <SkillTile skill={skill} onClick={() => onTileClick(skill.id)} />
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </div>
       </div>
       {filteredSkills.length === 0 && (
         <p className="text-center text-muted-foreground mt-8">No skills found. Try adjusting your search or filters.</p>

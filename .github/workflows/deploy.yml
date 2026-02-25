@@ -24,10 +24,13 @@ jobs:
           node-version: "20"
           cache: "npm"
       - run: npm install
+      - name: Run quality checks
+        run: npm run typecheck && npm run lint
       - name: Build static site
         run: npm run build
         env:
           NEXT_PUBLIC_SITE_URL: https://eduardosacahui.github.io/Eduardo_Sacahui_Resume
+          NEXT_PUBLIC_PLAUSIBLE_DOMAIN: ${{ github.repository_owner }}.github.io
       - name: Ensure _next assets are served
         run: touch out/.nojekyll
       - uses: actions/upload-pages-artifact@v3

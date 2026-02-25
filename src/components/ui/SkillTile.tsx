@@ -4,7 +4,7 @@
 import type { Skill } from '@/lib/types';
 import { useEasterEgg } from '@/components/context/EasterEggContext';
 import { cn } from '@/lib/utils';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 
 interface SkillTileProps {
   skill: Skill;
@@ -21,19 +21,22 @@ const levelColorMap: { [key: string]: string } = {
 
 const SkillTile = ({ skill, onClick }: SkillTileProps) => {
   const { isEasterEggActive } = useEasterEgg();
+  const shouldReduceMotion = useReducedMotion();
 
   return (
     <motion.button
+      type="button"
       onClick={onClick}
+      aria-label={`View details for ${skill.name}`}
       className={cn(
         "relative w-full h-full p-2 rounded-lg border-2 text-left transition-all duration-300 flex flex-col justify-between",
         levelColorMap[skill.level] || 'border-muted',
         'hover:bg-accent/10 hover:border-accent hover:shadow-[0_0_15px_hsl(var(--accent))] focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background'
       )}
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
+      whileHover={shouldReduceMotion ? undefined : { scale: 1.05 }}
+      whileTap={shouldReduceMotion ? undefined : { scale: 0.95 }}
     >
-      {isEasterEggActive && (
+      {isEasterEggActive && !shouldReduceMotion && (
          <motion.div 
             className="absolute inset-0 animate-pulse-emerald rounded-lg"
             style={{ animationDelay: `${Math.random() * 0.5}s` }}

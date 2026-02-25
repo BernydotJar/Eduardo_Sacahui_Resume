@@ -1,0 +1,33 @@
+{
+  "info": {
+    "name": "RAG Knowledge Services",
+    "_postman_id": "c4194567-2f0a-4f8d-88f5-84e8810a7f5d",
+    "description": "Sample collection placeholder for portfolio download.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Healthcheck",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/health",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "health"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.example.com"
+    }
+  ]
+}

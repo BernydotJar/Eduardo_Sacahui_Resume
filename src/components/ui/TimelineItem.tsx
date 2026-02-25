@@ -20,12 +20,12 @@ const TimelineItem = ({ experience }: TimelineItemProps) => {
   return (
     <AccordionItem value={experience.company + experience.role + experience.when}>
         <AccordionTrigger>
-            <div className='flex justify-between items-center w-full pr-4'>
+            <div className='flex flex-col gap-2 sm:flex-row sm:justify-between sm:items-center w-full pr-4'>
                 <div className='text-left'>
                     <h3 className="text-lg font-semibold">{role}</h3>
                     <p className="text-sm text-muted-foreground">{company}</p>
                 </div>
-                <p className="text-sm text-muted-foreground font-mono shrink-0">{experience.when}</p>
+                <p className="text-sm text-muted-foreground font-mono shrink-0 text-left sm:text-right">{experience.when}</p>
             </div>
         </AccordionTrigger>
         <AccordionContent>

@@ -1,6 +1,7 @@
 
 "use client";
 
+import { useEffect, useRef } from "react";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from "@/components/ui/sheet";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Badge } from "@/components/ui/badge";
@@ -18,6 +19,14 @@ interface DetailDrawerProps {
 }
 
 const DetailDrawer = ({ content, isOpen, onClose }: DetailDrawerProps) => {
+  const titleRef = useRef<HTMLHeadingElement | null>(null);
+
+  useEffect(() => {
+    if (isOpen) {
+      titleRef.current?.focus();
+    }
+  }, [content.id, content.type, isOpen]);
+
   if (!content) return null;
 
   let title = "";
@@ -49,11 +58,18 @@ const DetailDrawer = ({ content, isOpen, onClose }: DetailDrawerProps) => {
 
   return (
     <Sheet open={isOpen} onOpenChange={(open) => !open && onClose()}>
-      <SheetContent className="w-full md:w-3/5 lg:w-1/2 xl:w-2/5 p-0" side="right">
+      <SheetContent
+        className="w-full md:w-3/5 lg:w-1/2 xl:w-2/5 p-0"
+        side="right"
+        style={{
+          paddingTop: "max(env(safe-area-inset-top), 0px)",
+          paddingBottom: "max(env(safe-area-inset-bottom), 0px)",
+        }}
+      >
         <ScrollArea className="h-full">
           <div className="p-6">
             <SheetHeader>
-              <SheetTitle className="text-2xl text-primary">{title}</SheetTitle>
+              <SheetTitle ref={titleRef} className="text-2xl text-primary focus:outline-none" tabIndex={-1}>{title}</SheetTitle>
               <SheetDescription>{description}</SheetDescription>
             </SheetHeader>
             <div className="mt-6 space-y-8">
@@ -90,7 +106,7 @@ const DetailDrawer = ({ content, isOpen, onClose }: DetailDrawerProps) => {
 
                           {content.id === 'rag-knowledge-services' && (
                               <Button variant="link" asChild className="px-0">
-                                  <a href="/postman-collection.json" download><Download className="mr-2 h-4 w-4" />Download Postman Collection</a>
+                                  <a href="postman-collection.json" download><Download className="mr-2 h-4 w-4" />Download Postman Collection</a>
                               </Button>
                           )}
                            {content.id === 'autotask-to-jira-fabric' && (

@@ -1,6 +1,7 @@
 
 "use client";
 
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, Code, Rocket } from 'lucide-react';
@@ -18,6 +19,12 @@ interface HeaderProps {
 }
 
 const Header = ({ onStartTour }: HeaderProps) => {
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+    const handleNavClick = () => {
+        setMobileMenuOpen(false);
+    };
+
     return (
         <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
             <div className="container flex h-14 max-w-screen-2xl items-center">
@@ -38,20 +45,26 @@ const Header = ({ onStartTour }: HeaderProps) => {
                     <Button asChild>
                         <a href="#contact">Contact Me</a>
                     </Button>
-                    <Sheet>
+                    <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
                         <SheetTrigger asChild>
-                            <Button variant="outline" size="icon" className="md:hidden">
+                            <Button
+                                variant="outline"
+                                size="icon"
+                                className="md:hidden"
+                                aria-expanded={mobileMenuOpen}
+                                aria-controls="mobile-nav"
+                            >
                                 <Menu className="h-4 w-4" />
                             </Button>
                         </SheetTrigger>
                         <SheetContent side="left">
-                            <nav className="grid gap-6 text-lg font-medium mt-8">
-                                <a href="#" className="flex items-center gap-2 text-lg font-semibold">
+                            <nav id="mobile-nav" className="grid gap-6 text-lg font-medium mt-8">
+                                <a href="#" className="flex items-center gap-2 text-lg font-semibold" onClick={handleNavClick}>
                                      <Code className="h-6 w-6 text-primary" />
                                     <span>Eduardo Sacahui</span>
                                 </a>
                                 {navLinks.map(link => (
-                                    <a key={link.href} href={link.href} className="text-muted-foreground hover:text-foreground">{link.label}</a>
+                                    <a key={link.href} href={link.href} className="text-muted-foreground hover:text-foreground" onClick={handleNavClick}>{link.label}</a>
                                 ))}
                             </nav>
                         </SheetContent>
