@@ -1,41 +1,142 @@
-
 [
   {
-    "company":"Edwards Lifesciences",
-    "role":"Platform Architect",
-    "when":"2023–Present",
-    "highlights":[
+    "company": "Rice Command Center (Rice Brief)",
+    "role": "AI Solution Architect + Technical Product Owner (Hands-on)",
+    "when": "2026",
+    "highlights": [
+      "Diseñe y construí un MVP ejecutivo \"panels-first\" (no chat-first) con módulos: Today Brief, Calendar & Prep, Meetings Hub, Action Center y EA Triage.",
+      "Implementé arquitectura segura con Next.js + Node/Express API, donde backend es dueño de OAuth Google, refresh tokens, scopes mínimos y autorización por usuario.",
+      "Integré Google Calendar (read-only) con fallback controlado, manejo de disponibilidad, conflictos y calendar hygiene checks (overlaps, missing details, no buffers, remote mismatch).",
+      "Implementé orquestación AI con n8n demoted: solo payloads autorizados y minimizados; sin tokens long-lived en n8n.",
+      "Aseguré confiabilidad de salidas LLM con contratos estrictos, validación de esquema y lógica de needs_review + sources[] para trazabilidad y no sobrepromesa.",
+      "Desarrollé y estabilicé una Chrome Extension tipo overlay para acceso cross-page y flujo de autenticación en contexto embebido/top-level.",
+      "Lideré QA visual y funcional, accesibilidad, y gestión de ramas/releases para acelerar iteración y demo readiness."
+    ],
+    "skills": [
+      "llmprod",
+      "architecture",
+      "productownership",
+      "next",
+      "typescript",
+      "node",
+      "googleoauth",
+      "googlecalendar",
+      "n8n",
+      "jsonschema",
+      "chromeext",
+      "accessibility",
+      "apidesign",
+      "prompteng",
+      "securetoken",
+      "cicd"
+    ]
+  },
+  {
+    "company": "Accounting Models / GST Directo",
+    "role": "Backend Software Engineer (Python)",
+    "when": "2025–2026",
+    "highlights": [
+      "Ingeniero de Software Backend (Python) enfocado en automatización contable, responsable del diseño y evolución de motores de procesamiento para liquidaciones, altas e IIBB.",
+      "Implementé pipelines robustos de ingestión y validación de archivos (XLSX/XLS XML), reglas contables, generación de outputs compatibles con Tango, e integración con FTP/SFTP y Power Automate.",
+      "Lideré prácticas de delivery con Docker, FastAPI, CI (pytest/ruff), logging estructurado y enfoque fail-soft para mejorar resiliencia operativa.",
+      "Diseñé y mantuve un motor contable en Python con reglas de negocio parametrizables y trazabilidad end-to-end.",
+      "Implementé integración FTP/SFTP dinámica por fecha (año/mes/día) para descarga de inputs y publicación de outputs.",
+      "Desarrollé API con FastAPI para ejecución orquestada desde automatizaciones externas.",
+      "Containericé servicios con Docker y dejé estructura lista para despliegue en Kubernetes.",
+      "Mejoré calidad del output contable (formato y precisión de importes, compatibilidad de plantillas Excel para Tango).",
+      "Incorporé validaciones de parametrías y suite de pruebas unitarias/integración (pytest) con soporte para CI."
+    ],
+    "skills": [
+      "python",
+      "fastapi",
+      "docker",
+      "ftp",
+      "powerautomatecloud",
+      "apidesign",
+      "jsonschema",
+      "pytest",
+      "ruff",
+      "failsoft",
+      "cicd",
+      "kubernetes",
+      "sqlserver"
+    ]
+  },
+  {
+    "company": "Edwards Lifesciences",
+    "role": "Platform Architect",
+    "when": "2023–Present",
+    "highlights": [
       "Remediated mission-critical bots with ABBYY engineers; restored throughput and stability.",
       "UiPath–Power Platform convergence strategy; optimized license spend & platform fit.",
       "Power Automate governance (security, naming, exception strategy) and Power BI capacity dashboards.",
       "Shipped LLM/RAG features with evals, guardrails, and telemetry tied to clinical KPIs.",
       "API-first services (FastAPI/Node); SDKs/Postman; offshore team leadership; CI/CD + testing."
     ],
-    "skills":["uipath","powerplatform","python","fastapi","node","react","fabric","powerbi","snowflake","kubernetes","prometheus","grafana","elk"]
+    "skills": [
+      "uipath",
+      "powerplatform",
+      "python",
+      "fastapi",
+      "node",
+      "react",
+      "fabric",
+      "powerbi",
+      "snowflake",
+      "kubernetes",
+      "prometheus",
+      "grafana",
+      "elk"
+    ]
   },
   {
-    "company":"LCH (Low Code Human)",
-    "role":"CEO & Principal Python Engineer",
-    "when":"2023–Present",
-    "highlights":[
+    "company": "LCH (Low Code Human)",
+    "role": "CEO & Principal Python Engineer",
+    "when": "2023–Present",
+    "highlights": [
       "Led offshore Python team in building backend services using FastAPI and vector databases for RAG applications.",
       "Published SDKs for React development teams and managed API lifecycle with cost and latency SLOs.",
       "Implemented advanced deployment strategies like canary and blue-green releases, with comprehensive telemetry."
     ],
-    "skills":["python","fastapi","pgvector","openai","react","node","githubactions","jira"]
+    "skills": [
+      "python",
+      "fastapi",
+      "pgvector",
+      "openai",
+      "react",
+      "node",
+      "githubactions",
+      "jira"
+    ]
   },
   {
-    "company":"UiPath (United States)",
-    "role":"Technical Delivery Manager",
-    "when":"2022–2023",
-    "highlights":[
+    "company": "UiPath (United States)",
+    "role": "Technical Delivery Manager",
+    "when": "2022–2023",
+    "highlights": [
       "Managed Orchestrator deployments on AKS/EKS and on-prem using custom Helm charts, ensuring HA, autoscaling, and DR readiness.",
       "Engineered robust observability stacks (Prometheus/Grafana/ELK) with SLOs, reducing MTTR in heavily regulated healthcare client environments.",
       "Enforced stringent security controls including RBAC, CyberArk/Key Vault integration for secrets management, TLS rotation, and network policies.",
       "Architected and delivered complex RPA portfolios for numerous clients including **Zebra Technologies, Love's, Dana-Farber Cancer Institute, UCare, Regeneron, AdaptHealth, McLaren Health, Tarpon Health, CareCentrix, and Help at Home**, focusing on compliance, auditability, and integration with clinical systems in the challenging healthcare sector."
     ],
-    "skills":["uipath","kubernetes","helm","prometheus","grafana","elk","snowflake","fabric","azure","aws","uipathtestmgr","governance","queues","powerbi","monitoring"],
-    "projects":[
+    "skills": [
+      "uipath",
+      "kubernetes",
+      "helm",
+      "prometheus",
+      "grafana",
+      "elk",
+      "snowflake",
+      "fabric",
+      "azure",
+      "aws",
+      "uipathtestmgr",
+      "governance",
+      "queues",
+      "powerbi",
+      "monitoring"
+    ],
+    "projects": [
       "zebra-uipath-testmgr",
       "loves-retail-rpa",
       "dfci-coe-advancement",
@@ -49,20 +150,34 @@
     ]
   },
   {
-    "company":"Haceb (via LCH Consulting)",
-    "role":"Principal Consultant / Pod Lead — RPA",
-    "display_role_override":"RPA Principal Consultant (via LCH)",
-    "when":"2022–2024",
-    "highlights":[
+    "company": "Haceb (via LCH Consulting)",
+    "role": "Principal Consultant / Pod Lead — RPA",
+    "display_role_override": "RPA Principal Consultant (via LCH)",
+    "when": "2022–2024",
+    "highlights": [
       "Led an RPA pod focused on UiPath and Power Platform (PAC/Power Apps) for SAP, SharePoint, and web portals.",
       "Defined development standards (exceptions, idempotency, retries, structured logging) and governance (versioning, audit).",
       "Orchestrated PAC flows for approvals and notifications; created internal apps in Power Apps for self-service.",
       "Published metrics and KPIs in Power BI (SLA, AHT, throughput) and managed continuous improvement with stakeholders."
     ],
-    "projects":["haceb-rpa-suite","haceb-sap-invoice-bot","haceb-sharepoint-workflows","haceb-web-automation"],
-    "skills":["uipath","powerautomatecloud","powerapps","sap","sharepoint","browserautomation","powerbi","sqlserver"]
+    "projects": [
+      "haceb-rpa-suite",
+      "haceb-sap-invoice-bot",
+      "haceb-sharepoint-workflows",
+      "haceb-web-automation"
+    ],
+    "skills": [
+      "uipath",
+      "powerautomatecloud",
+      "powerapps",
+      "sap",
+      "sharepoint",
+      "browserautomation",
+      "powerbi",
+      "sqlserver"
+    ]
   },
-    {
+  {
     "company": "Fragomen",
     "role": "Solution Architect (Fixed-term, 6 months)",
     "when": "2022",
@@ -72,34 +187,68 @@
       "Established governance standards for automation in a highly regulated legal environment, ensuring compliance and data privacy.",
       "Developed a strategic roadmap for phasing in automations, starting with internal case management and expanding to client-facing portals."
     ],
-    "projects": ["fragomen-sol-arch-2022"],
-    "skills": ["architecture", "uipath", "powerplatform", "governance"]
+    "projects": [
+      "fragomen-sol-arch-2022"
+    ],
+    "skills": [
+      "architecture",
+      "uipath",
+      "powerplatform",
+      "governance"
+    ]
   },
   {
-    "company":"Team International",
-    "role":"RPA Team Lead / Senior Developer",
-    "when":"2020–2022",
-    "highlights":[
+    "company": "Team International",
+    "role": "RPA Team Lead / Senior Developer",
+    "when": "2020–2022",
+    "highlights": [
       "Ran RPA office/CoE and consulting practice; backlog and release mgmt (Jira/ClickUp).",
       "Hands-on with Blue Prism, UiPath, Automation Anywhere, WorkFusion, Power Platform, Python RPA Framework, Rocketbot.",
       "KBS: delivered 12 finance automations; governance & security standards.",
       "Newell: PTP/AP integration (SAP + email automation).",
       "KBS: financial automations on NetSuite with Automation Anywhere (AA360): queues, validations, reconciliations."
     ],
-    "projects":["kbs-finance-12-automations","newell-ptp-integration","kbs-netsuite-aa"],
-    "skills":["blueprism","uipath","automationanywhere","workfusion","powerplatform","pythonrpa","rocketbot","jira","clickup","visualstudio","excel","powerquery","automationanywhere","netsuite","sqlserver","jira","powerbi"]
+    "projects": [
+      "kbs-finance-12-automations",
+      "newell-ptp-integration",
+      "kbs-netsuite-aa"
+    ],
+    "skills": [
+      "blueprism",
+      "uipath",
+      "automationanywhere",
+      "workfusion",
+      "powerplatform",
+      "pythonrpa",
+      "rocketbot",
+      "jira",
+      "clickup",
+      "visualstudio",
+      "excel",
+      "powerquery",
+      "automationanywhere",
+      "netsuite",
+      "sqlserver",
+      "jira",
+      "powerbi"
+    ]
   },
   {
-    "company":"Roboyo",
-    "role":"RPA / Power Automate Senior Developer",
-    "when":"2021–2022",
-    "highlights":[
+    "company": "Roboyo",
+    "role": "RPA / Power Automate Senior Developer",
+    "when": "2021–2022",
+    "highlights": [
       "Built/maintained 200+ automations (Cloud/Desktop, SAP HANA).",
       "Designed CoE playbooks; integrated external APIs & legacy ERPs."
     ],
-    "skills":["powerplatform","sap","powerbi","sqlserver"]
+    "skills": [
+      "powerplatform",
+      "sap",
+      "powerbi",
+      "sqlserver"
+    ]
   },
-    {
+  {
     "company": "Cognition HQ (formerly Symphony LAM)",
     "display_company_override": "Cognition HQ (formerly Symphony LAM)",
     "role": "RPA Senior Consultant / Solution Architect",
@@ -116,32 +265,54 @@
       "claro-andinas-frontoffice",
       "engeform-rpa-coe"
     ],
-    "skills": ["blueprism", "abbyenlp","whatsappapi", "sqlserver", "powerbi", "javascript", "vsts", "visualstudio", "bpm", "automationanywhere"]
+    "skills": [
+      "blueprism",
+      "abbyenlp",
+      "whatsappapi",
+      "sqlserver",
+      "powerbi",
+      "javascript",
+      "vsts",
+      "visualstudio",
+      "bpm",
+      "automationanywhere"
+    ]
   },
   {
-    "company":"Onelink BPO — Colombia & Guatemala",
-    "role":"RPA Senior Lead Developer / RPA Developer",
-    "when":"2016–2018",
-    "highlights":[
+    "company": "Onelink BPO — Colombia & Guatemala",
+    "role": "RPA Senior Lead Developer / RPA Developer",
+    "when": "2016–2018",
+    "highlights": [
       "Avianca: redispatch automation for flight tickets (operational events).",
       "Claro: front-office helper to surface customer data, AHT reduction.",
       "Pepsi: finance automations—invoice sending, inventory integration, payments."
     ],
-    "projects":["avianca-redispatch","claro-front-office","pepsi-finance-rpa"],
-    "skills":["uipath","automationanywhere","sqlserver","vsts","powerbi","htmlcss"]
+    "projects": [
+      "avianca-redispatch",
+      "claro-front-office",
+      "pepsi-finance-rpa"
+    ],
+    "skills": [
+      "uipath",
+      "automationanywhere",
+      "sqlserver",
+      "vsts",
+      "powerbi",
+      "htmlcss"
+    ]
   },
   {
-    "company":"Capgemini BPO",
-    "role":"RPA Analyst / Web Developer",
-    "when":"2014–2016",
-    "highlights":[
+    "company": "Capgemini BPO",
+    "role": "RPA Analyst / Web Developer",
+    "when": "2014–2016",
+    "highlights": [
       "International Paper: statement sending robot for delinquent AR.",
       "Avon APAC/EMLA: SLA (>90d) & attendance automation (~250 users).",
       "General Mills: service-level web portal and reminder automation.",
       "Office Depot: AR invoice retrieval (on-demand & batch).",
       "Nokia: PoS download robot (Citrix)."
     ],
-    "projects":[
+    "projects": [
       "intlpaper-statements",
       "avon-sla-bpm",
       "generalmills-sl-web",
@@ -149,6 +320,14 @@
       "generalmills-reminders",
       "nokia-pos-download"
     ],
-    "skills":["uipath","java","php","sqlserver","as400","citrix","htmlcss"]
+    "skills": [
+      "uipath",
+      "java",
+      "php",
+      "sqlserver",
+      "as400",
+      "citrix",
+      "htmlcss"
+    ]
   }
 ]

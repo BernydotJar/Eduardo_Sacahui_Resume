@@ -36,8 +36,8 @@ const Skills = ({ onTileClick }: SkillsProps) => {
   return (
     <section id="skills" className="container">
       <div className="text-center">
-        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Periodic Table of Skills</h2>
-        <p className="mt-4 text-lg text-muted-foreground">An exhaustive list of my technical capabilities.</p>
+        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Core Skills</h2>
+        <p className="mt-4 text-lg text-muted-foreground">ATS-aligned technical capabilities and delivery strengths.</p>
       </div>
 
       <div className="my-8 flex flex-col md:flex-row gap-4 items-center">

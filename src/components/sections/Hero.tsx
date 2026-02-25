@@ -5,9 +5,11 @@ import { awards } from "@/lib/data";
 
 const heroInfo = {
   name: "Eduardo Sacahui",
-  title: "Platform Architect & Engineering Lead — AI-First Apps, Data Platforms, and Automation",
+  title: "AI Solution Architect & Technical Product Owner (Hands-on)",
   location: "Remote — Colombia / Guatemala (AMER)",
   email: "eduardo.sacahui@gmail.com",
+  summary:
+    "Arquitecto de Soluciones AI y Product Owner técnico con enfoque hands-on en entrega rápida de productos. Lidero definición funcional, arquitectura y desarrollo end-to-end de plataformas inteligentes basadas en LLMs, integraciones Google Workspace y orquestación con n8n bajo principios de seguridad (least privilege, backend-owned OAuth, trazabilidad y validación estricta de JSON). Capaz de convertir visión ejecutiva en MVPs demoables y rutas claras a producción, cubriendo UX, backend, calidad y operación.",
   languages: ["Spanish (Native)", "English (Proficient)", "Portuguese (Proficient)"],
   badges: [
     ...awards.map(a => `${a.title} (${a.date})`),
@@ -32,6 +34,12 @@ const Hero = () => {
             <p className="mt-6 max-w-3xl mx-auto text-lg text-muted-foreground sm:text-xl">
                 {heroInfo.title}
             </p>
+            <div className="mt-8 max-w-4xl mx-auto rounded-lg border border-border/60 bg-card/40 p-5 text-left">
+                <h2 className="text-base font-semibold text-primary">Professional Summary</h2>
+                <p className="mt-3 text-sm leading-6 text-muted-foreground sm:text-base">
+                    {heroInfo.summary}
+                </p>
+            </div>
             <div className="mt-8 flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
                 <div className="flex items-center gap-2">
                     <MapPin className="h-4 w-4" />
