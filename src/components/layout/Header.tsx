@@ -5,14 +5,15 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, Code, Rocket } from 'lucide-react';
-
-const navLinks = [
-    { href: "#skills", label: "Skills" },
-    { href: "#migrations", label: "Migrations" },
-    { href: "#experience", label: "Experience" },
-    { href: "#casestudies", label: "Case Studies" },
-    { href: "#education", label: "Education" },
-];
+import {
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+} from "@/components/ui/select";
+import { useLanguage } from "@/components/context/LanguageContext";
+import { isLocale, localeLabels } from "@/lib/i18n";
 
 interface HeaderProps {
     onStartTour: () => void;
@@ -20,9 +21,24 @@ interface HeaderProps {
 
 const Header = ({ onStartTour }: HeaderProps) => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const { locale, setLocale, dict } = useLanguage();
+
+    const navLinks = [
+        { href: "#skills", label: dict.header.nav.skills },
+        { href: "#migrations", label: dict.header.nav.migrations },
+        { href: "#experience", label: dict.header.nav.experience },
+        { href: "#casestudies", label: dict.header.nav.caseStudies },
+        { href: "#education", label: dict.header.nav.education },
+    ];
 
     const handleNavClick = () => {
         setMobileMenuOpen(false);
+    };
+
+    const handleLocaleChange = (value: string) => {
+        if (isLocale(value)) {
+            setLocale(value);
+        }
     };
 
     return (
@@ -38,12 +54,25 @@ const Header = ({ onStartTour }: HeaderProps) => {
                     ))}
                 </nav>
                 <div className="flex flex-1 items-center justify-end gap-2">
-                     <Button variant="outline" size="sm" onClick={onStartTour}>
+                    <div className="hidden md:block">
+                        <Select value={locale} onValueChange={handleLocaleChange}>
+                            <SelectTrigger className="h-9 w-[132px]">
+                                <SelectValue placeholder={dict.app.language} />
+                            </SelectTrigger>
+                            <SelectContent>
+                                <SelectItem value="en">{localeLabels.en}</SelectItem>
+                                <SelectItem value="es">{localeLabels.es}</SelectItem>
+                                <SelectItem value="pt">{localeLabels.pt}</SelectItem>
+                            </SelectContent>
+                        </Select>
+                    </div>
+
+                    <Button variant="outline" size="sm" onClick={onStartTour} className="hidden sm:inline-flex">
                         <Rocket className="mr-2 h-4 w-4" />
-                        Tour the Tech
+                        {dict.header.tourTech}
                     </Button>
-                    <Button asChild>
-                        <a href="#contact">Contact Me</a>
+                    <Button asChild className="hidden sm:inline-flex">
+                        <a href="#contact">{dict.header.contactMe}</a>
                     </Button>
                     <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
                         <SheetTrigger asChild>
@@ -63,9 +92,29 @@ const Header = ({ onStartTour }: HeaderProps) => {
                                      <Code className="h-6 w-6 text-primary" />
                                     <span>Eduardo Sacahui</span>
                                 </a>
+                                <div className="space-y-2">
+                                    <p className="text-sm text-muted-foreground">{dict.app.language}</p>
+                                    <Select value={locale} onValueChange={handleLocaleChange}>
+                                        <SelectTrigger className="w-full">
+                                            <SelectValue placeholder={dict.app.language} />
+                                        </SelectTrigger>
+                                        <SelectContent>
+                                            <SelectItem value="en">{localeLabels.en}</SelectItem>
+                                            <SelectItem value="es">{localeLabels.es}</SelectItem>
+                                            <SelectItem value="pt">{localeLabels.pt}</SelectItem>
+                                        </SelectContent>
+                                    </Select>
+                                </div>
                                 {navLinks.map(link => (
                                     <a key={link.href} href={link.href} className="text-muted-foreground hover:text-foreground" onClick={handleNavClick}>{link.label}</a>
                                 ))}
+                                <Button variant="outline" onClick={() => { onStartTour(); handleNavClick(); }}>
+                                    <Rocket className="mr-2 h-4 w-4" />
+                                    {dict.header.tourTech}
+                                </Button>
+                                <Button asChild onClick={handleNavClick}>
+                                    <a href="#contact">{dict.header.contactMe}</a>
+                                </Button>
                             </nav>
                         </SheetContent>
                     </Sheet>

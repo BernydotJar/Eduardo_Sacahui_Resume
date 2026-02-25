@@ -1,5 +1,6 @@
 "use client";
 
+import { useMemo } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -16,17 +17,18 @@ import {
 } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
-
-const formSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters."),
-  email: z.string().email("Invalid email address."),
-  message: z.string().min(10, "Message must be at least 10 characters."),
-});
+import { useLanguage } from "@/components/context/LanguageContext";
 
 const contactRecipient = ["eduardo", ".sacahui", "@", "gmail", ".com"].join("");
 
+type ContactFormValues = {
+  name: string;
+  email: string;
+  message: string;
+};
+
 const simulateContactSubmit = async (
-  values: z.infer<typeof formSchema>
+  values: ContactFormValues
 ): Promise<{ success: boolean; message?: string }> => {
   const subject = encodeURIComponent(`Portfolio contact from ${values.name}`);
   const body = encodeURIComponent(
@@ -38,7 +40,18 @@ const simulateContactSubmit = async (
 
 const Contact = () => {
     const { toast } = useToast();
-    const form = useForm<z.infer<typeof formSchema>>({
+    const { dict } = useLanguage();
+    const formSchema = useMemo(
+      () =>
+        z.object({
+          name: z.string().min(2, dict.contact.validation.nameMin),
+          email: z.string().email(dict.contact.validation.emailInvalid),
+          message: z.string().min(10, dict.contact.validation.messageMin),
+        }),
+      [dict.contact.validation.emailInvalid, dict.contact.validation.messageMin, dict.contact.validation.nameMin]
+    );
+
+    const form = useForm<ContactFormValues>({
         resolver: zodResolver(formSchema),
         defaultValues: {
             name: "",
@@ -47,19 +60,19 @@ const Contact = () => {
         },
     });
 
-    const onSubmit = async (values: z.infer<typeof formSchema>) => {
+    const onSubmit = async (values: ContactFormValues) => {
         const result = await simulateContactSubmit(values);
         if (result.success) {
             toast({
-                title: "Message Sent!",
-                description: "Thanks for reaching out. I'll get back to you soon.",
+                title: dict.contact.toastSuccessTitle,
+                description: dict.contact.toastSuccessDescription,
             });
             form.reset();
         } else {
             toast({
                 variant: "destructive",
-                title: "Uh oh! Something went wrong.",
-                description: result.message || "There was a problem with your request.",
+                title: dict.contact.toastErrorTitle,
+                description: result.message || dict.contact.toastErrorDescription,
             });
         }
     };
@@ -68,10 +81,10 @@ const Contact = () => {
         <section id="contact" className="container">
             <Card>
                 <CardHeader className="text-center">
-                    <CardTitle className="text-3xl font-bold tracking-tight sm:text-4xl">Contact Me</CardTitle>
-                    <p className="mt-4 text-lg text-muted-foreground">Have a question or want to work together?</p>
+                    <CardTitle className="text-3xl font-bold tracking-tight sm:text-4xl">{dict.contact.title}</CardTitle>
+                    <p className="mt-4 text-lg text-muted-foreground">{dict.contact.subtitle}</p>
                     <p className="mt-2 text-sm text-muted-foreground">
-                      This static site opens your email client to send your message.
+                      {dict.contact.staticSiteNote}
                     </p>
                 </CardHeader>
                 <CardContent>
@@ -82,9 +95,9 @@ const Contact = () => {
                                 name="name"
                                 render={({ field }) => (
                                     <FormItem>
-                                        <FormLabel>Name</FormLabel>
+                                        <FormLabel>{dict.contact.name}</FormLabel>
                                         <FormControl>
-                                            <Input placeholder="Your Name" {...field} />
+                                            <Input placeholder={dict.contact.namePlaceholder} {...field} />
                                         </FormControl>
                                         <FormMessage />
                                     </FormItem>
@@ -95,9 +108,9 @@ const Contact = () => {
                                 name="email"
                                 render={({ field }) => (
                                     <FormItem>
-                                        <FormLabel>Email</FormLabel>
+                                        <FormLabel>{dict.contact.email}</FormLabel>
                                         <FormControl>
-                                            <Input placeholder="your.email@example.com" {...field} />
+                                            <Input placeholder={dict.contact.emailPlaceholder} {...field} />
                                         </FormControl>
                                         <FormMessage />
                                     </FormItem>
@@ -108,19 +121,19 @@ const Contact = () => {
                                 name="message"
                                 render={({ field }) => (
                                     <FormItem>
-                                        <FormLabel>Message</FormLabel>
+                                        <FormLabel>{dict.contact.message}</FormLabel>
                                         <FormControl>
-                                            <Textarea placeholder="Tell me how I can help" {...field} />
+                                            <Textarea placeholder={dict.contact.messagePlaceholder} {...field} />
                                         </FormControl>
                                         <FormMessage />
                                     </FormItem>
                                 )}
                             />
                             <Button type="submit" disabled={form.formState.isSubmitting}>
-                                {form.formState.isSubmitting ? "Sending..." : "Send Message"}
+                                {form.formState.isSubmitting ? dict.contact.sending : dict.contact.sendMessage}
                             </Button>
                             <p className="text-sm text-muted-foreground">
-                              Prefer direct email?{" "}
+                              {dict.contact.preferDirectEmail}{" "}
                               <a href={`mailto:${contactRecipient}`} className="text-primary underline underline-offset-4">
                                 {contactRecipient}
                               </a>

@@ -11,6 +11,7 @@ import { medallionArchitecture } from "@/data/medallion";
 import { Button } from "./ui/button";
 import { Download } from "lucide-react";
 import Link from "next/link";
+import { useLanguage } from "@/components/context/LanguageContext";
 
 interface DetailDrawerProps {
   content: { type: 'skill'; id: string } | { type: 'project'; id: string };
@@ -20,6 +21,7 @@ interface DetailDrawerProps {
 
 const DetailDrawer = ({ content, isOpen, onClose }: DetailDrawerProps) => {
   const titleRef = useRef<HTMLHeadingElement | null>(null);
+  const { dict } = useLanguage();
 
   useEffect(() => {
     if (isOpen) {
@@ -40,7 +42,7 @@ const DetailDrawer = ({ content, isOpen, onClose }: DetailDrawerProps) => {
     if (skill) {
       mainContent = skill;
       title = skill.name;
-      description = `Projects and experience related to ${skill.name}.`;
+      description = `${dict.drawer.skillRelatedDescription} ${skill.name}.`;
       relatedProjects = projects.filter(p => p.skills.includes(skill.id));
       relatedExperience = experience.filter(e => e.skills.includes(skill.id));
     }
@@ -75,23 +77,23 @@ const DetailDrawer = ({ content, isOpen, onClose }: DetailDrawerProps) => {
             <div className="mt-6 space-y-8">
               {projectDetails && (
                   <div>
-                      <h3 className="font-semibold text-lg mb-4">Project Details</h3>
+                      <h3 className="font-semibold text-lg mb-4">{dict.drawer.projectDetails}</h3>
                       <div className="text-sm space-y-4 text-muted-foreground">
-                          {projectDetails.client && <p><strong className="text-foreground font-semibold">Client:</strong> {projectDetails.client}</p>}
-                          {projectDetails.when && <p><strong className="text-foreground font-semibold">When:</strong> {projectDetails.when}</p>}
-                          {projectDetails.stack && <p><strong className="text-foreground font-semibold">Stack:</strong> {projectDetails.stack}</p>}
-                          {projectDetails.methodology && <p><strong className="text-foreground font-semibold">Methodology:</strong> {projectDetails.methodology}</p>}
+                          {projectDetails.client && <p><strong className="text-foreground font-semibold">{dict.drawer.client}:</strong> {projectDetails.client}</p>}
+                          {projectDetails.when && <p><strong className="text-foreground font-semibold">{dict.drawer.when}:</strong> {projectDetails.when}</p>}
+                          {projectDetails.stack && <p><strong className="text-foreground font-semibold">{dict.drawer.stack}:</strong> {projectDetails.stack}</p>}
+                          {projectDetails.methodology && <p><strong className="text-foreground font-semibold">{dict.drawer.methodology}:</strong> {projectDetails.methodology}</p>}
                           
                           {projectDetails.outcomes && (
                             <div>
-                                <strong className="text-foreground font-semibold">Outcomes:</strong>
+                                <strong className="text-foreground font-semibold">{dict.drawer.outcomes}:</strong>
                                 <div className="flex flex-wrap gap-2 pt-2">
                                     {projectDetails.outcomes?.map(o => <Badge key={o} variant="secondary">{o}</Badge>)}
                                 </div>
                             </div>
                           )}
                            <div>
-                                <strong className="text-foreground font-semibold">Skills:</strong>
+                                <strong className="text-foreground font-semibold">{dict.drawer.skills}:</strong>
                                 <div className="flex flex-wrap gap-2 pt-2">
                                     {projectDetails.skills.map(skillId => {
                                         const skill = skills.find(s => s.id === skillId);
@@ -106,12 +108,12 @@ const DetailDrawer = ({ content, isOpen, onClose }: DetailDrawerProps) => {
 
                           {content.id === 'rag-knowledge-services' && (
                               <Button variant="link" asChild className="px-0">
-                                  <a href="postman-collection.json" download><Download className="mr-2 h-4 w-4" />Download Postman Collection</a>
+                                  <a href="postman-collection.json" download><Download className="mr-2 h-4 w-4" />{dict.drawer.downloadPostmanCollection}</a>
                               </Button>
                           )}
                            {content.id === 'autotask-to-jira-fabric' && (
                             <div className="mt-4 p-4 border rounded-lg bg-secondary/50">
-                                <h4 className="font-semibold text-foreground mb-2">Medallion Architecture</h4>
+                                <h4 className="font-semibold text-foreground mb-2">{dict.drawer.medallionArchitecture}</h4>
                                 <p className="text-xs whitespace-pre-wrap">{medallionArchitecture}</p>
                             </div>
                           )}
@@ -120,7 +122,7 @@ const DetailDrawer = ({ content, isOpen, onClose }: DetailDrawerProps) => {
               )}
               {relatedProjects.length > 0 && (
                 <div>
-                  <h3 className="font-semibold text-lg mb-4">Related Projects</h3>
+                  <h3 className="font-semibold text-lg mb-4">{dict.drawer.relatedProjects}</h3>
                   <div className="space-y-4">
                     {relatedProjects.map(project => (
                       <Link key={project.id} href={`#project=${project.id}`} scroll={false} className="block text-left">
@@ -142,11 +144,11 @@ const DetailDrawer = ({ content, isOpen, onClose }: DetailDrawerProps) => {
 
               {relatedExperience.length > 0 && (
                 <div>
-                  <h3 className="font-semibold text-lg mb-4">Related Experience</h3>
+                  <h3 className="font-semibold text-lg mb-4">{dict.drawer.relatedExperience}</h3>
                   <div className="space-y-4">
                     {relatedExperience.map(exp => (
                       <div key={exp.company + exp.role} className="p-4 border rounded-lg">
-                        <h4 className="font-semibold">{exp.role} at {exp.company}</h4>
+                        <h4 className="font-semibold">{exp.role} {dict.drawer.experienceAt} {exp.company}</h4>
                         <p className="text-sm text-muted-foreground">{exp.when}</p>
                       </div>
                     ))}

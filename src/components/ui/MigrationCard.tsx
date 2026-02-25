@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { useEasterEgg } from '@/components/context/EasterEggContext';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { medallionEasterEgg } from '@/data/medallion';
+import { useLanguage } from '@/components/context/LanguageContext';
 
 interface MigrationCardProps {
   migration: Project;
@@ -14,6 +15,7 @@ interface MigrationCardProps {
 
 const MigrationCard = ({ migration, onClick }: MigrationCardProps) => {
   const { isEasterEggActive } = useEasterEgg();
+  const { dict } = useLanguage();
 
   const renderSummary = () => {
     if (!isEasterEggActive || migration.id !== 'autotask-to-jira-fabric') {
@@ -47,7 +49,7 @@ const MigrationCard = ({ migration, onClick }: MigrationCardProps) => {
             {renderSummary()}
         </CardHeader>
         <CardContent className="flex-grow">
-            <p className="text-sm font-semibold text-muted-foreground mb-2">Stack</p>
+            <p className="text-sm font-semibold text-muted-foreground mb-2">{dict.drawer.stack}</p>
             <p className="text-sm text-foreground/80">{migration.stack}</p>
         </CardContent>
         <CardFooter>

@@ -253,6 +253,124 @@
     "col": 3
   },
   {
+    "id": "multiagent",
+    "symbol": "Ma",
+    "name": "Multi-Agent Orchestration",
+    "level": "advanced",
+    "stable": true,
+    "tags": [
+      "ai",
+      "agents",
+      "architecture",
+      "ats"
+    ],
+    "row": 7,
+    "col": 7
+  },
+  {
+    "id": "llmops",
+    "symbol": "Lo",
+    "name": "LLM Ops & Evaluation",
+    "level": "advanced",
+    "stable": true,
+    "tags": [
+      "ai",
+      "llm",
+      "ops",
+      "ats"
+    ],
+    "row": 7,
+    "col": 8
+  },
+  {
+    "id": "coinnovation",
+    "symbol": "Ci",
+    "name": "Product Co-Innovation",
+    "level": "advanced",
+    "stable": true,
+    "tags": [
+      "product",
+      "strategy",
+      "delivery",
+      "ats"
+    ],
+    "row": 7,
+    "col": 9
+  },
+  {
+    "id": "enterpriseai",
+    "symbol": "Ea",
+    "name": "Enterprise AI Deployment",
+    "level": "advanced",
+    "stable": true,
+    "tags": [
+      "ai",
+      "platform",
+      "delivery",
+      "ats"
+    ],
+    "row": 7,
+    "col": 10
+  },
+  {
+    "id": "techstrategy",
+    "symbol": "Tg",
+    "name": "Technical Strategy & Governance",
+    "level": "advanced",
+    "stable": true,
+    "tags": [
+      "architecture",
+      "governance",
+      "strategy",
+      "ats"
+    ],
+    "row": 7,
+    "col": 11
+  },
+  {
+    "id": "governance",
+    "symbol": "Gv",
+    "name": "Automation Governance",
+    "level": "advanced",
+    "stable": true,
+    "tags": [
+      "governance",
+      "delivery",
+      "ats"
+    ],
+    "row": 7,
+    "col": 12
+  },
+  {
+    "id": "queues",
+    "symbol": "Qe",
+    "name": "Queue Orchestration",
+    "level": "advanced",
+    "stable": true,
+    "tags": [
+      "automation",
+      "reliability",
+      "ats"
+    ],
+    "row": 7,
+    "col": 13
+  },
+  {
+    "id": "monitoring",
+    "symbol": "Mn",
+    "name": "Monitoring & Observability",
+    "level": "advanced",
+    "stable": true,
+    "tags": [
+      "monitoring",
+      "ops",
+      "observability",
+      "ats"
+    ],
+    "row": 7,
+    "col": 14
+  },
+  {
     "id": "python",
     "symbol": "Py",
     "name": "Python",

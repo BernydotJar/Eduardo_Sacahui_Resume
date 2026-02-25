@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { EasterEggProvider } from '@/components/context/EasterEggContext';
+import { LanguageProvider } from '@/components/context/LanguageContext';
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ??
@@ -69,8 +70,10 @@ export default function RootLayout({
           />
         )}
         <EasterEggProvider>
-          {children}
-          <Toaster />
+          <LanguageProvider>
+            {children}
+            <Toaster />
+          </LanguageProvider>
         </EasterEggProvider>
       </body>
     </html>

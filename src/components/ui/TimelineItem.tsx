@@ -1,3 +1,5 @@
+"use client";
+
 
 
 import type { Experience } from '@/lib/types';
@@ -5,12 +7,14 @@ import { AccordionContent, AccordionItem, AccordionTrigger } from '@/components/
 import { Badge } from '@/components/ui/badge';
 import { skills, projects } from '@/lib/data';
 import Link from 'next/link';
+import { useLanguage } from '@/components/context/LanguageContext';
 
 interface TimelineItemProps {
   experience: Experience;
 }
 
 const TimelineItem = ({ experience }: TimelineItemProps) => {
+    const { dict } = useLanguage();
     
     const techUsed = skills.filter(skill => experience.skills?.includes(skill.id));
     const relatedProjects = experience.projects ? projects.filter(p => experience.projects?.includes(p.id)) : [];
@@ -32,7 +36,7 @@ const TimelineItem = ({ experience }: TimelineItemProps) => {
            <div className="pl-4 border-l-2 border-primary ml-2 space-y-6">
                 {experience.highlights && experience.highlights.length > 0 && (
                   <div>
-                      <h4 className="text-sm font-semibold text-foreground mb-2">Highlights:</h4>
+                      <h4 className="text-sm font-semibold text-foreground mb-2">{dict.experience.highlights}:</h4>
                       <ul className="list-disc pl-5 space-y-2 text-muted-foreground">
                           {experience.highlights.map((highlight, index) => (
                               <li key={index} dangerouslySetInnerHTML={{__html: highlight.replace(/\*\*(.*?)\*\*/g, '<strong class="text-foreground/90">$1</strong>')}}></li>
@@ -43,7 +47,7 @@ const TimelineItem = ({ experience }: TimelineItemProps) => {
 
                 {relatedProjects.length > 0 && (
                      <div>
-                        <h4 className="text-sm font-semibold text-foreground mb-2">Client Projects:</h4>
+                        <h4 className="text-sm font-semibold text-foreground mb-2">{dict.experience.clientProjects}:</h4>
                         <div className="flex flex-wrap gap-2">
                             {relatedProjects.map(project => (
                                 <Link key={project.id} href={`#project=${project.id}`} scroll={false}>
@@ -56,7 +60,7 @@ const TimelineItem = ({ experience }: TimelineItemProps) => {
 
                 {techUsed.length > 0 && (
                   <div>
-                      <p className="text-sm font-semibold text-foreground mb-2">Tech Used:</p>
+                      <p className="text-sm font-semibold text-foreground mb-2">{dict.experience.techUsed}:</p>
                       <div className="flex flex-wrap gap-2">
                           {techUsed.map(skill => (
                              <Link key={skill.id} href={`#skill=${skill.id}`} scroll={false}>

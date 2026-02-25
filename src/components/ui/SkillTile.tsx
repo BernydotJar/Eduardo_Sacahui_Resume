@@ -5,6 +5,8 @@ import type { Skill } from '@/lib/types';
 import { useEasterEgg } from '@/components/context/EasterEggContext';
 import { cn } from '@/lib/utils';
 import { motion, useReducedMotion } from 'framer-motion';
+import { useLanguage } from '@/components/context/LanguageContext';
+import type { Locale } from '@/lib/i18n';
 
 interface SkillTileProps {
   skill: Skill;
@@ -19,15 +21,35 @@ const levelColorMap: { [key: string]: string } = {
   legacy: 'border-muted/50'
 };
 
+const levelLabelMap: Record<Locale, Record<string, string>> = {
+  en: {
+    expert: 'Expert',
+    advanced: 'Advanced',
+    intermediate: 'Intermediate',
+  },
+  es: {
+    expert: 'Experto',
+    advanced: 'Avanzado',
+    intermediate: 'Intermedio',
+  },
+  pt: {
+    expert: 'Especialista',
+    advanced: 'Avançado',
+    intermediate: 'Intermediário',
+  },
+};
+
 const SkillTile = ({ skill, onClick }: SkillTileProps) => {
   const { isEasterEggActive } = useEasterEgg();
   const shouldReduceMotion = useReducedMotion();
+  const { locale, dict } = useLanguage();
+  const displayLevel = levelLabelMap[locale][skill.level] || skill.level;
 
   return (
     <motion.button
       type="button"
       onClick={onClick}
-      aria-label={`View details for ${skill.name}`}
+      aria-label={`${dict.skills.ariaViewSkillDetails} ${skill.name}`}
       className={cn(
         "relative w-full h-full p-2 rounded-lg border-2 text-left transition-all duration-300 flex flex-col justify-between",
         levelColorMap[skill.level] || 'border-muted',
@@ -43,7 +65,7 @@ const SkillTile = ({ skill, onClick }: SkillTileProps) => {
         />
       )}
       <div className='relative'>
-        <div className="text-[10px] text-muted-foreground capitalize">{skill.level}</div>
+        <div className="text-[10px] text-muted-foreground capitalize">{displayLevel}</div>
         <span className="font-code text-3xl font-bold text-foreground/80">{skill.symbol}</span>
       </div>
       <div className="relative">

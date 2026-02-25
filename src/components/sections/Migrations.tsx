@@ -1,5 +1,8 @@
+"use client";
+
 import { projects } from '@/lib/data';
 import MigrationCard from '@/components/ui/MigrationCard';
+import { useLanguage } from '@/components/context/LanguageContext';
 
 const migrationIds = [
   'pentaho-to-powerbi',
@@ -15,12 +18,14 @@ interface MigrationsProps {
 }
 
 const Migrations = ({ onCardClick }: MigrationsProps) => {
+  const { dict } = useLanguage();
+
   return (
     <section id="migrations" className="bg-secondary">
       <div className="container">
         <div className="text-center">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Signature Migrations</h2>
-          <p className="mt-4 text-lg text-muted-foreground">Proven experience in re-platforming and modernization.</p>
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">{dict.migrations.title}</h2>
+          <p className="mt-4 text-lg text-muted-foreground">{dict.migrations.subtitle}</p>
         </div>
         <div className="mt-12 grid gap-8 md:grid-cols-1 lg:grid-cols-3">
           {signatureMigrations.map(migration => (

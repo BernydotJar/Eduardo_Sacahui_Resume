@@ -1,14 +1,19 @@
+"use client";
+
 import { education, certifications, awards } from "@/lib/data";
 import EducationTile from "../ui/EducationTile";
 import { Award, GraduationCap } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
+import { useLanguage } from "@/components/context/LanguageContext";
 
 const Education = () => {
+    const { dict } = useLanguage();
+
     return (
         <section id="education" className="container">
             <div className="text-center">
-                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Education & Credentials</h2>
-                <p className="mt-4 text-lg text-muted-foreground">My academic background and professional qualifications.</p>
+                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">{dict.education.title}</h2>
+                <p className="mt-4 text-lg text-muted-foreground">{dict.education.subtitle}</p>
             </div>
             <div className="mt-12 grid gap-8 lg:grid-cols-3">
                 <div className="lg:col-span-1 space-y-8">
@@ -21,7 +26,7 @@ const Education = () => {
                     <CardHeader>
                          <CardTitle className="flex items-center gap-2">
                             <GraduationCap className="h-6 w-6 text-primary"/>
-                            <span>Certifications</span>
+                            <span>{dict.education.certifications}</span>
                         </CardTitle>
                     </CardHeader>
                     <CardContent>
@@ -41,7 +46,7 @@ const Education = () => {
                     <CardHeader>
                         <CardTitle className="flex items-center gap-2">
                              <Award className="h-6 w-6 text-primary"/>
-                            <span>Awards</span>
+                            <span>{dict.education.awards}</span>
                         </CardTitle>
                     </CardHeader>
                     <CardContent>

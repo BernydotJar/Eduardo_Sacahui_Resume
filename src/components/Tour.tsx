@@ -6,6 +6,7 @@ import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover
 import { Button } from '@/components/ui/button';
 import tourData from '@/data/tour.json';
 import { X, ArrowRight, ArrowLeft } from 'lucide-react';
+import { useLanguage } from '@/components/context/LanguageContext';
 
 interface TourProps {
   onComplete: () => void;
@@ -15,8 +16,13 @@ const Tour = ({ onComplete }: TourProps) => {
   const [currentStep, setCurrentStep] = useState(0);
   const [popoverOpen, setPopoverOpen] = useState(false);
   const triggerRef = useRef<HTMLDivElement>(null);
+  const { dict } = useLanguage();
 
   const step = useMemo(() => tourData[currentStep], [currentStep]);
+  const translatedStep = useMemo(
+    () => (step ? dict.tour.steps[step.id] : undefined),
+    [dict.tour.steps, step],
+  );
   const targetElement = useMemo(() => {
     if (typeof window === 'undefined' || !step) return null;
     return document.getElementById(step.targetId);
@@ -84,22 +90,22 @@ const Tour = ({ onComplete }: TourProps) => {
       >
         <div className="space-y-4">
             <div className="flex justify-between items-center">
-                <h4 className="font-semibold leading-none">{step.title}</h4>
+                <h4 className="font-semibold leading-none">{translatedStep?.title || step.title}</h4>
                 <Button variant="ghost" size="icon" className="h-6 w-6" onClick={handleComplete}>
                     <X className="h-4 w-4" />
                 </Button>
             </div>
           <p className="text-sm text-muted-foreground">
-            {step.content}
+            {translatedStep?.content || step.content}
           </p>
           <div className="flex justify-between items-center">
             <span className="text-sm text-muted-foreground">{currentStep + 1} / {tourData.length}</span>
             <div className="flex gap-2">
               <Button variant="outline" size="sm" onClick={handlePrev} disabled={currentStep === 0}>
-                <ArrowLeft className="mr-2 h-4 w-4"/> Prev
+                <ArrowLeft className="mr-2 h-4 w-4"/> {dict.tour.prev}
               </Button>
               <Button size="sm" onClick={handleNext}>
-                {currentStep === tourData.length - 1 ? 'Finish' : 'Next'}
+                {currentStep === tourData.length - 1 ? dict.tour.finish : dict.tour.next}
                 <ArrowRight className="ml-2 h-4 w-4"/>
               </Button>
             </div>

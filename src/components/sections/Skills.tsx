@@ -8,6 +8,7 @@ import { Input } from '@/components/ui/input';
 import { Search } from 'lucide-react';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { cn } from '@/lib/utils';
+import { useLanguage } from '@/components/context/LanguageContext';
 
 interface SkillsProps {
   onTileClick: (skillId: string) => void;
@@ -19,6 +20,7 @@ const Skills = ({ onTileClick }: SkillsProps) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [activeTags, setActiveTags] = useState<string[]>([]);
   const shouldReduceMotion = useReducedMotion();
+  const { dict } = useLanguage();
 
   const toggleTag = (tag: string) => {
     setActiveTags(prev => 
@@ -37,8 +39,8 @@ const Skills = ({ onTileClick }: SkillsProps) => {
   return (
     <section id="skills" className="container">
       <div className="text-center">
-        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Core Skills</h2>
-        <p className="mt-4 text-lg text-muted-foreground">ATS-aligned technical capabilities and delivery strengths.</p>
+        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">{dict.skills.title}</h2>
+        <p className="mt-4 text-lg text-muted-foreground">{dict.skills.subtitle}</p>
       </div>
 
       <div className="my-8 flex flex-col md:flex-row gap-4 items-center">
@@ -46,7 +48,7 @@ const Skills = ({ onTileClick }: SkillsProps) => {
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
           <Input 
             type="search" 
-            placeholder="Search skills..." 
+            placeholder={dict.skills.searchPlaceholder}
             className="pl-10"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
@@ -71,21 +73,21 @@ const Skills = ({ onTileClick }: SkillsProps) => {
       </div>
 
       <p className="text-center text-xs text-muted-foreground -mt-4 mb-3">
-        Filter behavior: all selected tags must match.
+        {dict.skills.filterBehavior}
       </p>
 
       <div className="mb-6 flex flex-wrap items-center justify-center gap-4 text-xs text-muted-foreground">
         <span className="inline-flex items-center gap-2">
           <span className="h-2.5 w-2.5 rounded-full bg-primary" />
-          Expert
+          {dict.skills.legend.expert}
         </span>
         <span className="inline-flex items-center gap-2">
           <span className="h-2.5 w-2.5 rounded-full bg-accent" />
-          Advanced
+          {dict.skills.legend.advanced}
         </span>
         <span className="inline-flex items-center gap-2">
           <span className="h-2.5 w-2.5 rounded-full bg-secondary" />
-          Intermediate
+          {dict.skills.legend.intermediate}
         </span>
       </div>
       
@@ -117,7 +119,7 @@ const Skills = ({ onTileClick }: SkillsProps) => {
         </div>
       </div>
       {filteredSkills.length === 0 && (
-        <p className="text-center text-muted-foreground mt-8">No skills found. Try adjusting your search or filters.</p>
+        <p className="text-center text-muted-foreground mt-8">{dict.skills.noSkillsFound}</p>
       )}
     </section>
   );
