@@ -9,6 +9,326 @@
     "outcomes":["MTTR ↓ 35%","FCR ↑","Calmer releases"]
   },
   {
+    "id":"rice-command-center-demo-mode",
+    "title":"Rice Command Center - Multi-Surface Demo Mode Pilot",
+    "when":"2026",
+    "client":"Rice Command Center (Rice Brief)",
+    "skills":[
+      "architecture",
+      "productownership",
+      "next",
+      "typescript",
+      "node",
+      "googleoauth",
+      "googlecalendar",
+      "n8n",
+      "multiagent",
+      "llmops",
+      "jsonschema",
+      "apidesign",
+      "securetoken",
+      "chromeext",
+      "accessibility",
+      "techstrategy",
+      "coinnovation",
+      "enterpriseai",
+      "cicd"
+    ],
+    "stack":"Next.js web app + /digest PWA, Chrome extension overlay, Node/Express API, Google OAuth/Calendar, n8n (demoted orchestration)",
+    "summary":"Built a multi-surface executive assistant pilot with Live Data/Demo Mode, guided storyline, auditability, and read-only safety guardrails.",
+    "outcomes":[
+      "Multi-surface delivery shipped (web app + PWA + extension)",
+      "Pilot APIs, RBAC-lite, and audit export implemented",
+      "Demo mode is clearly labeled and no write-back is allowed"
+    ],
+    "caseStudy":{
+      "useCase":[
+        "This is a multi-surface web product: primary web app in Next.js, mobile PWA view at /digest on iPhone, Chrome extension overlay companion, and Node/Express backend APIs.",
+        "It is not a native iPhone app in the current phase; mobile delivery is web plus PWA.",
+        "Demo Mode design: top-bar Live Data / Demo Mode toggle, first-open guided demo, scripted storyline (morning brief, updates, meeting prep, action center, EA triage), timed alert cards in /digest, optional local notifications for installed PWA, explicit Demo Data and Draft/Concept truth labels, and read-only behavior."
+      ],
+      "statusMatrix":[
+        {
+          "key":"RCC-01",
+          "functionality":"Google OAuth + session auth",
+          "status":"Done",
+          "currentState":"OAuth start/callback/me/logout live; domain allowlist enforced; backend owns tokens.",
+          "next":"Add admin UI for allowed domains and env validation."
+        },
+        {
+          "key":"RCC-02",
+          "functionality":"Token security",
+          "status":"Done",
+          "currentState":"OAUTH_TOKEN_ENCRYPTION_KEY required; tokens encrypted at rest.",
+          "next":"Move key to managed secret store for cloud environments."
+        },
+        {
+          "key":"RCC-03",
+          "functionality":"Calendar integration",
+          "status":"Done",
+          "currentState":"Google Calendar read works; fallback to demo dataset if API is unavailable.",
+          "next":"Add better calendar error telemetry in UI."
+        },
+        {
+          "key":"RCC-04",
+          "functionality":"Today Brief (executive panels)",
+          "status":"Done",
+          "currentState":"Meetings, prep context, generated summary, decisions, and follow-ups are rendered.",
+          "next":"Tighten ranking and wording for decision quality."
+        },
+        {
+          "key":"RCC-05",
+          "functionality":"Action Center (hygiene checks)",
+          "status":"Done",
+          "currentState":"Deterministic checks implemented for meeting quality and conflicts.",
+          "next":"Add per-rule tuning from pilot feedback."
+        },
+        {
+          "key":"RCC-06",
+          "functionality":"EA Triage",
+          "status":"Done",
+          "currentState":"Availability and conflict suggestions with rationale and draft-only actions in UI.",
+          "next":"Add explicit export draft email action."
+        },
+        {
+          "key":"RCC-07",
+          "functionality":"Attention Queue (Next 2 + Top 10)",
+          "status":"Done",
+          "currentState":"/api/attention-queue implemented and used in Overview and Meeting Mode.",
+          "next":"Add personalization weights from onboarding preferences."
+        },
+        {
+          "key":"RCC-08",
+          "functionality":"Morning Digest (mobile-first)",
+          "status":"Done",
+          "currentState":"/api/morning-digest and /digest shipped; auto-refresh every five minutes in working hours.",
+          "next":"Add push notification layer if still in scope."
+        },
+        {
+          "key":"RCC-09",
+          "functionality":"Meetings Hub",
+          "status":"Partially done",
+          "currentState":"UX exists; live transcript is simulated and clearly not production capture.",
+          "next":"Integrate real transcript stream provider."
+        },
+        {
+          "key":"RCC-10",
+          "functionality":"Email ingestion (secure artifacts)",
+          "status":"Done",
+          "currentState":"/api/email/ingest supports label/forwarded modes, retention, audit event, and artifact storage.",
+          "next":"Add UI controls for ingest mode and retention summary."
+        },
+        {
+          "key":"RCC-11",
+          "functionality":"Onboarding preferences API",
+          "status":"Done (API)",
+          "currentState":"/api/onboarding GET/POST exists for VIPs, urgent phrases, delegate rules, and preferences.",
+          "next":"Build onboarding UI screen."
+        },
+        {
+          "key":"RCC-12",
+          "functionality":"n8n demoted orchestration",
+          "status":"Done",
+          "currentState":"Backend fetches Google data; n8n is used for orchestration and repair loops only.",
+          "next":"Add n8n workflow health dashboard."
+        },
+        {
+          "key":"RCC-13",
+          "functionality":"Extension overlay (all pages)",
+          "status":"Done",
+          "currentState":"Floating overlay injects on all pages, compact iframe mode, and open full app action.",
+          "next":"Add performance guardrails and optional domain allowlist for injection."
+        },
+        {
+          "key":"RCC-14",
+          "functionality":"Observability + safeguards",
+          "status":"Done",
+          "currentState":"Correlation IDs, request logging, rate limiting, and Google retry/backoff are in place.",
+          "next":"Add centralized log sink and alerts."
+        },
+        {
+          "key":"RCC-15",
+          "functionality":"Data layer abstraction",
+          "status":"Done (P0)",
+          "currentState":"IDataStore plus JsonDataStore wired; API decoupled from direct db.ts imports.",
+          "next":"Implement PostgresDataStore adapter."
+        },
+        {
+          "key":"RCC-16",
+          "functionality":"QA coverage",
+          "status":"In progress",
+          "currentState":"Contract tests exist and pass.",
+          "next":"Add integration tests and key UI end-to-end flows."
+        },
+        {
+          "key":"RCC-17",
+          "functionality":"Native iPhone app",
+          "status":"Not started / out of scope",
+          "currentState":"Current mobile delivery is responsive web plus PWA route (/digest), not native iOS.",
+          "next":"Decide whether native iOS is a separate phase."
+        }
+      ],
+      "implementationPlan":[
+        "Add pilot APIs: doc-finder, meeting-prep, gmail/sync (incremental), executive-pulse, and audit.",
+        "Keep OAuth and token ownership in backend; keep n8n demoted and out of token lifecycle.",
+        "Enforce pilot RBAC-lite roles (executive, ea, viewer), with viewer limited to audit export.",
+        "Add IDataStore methods for email sync cursor/state and audit querying to preserve clean Postgres migration path.",
+        "Implement Document Finder v1 with Drive folder scope and demo fallback.",
+        "Implement incremental Gmail metadata sync with processed-ID cursor persistence.",
+        "Update Executive Pulse for morning versus during-day with classification, action, and source traceability.",
+        "Add UI pilot-scope labels (Implemented, Draft, Concept) and wire doc suggestions into meeting prep surfaces.",
+        "Upgrade demo dataset with Rice public source-backed document evidence.",
+        "Keep strict schema validation, tests, and build pipeline green."
+      ],
+      "implementationHighlights":[
+        "types.ts, schemas.ts, examples.ts, validators.ts: new contract types, schemas, and validators for doc-finder, meeting-prep, executive-pulse, and audit.",
+        "demoData.ts and demo-dataset.json: expanded documents and richer public source evidence.",
+        "config.ts and .env.example: provider config for document finder and RBAC-lite role settings.",
+        "googleAuth.ts: Drive client support for scoped document search.",
+        "IDataStore.ts, JsonDataStore.ts, db.ts: email sync state and audit query persistence methods.",
+        "New services: docFinder.ts, meetingPrep.ts, gmailSync.ts, executivePulse.ts, and rbac.ts.",
+        "morningDigest.ts: now prefers stored artifacts and emits classification plus time-energy buckets.",
+        "index.ts: new endpoints, RBAC-lite enforcement, leader access checks, and audit logging.",
+        "contracts.test.ts plus docs (api-contracts, pilot-scope, security-notes, smoke-tests) updated for pilot scope."
+      ],
+      "localCommands":[
+        "npm install",
+        "Set OAUTH_TOKEN_ENCRYPTION_KEY in .env (minimum 32 chars).",
+        "npm run dev:reset",
+        "npm run typecheck",
+        "npm run build"
+      ],
+      "testChecklist":[
+        "Open http://localhost:3000 and verify Executive Pulse shows morning and during-day items with classification and source chips.",
+        "Use Calendar and Prep: select a meeting, search docs, and verify suggested docs and source links.",
+        "Use Prepare Next Meeting panel and confirm suggested docs plus why-it-matters text.",
+        "Trigger Export audit and verify JSON export works through pilot viewer path."
+      ],
+      "apiChecks":[
+        "GET /api/doc-finder?query=ai&scope=shared&limit=6",
+        "GET /api/meeting-prep?meetingId=mtg-101&date=2026-02-16",
+        "POST /api/gmail/sync?mode=incremental&date=2026-02-16",
+        "GET /api/executive-pulse?date=2026-02-16",
+        "GET /api/audit?from=2026-02-16T00:00:00.000Z&to=2026-02-16T23:59:59.000Z&limit=200&role=viewer"
+      ],
+      "validationProof":[
+        "npm run typecheck passed.",
+        "npm run build passed."
+      ],
+      "knownLimitations":[
+        "No write-back execution: all actions are draft-only.",
+        "Document Finder is Drive-folder scoped; if unavailable it falls back to demo docs and may require review.",
+        "Gmail ingest and sync stores metadata artifacts only, not full email body by default.",
+        "RBAC is pilot-lite (env allowlists plus optional role override), not enterprise IAM.",
+        "Box, OneDrive, and SharePoint connectors are not implemented in pilot phase."
+      ]
+    }
+  },
+  {
+    "id":"laura-ai-agent-rag-workflow",
+    "title":"Laura AI Agent - Multi-Channel RAG Workflow",
+    "when":"2026",
+    "client":"Customer Service and Pricing Operations",
+    "skills":[
+      "llmprod",
+      "architecture",
+      "apidesign",
+      "node",
+      "n8n",
+      "jsonschema",
+      "prompteng",
+      "securetoken",
+      "cicd"
+    ],
+    "stack":"WordPress embedded chat, API Gateway/Webhooks, n8n orchestration, RAG over SOP corpus, LLM reasoning and response controls",
+    "summary":"Designed an end-to-end AI agent workflow for Web, WhatsApp, and Voice channels using retrieval-grounded responses and a security-first gateway.",
+    "outcomes":[
+      "Replaced static pricing logic with dynamic SOP-grounded answers",
+      "Unified intake for Web, WhatsApp, and Voice user channels",
+      "Security controls enforced before any LLM processing"
+    ],
+    "caseStudy":{
+      "useCase":[
+        "Automation starts from a client-facing Web Chat interface embedded in the company WordPress portal.",
+        "To ensure pricing and service accuracy, the workflow uses Retrieval-Augmented Generation instead of hardcoded static values.",
+        "The agent dynamically queries Standard Operating Procedures (SOP) to produce precise, policy-aligned responses."
+      ],
+      "statusMatrix":[
+        {
+          "key":"LRA-01",
+          "functionality":"User and channel intake",
+          "status":"Designed",
+          "currentState":"Defined Start phase and multi-channel entry points (Web, WhatsApp, Voice).",
+          "next":"Implement channel adapters and unified intake validation."
+        },
+        {
+          "key":"LRA-02",
+          "functionality":"API gateway and security filter",
+          "status":"Designed",
+          "currentState":"Defined receive, credential validation, rate limiting, sensitive-data masking, and security decision checks.",
+          "next":"Implement webhook gateway policies and threat logging."
+        },
+        {
+          "key":"LRA-03",
+          "functionality":"Session, language, and intent",
+          "status":"Designed",
+          "currentState":"Defined session context creation/loading as the first step in conversation intelligence.",
+          "next":"Add language detection and intent routing."
+        },
+        {
+          "key":"LRA-04",
+          "functionality":"RAG retrieval over SOPs",
+          "status":"Designed",
+          "currentState":"Defined retrieval stage to query current SOP/pricing documentation.",
+          "next":"Connect indexed document store and freshness controls."
+        },
+        {
+          "key":"LRA-05",
+          "functionality":"LLM response orchestration",
+          "status":"Designed",
+          "currentState":"Defined generation stage driven by retrieved evidence and business constraints.",
+          "next":"Add output schema validation and response guardrails."
+        },
+        {
+          "key":"LRA-06",
+          "functionality":"Business console and process actions",
+          "status":"Designed",
+          "currentState":"Defined operational handoff surfaces in architecture.",
+          "next":"Implement action logging and operator approvals."
+        },
+        {
+          "key":"LRA-07",
+          "functionality":"RPA app integration",
+          "status":"Designed",
+          "currentState":"Defined integration lane for downstream enterprise process execution.",
+          "next":"Connect selected RPA/API targets and retry strategy."
+        },
+        {
+          "key":"LRA-08",
+          "functionality":"Monitoring and auditability",
+          "status":"Designed",
+          "currentState":"Defined decision logging path for errors and threat events.",
+          "next":"Add observability dashboards and retention policies."
+        }
+      ],
+      "implementationPlan":[
+        "Implement a single intake contract for Web, WhatsApp, and Voice channels.",
+        "Enforce API Gateway security checks before message processing.",
+        "Create session context and conversation state persistence.",
+        "Integrate SOP document retrieval as the primary source of truth.",
+        "Generate responses with strict schema validation and confidence checks.",
+        "Add business console actions and human-in-the-loop controls.",
+        "Wire downstream execution through approved RPA and API connectors.",
+        "Ship observability, audit logs, and anti-abuse controls as first-class features."
+      ],
+      "knownLimitations":[
+        "Current definition is architecture and process design, not a full production deployment snapshot.",
+        "RAG quality depends on SOP indexing freshness and content governance.",
+        "Voice/WhatsApp adapters require provider-specific implementation and compliance review."
+      ]
+    }
+  },
+  {
     "id":"rag-knowledge-services",
     "title":"RAG Knowledge Services",
     "skills":["python","fastapi","pgvector","openai","postgres"],

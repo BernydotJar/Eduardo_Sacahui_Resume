@@ -22,6 +22,27 @@ export interface Project {
   client?: string;
   methodology?: string;
   aliases?: string[];
+  caseStudy?: ProjectCaseStudy;
+}
+
+export interface ProjectCaseStudyStatus {
+  key: string;
+  functionality: string;
+  status: string;
+  currentState: string;
+  next: string;
+}
+
+export interface ProjectCaseStudy {
+  useCase: string[];
+  statusMatrix?: ProjectCaseStudyStatus[];
+  implementationPlan?: string[];
+  implementationHighlights?: string[];
+  localCommands?: string[];
+  testChecklist?: string[];
+  apiChecks?: string[];
+  validationProof?: string[];
+  knownLimitations?: string[];
 }
 
 export interface Experience {

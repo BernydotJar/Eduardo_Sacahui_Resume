@@ -58,6 +58,20 @@ const DetailDrawer = ({ content, isOpen, onClose }: DetailDrawerProps) => {
 
   const projectDetails = mainContent && content.type === 'project' ? (mainContent as Project) : null;
 
+  const renderListSection = (title: string, items?: string[]) => {
+    if (!items || items.length === 0) return null;
+    return (
+      <div>
+        <h4 className="font-semibold text-foreground mb-2">{title}</h4>
+        <ul className="list-disc pl-5 space-y-1 text-sm text-muted-foreground">
+          {items.map((item) => (
+            <li key={`${title}-${item}`}>{item}</li>
+          ))}
+        </ul>
+      </div>
+    );
+  };
+
   return (
     <Sheet open={isOpen} onOpenChange={(open) => !open && onClose()}>
       <SheetContent
@@ -115,6 +129,56 @@ const DetailDrawer = ({ content, isOpen, onClose }: DetailDrawerProps) => {
                             <div className="mt-4 p-4 border rounded-lg bg-secondary/50">
                                 <h4 className="font-semibold text-foreground mb-2">{dict.drawer.medallionArchitecture}</h4>
                                 <p className="text-xs whitespace-pre-wrap">{medallionArchitecture}</p>
+                            </div>
+                          )}
+
+                          {projectDetails.caseStudy && (
+                            <div className="space-y-5 rounded-lg border border-border/70 bg-card/40 p-4">
+                              {renderListSection("Use Case", projectDetails.caseStudy.useCase)}
+
+                              {projectDetails.caseStudy.statusMatrix && projectDetails.caseStudy.statusMatrix.length > 0 && (
+                                <div>
+                                  <h4 className="font-semibold text-foreground mb-2">Delivery Status</h4>
+                                  <div className="overflow-x-auto rounded-md border border-border/60">
+                                    <table className="min-w-[720px] w-full text-left text-xs">
+                                      <thead className="bg-secondary/50 text-foreground/90">
+                                        <tr>
+                                          <th className="px-3 py-2 font-semibold">Key</th>
+                                          <th className="px-3 py-2 font-semibold">Functionality</th>
+                                          <th className="px-3 py-2 font-semibold">Status</th>
+                                          <th className="px-3 py-2 font-semibold">What Is True Now</th>
+                                          <th className="px-3 py-2 font-semibold">Next</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        {projectDetails.caseStudy.statusMatrix.map((item) => (
+                                          <tr key={item.key} className="border-t border-border/60 align-top">
+                                            <td className="px-3 py-2 font-mono text-foreground/90">{item.key}</td>
+                                            <td className="px-3 py-2 text-muted-foreground">{item.functionality}</td>
+                                            <td className="px-3 py-2 text-foreground/90">{item.status}</td>
+                                            <td className="px-3 py-2 text-muted-foreground">{item.currentState}</td>
+                                            <td className="px-3 py-2 text-muted-foreground">{item.next}</td>
+                                          </tr>
+                                        ))}
+                                      </tbody>
+                                    </table>
+                                  </div>
+                                </div>
+                              )}
+
+                              {renderListSection("Implementation Plan", projectDetails.caseStudy.implementationPlan)}
+                              {renderListSection("Implementation Details", projectDetails.caseStudy.implementationHighlights)}
+                              {renderListSection("How To Test", projectDetails.caseStudy.testChecklist)}
+                              {renderListSection("API Quick Checks", projectDetails.caseStudy.apiChecks)}
+                              {renderListSection("Validation Proof", projectDetails.caseStudy.validationProof)}
+                              {renderListSection("Known Limitations", projectDetails.caseStudy.knownLimitations)}
+
+                              {projectDetails.caseStudy.localCommands && projectDetails.caseStudy.localCommands.length > 0 && (
+                                <div>
+                                  <h4 className="font-semibold text-foreground mb-2">Local Commands</h4>
+                                  <pre className="rounded-md border border-border/60 bg-secondary/40 p-3 text-xs text-foreground/90 overflow-x-auto">{projectDetails.caseStudy.localCommands.join("\n")}</pre>
+                                </div>
+                              )}
                             </div>
                           )}
                       </div>

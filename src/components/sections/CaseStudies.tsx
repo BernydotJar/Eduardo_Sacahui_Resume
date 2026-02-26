@@ -5,6 +5,8 @@ import CaseStudyCard from '@/components/ui/CaseStudyCard';
 import { useLanguage } from '@/components/context/LanguageContext';
 
 const caseStudyIds = [
+  'rice-command-center-demo-mode',
+  'laura-ai-agent-rag-workflow',
   'pentaho-to-powerbi',
   'alteryx-to-powerautomate',
   'autotask-to-jira-fabric'
@@ -28,7 +30,7 @@ const CaseStudies = ({ onCardClick }: CaseStudiesProps) => {
                     <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">{dict.caseStudies.title}</h2>
                     <p className="mt-4 text-lg text-muted-foreground">{dict.caseStudies.subtitle}</p>
                 </div>
-                <div className="mt-12 grid gap-8 md:grid-cols-1 lg:grid-cols-3">
+                <div className="mt-12 grid gap-8 md:grid-cols-2 xl:grid-cols-4">
                     {caseStudies.map(project => (
                         <CaseStudyCard key={project.id} project={project} onClick={() => onCardClick(project.id)} />
                     ))}
