@@ -40,6 +40,31 @@
     ]
   },
   {
+    "company": "Credito Directo (Argentina)",
+    "role": "AI Software Engineer & Architect — Python Financial Automation",
+    "when": "2026",
+    "highlights": [
+      "Architected and delivered Python-based financial automation engines for monthly accounting and tax processes, covering IVA, liquidations, accruals, reversals, and IIBB support.",
+      "Designed hybrid execution patterns across API, FTP, Power Automate, and local runtime flows to process high-volume financial datasets reliably under strict monthly close deadlines.",
+      "Formalized business rules from functional documentation into resilient rule engines with schema validation, template orchestration, accounting output generation, and regression-safe delivery.",
+      "Led production hardening across QA and release flows, including large-file ingestion strategy, timeout behavior, FTP synchronization, test coverage, and defect isolation in multi-model pipelines.",
+      "Applied AI-assisted engineering practices to accelerate diagnosis, implementation, and architectural decisions — bridging business logic, software design, and production operations."
+    ],
+    "skills": [
+      "python",
+      "fastapi",
+      "docker",
+      "ftp",
+      "powerautomatecloud",
+      "apidesign",
+      "jsonschema",
+      "pytest",
+      "ruff",
+      "failsoft",
+      "cicd"
+    ]
+  },
+  {
     "company": "Accounting Models / GST Directo",
     "role": "Backend Software Engineer (Python)",
     "when": "2025–2026",
@@ -234,10 +259,8 @@
       "visualstudio",
       "excel",
       "powerquery",
-      "automationanywhere",
       "netsuite",
       "sqlserver",
-      "jira",
       "powerbi"
     ]
   },

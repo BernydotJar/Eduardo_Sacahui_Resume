@@ -23,16 +23,16 @@ const Experience = () => {
         <div>
             <h3 className="text-2xl font-semibold mb-6 text-center text-primary">{dict.experience.recentHeading}</h3>
             <Accordion type="single" collapsible className="w-full">
-                {currentExperience.sort((a, b) => parseInt(b.when.split('–')[0]) - parseInt(a.when.split('–')[0])).map((exp, index) => (
-                    <TimelineItem key={index} experience={exp} />
+                {[...currentExperience].sort((a, b) => parseInt(b.when.split('–')[0]) - parseInt(a.when.split('–')[0])).map((exp) => (
+                    <TimelineItem key={exp.company + exp.role + exp.when} experience={exp} />
                 ))}
             </Accordion>
         </div>
         <div>
             <h3 className="text-2xl font-semibold mb-6 text-center text-primary">{dict.experience.earlyHeading}</h3>
             <Accordion type="single" collapsible className="w-full">
-                {earlyExperience.sort((a, b) => parseInt(b.when.split('–')[0]) - parseInt(a.when.split('–')[0])).map((exp, index) => (
-                    <TimelineItem key={index} experience={exp} />
+                {[...earlyExperience].sort((a, b) => parseInt(b.when.split('–')[0]) - parseInt(a.when.split('–')[0])).map((exp) => (
+                    <TimelineItem key={exp.company + exp.role + exp.when} experience={exp} />
                 ))}
             </Accordion>
         </div>
