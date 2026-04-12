@@ -1,0 +1,112 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 7 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R 6 0 R] /Count 2 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+5 0 obj
+<< /Length 3905 >>
+stream
+BT /F2 18 Tf 1 0 0 1 72 720.00 Tm (Eduardo Sacahui) Tj ET
+BT /F1 12 Tf 1 0 0 1 72 694.00 Tm (AI Solution Architect & Technical Product Owner \(Hands-on\)) Tj ET
+BT /F1 10 Tf 1 0 0 1 72 676.00 Tm (Remote - Colombia / Guatemala \(AMER\) | eduardo.sacahui@gmail.com) Tj ET
+BT /F2 14 Tf 1 0 0 1 72 656.00 Tm (Professional Summary) Tj ET
+BT /F1 11 Tf 1 0 0 1 72 634.00 Tm (AI Solution Architect and Technical Product Owner focused on secure LLM systems, governed) Tj ET
+BT /F1 11 Tf 1 0 0 1 72 615.00 Tm (orchestration, and production-grade AI delivery. Lead cross-functional execution for) Tj ET
+BT /F1 11 Tf 1 0 0 1 72 596.00 Tm (executive decision-support platforms, translating stakeholder feedback into reliable) Tj ET
+BT /F1 11 Tf 1 0 0 1 72 577.00 Tm (product increments, structured AI workflows, and measurable business outcomes.) Tj ET
+BT /F2 14 Tf 1 0 0 1 72 558.00 Tm (Experience) Tj ET
+BT /F2 12 Tf 1 0 0 1 72 536.00 Tm (AI Solution Architect + Technical Product Owner \(Hands-on, Principal FDE scope\) -) Tj ET
+BT /F2 12 Tf 1 0 0 1 72 518.00 Tm (Rice AI Center | 2026) Tj ET
+BT /F1 11 Tf 1 0 0 1 72 500.00 Tm (- Leading the technical architecture and delivery of an enterprise AI platform for) Tj ET
+BT /F1 11 Tf 1 0 0 1 72 486.00 Tm (executive decision support, focused on secure LLM systems, governed orchestration, and) Tj ET
+BT /F1 11 Tf 1 0 0 1 72 472.00 Tm (production-grade AI operations.) Tj ET
+BT /F1 11 Tf 1 0 0 1 72 458.00 Tm (- Architected a secure, enterprise-ready AI command platform integrating Google Workspace,) Tj ET
+BT /F1 11 Tf 1 0 0 1 72 444.00 Tm (backend-governed orchestration, and structured LLM output controls.) Tj ET
+BT /F1 11 Tf 1 0 0 1 72 430.00 Tm (- Converted executive and product requirements into a deployable MVP and a scalable) Tj ET
+BT /F1 11 Tf 1 0 0 1 72 416.00 Tm (architecture roadmap.) Tj ET
+BT /F2 12 Tf 1 0 0 1 72 385.00 Tm (AI Software Engineer & Architect - Python Financial Automation - Credito Directo) Tj ET
+BT /F2 12 Tf 1 0 0 1 72 367.00 Tm (\(Argentina\) | 2026) Tj ET
+BT /F1 11 Tf 1 0 0 1 72 349.00 Tm (- Architected and delivered Python-based financial automation engines for monthly) Tj ET
+BT /F1 11 Tf 1 0 0 1 72 335.00 Tm (accounting and tax processes, covering IVA, liquidations, accruals, reversals, and IIBB) Tj ET
+BT /F1 11 Tf 1 0 0 1 72 321.00 Tm (support.) Tj ET
+BT /F1 11 Tf 1 0 0 1 72 307.00 Tm (- Designed hybrid execution patterns across API, FTP, Power Automate, and local runtime) Tj ET
+BT /F1 11 Tf 1 0 0 1 72 293.00 Tm (flows to process high-volume financial datasets reliably under strict monthly close) Tj ET
+BT /F1 11 Tf 1 0 0 1 72 279.00 Tm (deadlines.) Tj ET
+BT /F1 11 Tf 1 0 0 1 72 265.00 Tm (- Formalized business rules from functional documentation into resilient rule engines with) Tj ET
+BT /F1 11 Tf 1 0 0 1 72 251.00 Tm (schema validation, template orchestration, accounting output generation, and regression-) Tj ET
+BT /F1 11 Tf 1 0 0 1 72 237.00 Tm (safe delivery.) Tj ET
+BT /F2 12 Tf 1 0 0 1 72 206.00 Tm (Backend Software Engineer \(Python\) - Accounting Models / GST Directo | 2025-2026) Tj ET
+BT /F1 11 Tf 1 0 0 1 72 188.00 Tm (- Ingeniero de Software Backend \(Python\) enfocado en automatizacion contable, responsable) Tj ET
+BT /F1 11 Tf 1 0 0 1 72 174.00 Tm (del diseno y evolucion de motores de procesamiento para liquidaciones, altas e IIBB.) Tj ET
+BT /F1 11 Tf 1 0 0 1 72 160.00 Tm (- Implemente pipelines robustos de ingestion y validacion de archivos \(XLSX/XLS XML\),) Tj ET
+BT /F1 11 Tf 1 0 0 1 72 146.00 Tm (reglas contables, generacion de outputs compatibles con Tango, e integracion con FTP/SFTP) Tj ET
+BT /F1 11 Tf 1 0 0 1 72 132.00 Tm (y Power Automate.) Tj ET
+BT /F1 11 Tf 1 0 0 1 72 118.00 Tm (- Lidere practicas de delivery con Docker, FastAPI, CI \(pytest/ruff\), logging estructurado) Tj ET
+BT /F1 11 Tf 1 0 0 1 72 104.00 Tm (y enfoque fail-soft para mejorar resiliencia operativa.) Tj ET
+endstream
+endobj
+6 0 obj
+<< /Length 3067 >>
+stream
+BT /F2 12 Tf 1 0 0 1 72 720.00 Tm (Platform Architect - Edwards Lifesciences | 2023-Present) Tj ET
+BT /F1 11 Tf 1 0 0 1 72 702.00 Tm (- Remediated mission-critical bots with ABBYY engineers; restored throughput and) Tj ET
+BT /F1 11 Tf 1 0 0 1 72 688.00 Tm (stability.) Tj ET
+BT /F1 11 Tf 1 0 0 1 72 674.00 Tm (- UiPath-Power Platform convergence strategy; optimized license spend & platform fit.) Tj ET
+BT /F1 11 Tf 1 0 0 1 72 660.00 Tm (- Power Automate governance \(security, naming, exception strategy\) and Power BI capacity) Tj ET
+BT /F1 11 Tf 1 0 0 1 72 646.00 Tm (dashboards.) Tj ET
+BT /F2 12 Tf 1 0 0 1 72 615.00 Tm (CEO & Principal Python Engineer - LCH \(Low Code Human\) | 2023-Present) Tj ET
+BT /F1 11 Tf 1 0 0 1 72 597.00 Tm (- Led offshore Python team in building backend services using FastAPI and vector databases) Tj ET
+BT /F1 11 Tf 1 0 0 1 72 583.00 Tm (for RAG applications.) Tj ET
+BT /F1 11 Tf 1 0 0 1 72 569.00 Tm (- Published SDKs for React development teams and managed API lifecycle with cost and) Tj ET
+BT /F1 11 Tf 1 0 0 1 72 555.00 Tm (latency SLOs.) Tj ET
+BT /F1 11 Tf 1 0 0 1 72 541.00 Tm (- Implemented advanced deployment strategies like canary and blue-green releases, with) Tj ET
+BT /F1 11 Tf 1 0 0 1 72 527.00 Tm (comprehensive telemetry.) Tj ET
+BT /F2 12 Tf 1 0 0 1 72 496.00 Tm (Technical Delivery Manager - UiPath \(United States\) | 2022-2023) Tj ET
+BT /F1 11 Tf 1 0 0 1 72 478.00 Tm (- Managed Orchestrator deployments on AKS/EKS and on-prem using custom Helm charts,) Tj ET
+BT /F1 11 Tf 1 0 0 1 72 464.00 Tm (ensuring HA, autoscaling, and DR readiness.) Tj ET
+BT /F1 11 Tf 1 0 0 1 72 450.00 Tm (- Engineered robust observability stacks \(Prometheus/Grafana/ELK\) with SLOs, reducing MTTR) Tj ET
+BT /F1 11 Tf 1 0 0 1 72 436.00 Tm (in heavily regulated healthcare client environments.) Tj ET
+BT /F1 11 Tf 1 0 0 1 72 422.00 Tm (- Enforced stringent security controls including RBAC, CyberArk/Key Vault integration for) Tj ET
+BT /F1 11 Tf 1 0 0 1 72 408.00 Tm (secrets management, TLS rotation, and network policies.) Tj ET
+BT /F2 14 Tf 1 0 0 1 72 377.00 Tm (Education) Tj ET
+BT /F1 11 Tf 1 0 0 1 72 355.00 Tm (Master of Business Psychology - Franklin University \(In progress \(expected 2026\)\)) Tj ET
+BT /F1 11 Tf 1 0 0 1 72 340.00 Tm (Bachelor of Business Administration - Franklin University \(2024\)) Tj ET
+BT /F2 14 Tf 1 0 0 1 72 325.00 Tm (Certifications) Tj ET
+BT /F1 10 Tf 1 0 0 1 72 303.00 Tm (UiPath RPA Solution Architect, Microsoft Certified App Maker, Microsoft Data Analyst Training,) Tj ET
+BT /F1 10 Tf 1 0 0 1 72 287.00 Tm (Professional Python Developer, Python Data Structures - University of Michigan, Scrum Professional -) Tj ET
+BT /F1 10 Tf 1 0 0 1 72 271.00 Tm (Platzi, Harvard ManageMentor - Coaching, EF SET English Certificate - C1 Advanced \(67/100\), Workato) Tj ET
+BT /F1 10 Tf 1 0 0 1 72 255.00 Tm (Certificate of Completion, WorkFusion Diploma \(SAP\)) Tj ET
+BT /F2 14 Tf 1 0 0 1 72 239.00 Tm (Awards) Tj ET
+BT /F1 11 Tf 1 0 0 1 72 217.00 Tm (Winner - UiPath AI Automation Contest \(May 2025\)) Tj ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 3 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 3 0 R >>
+endobj
+8 0 obj
+<< /Type /Page /Parent 3 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 4 0 R >>
+endobj
+xref
+0 9
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000121 00000 n 
+0000000191 00000 n 
+0000000266 00000 n 
+0000004223 00000 n 
+0000007342 00000 n 
+0000007478 00000 n 
+trailer
+<< /Size 9 /Root 1 0 R >>
+startxref
+7614
+%%EOF
