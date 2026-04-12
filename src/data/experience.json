@@ -1,5 +1,29 @@
 [
   {
+    "company": "Auxies",
+    "role": "Technical Product Lead, AI Solutions",
+    "when": "2026–Present",
+    "highlights": [
+      "Led cross-functional execution for an executive-facing AI platform, bridging product strategy, AI prompt/workflow design, UX refinement, QA readiness, and stakeholder alignment.",
+      "Translated leadership feedback into concrete engineering tasks, test plans, and delivery milestones, turning ambiguity into structured execution.",
+      "Elevated AI interaction quality through prompt patterns, fallback logic, JSON contracts, and telemetry to keep outputs credible and production-ready.",
+      "Shaped the product experience and brand trust in the interface, focusing on clarity, safe behavior, and executive-grade polish.",
+      "Aligned PM, engineering, QA, design, and business stakeholders around demo readiness, release quality, and operational outcomes."
+    ],
+    "skills": [
+      "llmprod",
+      "productownership",
+      "techstrategy",
+      "llmops",
+      "prompteng",
+      "jsonschema",
+      "apidesign",
+      "accessibility",
+      "cicd",
+      "architecture"
+    ]
+  },
+  {
     "company": "Rice Command Center (Rice Brief)",
     "role": "AI Solution Architect + Technical Product Owner (Hands-on, Principal FDE scope)",
     "when": "2026",
