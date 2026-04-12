@@ -1,42 +1,17 @@
 [
   {
-    "company": "Auxies",
-    "role": "Technical Product Lead, AI Solutions",
-    "when": "2026–Present",
-    "highlights": [
-      "Led cross-functional execution for an executive-facing AI platform, bridging product strategy, AI prompt/workflow design, UX refinement, QA readiness, and stakeholder alignment.",
-      "Translated leadership feedback into concrete engineering tasks, test plans, and delivery milestones, turning ambiguity into structured execution.",
-      "Elevated AI interaction quality through prompt patterns, fallback logic, JSON contracts, and telemetry to keep outputs credible and production-ready.",
-      "Shaped the product experience and brand trust in the interface, focusing on clarity, safe behavior, and executive-grade polish.",
-      "Aligned PM, engineering, QA, design, and business stakeholders around demo readiness, release quality, and operational outcomes."
-    ],
-    "skills": [
-      "llmprod",
-      "productownership",
-      "techstrategy",
-      "llmops",
-      "prompteng",
-      "jsonschema",
-      "apidesign",
-      "accessibility",
-      "cicd",
-      "architecture"
-    ]
-  },
-  {
-    "company": "Rice Command Center (Rice Brief)",
+    "company": "Rice AI Center",
     "role": "AI Solution Architect + Technical Product Owner (Hands-on, Principal FDE scope)",
     "when": "2026",
     "highlights": [
-      "Defined technical strategy for AI system design, multi-agent orchestration, and enterprise deployment across lighthouse executive engagements.",
-      "Partnered with UiPath Product and Engineering teams to co-innovate on agentic automation capabilities, translating field insights into roadmap recommendations.",
-      "Developed reusable reference architectures for secure, scalable AI deployments and established standards for agent engineering, prompt management, and LLM operations.",
-      "Designed and built a panels-first executive MVP (Today Brief, Calendar & Prep, Meetings Hub, Action Center, EA Triage) focused on measurable decision-cycle outcomes.",
-      "Implemented secure architecture with Next.js + Node/Express APIs, backend-owned Google OAuth, least-privilege scopes, refresh-token controls, and per-user authorization.",
-      "Integrated Google Calendar (read-only) with conflict handling, availability planning, and calendar hygiene checks (overlaps, missing details, no buffers, remote mismatch).",
-      "Orchestrated AI workflows with n8n in demoted mode (authorized/minimized payloads only; no long-lived tokens) and strict JSON contracts with needs_review + sources[] traceability.",
-      "Developed and stabilized a Chrome overlay extension for cross-page access and embedded/top-level authentication flows.",
-      "Led cross-functional QA, accessibility, release management, and performance/cost/security optimization to accelerate demo readiness and production-path delivery."
+      "Leading the technical architecture and delivery of an enterprise AI platform for executive decision support, focused on secure LLM systems, governed orchestration, and production-grade AI operations.",
+      "Architected a secure, enterprise-ready AI command platform integrating Google Workspace, backend-governed orchestration, and structured LLM output controls.",
+      "Converted executive and product requirements into a deployable MVP and a scalable architecture roadmap.",
+      "Built hardened backend foundations (Next.js + Node/Express) with backend-owned OAuth 2.0, least-privilege scope enforcement, encrypted token lifecycle handling, and audit-grade observability.",
+      "Defined operational guardrails for LLM reliability: JSON contract enforcement, schema validation and repair, escalation paths, source traceability, and prompt governance standards.",
+      "Designed controlled orchestration patterns to constrain workflow execution under minimal authorized payloads and protect enterprise security boundaries.",
+      "Delivered secure calendar intelligence (availability analysis, conflict detection, planning visibility) tailored to executive workflows.",
+      "Directed QA governance and release readiness across functional, visual, and accessibility standards."
     ],
     "skills": [
       "llmprod",
