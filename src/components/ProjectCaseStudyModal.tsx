@@ -173,6 +173,16 @@ export function ProjectCaseStudyModal({ projectId, isOpen, onClose }: ProjectCas
                   </div>
                 )}
 
+                {project.id === 'ai-recruiting-copilot' && (
+                  <div className="pt-2">
+                    <Button asChild className="w-full justify-center text-xs bg-primary text-primary-foreground hover:bg-primary/90">
+                      <Link href="/recruiting-demo/" target="_blank">
+                        {dict.drawer.launchInteractivePlayground}
+                      </Link>
+                    </Button>
+                  </div>
+                )}
+
                 {project.id === 'autotask-to-jira-fabric' && (
                   <div className="p-3 border border-primary/20 rounded-lg bg-primary/5 space-y-2 mt-auto">
                     <h4 className="font-semibold text-foreground text-xs uppercase tracking-wider">{dict.drawer.medallionArchitecture}</h4>
@@ -201,6 +211,25 @@ export function ProjectCaseStudyModal({ projectId, isOpen, onClose }: ProjectCas
                         </div>
                         <Button asChild className="w-full sm:w-auto px-5 py-2.5 bg-primary text-primary-foreground hover:bg-primary/90 shadow-[0_0_15px_rgba(34,197,94,0.25)] shrink-0 font-semibold text-xs">
                           <Link href="/rag-demo/" target="_blank">
+                            {dict.drawer.launchInteractivePlayground} →
+                          </Link>
+                        </Button>
+                      </div>
+                    )}
+
+                    {/* Prominent Action Banner for AI Recruiting Copilot Demo */}
+                    {project.id === 'ai-recruiting-copilot' && (
+                      <div className="flex flex-col sm:flex-row gap-4 p-5 border border-primary/30 rounded-xl bg-primary/5 items-center justify-between shadow-[0_0_20px_rgba(34,197,94,0.05)]">
+                        <div className="space-y-1">
+                          <h4 className="text-sm font-bold text-primary uppercase tracking-wider font-code">
+                            {dict.drawer.interactiveDemoPlayground}
+                          </h4>
+                          <p className="text-xs text-muted-foreground">
+                            {dict.drawer.interactiveDemoPlaygroundDesc}
+                          </p>
+                        </div>
+                        <Button asChild className="w-full sm:w-auto px-5 py-2.5 bg-primary text-primary-foreground hover:bg-primary/90 shadow-[0_0_15px_rgba(34,197,94,0.25)] shrink-0 font-semibold text-xs">
+                          <Link href="/recruiting-demo/" target="_blank">
                             {dict.drawer.launchInteractivePlayground} →
                           </Link>
                         </Button>

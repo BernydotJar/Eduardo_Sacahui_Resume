@@ -8,6 +8,7 @@ const caseStudyIds = [
   'rice-command-center-demo-mode',
   'laura-ai-agent-rag-workflow',
   'rag-made-easy',
+  'ai-recruiting-copilot',
   'pentaho-to-powerbi',
   'alteryx-to-powerautomate',
   'autotask-to-jira-fabric'

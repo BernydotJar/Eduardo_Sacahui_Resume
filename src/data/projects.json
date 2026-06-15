@@ -426,6 +426,93 @@
     }
   },
   {
+    "id": "ai-recruiting-copilot",
+    "title": "AI Recruiting Copilot — Agentic Hiring Operations Demo",
+    "when": "2026",
+    "client": "Personal AI product / portfolio demo",
+    "skills": [
+      "openai",
+      "prompteng",
+      "llmops",
+      "llmprod",
+      "typescript",
+      "react",
+      "architecture",
+      "uipath",
+      "cicd"
+    ],
+    "stack": "React, TypeScript, React Router, Agentic Screening, Candidate Matching, Workflow Automation, Recruiting Analytics, LLM-assisted Communications",
+    "summary": "AI Recruiting Copilot is an agentic hiring operations prototype that turns candidate intake, screening, job matching, recruiter review, and reporting into a guided AI-assisted workflow.",
+    "outcomes": [
+      "Turns candidate review into an evidence-backed screening workflow",
+      "Ranks candidates against job requirements using fit scores and screening evidence",
+      "Supports recruiter actions such as approve, reject, request review, and follow-up drafts",
+      "Includes automation workflows, dashboard metrics, and hiring-funnel reporting",
+      "Demonstrates how AI can assist recruiting operations without removing human review"
+    ],
+    "caseStudy": {
+      "useCase": [
+        "AI Recruiting Copilot is an agentic hiring operations prototype that turns candidate intake, screening, job matching, recruiter review, and reporting into a guided AI-assisted workflow. The demo includes dashboard metrics, candidate fit scoring, evidence cards, job-level matching, automation queues, recruiter actions, and hiring-funnel reports.",
+        "The product is designed around human-in-the-loop AI: the system can screen candidates, generate questions, surface evidence, and draft communications, but final hiring decisions remain recruiter-controlled."
+      ],
+      "statusMatrix": [
+        {
+          "key": "ARC-01",
+          "functionality": "Dashboard Metrics & Recruiting Analytics",
+          "status": "Done",
+          "currentState": "Dynamic stats cards for active jobs, total candidates, pending review, automation success rates, and interactive hiring funnel chart.",
+          "next": "Add real-time web socket sync for collaborative recruiting queues."
+        },
+        {
+          "key": "ARC-02",
+          "functionality": "Candidate Fit Scoring & Screening Evidence",
+          "status": "Done",
+          "currentState": "Computes AI match confidence based on candidate skills and job requirements; displays structured evidence cards and target interview questions.",
+          "next": "Add automated resume parsing/OCR pipeline for PDF uploads."
+        },
+        {
+          "key": "ARC-03",
+          "functionality": "Human-in-the-loop Recruiter Actions",
+          "status": "Done",
+          "currentState": "Buttons for approve, reject, or request review with modal confirmation and timeline audit logging.",
+          "next": "Support direct calendar scheduling integration."
+        },
+        {
+          "key": "ARC-04",
+          "functionality": "Agentic Workflow & Automations Queue",
+          "status": "Done",
+          "currentState": "Interactive workflow builder with trigger/action nodes (e.g., auto-reply, auto-score, slack notification) and live activity log.",
+          "next": "Support custom python script injection in workflow nodes."
+        },
+        {
+          "key": "ARC-05",
+          "functionality": "LLM-assisted Communications",
+          "status": "Done",
+          "currentState": "Dynamic email and outreach message generator based on candidate profile and selected tone (professional, encouraging, technical).",
+          "next": "Integrate Twilio SMS outreach automation."
+        }
+      ],
+      "implementationPlan": [
+        "Design a unified recruiting dashboard using high-fidelity Tailwind components",
+        "Model recruiters' workflows around human-in-the-loop validation principles",
+        "Expose AI matching logic and prompt evidence clearly to build recruiter trust",
+        "Simulate automation logs to demonstrate background orchestrations",
+        "Support responsive layout and seamless browser-based demo mode"
+      ],
+      "localCommands": [
+        "git clone https://github.com/eduardosacahui/HR-CRM.git",
+        "npm install",
+        "npm run dev",
+        "npm test"
+      ],
+      "knownLimitations": [
+        "Demo mode runs entirely on browser-bundled mock datasets and offline states.",
+        "Direct email action generates browser-standard drafts instead of SMTP delivery.",
+        "Workflow builder node configurations are simulated inside the static sandbox."
+      ]
+    }
+  },
+  {
     "id":"rag-knowledge-services",
     "title":"RAG Knowledge Services",
     "skills":["python","fastapi","pgvector","openai","postgres"],
