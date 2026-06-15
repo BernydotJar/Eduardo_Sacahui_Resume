@@ -77,10 +77,10 @@ export function ProjectCaseStudyModal({ projectId, isOpen, onClose }: ProjectCas
             </button>
 
             {/* Split Panel Layout */}
-            <div className="grid max-h-[85vh] md:max-h-[88vh] grid-cols-1 lg:grid-cols-[22rem_1fr] overflow-y-auto lg:overflow-hidden bg-[#060e0a]">
+            <div className="grid h-auto lg:h-[85vh] max-h-[85vh] md:max-h-[88vh] grid-cols-1 lg:grid-cols-[22rem_1fr] overflow-y-auto lg:overflow-hidden bg-[#060e0a]">
               
               {/* Left Column: Sidebar (Fixed/Scrolls on Desktop independently) */}
-              <aside className="p-6 md:p-8 border-b border-primary/20 lg:border-b-0 lg:border-r lg:overflow-y-auto bg-[#040a07] space-y-6 flex flex-col">
+              <aside className="p-6 md:p-8 border-b border-primary/20 lg:border-b-0 lg:border-r lg:overflow-y-auto bg-[#040a07] space-y-6 flex flex-col lg:min-h-0">
                 <div className="space-y-2">
                   <p className="text-xs uppercase tracking-[0.2em] text-primary/70 font-semibold font-code">
                     Case Study Analysis
@@ -167,7 +167,7 @@ export function ProjectCaseStudyModal({ projectId, isOpen, onClose }: ProjectCas
                   <div className="pt-2">
                     <Button asChild className="w-full justify-center text-xs bg-primary text-primary-foreground hover:bg-primary/90">
                       <Link href="/rag-demo/" target="_blank">
-                        Launch Interactive Playground
+                        {dict.drawer.launchInteractivePlayground}
                       </Link>
                     </Button>
                   </div>
@@ -182,12 +182,31 @@ export function ProjectCaseStudyModal({ projectId, isOpen, onClose }: ProjectCas
               </aside>
 
               {/* Right Column: Main Content (Scrolls independently on desktop) */}
-              <main className="p-6 md:p-8 lg:overflow-y-auto space-y-8 bg-[#06100c] relative">
+              <main className="p-6 md:p-8 lg:overflow-y-auto space-y-8 bg-[#06100c] relative lg:min-h-0">
                 <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_top_right,rgba(34,197,94,0.08),transparent_50%)]" />
 
                 {project.caseStudy ? (
                   <div className="relative space-y-8">
                     
+                    {/* Prominent Action Banner for RAG Demo */}
+                    {project.id === 'rag-made-easy' && (
+                      <div className="flex flex-col sm:flex-row gap-4 p-5 border border-primary/30 rounded-xl bg-primary/5 items-center justify-between shadow-[0_0_20px_rgba(34,197,94,0.05)]">
+                        <div className="space-y-1">
+                          <h4 className="text-sm font-bold text-primary uppercase tracking-wider font-code">
+                            {dict.drawer.interactiveDemoPlayground}
+                          </h4>
+                          <p className="text-xs text-muted-foreground">
+                            {dict.drawer.interactiveDemoPlaygroundDesc}
+                          </p>
+                        </div>
+                        <Button asChild className="w-full sm:w-auto px-5 py-2.5 bg-primary text-primary-foreground hover:bg-primary/90 shadow-[0_0_15px_rgba(34,197,94,0.25)] shrink-0 font-semibold text-xs">
+                          <Link href="/rag-demo/" target="_blank">
+                            {dict.drawer.launchInteractivePlayground} →
+                          </Link>
+                        </Button>
+                      </div>
+                    )}
+
                     {/* Use Case */}
                     {project.caseStudy.useCase && project.caseStudy.useCase.length > 0 && (
                       <div className="space-y-3">

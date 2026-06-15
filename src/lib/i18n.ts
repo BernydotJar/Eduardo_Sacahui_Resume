@@ -128,9 +128,12 @@ export type TranslationDictionary = {
     relatedProjects: string;
     relatedExperience: string;
     experienceAt: string;
-    downloadPostmanCollection: string;
-    medallionArchitecture: string;
-  };
+      downloadPostmanCollection: string;
+      medallionArchitecture: string;
+      launchInteractivePlayground: string;
+      interactiveDemoPlayground: string;
+      interactiveDemoPlaygroundDesc: string;
+    };
   tour: {
     prev: string;
     next: string;
@@ -261,6 +264,9 @@ export const translations: Record<Locale, TranslationDictionary> = {
       experienceAt: 'at',
       downloadPostmanCollection: 'Download Postman Collection',
       medallionArchitecture: 'Medallion Architecture',
+      launchInteractivePlayground: 'Launch Interactive Playground',
+      interactiveDemoPlayground: 'Interactive Demo Playground',
+      interactiveDemoPlaygroundDesc: 'Launch the live, hands-on RAG learning application directly in your browser.',
     },
     tour: {
       prev: 'Prev',
@@ -423,6 +429,9 @@ export const translations: Record<Locale, TranslationDictionary> = {
       experienceAt: 'en',
       downloadPostmanCollection: 'Descargar colección de Postman',
       medallionArchitecture: 'Arquitectura Medallion',
+      launchInteractivePlayground: 'Iniciar Demo Interactiva',
+      interactiveDemoPlayground: 'Demo Interactiva Playground',
+      interactiveDemoPlaygroundDesc: 'Inicia la aplicación de aprendizaje de RAG interactiva directamente en tu navegador.',
     },
     tour: {
       prev: 'Anterior',
@@ -586,6 +595,9 @@ export const translations: Record<Locale, TranslationDictionary> = {
       experienceAt: 'na',
       downloadPostmanCollection: 'Baixar coleção do Postman',
       medallionArchitecture: 'Arquitetura Medallion',
+      launchInteractivePlayground: 'Iniciar Demo Interativa',
+      interactiveDemoPlayground: 'Demo Interativa Playground',
+      interactiveDemoPlaygroundDesc: 'Inicie o aplicativo de aprendizado de RAG interativo diretamente no seu navegador.',
     },
     tour: {
       prev: 'Anterior',
