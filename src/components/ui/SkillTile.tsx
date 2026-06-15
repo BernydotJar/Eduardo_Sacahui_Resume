@@ -75,12 +75,12 @@ const SkillTile = ({ skill, onClick }: SkillTileProps) => {
         whileHover={
           shouldReduceMotion
             ? undefined
-            : { scale: 1.04, transition: { type: 'spring', stiffness: 400, damping: 20 } }
+            : { scale: 1.08, y: -4, transition: { type: 'spring', stiffness: 400, damping: 20 } }
         }
         whileTap={
           shouldReduceMotion
             ? undefined
-            : { scale: 0.97, transition: { type: 'spring', stiffness: 600, damping: 15 } }
+            : { scale: 0.96, transition: { type: 'spring', stiffness: 600, damping: 15 } }
         }
       >
         {isEasterEggActive && !shouldReduceMotion && (
