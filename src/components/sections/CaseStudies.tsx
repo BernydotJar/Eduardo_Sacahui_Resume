@@ -7,6 +7,7 @@ import { useLanguage } from '@/components/context/LanguageContext';
 const caseStudyIds = [
   'rice-command-center-demo-mode',
   'laura-ai-agent-rag-workflow',
+  'rag-made-easy',
   'pentaho-to-powerbi',
   'alteryx-to-powerautomate',
   'autotask-to-jira-fabric'

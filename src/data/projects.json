@@ -329,6 +329,103 @@
     }
   },
   {
+    "id": "rag-made-easy",
+    "title": "RAG Made Easy — Interactive RAG Learning Demo",
+    "when": "2026",
+    "client": "Personal AI education product / portfolio demo",
+    "skills": [
+      "openai",
+      "pgvector",
+      "llmprod",
+      "prompteng",
+      "typescript",
+      "react",
+      "next",
+      "architecture",
+      "llmops",
+      "cicd"
+    ],
+    "stack": "TypeScript, React/Next.js, embeddings, semantic search, hybrid retrieval, source-grounded answer generation, optional Anthropic/Claude integration",
+    "summary": "Built an interactive, hands-on RAG demo that turns retrieval-augmented generation into a visible pipeline: chunk, embed, retrieve, and generate.",
+    "outcomes": [
+      "Turned RAG from an abstract concept into an interactive learning experience",
+      "Demonstrated chunking, embeddings, retrieval, and grounded generation in one browser-based flow",
+      "Added semantic vs hybrid retrieval comparison to show why embedding-based search matters",
+      "Included source grounding and quality indicators to teach trustworthy AI behavior",
+      "Designed the project so users can swap in their own text and reuse the pipeline in their own apps"
+    ],
+    "caseStudy": {
+      "useCase": [
+        "RAG is often explained with architecture diagrams but rarely made tangible. This demo helps users learn by doing.",
+        "They can select a knowledge base (Aurora Coffee, Pokédex, or Embeddings & ML), index documents, ask questions, inspect retrieved chunks, compare retrieval modes, and see how grounded answers are composed from retrieved context."
+      ],
+      "statusMatrix": [
+        {
+          "key": "RME-01",
+          "functionality": "Local indexing & memory vector store",
+          "status": "Done",
+          "currentState": "MemoryVectorStore implements cosine similarity over local embeddings, zero dependencies.",
+          "next": "Add disk/file-based serialization adapter."
+        },
+        {
+          "key": "RME-02",
+          "functionality": "Lexical BM25 keyword index",
+          "status": "Done",
+          "currentState": "Standalone BM25Index built-in; computes tf-idf over terms for exact keyword matching.",
+          "next": "Optimize tokenization speed for very large document corpuses."
+        },
+        {
+          "key": "RME-03",
+          "functionality": "Hybrid retrieve-broad + rerank",
+          "status": "Done",
+          "currentState": "Blends semantic cosine scores with BM25 keyword scores using adjustable weighting.",
+          "next": "Add Reciprocal Rank Fusion (RRF) option."
+        },
+        {
+          "key": "RME-04",
+          "functionality": "Answer evaluation & quality metrics",
+          "status": "Done",
+          "currentState": "Offline lexical proxies for context relevance, groundedness, and answer relevance implemented.",
+          "next": "Integrate LLM-as-a-judge runner using Claude API."
+        },
+        {
+          "key": "RME-05",
+          "functionality": "Anthropic Claude integration",
+          "status": "Done",
+          "currentState": "ClaudeGenerator adapter implemented in separate entry point; supports streaming & source citations.",
+          "next": "Support Gemini API integration."
+        },
+        {
+          "key": "RME-06",
+          "functionality": "Interactive browser demo playground",
+          "status": "Done",
+          "currentState": "Next.js client-side playground with topic switcher, live toggles, quality gauges, and cited chunk badges.",
+          "next": "Support custom user PDF uploads."
+        }
+      ],
+      "implementationPlan": [
+        "Package the RAG pipeline as an interactive browser-first demo",
+        "Present the four-step pipeline visually: Chunk → Embed → Retrieve → Generate",
+        "Add sample knowledge bases users can index immediately",
+        "Support semantic and hybrid retrieval modes",
+        "Surface source snippets and retrieval confidence/quality indicators",
+        "Add optional real LLM answer generation through Claude API key",
+        "Include a 'Use it in your project' code example for developer adoption"
+      ],
+      "localCommands": [
+        "git clone https://github.com/eduardosacahui/rag-made-easy.git",
+        "npm install",
+        "npm run demo",
+        "npm test"
+      ],
+      "knownLimitations": [
+        "Default embedder and vector store run completely offline in memory, not suited for millions of documents.",
+        "Lexical evaluation metrics are fast, offline lexical proxies rather than full semantic LLM-as-judge checks.",
+        "Anthropic Claude integration requires client-supplied API key in the demo frontend."
+      ]
+    }
+  },
+  {
     "id":"rag-knowledge-services",
     "title":"RAG Knowledge Services",
     "skills":["python","fastapi","pgvector","openai","postgres"],

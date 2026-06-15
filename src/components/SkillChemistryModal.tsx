@@ -33,6 +33,116 @@ const levelLabelMap: Record<Locale, Record<string, string>> = {
   },
 };
 
+const capabilityOverrides: Record<
+  string,
+  { capability: string; canDo: string[]; proof: string }
+> = {
+  prompteng: {
+    capability:
+      "I design prompts as production contracts: system instructions, task prompts, structured outputs, fallback rules, and eval cases that make LLM behavior measurable instead of improvised.",
+    canDo: [
+      "System prompting for agentic chatbots and workflow assistants",
+      "Prompt/version governance with regression checks",
+      "Structured response contracts using JSON schemas",
+      "Safety, source-traceability, and refusal/fallback behavior",
+      "Eval testing for accuracy, consistency, and production readiness",
+    ],
+    proof:
+      "Used in Rice executive AI workflows, Laura AI Agent, RAG assistants, and document verification pipelines.",
+  },
+  openai: {
+    capability:
+      "I build retrieval-grounded AI systems that can search trusted knowledge, assemble context, cite sources, and produce controlled responses instead of relying on raw model memory.",
+    canDo: [
+      "Document ingestion, chunking, enrichment, and retrieval design",
+      "Vector search using pgvector, Pinecone, or cloud-native search",
+      "Source-grounded response generation with confidence metadata",
+      "RAG evaluation for relevance, faithfulness, and answer quality",
+      "Human review loops for high-risk or low-confidence outputs",
+    ],
+    proof:
+      "Resume-backed work includes RAG knowledge workflows, executive AI assistants, agentic knowledge tutor systems, and operations second-brain systems.",
+  },
+  multiagent: {
+    capability:
+      "I design agentic workflows where LLMs can plan, retrieve, call tools, validate outputs, and escalate safely through governed backend APIs.",
+    canDo: [
+      "Intent routing and context assembly",
+      "Tool-use orchestration across backend services",
+      "Long-term memory and session state patterns",
+      "Approval-gated actions and human-in-the-loop controls",
+      "Agent observability, audit traces, and rollback-safe workflows",
+    ],
+    proof:
+      "Rice assistant architecture, multi-agent orchestration projects, and UiPath AI Automation Contest work all support this positioning.",
+  },
+  architecture: {
+    capability:
+      "I build the backend layer that makes AI usable in production: APIs, auth, orchestration, memory, schemas, queues, observability, and deployment pipelines.",
+    canDo: [
+      "Python/FastAPI and Node.js/TypeScript AI services",
+      "Typed JSON contracts and schema validation",
+      "OAuth, RBAC, token handling, and least-privilege access",
+      "Distributed backend services for chatbot and assistant features",
+      "CI/CD, smoke tests, regression checks, and production gates",
+    ],
+    proof:
+      "The Rice prototype used backend-owned OAuth, typed JSON endpoints, AJV schema validation, RBAC, audit logging, Cloud Run, Firebase Hosting, and Google Workspace integrations.",
+  },
+  llmops: {
+    capability:
+      "I create evaluation harnesses that force AI systems to prove they work before they are trusted in production.",
+    canDo: [
+      "Golden test sets for prompts, RAG, and agent workflows",
+      "Schema validation and structured-output checks",
+      "False-positive and false-negative review loops",
+      "Regression audits for prompt and model changes",
+      "Smoke tests for production-readiness gates",
+    ],
+    proof:
+      "The Rice work included seeded test batteries, synthetic fixtures, CI validation, smoke tests, security checks, release gates, and regression audits.",
+  },
+  llmprod: {
+    capability:
+      "I build the control layer around AI models: tools, memory, context management, subagents, validation, permissions, and development workflows that keep agents useful and safe.",
+    canDo: [
+      "Agent loops, tool execution, and permission gates",
+      "Memory and context compaction strategies",
+      "Subagent orchestration for implementation, review, and research",
+      "Spec-driven development flows with human approval",
+      "Verification loops that require tests, browser checks, or other evidence",
+    ],
+    proof:
+      "The model is only the 'brain'; the useful system is the environment around it: tools, memory, validation, context management, and orchestration.",
+  },
+  uipath: {
+    capability:
+      "I connect AI with enterprise automation platforms so reasoning can become measurable operational execution.",
+    canDo: [
+      "UiPath, Power Platform, n8n, Blue Prism, and Automation Anywhere architectures",
+      "Human-in-the-loop review for high-risk actions",
+      "ERP, SAP, ServiceNow, Jira, Google Workspace, and Microsoft integrations",
+      "Automation CoE governance, naming standards, error handling, and monitoring",
+      "ROI modeling and platform selection across automation stacks",
+    ],
+    proof:
+      "Resume-backed results include $120K+ annual savings, 300% average ROI, 99.9% uptime SLA, 50+ automation solutions, and $50M+ annual transactions automated.",
+  },
+  docker: {
+    capability:
+      "I package and operate AI systems like production software: containerized, observable, versioned, secure, and deployable across cloud environments.",
+    canDo: [
+      "Docker, Kubernetes, Helm, Cloud Run, and cloud deployment pipelines",
+      "Containerized AI services with rollback-safe releases",
+      "Observability using Prometheus, Grafana, Cloud Logging, and dashboards",
+      "Secure runtime patterns for tools, credentials, and model access",
+      "Portable architectures that reduce model and cloud lock-in",
+    ],
+    proof:
+      "Containers are becoming the foundation for agentic infrastructure because they provide isolation, portability, versioning, reproducibility, and rollback (as supported by Docker's market agentic reports).",
+  },
+};
+
 export function SkillChemistryModal({ skillId, isOpen, onClose }: SkillChemistryModalProps) {
   const { locale, dict } = useLanguage();
 
@@ -56,6 +166,18 @@ export function SkillChemistryModal({ skillId, isOpen, onClose }: SkillChemistry
   const relatedProjects = projects.filter(p => p.skills.includes(skill.id));
   const relatedExperience = experience.filter(e => e.skills.includes(skill.id));
 
+  const override = capabilityOverrides[skill.id];
+  const skillData = {
+    name: skill.name,
+    capability: override?.capability ?? `${dict.drawer.skillRelatedDescription} ${skill.name}.`,
+    canDo: override?.canDo ?? [
+      `Design and implement ${skill.name} solutions for production environments`,
+      `Establish proper governance, standard operating procedures, and automated quality controls`,
+      `Design robust integrations and handle complex workflow logic with error resolution`
+    ],
+    proof: override?.proof ?? `Proven experience applying ${skill.name} in automated workflows, deployment pipelines, and project deliveries.`
+  };
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -66,7 +188,7 @@ export function SkillChemistryModal({ skillId, isOpen, onClose }: SkillChemistry
           exit={{ opacity: 0 }}
           role="dialog"
           aria-modal="true"
-          aria-label={`${skill.name} ${dict.skills.title}`}
+          aria-label={`${skillData.name} ${dict.skills.title}`}
           onClick={onClose}
         >
           <motion.div
@@ -105,22 +227,45 @@ export function SkillChemistryModal({ skillId, isOpen, onClose }: SkillChemistry
                   Skill Isotope
                 </p>
                 <h2 className="text-3xl font-bold text-primary md:text-4xl leading-tight">
-                  {skill.name}
+                  {skillData.name}
                 </h2>
-                <p className="mt-3 text-sm md:text-base leading-relaxed text-muted-foreground">
-                  {`${dict.drawer.skillRelatedDescription} ${skill.name}.`}
-                </p>
                 
+                <p className="mt-4 text-sm md:text-base leading-relaxed text-muted-foreground">
+                  {skillData.capability}
+                </p>
+
                 <div className="mt-6 grid grid-cols-3 gap-3">
                   <Metric label="Level" value={displayLevel} />
                   <Metric label="Atomic No." value={String(atomicNumber)} />
                   <Metric label="State" value="Production" />
                 </div>
+
+                <section className="mt-8">
+                  <h3 className="text-sm font-bold uppercase tracking-wider text-foreground">
+                    What I Can Build
+                  </h3>
+                  <ul className="mt-3 grid gap-2">
+                    {skillData.canDo.map((item) => (
+                      <li key={item} className="rounded-lg border border-primary/20 bg-primary/5 px-4 py-3 text-sm text-muted-foreground">
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+
+                <section className="mt-8">
+                  <h3 className="text-sm font-bold uppercase tracking-wider text-foreground">
+                    Proof / Field Evidence
+                  </h3>
+                  <p className="mt-3 rounded-lg border border-primary/20 bg-black/20 p-4 text-sm text-muted-foreground">
+                    {skillData.proof}
+                  </p>
+                </section>
                 
                 {relatedProjects.length > 0 && (
-                  <section className="mt-6">
+                  <section className="mt-8">
                     <h3 className="text-sm font-bold uppercase tracking-wider text-foreground">
-                      {dict.drawer.relatedProjects}
+                      Related Case Studies
                     </h3>
                     <div className="mt-3 space-y-2">
                       {relatedProjects.map((project) => (
@@ -140,7 +285,7 @@ export function SkillChemistryModal({ skillId, isOpen, onClose }: SkillChemistry
                 )}
                 
                 {relatedExperience.length > 0 && (
-                  <section className="mt-6">
+                  <section className="mt-8">
                     <h3 className="text-sm font-bold uppercase tracking-wider text-foreground">
                       {dict.drawer.relatedExperience}
                     </h3>
@@ -156,7 +301,7 @@ export function SkillChemistryModal({ skillId, isOpen, onClose }: SkillChemistry
                 )}
 
                 {skill.tags?.length > 0 && (
-                  <section className="mt-6">
+                  <section className="mt-8">
                     <h3 className="text-sm font-bold uppercase tracking-wider text-foreground mb-3">
                       Bonds With
                     </h3>
@@ -184,7 +329,7 @@ export function SkillChemistryModal({ skillId, isOpen, onClose }: SkillChemistry
 function Metric({ label, value }: { label: string; value: string }) {
   return (
     <div className="rounded-lg border border-primary/20 bg-primary/5 p-3">
-      <div className="text-[10px] uppercase tracking-wider text-muted-foreground font-semibold">
+      <div className="text-[10px] uppercase tracking-wider text-muted-foreground font-semibold font-code">
         {label}
       </div>
       <div className="mt-1 truncate text-sm md:text-base font-bold text-foreground">
