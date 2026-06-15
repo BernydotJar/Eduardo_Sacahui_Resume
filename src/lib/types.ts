@@ -50,6 +50,7 @@ export interface Experience {
   role: string;
   when: string;
   highlights: string[];
+  metrics?: string[];
   skills: string[];
   projects?: string[];
   display_role_override?: string;

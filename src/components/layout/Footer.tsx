@@ -47,13 +47,13 @@ const Footer = () => {
                         <Label htmlFor="easter-egg-mode" className="text-sm text-muted-foreground">{dict.footer.animations}</Label>
                     </div>
 
-                    <a href="https://github.com" target="_blank" rel="noreferrer">
+                    <a href="https://github.com/BernydotJar" target="_blank" rel="noreferrer">
                         <Button variant="ghost" size="icon">
                             <Github className="h-5 w-5" />
                             <span className="sr-only">GitHub</span>
                         </Button>
                     </a>
-                    <a href="https://linkedin.com" target="_blank" rel="noreferrer">
+                    <a href="https://www.linkedin.com/in/eduardosacahui" target="_blank" rel="noreferrer">
                         <Button variant="ghost" size="icon">
                             <Linkedin className="h-5 w-5" />
                             <span className="sr-only">LinkedIn</span>

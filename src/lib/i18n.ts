@@ -34,6 +34,15 @@ export type TranslationDictionary = {
     title: string;
     summaryHeading: string;
     summary: string;
+    statsHeading: string;
+    stats: {
+      years: string;
+      ai: string;
+      roi: string;
+      savings: string;
+      uptime: string;
+      transactions: string;
+    };
     location: string;
     languages: string[];
     downloadCv: string;
@@ -68,6 +77,7 @@ export type TranslationDictionary = {
     subtitle: string;
     recentHeading: string;
     earlyHeading: string;
+    impact: string;
     highlights: string;
     clientProjects: string;
     techUsed: string;
@@ -153,6 +163,15 @@ export const translations: Record<Locale, TranslationDictionary> = {
       summaryHeading: 'Professional Summary',
       summary:
         'Hands-on AI Solution Architect and Technical Product Owner focused on rapid product delivery. I define technical strategy for AI systems, multi-agent orchestration, and enterprise deployments; co-innovate with Product and Engineering teams to convert field insights into roadmap outcomes. I lead end-to-end architecture and development of LLM-powered platforms, Google Workspace integrations, and n8n orchestration under secure-by-design principles (least privilege, backend-owned OAuth, strict JSON validation, and traceability), turning executive vision into demo-ready MVPs and production paths.',
+      statsHeading: 'Proven Impact — By the Numbers',
+      stats: {
+        years: 'years in enterprise automation',
+        ai: 'years shipping production LLM/RAG systems',
+        roi: 'average client ROI in year one',
+        savings: 'annual platform savings delivered',
+        uptime: 'uptime SLA on cloud RPA infrastructure',
+        transactions: 'annual transactions automated',
+      },
       location: 'Remote — Colombia / Guatemala (AMER)',
       languages: ['English (Default)', 'Spanish', 'Portuguese'],
       downloadCv: 'Download CV',
@@ -187,6 +206,7 @@ export const translations: Record<Locale, TranslationDictionary> = {
       subtitle: 'A journey through my professional career.',
       recentHeading: 'Recent Experience (2020–Present)',
       earlyHeading: 'Early Career (2014–2020)',
+      impact: 'Impact',
       highlights: 'Highlights',
       clientProjects: 'Client Projects',
       techUsed: 'Tech Used',
@@ -303,6 +323,15 @@ export const translations: Record<Locale, TranslationDictionary> = {
       summaryHeading: 'Resumen Profesional',
       summary:
         'Arquitecto de Soluciones AI y Product Owner técnico con enfoque hands-on en entrega rápida de productos. Defino estrategia técnica para sistemas de IA, orquestación multiagente y despliegues enterprise; co-innovo con equipos de Product y Engineering para traducir insights de campo en roadmap accionable. Lidero arquitectura y desarrollo end-to-end de plataformas basadas en LLMs, integraciones Google Workspace y n8n bajo principios de seguridad (least privilege, backend-owned OAuth, trazabilidad y validación estricta de JSON), convirtiendo visión ejecutiva en MVPs demoables con ruta clara a producción.',
+      statsHeading: 'Impacto Comprobado — En Números',
+      stats: {
+        years: 'años en automatización enterprise',
+        ai: 'años entregando sistemas LLM/RAG en producción',
+        roi: 'ROI promedio de clientes en el primer año',
+        savings: 'ahorros anuales de plataforma entregados',
+        uptime: 'SLA de uptime en infraestructura RPA cloud',
+        transactions: 'transacciones anuales automatizadas',
+      },
       location: 'Remoto — Colombia / Guatemala (AMER)',
       languages: ['Inglés (Predeterminado)', 'Español', 'Portugués'],
       downloadCv: 'Descargar CV',
@@ -339,6 +368,7 @@ export const translations: Record<Locale, TranslationDictionary> = {
       subtitle: 'Un recorrido por mi carrera profesional.',
       recentHeading: 'Experiencia Reciente (2020–Actualidad)',
       earlyHeading: 'Etapa Inicial (2014–2020)',
+      impact: 'Impacto',
       highlights: 'Logros',
       clientProjects: 'Proyectos de Cliente',
       techUsed: 'Tecnología Usada',
@@ -455,6 +485,15 @@ export const translations: Record<Locale, TranslationDictionary> = {
       summaryHeading: 'Resumo Profissional',
       summary:
         'Arquiteto de Soluções AI e Product Owner técnico com foco hands-on em entrega rápida de produtos. Defino estratégia técnica para sistemas de IA, orquestração multiagente e implantações enterprise; co-inovo com times de Product e Engineering para transformar insights de campo em roadmap acionável. Lidero arquitetura e desenvolvimento end-to-end de plataformas com LLMs, integrações Google Workspace e orquestração n8n com princípios de segurança (least privilege, backend-owned OAuth, rastreabilidade e validação rígida de JSON), convertendo visão executiva em MVPs demonstráveis e caminho claro para produção.',
+      statsHeading: 'Impacto Comprovado — Em Números',
+      stats: {
+        years: 'anos em automação enterprise',
+        ai: 'anos entregando sistemas LLM/RAG em produção',
+        roi: 'ROI médio de clientes no primeiro ano',
+        savings: 'economia anual de plataforma entregue',
+        uptime: 'SLA de uptime em infraestrutura RPA cloud',
+        transactions: 'transações anuais automatizadas',
+      },
       location: 'Remoto — Colômbia / Guatemala (AMER)',
       languages: ['Inglês (Padrão)', 'Espanhol', 'Português'],
       downloadCv: 'Baixar CV',
@@ -492,6 +531,7 @@ export const translations: Record<Locale, TranslationDictionary> = {
       subtitle: 'Uma jornada pela minha carreira profissional.',
       recentHeading: 'Experiência Recente (2020–Atual)',
       earlyHeading: 'Início de Carreira (2014–2020)',
+      impact: 'Impacto',
       highlights: 'Destaques',
       clientProjects: 'Projetos de Cliente',
       techUsed: 'Tecnologias Utilizadas',

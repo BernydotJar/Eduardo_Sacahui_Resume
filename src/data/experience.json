@@ -13,6 +13,11 @@
       "Delivered secure calendar intelligence (availability analysis, conflict detection, planning visibility) tailored to executive workflows.",
       "Directed QA governance and release readiness across functional, visual, and accessibility standards."
     ],
+    "metrics": [
+      "0→1 production executive AI assistant",
+      "6 Google Workspace surfaces integrated",
+      "100% approval-gated AI actions"
+    ],
     "skills": [
       "llmprod",
       "architecture",
@@ -105,6 +110,11 @@
       "Shipped LLM/RAG features with evals, guardrails, and telemetry tied to clinical KPIs.",
       "API-first services (FastAPI/Node); SDKs/Postman; offshore team leadership; CI/CD + testing."
     ],
+    "metrics": [
+      "+40% bot throughput after remediation",
+      "$120K+ annual license savings",
+      "500+ employees on governed platforms"
+    ],
     "skills": [
       "uipath",
       "powerplatform",
@@ -151,6 +161,11 @@
       "Enforced stringent security controls including RBAC, CyberArk/Key Vault integration for secrets management, TLS rotation, and network policies.",
       "Architected and delivered complex RPA portfolios for numerous clients including **Zebra Technologies, Love's, Dana-Farber Cancer Institute, UCare, Regeneron, AdaptHealth, McLaren Health, Tarpon Health, CareCentrix, and Help at Home**, focusing on compliance, auditability, and integration with clinical systems in the challenging healthcare sector."
     ],
+    "metrics": [
+      "$2M+ ARR portfolio managed",
+      "300% average client ROI in year one",
+      "10+ enterprise healthcare & retail clients"
+    ],
     "skills": [
       "uipath",
       "kubernetes",
@@ -191,6 +206,11 @@
       "Defined development standards (exceptions, idempotency, retries, structured logging) and governance (versioning, audit).",
       "Orchestrated PAC flows for approvals and notifications; created internal apps in Power Apps for self-service.",
       "Published metrics and KPIs in Power BI (SLA, AHT, throughput) and managed continuous improvement with stakeholders."
+    ],
+    "metrics": [
+      "15+ critical processes automated",
+      "−75% order processing time",
+      "−95% manual data-entry errors"
     ],
     "projects": [
       "haceb-rpa-suite",
@@ -240,6 +260,12 @@
       "Newell: PTP/AP integration (SAP + email automation).",
       "KBS: financial automations on NetSuite with Automation Anywhere (AA360): queues, validations, reconciliations."
     ],
+    "metrics": [
+      "Team of 12 developers led",
+      "50+ automation solutions delivered",
+      "99.9% uptime SLA on AWS/Azure",
+      "$50M+ annual transactions automated"
+    ],
     "projects": [
       "kbs-finance-12-automations",
       "newell-ptp-integration",
@@ -271,6 +297,9 @@
       "Built/maintained 200+ automations (Cloud/Desktop, SAP HANA).",
       "Designed CoE playbooks; integrated external APIs & legacy ERPs."
     ],
+    "metrics": [
+      "200+ automations built and maintained"
+    ],
     "skills": [
       "powerplatform",
       "sap",
@@ -288,6 +317,9 @@
       "Banco Ciudad (AR): back-office automations with Blue Prism; monitoring and metrics.",
       "Designed standards and templates (objects, queues, retries, logging) and control dashboards.",
       "Claro Andinas: front-office helper with AA and reporting."
+    ],
+    "metrics": [
+      "250% average ROI across clients"
     ],
     "projects": [
       "cabify-driver-onboarding",
@@ -317,6 +349,10 @@
       "Claro: front-office helper to surface customer data, AHT reduction.",
       "Pepsi: finance automations—invoice sending, inventory integration, payments."
     ],
+    "metrics": [
+      "−60% processing costs on key workflows",
+      "Fortune 100 client operations served"
+    ],
     "projects": [
       "avianca-redispatch",
       "claro-front-office",
@@ -341,6 +377,10 @@
       "General Mills: service-level web portal and reminder automation.",
       "Office Depot: AR invoice retrieval (on-demand & batch).",
       "Nokia: PoS download robot (Citrix)."
+    ],
+    "metrics": [
+      "~250 users on SLA & attendance automation",
+      "5 global brands automated"
     ],
     "projects": [
       "intlpaper-statements",

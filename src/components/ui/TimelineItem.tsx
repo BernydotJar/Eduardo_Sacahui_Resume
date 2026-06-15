@@ -34,6 +34,22 @@ const TimelineItem = ({ experience }: TimelineItemProps) => {
         </AccordionTrigger>
         <AccordionContent>
            <div className="pl-4 border-l-2 border-primary ml-2 space-y-6">
+                {experience.metrics && experience.metrics.length > 0 && (
+                  <div>
+                      <h4 className="text-sm font-semibold text-foreground mb-2">{dict.experience.impact}:</h4>
+                      <div className="flex flex-wrap gap-2">
+                          {experience.metrics.map((metric, index) => (
+                              <span
+                                key={index}
+                                className="inline-flex items-center rounded-md border border-primary/50 bg-primary/10 px-2.5 py-1 font-code text-xs font-semibold text-primary"
+                              >
+                                {metric}
+                              </span>
+                          ))}
+                      </div>
+                  </div>
+                )}
+
                 {experience.highlights && experience.highlights.length > 0 && (
                   <div>
                       <h4 className="text-sm font-semibold text-foreground mb-2">{dict.experience.highlights}:</h4>
