@@ -31,6 +31,23 @@ const impactStats = [
   { value: "$50M+", labelKey: "transactions" },
 ] as const;
 
+const HeroElementTile = ({
+  number,
+  symbol,
+}: {
+  number: string;
+  symbol: string;
+}) => {
+  return (
+    <span className="element-tile mr-1 px-[0.24em] py-[0.06em] leading-none overflow-hidden align-baseline rounded-lg">
+      <span className="absolute left-[0.16em] top-[0.12em] text-[0.22em] font-bold leading-none text-primary/90">
+        {number}
+      </span>
+      <span className="relative z-10 leading-none">{symbol}</span>
+    </span>
+  );
+};
+
 const Hero = () => {
   const { dict } = useLanguage();
 
@@ -46,17 +63,11 @@ const Hero = () => {
             >
                 <span aria-hidden="true" className="inline-flex flex-wrap items-center justify-center gap-x-4 gap-y-4">
                     <span className="inline-flex items-center">
-                        <span className="element-tile mr-1 px-2 py-1 leading-none">
-                            <span className="element-tile-number">99</span>
-                            Ed
-                        </span>
+                        <HeroElementTile number="99" symbol="Ed" />
                         <span>uardo</span>
                     </span>
                     <span className="inline-flex items-center">
-                        <span className="element-tile mr-1 px-2 py-1 leading-none">
-                            <span className="element-tile-number">16</span>
-                            Sa
-                        </span>
+                        <HeroElementTile number="16" symbol="Sa" />
                         <span>cahui</span>
                     </span>
                 </span>
