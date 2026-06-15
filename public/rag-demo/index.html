@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RAG Made Easy — learn retrieval-augmented generation by doing</title>
+  <script>
+    // Apply the saved theme before first paint to avoid a flash.
+    (function () {
+      try {
+        var t = localStorage.getItem("rag-theme");
+        if (t === "clarity") document.documentElement.setAttribute("data-theme", "clarity");
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Fraunces:ital,wght@0,600;1,500&family=Lato:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- floating gradient blobs -->
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+  <div class="blob blob-4"></div>
+  <div class="grain"></div>
+
+  <!-- theme switcher -->
+  <div class="theme-switch" role="group" aria-label="Theme">
+    <button id="theme-aurora" class="active" aria-pressed="true">✦ Aurora</button>
+    <button id="theme-clarity" aria-pressed="false">☀ Clarity</button>
+  </div>
+
+  <main>
+    <header class="hero">
+      <span class="badge">✦ rag-made-easy · learn by doing</span>
+      <h1>RAG, <em>made easy.</em></h1>
+      <p class="tagline">
+        A tiny retrieval-augmented generation module — and a hands-on way to <strong>understand it</strong>.
+        Pick a topic, index it, ask questions, and watch retrieval happen live in this page. No API key needed.
+      </p>
+      <!-- andragogy: the "why" up front, learning framed around the learner -->
+      <div class="principles">
+        <span class="principle">🧭 <b>Know the why</b> — see what each step is for</span>
+        <span class="principle">🛠️ <b>Learn by doing</b> — run the real pipeline</span>
+        <span class="principle">🧩 <b>Build on what you know</b> — swap in your own text</span>
+        <span class="principle">🎯 <b>Solve real problems</b> — ground answers in sources</span>
+      </div>
+    </header>
+
+    <!-- pipeline -->
+    <section aria-label="RAG pipeline">
+      <div class="section-head">
+        <h2>The pipeline, one step at a time</h2>
+        <p>RAG is four moves. Open “Why it matters” on any card to go deeper at your own pace.</p>
+      </div>
+      <div class="pipeline">
+        <div class="step glass" id="step-chunk">
+          <div class="step-icon i-chunk">⌗</div>
+          <h3>Chunk</h3>
+          <p>Documents are split into overlapping pieces that fit a retrieval window.</p>
+          <details class="why">
+            <summary>Why it matters</summary>
+            <div class="why-body">
+              Whole documents are too big to compare precisely. Splitting into small,
+              <b>overlapping</b> chunks means a question can match the exact passage that
+              answers it — and overlap keeps a sentence from being cut off at a boundary.
+            </div>
+          </details>
+        </div>
+        <div class="arrow">→</div>
+        <div class="step glass" id="step-embed">
+          <div class="step-icon i-embed">∿</div>
+          <h3>Embed</h3>
+          <p>Each chunk becomes a vector — a point in semantic space.</p>
+          <details class="why">
+            <summary>Why it matters</summary>
+            <div class="why-body">
+              An <b>embedding</b> turns text into numbers so that related text lands near
+              each other in space. Big models learn deep synonym links; this demo’s
+              offline embedder is lightweight — it scores <b>shared words and phrasing</b>,
+              so keep a key term or two in your question and it finds the right chunk.
+            </div>
+          </details>
+        </div>
+        <div class="arrow">→</div>
+        <div class="step glass" id="step-retrieve">
+          <div class="step-icon i-retrieve">◎</div>
+          <h3>Retrieve</h3>
+          <p>Your question is embedded too; the closest chunks win.</p>
+          <details class="why">
+            <summary>Why it matters</summary>
+            <div class="why-body">
+              The question becomes a vector in the <b>same space</b>. We measure
+              <b>cosine similarity</b> to every chunk and keep the top few — those become the
+              evidence. You’ll see the scores below as bars.
+            </div>
+          </details>
+        </div>
+        <div class="arrow">→</div>
+        <div class="step glass" id="step-generate">
+          <div class="step-icon i-generate">✦</div>
+          <h3>Generate</h3>
+          <p>An answer is composed strictly from the retrieved context.</p>
+          <details class="why">
+            <summary>Why it matters</summary>
+            <div class="why-body">
+              The answer is built <b>only</b> from what was retrieved, so it stays grounded in
+              your sources instead of guessing. Add a Claude key below to see a real LLM do this
+              with citations.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- concept: keywords vs meaning -->
+    <section class="concept glass">
+      <div class="panel-head">
+        <h2><span class="dot dot-purple"></span> From keywords to meaning</h2>
+      </div>
+      <p class="lead">The whole trick of RAG is the <b>Embed → Retrieve</b> pair. Here’s the idea behind it.</p>
+      <div class="compare">
+        <div class="compare-card basic glass-inner">
+          <h4><span class="tag">Old way</span> Keyword search</h4>
+          <p>Matches the exact words you typed. Ask “how does Pikachu grow up?” and a document
+          that only says “Pikachu <em>evolves</em>” may never surface — the words don’t line up.</p>
+        </div>
+        <div class="compare-card good glass-inner">
+          <h4><span class="tag">RAG way</span> Semantic search</h4>
+          <p>Compares <b>similarity</b>, not exact spelling. Both your question and the chunks
+          become vectors, and the closest ones win — so a reworded question still finds the
+          passage that answers it.</p>
+        </div>
+      </div>
+      <p class="note">
+        💡 <b>Cosine similarity</b> is just the angle between two vectors: small angle → very related → high score.
+        Those are the scores you’ll see on the retrieved chunks in a moment.
+        <br><br>
+        🔬 <b>This demo runs a tiny offline embedder</b> so it works with no API key — it matches shared words and
+        phrasing rather than deep synonyms. That’s the lesson: <b>embedder quality is a dial you control</b>.
+        Swap in a production embedding model (one line of code) and the same pipeline understands paraphrases far better.
+      </p>
+    </section>
+
+    <!-- playground -->
+    <section class="playground">
+      <div class="glass panel" id="kb-panel">
+        <div class="panel-head">
+          <h2><span class="dot dot-pink"></span> Knowledge base</h2>
+          <button id="index-btn" class="btn btn-primary">Index documents</button>
+        </div>
+        <div class="topic-bar">
+          <label for="topic-select">Topic</label>
+          <div class="topic-select-wrap">
+            <select id="topic-select" class="topic-select"></select>
+          </div>
+        </div>
+        <p class="hint">Pick a topic to load sample docs, then edit freely — separate documents with a line containing only <code>---</code>.</p>
+        <textarea id="docs-input" spellcheck="false"></textarea>
+        <div class="stats" id="stats" hidden>
+          <div class="stat"><span class="stat-num" id="stat-docs">0</span><span class="stat-label">docs</span></div>
+          <div class="stat"><span class="stat-num" id="stat-chunks">0</span><span class="stat-label">chunks</span></div>
+          <div class="stat"><span class="stat-num" id="stat-dims">0</span><span class="stat-label">dims</span></div>
+          <div class="stat"><span class="stat-num" id="stat-ms">–</span><span class="stat-label">index ms</span></div>
+        </div>
+      </div>
+
+      <div class="glass panel" id="ask-panel">
+        <div class="panel-head">
+          <h2><span class="dot dot-cyan"></span> Ask anything</h2>
+        </div>
+        <div class="ask-row">
+          <input id="question-input" type="text" placeholder="Index a topic first, then ask…" />
+          <button id="ask-btn" class="btn btn-primary" disabled>Ask</button>
+        </div>
+        <div class="retrieval-row">
+          <span class="retrieval-label">Retrieval</span>
+          <div class="seg" role="group" aria-label="Retrieval mode">
+            <button id="mode-hybrid" class="active" aria-pressed="true">Hybrid</button>
+            <button id="mode-semantic" aria-pressed="false">Semantic only</button>
+          </div>
+          <span class="retrieval-help" id="retrieval-help">semantic + keyword (BM25)</span>
+        </div>
+        <div class="suggestions" id="suggestions"></div>
+
+        <div id="results" hidden>
+          <h4 class="results-title">Retrieved chunks <span id="retrieve-ms" class="muted"></span></h4>
+          <div id="chunks-list"></div>
+          <h4 class="results-title">Answer <span class="muted" id="gen-mode"></span></h4>
+          <div class="answer glass-inner" id="answer"></div>
+
+          <h4 class="results-title">Answer quality <span class="muted">· lightweight signals</span></h4>
+          <div class="metrics" id="metrics">
+            <div class="metric">
+              <div class="metric-head"><span>Context relevance</span><span class="metric-val" id="m-context">–</span></div>
+              <div class="score-bar"><div class="score-fill" id="m-context-bar" style="width:0%"></div></div>
+              <p class="metric-note">Did retrieval find chunks that match your question?</p>
+            </div>
+            <div class="metric">
+              <div class="metric-head"><span>Groundedness</span><span class="metric-val" id="m-grounded">–</span></div>
+              <div class="score-bar"><div class="score-fill" id="m-grounded-bar" style="width:0%"></div></div>
+              <p class="metric-note">Is the answer supported by the retrieved context (not invented)?</p>
+            </div>
+            <div class="metric">
+              <div class="metric-head"><span>Answer relevance</span><span class="metric-val" id="m-relevance">–</span></div>
+              <div class="score-bar"><div class="score-fill" id="m-relevance-bar" style="width:0%"></div></div>
+              <p class="metric-note">Does the answer actually address what you asked?</p>
+            </div>
+          </div>
+          <p class="metric-disclaimer">
+            These are fast, offline lexical proxies — great for catching obvious problems.
+            Production systems score the same dimensions with an LLM-as-judge (add a Claude key above) or a
+            dedicated eval tool.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- your turn: andragogy experiments -->
+    <section class="your-turn glass">
+      <div class="panel-head">
+        <h2><span class="dot dot-green"></span> Your turn — experiment</h2>
+      </div>
+      <p class="hint">You learn this fastest by poking at it. Try these and watch what changes:</p>
+      <ul>
+        <li><span class="num">1</span><span><b>Flip Hybrid ↔ Semantic only</b> on the same question and compare. Hybrid adds a keyword (BM25) signal on top of meaning — watch an exact name or rare term climb the ranking.</span></li>
+        <li><span class="num">2</span><span><b>Watch the quality bars.</b> Ask something well-covered, then something the docs barely mention — see <b>groundedness</b> and <b>context relevance</b> drop, and check which chunks earn a “✓ cited” badge.</span></li>
+        <li><span class="num">3</span><span><b>Paste your own notes</b> into the knowledge base, re-index, and ask about them. RAG works on any text you give it.</span></li>
+        <li><span class="num">4</span><span><b>Switch topics</b> — Coffee, Pokédex, or Embeddings — re-index, and notice the pipeline is identical. The only thing that changed is the data.</span></li>
+      </ul>
+    </section>
+
+    <!-- claude option -->
+    <section class="glass panel claude-panel">
+      <div class="panel-head">
+        <h2><span class="dot dot-orange"></span> Optional: real LLM answers</h2>
+      </div>
+      <p class="hint">
+        By default this demo composes answers <em>extractively</em> from the retrieved chunks — fully offline.
+        Paste an Anthropic API key to have <strong>Claude</strong> generate grounded, cited answers instead.
+        The key stays in this page and is sent only to the Anthropic API.
+      </p>
+      <div class="ask-row">
+        <input id="api-key-input" type="password" placeholder="sk-ant-…  (optional)" autocomplete="off" />
+      </div>
+    </section>
+
+    <!-- usage -->
+    <section class="glass panel code-panel">
+      <div class="panel-head">
+        <h2><span class="dot dot-green"></span> Use it in your project</h2>
+      </div>
+<pre><code><span class="c-kw">import</span> { RAG } <span class="c-kw">from</span> <span class="c-str">"rag-made-easy"</span>;
+<span class="c-kw">import</span> { ClaudeGenerator } <span class="c-kw">from</span> <span class="c-str">"rag-made-easy/claude"</span>; <span class="c-com">// optional</span>
+
+<span class="c-kw">const</span> rag = <span class="c-kw">new</span> <span class="c-fn">RAG</span>({ generator: <span class="c-kw">new</span> <span class="c-fn">ClaudeGenerator</span>() });
+
+<span class="c-kw">await</span> rag.<span class="c-fn">add</span>([{ id: <span class="c-str">"handbook"</span>, text: docs }]);
+<span class="c-kw">const</span> { answer, sources } = <span class="c-kw">await</span> rag.<span class="c-fn">query</span>(<span class="c-str">"What temperature for pour-over?"</span>);</code></pre>
+      <p class="hint">Every stage is pluggable: implement <code>Embedder</code>, <code>VectorStore</code>, or <code>Generator</code> to use any model or database.</p>
+    </section>
+
+    <footer>
+      <p>rag-made-easy · zero-dependency core · MIT · two themes, built for learners</p>
+    </footer>
+  </main>
+
+  <script src="rag.bundle.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

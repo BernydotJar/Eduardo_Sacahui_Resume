@@ -163,6 +163,16 @@ export function ProjectCaseStudyModal({ projectId, isOpen, onClose }: ProjectCas
                   </div>
                 )}
 
+                {project.id === 'rag-made-easy' && (
+                  <div className="pt-2">
+                    <Button asChild className="w-full justify-center text-xs bg-primary text-primary-foreground hover:bg-primary/90">
+                      <Link href="/rag-demo/" target="_blank">
+                        Launch Interactive Playground
+                      </Link>
+                    </Button>
+                  </div>
+                )}
+
                 {project.id === 'autotask-to-jira-fabric' && (
                   <div className="p-3 border border-primary/20 rounded-lg bg-primary/5 space-y-2 mt-auto">
                     <h4 className="font-semibold text-foreground text-xs uppercase tracking-wider">{dict.drawer.medallionArchitecture}</h4>
