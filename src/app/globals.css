@@ -76,6 +76,33 @@
     @apply absolute left-1 top-0.5 text-[0.3em] font-bold leading-none text-primary/80;
     text-shadow: none;
   }
+  .ai-harness-link {
+    @apply relative inline-flex items-center gap-1.5 overflow-hidden rounded-sm border px-2.5 py-1 font-code text-xs font-bold uppercase text-foreground transition-transform duration-200;
+    border-color: hsl(190 100% 58% / 0.72);
+    background:
+      linear-gradient(90deg, hsl(190 100% 58% / 0.2), hsl(315 100% 60% / 0.18)),
+      repeating-linear-gradient(0deg, transparent 0 3px, hsl(0 0% 100% / 0.08) 3px 4px);
+    box-shadow:
+      3px 3px 0 hsl(315 100% 60% / 0.9),
+      0 0 18px hsl(190 100% 58% / 0.36);
+    text-shadow:
+      1px 1px 0 hsl(315 100% 60% / 0.9),
+      0 0 10px hsl(190 100% 58% / 0.72);
+  }
+  .ai-harness-link:hover {
+    @apply -translate-y-0.5 text-white;
+    border-color: hsl(315 100% 68% / 0.88);
+    box-shadow:
+      4px 4px 0 hsl(190 100% 58% / 0.9),
+      0 0 24px hsl(315 100% 60% / 0.44);
+  }
+  .ai-harness-chip {
+    @apply inline-flex h-5 w-5 items-center justify-center rounded-sm border;
+    border-color: hsl(315 100% 70% / 0.75);
+    background: hsl(160 30% 6% / 0.72);
+    color: hsl(190 100% 70%);
+    box-shadow: inset 0 0 10px hsl(190 100% 58% / 0.28);
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {

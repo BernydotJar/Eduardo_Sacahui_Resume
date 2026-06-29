@@ -4,7 +4,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, Rocket } from 'lucide-react';
+import { Cpu, Menu, Rocket } from 'lucide-react';
 import {
     Select,
     SelectContent,
@@ -30,6 +30,7 @@ const Header = ({ onStartTour }: HeaderProps) => {
         { href: "#casestudies", label: dict.header.nav.caseStudies },
         { href: "#education", label: dict.header.nav.education },
     ];
+    const aiHarnessUrl = "https://github.com/BernydotJar/harness-sdlc.git";
 
     const handleNavClick = () => {
         setMobileMenuOpen(false);
@@ -51,10 +52,22 @@ const Header = ({ onStartTour }: HeaderProps) => {
                     </span>
                     <span className="hidden font-bold sm:inline-block">Eduardo Sacahui</span>
                 </a>
-                <nav className="hidden md:flex items-center gap-6 text-sm">
+                <nav className="hidden xl:flex items-center gap-5 text-sm">
                     {navLinks.map(link => (
                         <a key={link.href} href={link.href} className="transition-colors hover:text-foreground text-foreground/80">{link.label}</a>
                     ))}
+                    <a
+                        href={aiHarnessUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label={dict.header.nav.aiHarnessAria}
+                        className="ai-harness-link"
+                    >
+                        <span className="ai-harness-chip" aria-hidden="true">
+                            <Cpu className="h-3.5 w-3.5" />
+                        </span>
+                        <span>{dict.header.nav.aiHarness}</span>
+                    </a>
                 </nav>
                 <div className="flex flex-1 items-center justify-end gap-2">
                     <div className="hidden md:block">
@@ -82,7 +95,7 @@ const Header = ({ onStartTour }: HeaderProps) => {
                             <Button
                                 variant="outline"
                                 size="icon"
-                                className="md:hidden"
+                                className="xl:hidden"
                                 aria-expanded={mobileMenuOpen}
                                 aria-controls="mobile-nav"
                             >
@@ -115,6 +128,19 @@ const Header = ({ onStartTour }: HeaderProps) => {
                                 {navLinks.map(link => (
                                     <a key={link.href} href={link.href} className="text-muted-foreground hover:text-foreground" onClick={handleNavClick}>{link.label}</a>
                                 ))}
+                                <a
+                                    href={aiHarnessUrl}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    aria-label={dict.header.nav.aiHarnessAria}
+                                    className="ai-harness-link w-fit text-base"
+                                    onClick={handleNavClick}
+                                >
+                                    <span className="ai-harness-chip" aria-hidden="true">
+                                        <Cpu className="h-3.5 w-3.5" />
+                                    </span>
+                                    <span>{dict.header.nav.aiHarness}</span>
+                                </a>
                                 <Button variant="outline" onClick={() => { onStartTour(); handleNavClick(); }}>
                                     <Rocket className="mr-2 h-4 w-4" />
                                     {dict.header.tourTech}

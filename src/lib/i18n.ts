@@ -24,6 +24,8 @@ export type TranslationDictionary = {
       experience: string;
       caseStudies: string;
       education: string;
+      aiHarness: string;
+      aiHarnessAria: string;
     };
     tourTech: string;
     contactMe: string;
@@ -155,6 +157,8 @@ export const translations: Record<Locale, TranslationDictionary> = {
         experience: 'Experience',
         caseStudies: 'Case Studies',
         education: 'Education',
+        aiHarness: 'AI-Harness',
+        aiHarnessAria: 'Open AI-Harness project on GitHub',
       },
       tourTech: 'Tour the Tech',
       contactMe: 'Contact Me',
@@ -318,6 +322,8 @@ export const translations: Record<Locale, TranslationDictionary> = {
         experience: 'Experiencia',
         caseStudies: 'Casos de Estudio',
         education: 'Educación',
+        aiHarness: 'AI-Harness',
+        aiHarnessAria: 'Abrir el proyecto AI-Harness en GitHub',
       },
       tourTech: 'Recorrido Técnico',
       contactMe: 'Contáctame',
@@ -483,6 +489,8 @@ export const translations: Record<Locale, TranslationDictionary> = {
         experience: 'Experiência',
         caseStudies: 'Estudos de Caso',
         education: 'Educação',
+        aiHarness: 'AI-Harness',
+        aiHarnessAria: 'Abrir o projeto AI-Harness no GitHub',
       },
       tourTech: 'Tour Técnico',
       contactMe: 'Contato',
