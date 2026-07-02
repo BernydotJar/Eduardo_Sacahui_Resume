@@ -4,11 +4,12 @@ import experienceData from '@/data/experience.json';
 import educationData from '@/data/education.json';
 import certificationsData from '@/data/certifications.json';
 import awardsData from '@/data/awards.json';
+import { harnessSdlcProject } from '@/data/harnessProject';
 
 import type { Skill, Project, Experience, Education, Award } from './types';
 
 export const skills: Skill[] = skillsData;
-export const projects: Project[] = projectsData;
+export const projects: Project[] = [...(projectsData as Project[]), harnessSdlcProject];
 export const experience: Experience[] = experienceData;
 export const education: Education[] = educationData;
 export const certifications: string[] = certificationsData;
