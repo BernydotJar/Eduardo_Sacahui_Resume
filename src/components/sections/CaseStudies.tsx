@@ -6,6 +6,7 @@ import { useLanguage } from '@/components/context/LanguageContext';
 
 const caseStudyIds = [
   'rice-command-center-demo-mode',
+  'constructhub-ai-procurement-platform',
   'harness-sdlc-agentic-delivery',
   'laura-ai-agent-rag-workflow',
   'rag-made-easy',
