@@ -15,7 +15,9 @@ const caseStudyIds = [
   'autotask-to-jira-fabric'
 ];
 
-const caseStudies = projects.filter(p => caseStudyIds.includes(p.id));
+const caseStudies = caseStudyIds
+  .map(id => projects.find(p => p.id === id))
+  .filter((project): project is NonNullable<typeof project> => Boolean(project));
 
 interface CaseStudiesProps {
     onCardClick: (projectId: string) => void;
