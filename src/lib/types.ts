@@ -22,6 +22,8 @@ export interface Project {
   client?: string;
   methodology?: string;
   aliases?: string[];
+  liveUrl?: string;
+  sourceUrl?: string;
   caseStudy?: ProjectCaseStudy;
 }
 

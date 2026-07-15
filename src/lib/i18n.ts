@@ -73,6 +73,21 @@ export type TranslationDictionary = {
     title: string;
     subtitle: string;
     viewDetails: string;
+    featuredLabel: string;
+    liveApp: string;
+    viewSource: string;
+    instrumentLabel: string;
+    metricHours: string;
+    metricRisk: string;
+    metricConfidence: string;
+    riskValue: string;
+    confidenceValue: string;
+    capabilities: {
+      discovery: string;
+      estimation: string;
+      assumptions: string;
+      reports: string;
+    };
   };
   experience: {
     title: string;
@@ -135,6 +150,9 @@ export type TranslationDictionary = {
       launchInteractivePlayground: string;
       interactiveDemoPlayground: string;
       interactiveDemoPlaygroundDesc: string;
+      liveProduct: string;
+      liveProductDesc: string;
+      viewSource: string;
     };
   tour: {
     prev: string;
@@ -207,6 +225,21 @@ export const translations: Record<Locale, TranslationDictionary> = {
       title: 'Featured Case Studies',
       subtitle: 'Deep dives into impactful projects.',
       viewDetails: 'View Details',
+      featuredLabel: 'Featured build · Live product',
+      liveApp: 'Launch live app',
+      viewSource: 'View source',
+      instrumentLabel: 'Estimate pulse',
+      metricHours: 'Estimated hours',
+      metricRisk: 'Delivery risk',
+      metricConfidence: 'Confidence',
+      riskValue: 'Moderate',
+      confidenceValue: 'High',
+      capabilities: {
+        discovery: 'Discovery',
+        estimation: 'Estimation',
+        assumptions: 'Assumptions',
+        reports: 'Reports',
+      },
     },
     experience: {
       title: 'Experience Timeline',
@@ -271,6 +304,9 @@ export const translations: Record<Locale, TranslationDictionary> = {
       launchInteractivePlayground: 'Launch Interactive Playground',
       interactiveDemoPlayground: 'Interactive Demo Playground',
       interactiveDemoPlaygroundDesc: 'Launch the live, hands-on RAG learning application directly in your browser.',
+      liveProduct: 'Live Product Experience',
+      liveProductDesc: 'Open the production demo and explore the RPA estimation workflow directly in your browser.',
+      viewSource: 'View Source on GitHub',
     },
     tour: {
       prev: 'Prev',
@@ -374,6 +410,21 @@ export const translations: Record<Locale, TranslationDictionary> = {
       title: 'Casos de Estudio Destacados',
       subtitle: 'Análisis profundos de proyectos de alto impacto.',
       viewDetails: 'Ver Detalles',
+      featuredLabel: 'Producto destacado · Demo en vivo',
+      liveApp: 'Abrir app en vivo',
+      viewSource: 'Ver código',
+      instrumentLabel: 'Pulso de estimación',
+      metricHours: 'Horas estimadas',
+      metricRisk: 'Riesgo de entrega',
+      metricConfidence: 'Confianza',
+      riskValue: 'Moderado',
+      confidenceValue: 'Alta',
+      capabilities: {
+        discovery: 'Descubrimiento',
+        estimation: 'Estimación',
+        assumptions: 'Supuestos',
+        reports: 'Reportes',
+      },
     },
     experience: {
       title: 'Línea de Tiempo Profesional',
@@ -438,6 +489,9 @@ export const translations: Record<Locale, TranslationDictionary> = {
       launchInteractivePlayground: 'Iniciar Demo Interactiva',
       interactiveDemoPlayground: 'Demo Interactiva Playground',
       interactiveDemoPlaygroundDesc: 'Inicia la aplicación de aprendizaje de RAG interactiva directamente en tu navegador.',
+      liveProduct: 'Experiencia de Producto en Vivo',
+      liveProductDesc: 'Abre la demo publicada y explora el flujo de estimación RPA directamente en tu navegador.',
+      viewSource: 'Ver Código en GitHub',
     },
     tour: {
       prev: 'Anterior',
@@ -542,6 +596,21 @@ export const translations: Record<Locale, TranslationDictionary> = {
       title: 'Estudos de Caso em Destaque',
       subtitle: 'Análises profundas de projetos com alto impacto.',
       viewDetails: 'Ver Detalhes',
+      featuredLabel: 'Produto em destaque · Demo ao vivo',
+      liveApp: 'Abrir app ao vivo',
+      viewSource: 'Ver código',
+      instrumentLabel: 'Pulso da estimativa',
+      metricHours: 'Horas estimadas',
+      metricRisk: 'Risco de entrega',
+      metricConfidence: 'Confiança',
+      riskValue: 'Moderado',
+      confidenceValue: 'Alta',
+      capabilities: {
+        discovery: 'Descoberta',
+        estimation: 'Estimativa',
+        assumptions: 'Premissas',
+        reports: 'Relatórios',
+      },
     },
     experience: {
       title: 'Linha do Tempo Profissional',
@@ -606,6 +675,9 @@ export const translations: Record<Locale, TranslationDictionary> = {
       launchInteractivePlayground: 'Iniciar Demo Interativa',
       interactiveDemoPlayground: 'Demo Interativa Playground',
       interactiveDemoPlaygroundDesc: 'Inicie o aplicativo de aprendizado de RAG interativo diretamente no seu navegador.',
+      liveProduct: 'Experiência de Produto ao Vivo',
+      liveProductDesc: 'Abra a demo publicada e explore o fluxo de estimativa RPA diretamente no navegador.',
+      viewSource: 'Ver Código no GitHub',
     },
     tour: {
       prev: 'Anterior',

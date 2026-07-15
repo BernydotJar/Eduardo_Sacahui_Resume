@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { X, Download } from "lucide-react";
+import { X, Download, ExternalLink, Github } from "lucide-react";
 import { useLanguage } from "@/components/context/LanguageContext";
 import { skills, projects, experience } from "@/lib/data";
 import { medallionArchitecture } from "@/data/medallion";
@@ -183,6 +183,27 @@ export function ProjectCaseStudyModal({ projectId, isOpen, onClose }: ProjectCas
                   </div>
                 )}
 
+                {(project.liveUrl || project.sourceUrl) && (
+                  <div className="space-y-2 pt-2">
+                    {project.liveUrl && (
+                      <Button asChild className="w-full justify-center text-xs bg-cyan-300 text-slate-950 hover:bg-cyan-200">
+                        <a href={project.liveUrl} target="_blank" rel="noreferrer">
+                          <ExternalLink className="mr-2 h-3.5 w-3.5" />
+                          {dict.caseStudies.liveApp}
+                        </a>
+                      </Button>
+                    )}
+                    {project.sourceUrl && (
+                      <Button asChild variant="outline" className="w-full justify-center text-xs border-primary/30 hover:bg-primary/10 hover:text-primary">
+                        <a href={project.sourceUrl} target="_blank" rel="noreferrer">
+                          <Github className="mr-2 h-3.5 w-3.5" />
+                          {dict.drawer.viewSource}
+                        </a>
+                      </Button>
+                    )}
+                  </div>
+                )}
+
                 {project.id === 'autotask-to-jira-fabric' && (
                   <div className="p-3 border border-primary/20 rounded-lg bg-primary/5 space-y-2 mt-auto">
                     <h4 className="font-semibold text-foreground text-xs uppercase tracking-wider">{dict.drawer.medallionArchitecture}</h4>
@@ -197,6 +218,24 @@ export function ProjectCaseStudyModal({ projectId, isOpen, onClose }: ProjectCas
 
                 {project.caseStudy ? (
                   <div className="relative space-y-8">
+                    {project.liveUrl && (
+                      <div className="flex flex-col items-start justify-between gap-4 rounded-xl border border-cyan-300/25 bg-cyan-300/[0.06] p-5 shadow-[0_0_24px_rgba(34,211,238,0.06)] sm:flex-row sm:items-center">
+                        <div className="space-y-1">
+                          <h4 className="font-code text-sm font-bold uppercase tracking-wider text-cyan-200">
+                            {dict.drawer.liveProduct}
+                          </h4>
+                          <p className="text-xs text-muted-foreground">
+                            {dict.drawer.liveProductDesc}
+                          </p>
+                        </div>
+                        <Button asChild className="w-full shrink-0 bg-cyan-300 text-slate-950 hover:bg-cyan-200 sm:w-auto">
+                          <a href={project.liveUrl} target="_blank" rel="noreferrer">
+                            {dict.caseStudies.liveApp}
+                            <ExternalLink className="ml-2 h-4 w-4" />
+                          </a>
+                        </Button>
+                      </div>
+                    )}
                     
                     {/* Prominent Action Banner for RAG Demo */}
                     {project.id === 'rag-made-easy' && (
