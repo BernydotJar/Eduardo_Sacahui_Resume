@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { withBasePath } from "@/lib/site";
 
 interface ProjectCaseStudyModalProps {
   projectId: string | null;
@@ -20,18 +21,44 @@ interface ProjectCaseStudyModalProps {
 export function ProjectCaseStudyModal({ projectId, isOpen, onClose }: ProjectCaseStudyModalProps) {
   const { dict } = useLanguage();
   const titleRef = useRef<HTMLHeadingElement | null>(null);
+  const dialogRef = useRef<HTMLDivElement | null>(null);
+  const returnFocusRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         onClose();
+        return;
+      }
+
+      if (e.key === "Tab" && dialogRef.current) {
+        const focusable = Array.from(
+          dialogRef.current.querySelectorAll<HTMLElement>(
+            'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+          )
+        );
+        const first = focusable[0];
+        const last = focusable.at(-1);
+
+        if (!first || !last) return;
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
       }
     };
     if (isOpen) {
+      returnFocusRef.current = document.activeElement as HTMLElement | null;
       window.addEventListener("keydown", handleKeyDown);
-      titleRef.current?.focus();
+      window.requestAnimationFrame(() => titleRef.current?.focus());
     }
-    return () => window.removeEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      if (isOpen) returnFocusRef.current?.focus();
+    };
   }, [isOpen, onClose]);
 
   const project = projects.find(p => p.id === projectId);
@@ -55,6 +82,7 @@ export function ProjectCaseStudyModal({ projectId, isOpen, onClose }: ProjectCas
           onClick={onClose}
         >
           <motion.div
+            ref={dialogRef}
             onClick={(event) => event.stopPropagation()}
             initial={{ opacity: 0, scale: 0.88 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -155,7 +183,7 @@ export function ProjectCaseStudyModal({ projectId, isOpen, onClose }: ProjectCas
                 {project.id === 'rag-knowledge-services' && (
                   <div className="pt-2">
                     <Button variant="outline" asChild className="w-full justify-center text-xs border-primary/30 hover:bg-primary/10 hover:text-primary">
-                      <a href="/postman-collection.json" download>
+                      <a href={withBasePath("/postman-collection.json")} download>
                         <Download className="mr-2 h-3.5 w-3.5" />
                         {dict.drawer.downloadPostmanCollection}
                       </a>
@@ -166,7 +194,7 @@ export function ProjectCaseStudyModal({ projectId, isOpen, onClose }: ProjectCas
                 {project.id === 'rag-made-easy' && (
                   <div className="pt-2">
                     <Button asChild className="w-full justify-center text-xs bg-primary text-primary-foreground hover:bg-primary/90">
-                      <Link href="/rag-demo/" target="_blank">
+                      <Link href={withBasePath("/rag-demo/")} target="_blank">
                         {dict.drawer.launchInteractivePlayground}
                       </Link>
                     </Button>
@@ -176,7 +204,7 @@ export function ProjectCaseStudyModal({ projectId, isOpen, onClose }: ProjectCas
                 {project.id === 'ai-recruiting-copilot' && (
                   <div className="pt-2">
                     <Button asChild className="w-full justify-center text-xs bg-primary text-primary-foreground hover:bg-primary/90">
-                      <Link href="/recruiting-demo/" target="_blank">
+                      <Link href={withBasePath("/recruiting-demo/")} target="_blank">
                         {dict.drawer.launchInteractivePlayground}
                       </Link>
                     </Button>
@@ -202,6 +230,15 @@ export function ProjectCaseStudyModal({ projectId, isOpen, onClose }: ProjectCas
                       </Button>
                     )}
                   </div>
+                )}
+
+                {project.category && (
+                  <Button asChild variant="outline" className="w-full justify-center text-xs border-cyan-300/30 text-cyan-100 hover:bg-cyan-300/10 hover:text-white">
+                    <Link href={`/projects/${project.id}/`}>
+                      <ExternalLink className="mr-2 h-3.5 w-3.5" />
+                      {dict.projectPage.openFullCaseStudy}
+                    </Link>
+                  </Button>
                 )}
 
                 {project.id === 'autotask-to-jira-fabric' && (
@@ -249,7 +286,7 @@ export function ProjectCaseStudyModal({ projectId, isOpen, onClose }: ProjectCas
                           </p>
                         </div>
                         <Button asChild className="w-full sm:w-auto px-5 py-2.5 bg-primary text-primary-foreground hover:bg-primary/90 shadow-[0_0_15px_rgba(34,197,94,0.25)] shrink-0 font-semibold text-xs">
-                          <Link href="/rag-demo/" target="_blank">
+                          <Link href={withBasePath("/rag-demo/")} target="_blank">
                             {dict.drawer.launchInteractivePlayground} →
                           </Link>
                         </Button>
@@ -268,7 +305,7 @@ export function ProjectCaseStudyModal({ projectId, isOpen, onClose }: ProjectCas
                           </p>
                         </div>
                         <Button asChild className="w-full sm:w-auto px-5 py-2.5 bg-primary text-primary-foreground hover:bg-primary/90 shadow-[0_0_15px_rgba(34,197,94,0.25)] shrink-0 font-semibold text-xs">
-                          <Link href="/recruiting-demo/" target="_blank">
+                          <Link href={withBasePath("/recruiting-demo/")} target="_blank">
                             {dict.drawer.launchInteractivePlayground} →
                           </Link>
                         </Button>
@@ -279,7 +316,7 @@ export function ProjectCaseStudyModal({ projectId, isOpen, onClose }: ProjectCas
                     {project.caseStudy.useCase && project.caseStudy.useCase.length > 0 && (
                       <div className="space-y-3">
                         <h3 className="text-lg font-bold text-primary border-b border-primary/10 pb-2 uppercase tracking-wide">
-                          Use Case
+                          {dict.projectPage.useCase}
                         </h3>
                         <ul className="list-disc pl-5 space-y-2 text-sm text-muted-foreground leading-relaxed">
                           {project.caseStudy.useCase.map((item, idx) => (
@@ -293,17 +330,17 @@ export function ProjectCaseStudyModal({ projectId, isOpen, onClose }: ProjectCas
                     {project.caseStudy.statusMatrix && project.caseStudy.statusMatrix.length > 0 && (
                       <div className="space-y-3">
                         <h3 className="text-lg font-bold text-primary border-b border-primary/10 pb-2 uppercase tracking-wide">
-                          Delivery Status
+                          {dict.projectPage.deliveryStatus}
                         </h3>
                         <div className="overflow-x-auto rounded-lg border border-primary/20 bg-primary/5">
                           <table className="min-w-[700px] w-full text-left text-xs">
                             <thead className="bg-primary/10 text-primary uppercase font-mono tracking-wider text-[10px]">
                               <tr>
-                                <th className="px-4 py-3 font-bold">Key</th>
-                                <th className="px-4 py-3 font-bold">Functionality</th>
-                                <th className="px-4 py-3 font-bold">Status</th>
-                                <th className="px-4 py-3 font-bold">What Is True Now</th>
-                                <th className="px-4 py-3 font-bold">Next</th>
+                                <th className="px-4 py-3 font-bold">{dict.projectPage.table.key}</th>
+                                <th className="px-4 py-3 font-bold">{dict.projectPage.table.functionality}</th>
+                                <th className="px-4 py-3 font-bold">{dict.projectPage.table.status}</th>
+                                <th className="px-4 py-3 font-bold">{dict.projectPage.table.current}</th>
+                                <th className="px-4 py-3 font-bold">{dict.projectPage.table.next}</th>
                               </tr>
                             </thead>
                             <tbody className="divide-y divide-primary/10">
@@ -335,7 +372,7 @@ export function ProjectCaseStudyModal({ projectId, isOpen, onClose }: ProjectCas
                     {project.caseStudy.implementationPlan && (
                       <div className="space-y-3">
                         <h3 className="text-lg font-bold text-primary border-b border-primary/10 pb-2 uppercase tracking-wide">
-                          Implementation Plan
+                          {dict.projectPage.implementationPlan}
                         </h3>
                         <ul className="list-disc pl-5 space-y-2 text-sm text-muted-foreground leading-relaxed">
                           {project.caseStudy.implementationPlan.map((item, idx) => (
@@ -349,7 +386,7 @@ export function ProjectCaseStudyModal({ projectId, isOpen, onClose }: ProjectCas
                     {project.caseStudy.implementationHighlights && (
                       <div className="space-y-3">
                         <h3 className="text-lg font-bold text-primary border-b border-primary/10 pb-2 uppercase tracking-wide">
-                          Implementation Details
+                          {dict.projectPage.technicalDetails}
                         </h3>
                         <ul className="list-disc pl-5 space-y-2 text-sm text-muted-foreground leading-relaxed">
                           {project.caseStudy.implementationHighlights.map((item, idx) => (
@@ -363,7 +400,7 @@ export function ProjectCaseStudyModal({ projectId, isOpen, onClose }: ProjectCas
                     {project.caseStudy.testChecklist && (
                       <div className="space-y-3">
                         <h3 className="text-lg font-bold text-primary border-b border-primary/10 pb-2 uppercase tracking-wide">
-                          How To Test
+                          {dict.projectPage.howToTest}
                         </h3>
                         <ul className="list-disc pl-5 space-y-2 text-sm text-muted-foreground leading-relaxed">
                           {project.caseStudy.testChecklist.map((item, idx) => (
@@ -377,7 +414,7 @@ export function ProjectCaseStudyModal({ projectId, isOpen, onClose }: ProjectCas
                     {project.caseStudy.apiChecks && (
                       <div className="space-y-3">
                         <h3 className="text-lg font-bold text-primary border-b border-primary/10 pb-2 uppercase tracking-wide">
-                          API Quick Checks
+                          {dict.projectPage.apiChecks}
                         </h3>
                         <ul className="list-disc pl-5 space-y-2 text-sm text-muted-foreground leading-relaxed">
                           {project.caseStudy.apiChecks.map((item, idx) => (
@@ -391,7 +428,7 @@ export function ProjectCaseStudyModal({ projectId, isOpen, onClose }: ProjectCas
                     {project.caseStudy.validationProof && (
                       <div className="space-y-3">
                         <h3 className="text-lg font-bold text-primary border-b border-primary/10 pb-2 uppercase tracking-wide">
-                          Validation Proof
+                          {dict.projectPage.validationProof}
                         </h3>
                         <ul className="list-disc pl-5 space-y-2 text-sm text-muted-foreground leading-relaxed">
                           {project.caseStudy.validationProof.map((item, idx) => (
@@ -405,7 +442,7 @@ export function ProjectCaseStudyModal({ projectId, isOpen, onClose }: ProjectCas
                     {project.caseStudy.knownLimitations && (
                       <div className="space-y-3">
                         <h3 className="text-lg font-bold text-primary border-b border-primary/10 pb-2 uppercase tracking-wide">
-                          Known Limitations
+                          {dict.projectPage.limitations}
                         </h3>
                         <ul className="list-disc pl-5 space-y-2 text-sm text-muted-foreground leading-relaxed">
                           {project.caseStudy.knownLimitations.map((item, idx) => (
@@ -419,7 +456,7 @@ export function ProjectCaseStudyModal({ projectId, isOpen, onClose }: ProjectCas
                     {project.caseStudy.localCommands && project.caseStudy.localCommands.length > 0 && (
                       <div className="space-y-3">
                         <h3 className="text-lg font-bold text-primary border-b border-primary/10 pb-2 uppercase tracking-wide">
-                          Local Commands
+                          {dict.projectPage.localCommands}
                         </h3>
                         <pre className="rounded-lg border border-primary/20 bg-[#040a07] p-4 text-xs text-primary font-code overflow-x-auto leading-relaxed">{project.caseStudy.localCommands.join("\n")}</pre>
                       </div>

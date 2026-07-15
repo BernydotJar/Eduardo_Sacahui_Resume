@@ -4,17 +4,10 @@ const repoName = 'Eduardo_Sacahui_Resume';
 const isProd = process.env.NODE_ENV === 'production';
 
 const nextConfig: NextConfig = {
-  /* config options here */
   output: 'export',
   basePath: isProd ? `/${repoName}` : undefined,
   assetPrefix: isProd ? `/${repoName}/` : undefined,
   trailingSlash: true,
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
   images: {
     unoptimized: true,
     remotePatterns: [

@@ -19,6 +19,12 @@ export type TranslationDictionary = {
   };
   header: {
     nav: {
+      products: string;
+      platforms: string;
+      approach: string;
+      leadership: string;
+      engagements: string;
+      contact: string;
       skills: string;
       migrations: string;
       experience: string;
@@ -28,12 +34,29 @@ export type TranslationDictionary = {
       aiHarnessAria: string;
     };
     tourTech: string;
+    brandTagline: string;
+    primaryNavLabel: string;
+    mobileNavLabel: string;
     contactMe: string;
     goToTop: string;
     menuToggle: string;
   };
   hero: {
+    eyebrow: string;
     title: string;
+    differentiator: string;
+    exploreProducts: string;
+    viewLeadership: string;
+    downloadResume: string;
+    proofLabel: string;
+    proofItems: string[];
+    proofStatus: string;
+    proofTags: { products: string; control: string; delivery: string };
+    pillars: {
+      products: string;
+      platforms: string;
+      transformation: string;
+    };
     summaryHeading: string;
     summary: string;
     statsHeading: string;
@@ -50,6 +73,46 @@ export type TranslationDictionary = {
     downloadCv: string;
     awardsAndCertifications: string;
     contactMe: string;
+  };
+  portfolio: {
+    impactEyebrow: string;
+    impactTitle: string;
+    impactSubtitle: string;
+    impactItems: {
+      products: { value: string; label: string; context: string };
+      surfaces: { value: string; label: string; context: string };
+      controls: { value: string; label: string; context: string };
+      leadership: { value: string; label: string; context: string };
+    };
+    customerEyebrow: string;
+    customerTitle: string;
+    customerSubtitle: string;
+    platformEyebrow: string;
+    platformTitle: string;
+    platformSubtitle: string;
+    labels: {
+      maturity: string;
+      users: string;
+      problem: string;
+      role: string;
+      proof: string;
+      details: string;
+      liveDemo: string;
+      source: string;
+    };
+    cards: Record<'rice' | 'laMuni' | 'recruiting' | 'harness' | 'rag' | 'timeEstimator' | 'constructHub', {
+      summary: string;
+      users: string;
+      problem: string;
+      role: string;
+      maturity: string;
+    }>;
+  };
+  approach: {
+    eyebrow: string;
+    title: string;
+    subtitle: string;
+    stages: Array<{ name: string; responsibilities: string }>;
   };
   skills: {
     title: string;
@@ -92,12 +155,61 @@ export type TranslationDictionary = {
   experience: {
     title: string;
     subtitle: string;
+    leadershipTitle: string;
+    leadershipSubtitle: string;
+    engagementsTitle: string;
+    engagementsSubtitle: string;
+    overlapNote: string;
     recentHeading: string;
     earlyHeading: string;
     impact: string;
     highlights: string;
     clientProjects: string;
     techUsed: string;
+  };
+  humanSystems: {
+    eyebrow: string;
+    title: string;
+    summary: string;
+    degreeLabel: string;
+    degreeStatus: string;
+    themes: Array<{ title: string; description: string }>;
+    boundary: string;
+  };
+  projectPage: {
+    back: string;
+    maturity: string;
+    users: string;
+    stakeholders: string;
+    problem: string;
+    surface: string;
+    role: string;
+    team: string;
+    discovery: string;
+    decisions: string;
+    tradeoffs: string;
+    architecture: string;
+    aiBehavior: string;
+    evaluation: string;
+    safety: string;
+    delivery: string;
+    feedback: string;
+    outcomes: string;
+    evidence: string;
+    limitations: string;
+    nextStage: string;
+    live: string;
+    source: string;
+    technicalDetails: string;
+    openFullCaseStudy: string;
+    useCase: string;
+    deliveryStatus: string;
+    implementationPlan: string;
+    howToTest: string;
+    apiChecks: string;
+    validationProof: string;
+    localCommands: string;
+    table: { key: string; functionality: string; status: string; current: string; next: string };
   };
   education: {
     title: string;
@@ -170,6 +282,12 @@ export const translations: Record<Locale, TranslationDictionary> = {
     },
     header: {
       nav: {
+        products: 'Products',
+        platforms: 'Platforms',
+        approach: 'Approach',
+        leadership: 'Leadership',
+        engagements: 'Experience',
+        contact: 'Contact',
         skills: 'Skills',
         migrations: 'Migrations',
         experience: 'Experience',
@@ -179,15 +297,32 @@ export const translations: Record<Locale, TranslationDictionary> = {
         aiHarnessAria: 'Open AI-Harness project on GitHub',
       },
       tourTech: 'Tour the Tech',
+      brandTagline: 'AI Product & Platform',
+      primaryNavLabel: 'Primary navigation',
+      mobileNavLabel: 'Mobile navigation',
       contactMe: 'Contact Me',
       goToTop: 'Go to top',
       menuToggle: 'Toggle menu',
     },
     hero: {
-      title: 'AI Solution Architect & Technical Product Owner (Hands-on)',
+      eyebrow: 'Build AI products · Engineer platforms · Lead transformation',
+      title: 'AI Product & Platform Engineering Leader',
+      differentiator: 'Hands-on product leadership across customer experience, agent behavior, platform architecture, delivery systems, and the human work of adoption.',
+      exploreProducts: 'Explore Products',
+      viewLeadership: 'View Leadership & Impact',
+      downloadResume: 'Download Resume',
+      proofLabel: 'Evidence, not slogans',
+      proofItems: ['Multi-surface executive AI pilot', 'Public procedure-workflow MVP', 'Approval-gated agent actions'],
+      proofStatus: 'Verified scope',
+      proofTags: { products: 'Products', control: 'Control', delivery: 'Delivery' },
+      pillars: {
+        products: 'Build AI Products',
+        platforms: 'Engineer AI Platforms',
+        transformation: 'Lead Transformation',
+      },
       summaryHeading: 'Professional Summary',
       summary:
-        'Hands-on AI Solution Architect and Technical Product Owner focused on rapid product delivery. I define technical strategy for AI systems, multi-agent orchestration, and enterprise deployments; co-innovate with Product and Engineering teams to convert field insights into roadmap outcomes. I lead end-to-end architecture and development of LLM-powered platforms, Google Workspace integrations, and n8n orchestration under secure-by-design principles (least privilege, backend-owned OAuth, strict JSON validation, and traceability), turning executive vision into demo-ready MVPs and production paths.',
+        'I build customer-facing AI products, agentic platforms, and AI-native delivery systems—from product discovery and architecture through evaluation, production, and adoption.',
       statsHeading: 'Proven Impact — By the Numbers',
       stats: {
         years: 'years in enterprise automation',
@@ -202,6 +337,99 @@ export const translations: Record<Locale, TranslationDictionary> = {
       downloadCv: 'Download CV',
       awardsAndCertifications: 'AWARDS & CERTIFICATIONS',
       contactMe: 'Contact Me',
+    },
+    portfolio: {
+      impactEyebrow: 'Selected product impact',
+      impactTitle: 'Product ownership backed by working systems',
+      impactSubtitle: 'Recent AI delivery evidence is separated from historical automation outcomes so each claim keeps its real context.',
+      impactItems: {
+        products: { value: '0→1', label: 'Executive AI pilot', context: 'Product, architecture, and hands-on delivery' },
+        surfaces: { value: '6', label: 'Workspace surfaces', context: 'Integrated for executive workflows' },
+        controls: { value: '100%', label: 'Approval-gated actions', context: 'Human control in the pilot scope' },
+        leadership: { value: '12', label: 'Engineers led', context: 'Historical enterprise delivery team' },
+      },
+      customerEyebrow: 'Customer-facing AI products',
+      customerTitle: 'AI experiences designed around real user decisions',
+      customerSubtitle: 'Three products at different maturity levels, each explicit about users, human control, evidence, and what remains unproven.',
+      platformEyebrow: 'AI platforms & developer tooling',
+      platformTitle: 'The systems behind reliable product delivery',
+      platformSubtitle: 'Reusable retrieval, estimation, evaluation, and delivery-control foundations—without pretending every framework is already production-proven.',
+      labels: {
+        maturity: 'Maturity',
+        users: 'Primary users',
+        problem: 'Problem',
+        role: 'My role',
+        proof: 'Public proof',
+        details: 'View case study',
+        liveDemo: 'Open live demo',
+        source: 'View source',
+      },
+      cards: {
+        rice: {
+          summary: 'A multi-surface executive assistant pilot that connects briefings, calendar intelligence, meeting prep, and action follow-up with read-only safety controls.',
+          users: 'Executives and executive assistants',
+          problem: 'Critical context is fragmented across calendars, briefings, and follow-up workflows.',
+          role: 'AI Solution Architect and Technical Product Owner; hands-on across product, architecture, security, integrations, and release readiness.',
+          maturity: 'Pilot · Multi-surface demo mode',
+        },
+        laMuni: {
+          summary: 'An evidence-first procedural advisor that produces cited answers, structured workflows, document checklists, confidence, gaps, and warnings.',
+          users: 'Residents, municipal service users, and procedure reviewers',
+          problem: 'Procedural guidance is distributed across documents and source authorities.',
+          role: 'Product architect and hands-on engineer for retrieval, workflow behavior, governance, feedback, and public delivery.',
+          maturity: 'MVP complete · Public developer demo',
+        },
+        recruiting: {
+          summary: 'A static recruiting-operations demo that makes candidate evidence, fit signals, human review, and workflow actions visible.',
+          users: 'Recruiters and hiring operations teams',
+          problem: 'Screening evidence, matching, communications, and approval decisions are fragmented.',
+          role: 'Independent product designer and frontend engineer.',
+          maturity: 'Interactive portfolio demo · Mock data',
+        },
+        harness: {
+          summary: 'A repository-native framework for specs, approval, file boundaries, role separation, verification, and release criteria.',
+          users: 'Engineering teams using coding agents',
+          problem: 'Unconstrained agents can drift, overbuild, and close work without sufficient evidence.',
+          role: 'Framework author and product architect.',
+          maturity: 'Framework draft · First workflow spec_ready',
+        },
+        rag: {
+          summary: 'An interactive learning surface that exposes chunking, retrieval, grounding, and quality signals.',
+          users: 'Developers and technical learners',
+          problem: 'RAG behavior is hard to understand when the pipeline remains hidden behind an API.',
+          role: 'Independent product designer and engineer.',
+          maturity: 'Interactive learning demo',
+        },
+        timeEstimator: {
+          summary: 'A live RPA estimation workspace with deterministic calculations and optional fail-soft AI assistance.',
+          users: 'Automation architects and discovery teams',
+          problem: 'Spreadsheet estimates make assumptions, overhead, and totals difficult to defend.',
+          role: 'Independent product architect and hands-on engineer.',
+          maturity: 'Live developer preview',
+        },
+        constructHub: {
+          summary: 'A gated AWS deployment-validation demo for a future construction marketplace—not a finished customer product.',
+          users: 'Future contractor, supplier, and platform operations users',
+          problem: 'Current evidence validates infrastructure delivery, not customer product behavior.',
+          role: 'Architecture and gated deployment workflow design.',
+          maturity: 'Staging validated · UX rebuild required',
+        },
+      },
+    },
+    approach: {
+      eyebrow: 'How I build and lead AI products',
+      title: 'One operating model from discovery to adoption',
+      subtitle: 'I connect product decisions, agent behavior, platform architecture, delivery controls, and human change instead of handing them off as separate problems.',
+      stages: [
+        { name: 'Discover', responsibilities: 'Map user workflows, pain points, constraints, source truth, and business outcomes.' },
+        { name: 'Define', responsibilities: 'Write behavior contracts, product scope, architecture decisions, acceptance criteria, and safety boundaries.' },
+        { name: 'Prototype', responsibilities: 'Build real product surfaces and integration paths early enough to test the workflow—not just the model.' },
+        { name: 'Evaluate', responsibilities: 'Test groundedness, failure modes, human control, UX clarity, accessibility, and operational risk.' },
+        { name: 'Ship', responsibilities: 'Use CI/CD, security controls, observability, release gates, rollback paths, and evidence-based review.' },
+        { name: 'Operate', responsibilities: 'Monitor quality, reliability, cost, incidents, data boundaries, and changing source systems.' },
+        { name: 'Adopt', responsibilities: 'Design trust, training, workflow change, ownership, and feedback into the product experience.' },
+        { name: 'Improve', responsibilities: 'Turn telemetry, user signals, defects, and field learning into roadmap decisions.' },
+      ],
     },
     skills: {
       title: 'Core Skills',
@@ -244,12 +472,34 @@ export const translations: Record<Locale, TranslationDictionary> = {
     experience: {
       title: 'Experience Timeline',
       subtitle: 'A journey through my professional career.',
+      leadershipTitle: 'Leadership & Employment',
+      leadershipSubtitle: 'Formal roles, platform ownership, team leadership, and long-term career progression.',
+      engagementsTitle: 'Selected Product & Client Engagements',
+      engagementsSubtitle: 'Focused product builds, consulting delivery, and fixed-term work shown separately from the employment narrative.',
+      overlapNote: 'Some engagements overlap because they were delivered through consulting organizations, independent practice, or fixed-term assignments. Dates show delivery context, not simultaneous full-time employment claims.',
       recentHeading: 'Recent Experience (2020–Present)',
       earlyHeading: 'Early Career (2014–2020)',
       impact: 'Impact',
       highlights: 'Highlights',
       clientProjects: 'Client Projects',
       techUsed: 'Tech Used',
+    },
+    humanSystems: {
+      eyebrow: 'Human systems & AI adoption',
+      title: 'Engineering the conditions for people to trust and use AI',
+      summary: 'My Business Psychology studies complement product and engineering practice with a practical lens on cognitive load, team dynamics, change readiness, and human-controlled decisions.',
+      degreeLabel: 'Master of Business Psychology · Franklin University',
+      degreeStatus: 'In progress · Expected 2026',
+      themes: [
+        { title: 'Trust by design', description: 'Make sources, uncertainty, approvals, and system boundaries visible at the moment of decision.' },
+        { title: 'Cognitive load', description: 'Reduce fragmented context and design AI assistance around the user’s actual workflow and attention.' },
+        { title: 'Change readiness', description: 'Treat training, ownership, role clarity, and feedback loops as part of product delivery.' },
+        { title: 'Human control', description: 'Keep consequential actions reviewable, approval-gated, reversible, and auditable.' },
+      ],
+      boundary: 'This is an organizational and product-adoption perspective—not a claim of clinical psychology practice or unsupported people-analytics outcomes.',
+    },
+    projectPage: {
+      back: 'Back to products', maturity: 'Maturity', users: 'Primary users', stakeholders: 'Buyer or stakeholder', problem: 'The customer problem', surface: 'Customer-facing experience', role: 'My ownership', team: 'Team context', discovery: 'Discovery and product strategy', decisions: 'Key product decisions', tradeoffs: 'Tradeoffs', architecture: 'Architecture', aiBehavior: 'AI behavior and orchestration', evaluation: 'Evaluation and quality', safety: 'Guardrails and human control', delivery: 'Delivery and release approach', feedback: 'Adoption and feedback', outcomes: 'Outcomes', evidence: 'Evidence', limitations: 'Known limitations', nextStage: 'Next product stage', live: 'Open live experience', source: 'View public source', technicalDetails: 'Technical implementation detail', openFullCaseStudy: 'Open full case study', useCase: 'Use case', deliveryStatus: 'Delivery status', implementationPlan: 'Implementation plan', howToTest: 'How to test', apiChecks: 'API quick checks', validationProof: 'Validation proof', localCommands: 'Local commands', table: { key: 'Key', functionality: 'Functionality', status: 'Status', current: 'Current state', next: 'Next' },
     },
     education: {
       title: 'Education & Credentials',
@@ -353,6 +603,12 @@ export const translations: Record<Locale, TranslationDictionary> = {
     },
     header: {
       nav: {
+        products: 'Productos',
+        platforms: 'Plataformas',
+        approach: 'Enfoque',
+        leadership: 'Liderazgo',
+        engagements: 'Experiencia',
+        contact: 'Contacto',
         skills: 'Habilidades',
         migrations: 'Migraciones',
         experience: 'Experiencia',
@@ -362,15 +618,32 @@ export const translations: Record<Locale, TranslationDictionary> = {
         aiHarnessAria: 'Abrir el proyecto AI-Harness en GitHub',
       },
       tourTech: 'Recorrido Técnico',
+      brandTagline: 'Productos y Plataformas AI',
+      primaryNavLabel: 'Navegación principal',
+      mobileNavLabel: 'Navegación móvil',
       contactMe: 'Contáctame',
       goToTop: 'Ir al inicio',
       menuToggle: 'Abrir o cerrar menú',
     },
     hero: {
-      title: 'Arquitecto de Soluciones AI y Product Owner Técnico (Hands-on)',
+      eyebrow: 'Construyo productos AI · Diseño plataformas · Lidero transformación',
+      title: 'Líder de Ingeniería de Productos y Plataformas AI',
+      differentiator: 'Liderazgo hands-on que conecta experiencia de usuario, comportamiento del agente, arquitectura de plataforma, sistemas de entrega y el trabajo humano de adopción.',
+      exploreProducts: 'Explorar Productos',
+      viewLeadership: 'Ver Liderazgo e Impacto',
+      downloadResume: 'Descargar CV',
+      proofLabel: 'Evidencia, no eslóganes',
+      proofItems: ['Piloto ejecutivo AI multicanal', 'MVP público de flujos procedimentales', 'Acciones de agentes con aprobación'],
+      proofStatus: 'Alcance verificado',
+      proofTags: { products: 'Productos', control: 'Control', delivery: 'Entrega' },
+      pillars: {
+        products: 'Construir Productos AI',
+        platforms: 'Diseñar Plataformas AI',
+        transformation: 'Liderar Transformación',
+      },
       summaryHeading: 'Resumen Profesional',
       summary:
-        'Arquitecto de Soluciones AI y Product Owner técnico con enfoque hands-on en entrega rápida de productos. Defino estrategia técnica para sistemas de IA, orquestación multiagente y despliegues enterprise; co-innovo con equipos de Product y Engineering para traducir insights de campo en roadmap accionable. Lidero arquitectura y desarrollo end-to-end de plataformas basadas en LLMs, integraciones Google Workspace y n8n bajo principios de seguridad (least privilege, backend-owned OAuth, trazabilidad y validación estricta de JSON), convirtiendo visión ejecutiva en MVPs demoables con ruta clara a producción.',
+        'Construyo productos AI orientados a usuarios, plataformas de agentes y sistemas de entrega AI-native: desde descubrimiento y arquitectura hasta evaluación, producción y adopción.',
       statsHeading: 'Impacto Comprobado — En Números',
       stats: {
         years: 'años en automatización enterprise',
@@ -385,6 +658,99 @@ export const translations: Record<Locale, TranslationDictionary> = {
       downloadCv: 'Descargar CV',
       awardsAndCertifications: 'PREMIOS Y CERTIFICACIONES',
       contactMe: 'Contáctame',
+    },
+    portfolio: {
+      impactEyebrow: 'Impacto de producto seleccionado',
+      impactTitle: 'Ownership de producto respaldado por sistemas funcionales',
+      impactSubtitle: 'La evidencia reciente de productos AI se separa del impacto histórico de automatización para conservar el contexto real de cada claim.',
+      impactItems: {
+        products: { value: '0→1', label: 'Piloto ejecutivo AI', context: 'Producto, arquitectura y entrega hands-on' },
+        surfaces: { value: '6', label: 'Superficies Workspace', context: 'Integradas para flujos ejecutivos' },
+        controls: { value: '100%', label: 'Acciones con aprobación', context: 'Control humano en el alcance piloto' },
+        leadership: { value: '12', label: 'Ingenieros liderados', context: 'Equipo histórico de entrega enterprise' },
+      },
+      customerEyebrow: 'Productos AI orientados al usuario',
+      customerTitle: 'Experiencias AI diseñadas alrededor de decisiones reales',
+      customerSubtitle: 'Tres productos en diferentes niveles de madurez, explícitos sobre usuarios, control humano, evidencia y lo que aún no está probado.',
+      platformEyebrow: 'Plataformas AI y herramientas para desarrolladores',
+      platformTitle: 'Los sistemas detrás de una entrega confiable',
+      platformSubtitle: 'Fundamentos reutilizables de retrieval, estimación, evaluación y control de entrega, sin presentar cada framework como probado en producción.',
+      labels: {
+        maturity: 'Madurez',
+        users: 'Usuarios principales',
+        problem: 'Problema',
+        role: 'Mi rol',
+        proof: 'Evidencia pública',
+        details: 'Ver caso de estudio',
+        liveDemo: 'Abrir demo',
+        source: 'Ver código',
+      },
+      cards: {
+        rice: {
+          summary: 'Piloto de asistente ejecutivo multicanal que conecta briefs, calendario, preparación de reuniones y seguimiento con controles de solo lectura.',
+          users: 'Ejecutivos y asistentes ejecutivos',
+          problem: 'El contexto crítico está fragmentado entre calendarios, briefs y flujos de seguimiento.',
+          role: 'Arquitecto de Soluciones AI y Product Owner Técnico; hands-on en producto, arquitectura, seguridad, integraciones y releases.',
+          maturity: 'Piloto · Demo multicanal',
+        },
+        laMuni: {
+          summary: 'Asesor procedimental evidence-first que produce respuestas citadas, flujos estructurados, documentos, confianza, brechas y advertencias.',
+          users: 'Residentes, usuarios municipales y revisores de procedimientos',
+          problem: 'La guía procedimental está distribuida entre documentos y autoridades de fuente.',
+          role: 'Arquitecto de producto e ingeniero hands-on en retrieval, flujos, gobernanza, feedback y entrega pública.',
+          maturity: 'MVP completo · Demo pública para desarrolladores',
+        },
+        recruiting: {
+          summary: 'Demo estática de operaciones de reclutamiento que hace visibles evidencia, señales de fit, revisión humana y acciones.',
+          users: 'Recruiters y equipos de operaciones de contratación',
+          problem: 'La evidencia, matching, comunicación y decisiones están fragmentadas.',
+          role: 'Diseñador de producto e ingeniero frontend independiente.',
+          maturity: 'Demo interactiva · Datos simulados',
+        },
+        harness: {
+          summary: 'Framework nativo de repositorio para specs, aprobación, límites de archivos, separación de roles, verificación y releases.',
+          users: 'Equipos de ingeniería que usan agentes de código',
+          problem: 'Agentes sin controles pueden desviarse, sobredesarrollar y cerrar sin evidencia suficiente.',
+          role: 'Autor del framework y arquitecto de producto.',
+          maturity: 'Borrador de framework · Primer flujo spec_ready',
+        },
+        rag: {
+          summary: 'Experiencia interactiva que expone chunking, retrieval, grounding y señales de calidad.',
+          users: 'Desarrolladores y aprendices técnicos',
+          problem: 'RAG es difícil de comprender cuando el pipeline queda oculto tras una API.',
+          role: 'Diseñador de producto e ingeniero independiente.',
+          maturity: 'Demo educativa interactiva',
+        },
+        timeEstimator: {
+          summary: 'Workspace RPA en vivo con cálculos deterministas y asistencia AI opcional con fallback.',
+          users: 'Arquitectos de automatización y equipos de discovery',
+          problem: 'Las estimaciones en hojas de cálculo dificultan defender supuestos, overhead y totales.',
+          role: 'Arquitecto de producto e ingeniero hands-on independiente.',
+          maturity: 'Developer preview en vivo',
+        },
+        constructHub: {
+          summary: 'Demo de validación de despliegue AWS para un futuro marketplace de construcción; no es un producto terminado.',
+          users: 'Futuros contratistas, proveedores y operadores',
+          problem: 'La evidencia actual valida infraestructura, no comportamiento de producto.',
+          role: 'Arquitectura y diseño del flujo de despliegue gobernado.',
+          maturity: 'Staging validado · Requiere rediseño UX',
+        },
+      },
+    },
+    approach: {
+      eyebrow: 'Cómo construyo y lidero productos AI',
+      title: 'Un solo modelo operativo desde discovery hasta adopción',
+      subtitle: 'Conecto decisiones de producto, comportamiento del agente, arquitectura, controles de entrega y cambio humano en lugar de tratarlos como problemas separados.',
+      stages: [
+        { name: 'Descubrir', responsibilities: 'Mapear flujos, fricciones, restricciones, fuentes de verdad y resultados de negocio.' },
+        { name: 'Definir', responsibilities: 'Escribir contratos de comportamiento, alcance, decisiones de arquitectura, criterios y límites de seguridad.' },
+        { name: 'Prototipar', responsibilities: 'Construir superficies reales e integraciones temprano para probar el flujo, no solo el modelo.' },
+        { name: 'Evaluar', responsibilities: 'Probar grounding, fallos, control humano, claridad UX, accesibilidad y riesgo operativo.' },
+        { name: 'Entregar', responsibilities: 'Usar CI/CD, seguridad, observabilidad, gates, rollback y revisión basada en evidencia.' },
+        { name: 'Operar', responsibilities: 'Monitorear calidad, confiabilidad, costo, incidentes, datos y cambios en fuentes.' },
+        { name: 'Adoptar', responsibilities: 'Diseñar confianza, entrenamiento, cambio de flujo, ownership y feedback dentro del producto.' },
+        { name: 'Mejorar', responsibilities: 'Convertir telemetría, señales de usuario, defectos y aprendizaje de campo en roadmap.' },
+      ],
     },
     skills: {
       title: 'Habilidades Clave',
@@ -429,12 +795,34 @@ export const translations: Record<Locale, TranslationDictionary> = {
     experience: {
       title: 'Línea de Tiempo Profesional',
       subtitle: 'Un recorrido por mi carrera profesional.',
+      leadershipTitle: 'Liderazgo y Empleo',
+      leadershipSubtitle: 'Roles formales, ownership de plataformas, liderazgo de equipos y progresión profesional.',
+      engagementsTitle: 'Engagements Seleccionados de Producto y Clientes',
+      engagementsSubtitle: 'Productos, consultoría y trabajo de duración definida separados de la narrativa de empleo.',
+      overlapNote: 'Algunos engagements se superponen porque fueron entregados mediante firmas de consultoría, práctica independiente o asignaciones de duración definida. Las fechas muestran contexto de entrega, no múltiples empleos full-time simultáneos.',
       recentHeading: 'Experiencia Reciente (2020–Actualidad)',
       earlyHeading: 'Etapa Inicial (2014–2020)',
       impact: 'Impacto',
       highlights: 'Logros',
       clientProjects: 'Proyectos de Cliente',
       techUsed: 'Tecnología Usada',
+    },
+    humanSystems: {
+      eyebrow: 'Sistemas humanos y adopción de AI',
+      title: 'Diseñar las condiciones para que las personas confíen y usen AI',
+      summary: 'Mis estudios de Psicología Empresarial complementan producto e ingeniería con una perspectiva práctica sobre carga cognitiva, dinámica de equipos, preparación para el cambio y decisiones bajo control humano.',
+      degreeLabel: 'Maestría en Psicología Empresarial · Franklin University',
+      degreeStatus: 'En curso · Prevista para 2026',
+      themes: [
+        { title: 'Confianza por diseño', description: 'Hacer visibles fuentes, incertidumbre, aprobaciones y límites en el momento de decisión.' },
+        { title: 'Carga cognitiva', description: 'Reducir contexto fragmentado y diseñar asistencia alrededor del flujo y la atención reales.' },
+        { title: 'Preparación para el cambio', description: 'Tratar entrenamiento, ownership, claridad de roles y feedback como parte del producto.' },
+        { title: 'Control humano', description: 'Mantener acciones importantes revisables, aprobables, reversibles y auditables.' },
+      ],
+      boundary: 'Esta es una perspectiva organizacional y de adopción de producto; no implica práctica de psicología clínica ni resultados de people analytics sin evidencia.',
+    },
+    projectPage: {
+      back: 'Volver a productos', maturity: 'Madurez', users: 'Usuarios principales', stakeholders: 'Comprador o stakeholder', problem: 'El problema del cliente', surface: 'Experiencia orientada al usuario', role: 'Mi ownership', team: 'Contexto del equipo', discovery: 'Discovery y estrategia de producto', decisions: 'Decisiones clave de producto', tradeoffs: 'Tradeoffs', architecture: 'Arquitectura', aiBehavior: 'Comportamiento AI y orquestación', evaluation: 'Evaluación y calidad', safety: 'Guardrails y control humano', delivery: 'Entrega y releases', feedback: 'Adopción y feedback', outcomes: 'Resultados', evidence: 'Evidencia', limitations: 'Limitaciones conocidas', nextStage: 'Siguiente etapa del producto', live: 'Abrir experiencia en vivo', source: 'Ver código público', technicalDetails: 'Detalle técnico de implementación', openFullCaseStudy: 'Abrir caso de estudio completo', useCase: 'Caso de uso', deliveryStatus: 'Estado de entrega', implementationPlan: 'Plan de implementación', howToTest: 'Cómo probar', apiChecks: 'Verificaciones rápidas de API', validationProof: 'Evidencia de validación', localCommands: 'Comandos locales', table: { key: 'Clave', functionality: 'Funcionalidad', status: 'Estado', current: 'Estado actual', next: 'Siguiente' },
     },
     education: {
       title: 'Educación y Credenciales',
@@ -538,6 +926,12 @@ export const translations: Record<Locale, TranslationDictionary> = {
     },
     header: {
       nav: {
+        products: 'Produtos',
+        platforms: 'Plataformas',
+        approach: 'Abordagem',
+        leadership: 'Liderança',
+        engagements: 'Experiência',
+        contact: 'Contato',
         skills: 'Habilidades',
         migrations: 'Migrações',
         experience: 'Experiência',
@@ -547,15 +941,32 @@ export const translations: Record<Locale, TranslationDictionary> = {
         aiHarnessAria: 'Abrir o projeto AI-Harness no GitHub',
       },
       tourTech: 'Tour Técnico',
+      brandTagline: 'Produtos e Plataformas de IA',
+      primaryNavLabel: 'Navegação principal',
+      mobileNavLabel: 'Navegação móvel',
       contactMe: 'Contato',
       goToTop: 'Voltar ao topo',
       menuToggle: 'Abrir ou fechar menu',
     },
     hero: {
-      title: 'Arquiteto de Soluções AI e Product Owner Técnico (Hands-on)',
+      eyebrow: 'Construo produtos de IA · Projeto plataformas · Lidero transformação',
+      title: 'Líder de Engenharia de Produtos e Plataformas de IA',
+      differentiator: 'Liderança hands-on conectando experiência do usuário, comportamento do agente, arquitetura de plataforma, sistemas de entrega e o trabalho humano da adoção.',
+      exploreProducts: 'Explorar Produtos',
+      viewLeadership: 'Ver Liderança e Impacto',
+      downloadResume: 'Baixar Currículo',
+      proofLabel: 'Evidência, não slogans',
+      proofItems: ['Piloto executivo de IA multissuperfície', 'MVP público de fluxos procedimentais', 'Ações de agentes com aprovação'],
+      proofStatus: 'Escopo verificado',
+      proofTags: { products: 'Produtos', control: 'Controle', delivery: 'Entrega' },
+      pillars: {
+        products: 'Construir Produtos de IA',
+        platforms: 'Projetar Plataformas de IA',
+        transformation: 'Liderar Transformação',
+      },
       summaryHeading: 'Resumo Profissional',
       summary:
-        'Arquiteto de Soluções AI e Product Owner técnico com foco hands-on em entrega rápida de produtos. Defino estratégia técnica para sistemas de IA, orquestração multiagente e implantações enterprise; co-inovo com times de Product e Engineering para transformar insights de campo em roadmap acionável. Lidero arquitetura e desenvolvimento end-to-end de plataformas com LLMs, integrações Google Workspace e orquestração n8n com princípios de segurança (least privilege, backend-owned OAuth, rastreabilidade e validação rígida de JSON), convertendo visão executiva em MVPs demonstráveis e caminho claro para produção.',
+        'Construo produtos de IA voltados ao cliente, plataformas de agentes e sistemas de entrega AI-native — da descoberta e arquitetura à avaliação, produção e adoção.',
       statsHeading: 'Impacto Comprovado — Em Números',
       stats: {
         years: 'anos em automação enterprise',
@@ -570,6 +981,99 @@ export const translations: Record<Locale, TranslationDictionary> = {
       downloadCv: 'Baixar CV',
       awardsAndCertifications: 'PRÊMIOS E CERTIFICAÇÕES',
       contactMe: 'Contato',
+    },
+    portfolio: {
+      impactEyebrow: 'Impacto de produto selecionado',
+      impactTitle: 'Ownership de produto apoiado por sistemas funcionais',
+      impactSubtitle: 'A evidência recente de produtos de IA fica separada do impacto histórico de automação para preservar o contexto real de cada afirmação.',
+      impactItems: {
+        products: { value: '0→1', label: 'Piloto executivo de IA', context: 'Produto, arquitetura e entrega hands-on' },
+        surfaces: { value: '6', label: 'Superfícies Workspace', context: 'Integradas para fluxos executivos' },
+        controls: { value: '100%', label: 'Ações com aprovação', context: 'Controle humano no escopo piloto' },
+        leadership: { value: '12', label: 'Engenheiros liderados', context: 'Equipe histórica de entrega enterprise' },
+      },
+      customerEyebrow: 'Produtos de IA voltados ao cliente',
+      customerTitle: 'Experiências de IA projetadas para decisões reais',
+      customerSubtitle: 'Três produtos em diferentes níveis de maturidade, explícitos sobre usuários, controle humano, evidência e o que ainda não foi comprovado.',
+      platformEyebrow: 'Plataformas de IA e ferramentas para desenvolvedores',
+      platformTitle: 'Os sistemas por trás de uma entrega confiável',
+      platformSubtitle: 'Fundamentos reutilizáveis de retrieval, estimativa, avaliação e controle de entrega, sem tratar todo framework como comprovado em produção.',
+      labels: {
+        maturity: 'Maturidade',
+        users: 'Usuários principais',
+        problem: 'Problema',
+        role: 'Meu papel',
+        proof: 'Evidência pública',
+        details: 'Ver estudo de caso',
+        liveDemo: 'Abrir demo',
+        source: 'Ver código',
+      },
+      cards: {
+        rice: {
+          summary: 'Piloto de assistente executivo multissuperfície conectando briefs, calendário, preparação de reuniões e acompanhamento com controles somente leitura.',
+          users: 'Executivos e assistentes executivos',
+          problem: 'O contexto crítico está fragmentado entre calendários, briefs e fluxos de acompanhamento.',
+          role: 'Arquiteto de Soluções de IA e Product Owner Técnico; hands-on em produto, arquitetura, segurança, integrações e releases.',
+          maturity: 'Piloto · Demo multissuperfície',
+        },
+        laMuni: {
+          summary: 'Advisor procedimental evidence-first com respostas citadas, fluxos estruturados, documentos, confiança, lacunas e avisos.',
+          users: 'Residentes, usuários municipais e revisores de procedimentos',
+          problem: 'A orientação procedimental está distribuída entre documentos e autoridades de fonte.',
+          role: 'Arquiteto de produto e engenheiro hands-on em retrieval, fluxos, governança, feedback e entrega pública.',
+          maturity: 'MVP completo · Demo pública para desenvolvedores',
+        },
+        recruiting: {
+          summary: 'Demo estática de operações de recrutamento que torna visíveis evidências, sinais de fit, revisão humana e ações.',
+          users: 'Recrutadores e equipes de operações de contratação',
+          problem: 'Evidência, matching, comunicação e decisões estão fragmentados.',
+          role: 'Designer de produto e engenheiro frontend independente.',
+          maturity: 'Demo interativa · Dados simulados',
+        },
+        harness: {
+          summary: 'Framework nativo de repositório para specs, aprovação, limites de arquivos, separação de papéis, verificação e releases.',
+          users: 'Equipes de engenharia que usam agentes de código',
+          problem: 'Agentes sem controles podem desviar, construir demais e fechar sem evidência suficiente.',
+          role: 'Autor do framework e arquiteto de produto.',
+          maturity: 'Rascunho de framework · Primeiro fluxo spec_ready',
+        },
+        rag: {
+          summary: 'Experiência interativa que expõe chunking, retrieval, grounding e sinais de qualidade.',
+          users: 'Desenvolvedores e aprendizes técnicos',
+          problem: 'RAG é difícil de entender quando o pipeline fica oculto atrás de uma API.',
+          role: 'Designer de produto e engenheiro independente.',
+          maturity: 'Demo educacional interativa',
+        },
+        timeEstimator: {
+          summary: 'Workspace RPA ao vivo com cálculos determinísticos e assistência de IA opcional com fallback.',
+          users: 'Arquitetos de automação e equipes de discovery',
+          problem: 'Estimativas em planilhas dificultam defender premissas, overhead e totais.',
+          role: 'Arquiteto de produto e engenheiro hands-on independente.',
+          maturity: 'Developer preview ao vivo',
+        },
+        constructHub: {
+          summary: 'Demo de validação de deploy AWS para um futuro marketplace de construção; não é um produto finalizado.',
+          users: 'Futuros contratantes, fornecedores e operadores',
+          problem: 'A evidência atual valida infraestrutura, não comportamento de produto.',
+          role: 'Arquitetura e desenho do fluxo de deploy governado.',
+          maturity: 'Staging validado · Requer reconstrução UX',
+        },
+      },
+    },
+    approach: {
+      eyebrow: 'Como construo e lidero produtos de IA',
+      title: 'Um modelo operacional da descoberta à adoção',
+      subtitle: 'Conecto decisões de produto, comportamento do agente, arquitetura, controles de entrega e mudança humana em vez de tratá-los como problemas separados.',
+      stages: [
+        { name: 'Descobrir', responsibilities: 'Mapear fluxos, dores, restrições, fontes de verdade e resultados de negócio.' },
+        { name: 'Definir', responsibilities: 'Escrever contratos de comportamento, escopo, decisões de arquitetura, critérios e limites de segurança.' },
+        { name: 'Prototipar', responsibilities: 'Construir superfícies reais e integrações cedo para testar o fluxo, não apenas o modelo.' },
+        { name: 'Avaliar', responsibilities: 'Testar grounding, falhas, controle humano, clareza UX, acessibilidade e risco operacional.' },
+        { name: 'Entregar', responsibilities: 'Usar CI/CD, segurança, observabilidade, gates, rollback e revisão baseada em evidências.' },
+        { name: 'Operar', responsibilities: 'Monitorar qualidade, confiabilidade, custo, incidentes, dados e mudanças nas fontes.' },
+        { name: 'Adotar', responsibilities: 'Projetar confiança, treinamento, mudança de fluxo, ownership e feedback no produto.' },
+        { name: 'Melhorar', responsibilities: 'Transformar telemetria, sinais de usuários, defeitos e aprendizado em roadmap.' },
+      ],
     },
     skills: {
       title: 'Competências Principais',
@@ -615,12 +1119,34 @@ export const translations: Record<Locale, TranslationDictionary> = {
     experience: {
       title: 'Linha do Tempo Profissional',
       subtitle: 'Uma jornada pela minha carreira profissional.',
+      leadershipTitle: 'Liderança e Emprego',
+      leadershipSubtitle: 'Papéis formais, ownership de plataformas, liderança de equipes e progressão profissional.',
+      engagementsTitle: 'Engajamentos Selecionados de Produto e Clientes',
+      engagementsSubtitle: 'Produtos, consultoria e trabalhos de duração definida separados da narrativa de emprego.',
+      overlapNote: 'Alguns engajamentos se sobrepõem porque foram entregues por consultorias, prática independente ou atribuições de duração definida. As datas mostram contexto de entrega, não múltiplos empregos full-time simultâneos.',
       recentHeading: 'Experiência Recente (2020–Atual)',
       earlyHeading: 'Início de Carreira (2014–2020)',
       impact: 'Impacto',
       highlights: 'Destaques',
       clientProjects: 'Projetos de Cliente',
       techUsed: 'Tecnologias Utilizadas',
+    },
+    humanSystems: {
+      eyebrow: 'Sistemas humanos e adoção de IA',
+      title: 'Projetar as condições para as pessoas confiarem e usarem IA',
+      summary: 'Meus estudos em Psicologia Empresarial complementam produto e engenharia com uma visão prática sobre carga cognitiva, dinâmica de equipes, prontidão para mudança e decisões sob controle humano.',
+      degreeLabel: 'Mestrado em Psicologia Empresarial · Franklin University',
+      degreeStatus: 'Em andamento · Previsão 2026',
+      themes: [
+        { title: 'Confiança por design', description: 'Tornar fontes, incerteza, aprovações e limites visíveis no momento da decisão.' },
+        { title: 'Carga cognitiva', description: 'Reduzir contexto fragmentado e projetar assistência em torno do fluxo e da atenção reais.' },
+        { title: 'Prontidão para mudança', description: 'Tratar treinamento, ownership, clareza de papéis e feedback como parte do produto.' },
+        { title: 'Controle humano', description: 'Manter ações importantes revisáveis, aprováveis, reversíveis e auditáveis.' },
+      ],
+      boundary: 'Esta é uma perspectiva organizacional e de adoção de produto — não uma alegação de prática clínica ou resultados de people analytics sem evidência.',
+    },
+    projectPage: {
+      back: 'Voltar aos produtos', maturity: 'Maturidade', users: 'Usuários principais', stakeholders: 'Comprador ou stakeholder', problem: 'O problema do cliente', surface: 'Experiência voltada ao usuário', role: 'Meu ownership', team: 'Contexto da equipe', discovery: 'Descoberta e estratégia de produto', decisions: 'Decisões-chave de produto', tradeoffs: 'Tradeoffs', architecture: 'Arquitetura', aiBehavior: 'Comportamento de IA e orquestração', evaluation: 'Avaliação e qualidade', safety: 'Guardrails e controle humano', delivery: 'Entrega e releases', feedback: 'Adoção e feedback', outcomes: 'Resultados', evidence: 'Evidência', limitations: 'Limitações conhecidas', nextStage: 'Próxima etapa do produto', live: 'Abrir experiência ao vivo', source: 'Ver código público', technicalDetails: 'Detalhe técnico de implementação', openFullCaseStudy: 'Abrir estudo de caso completo', useCase: 'Caso de uso', deliveryStatus: 'Estado da entrega', implementationPlan: 'Plano de implementação', howToTest: 'Como testar', apiChecks: 'Verificações rápidas de API', validationProof: 'Evidência de validação', localCommands: 'Comandos locais', table: { key: 'Chave', functionality: 'Funcionalidade', status: 'Status', current: 'Estado atual', next: 'Próximo' },
     },
     education: {
       title: 'Educação e Credenciais',

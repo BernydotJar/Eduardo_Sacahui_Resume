@@ -412,12 +412,6 @@
         "Add optional real LLM answer generation through Claude API key",
         "Include a 'Use it in your project' code example for developer adoption"
       ],
-      "localCommands": [
-        "git clone https://github.com/eduardosacahui/rag-made-easy.git",
-        "npm install",
-        "npm run demo",
-        "npm test"
-      ],
       "knownLimitations": [
         "Default embedder and vector store run completely offline in memory, not suited for millions of documents.",
         "Lexical evaluation metrics are fast, offline lexical proxies rather than full semantic LLM-as-judge checks.",
@@ -498,12 +492,6 @@
         "Expose AI matching logic and prompt evidence clearly to build recruiter trust",
         "Simulate automation logs to demonstrate background orchestrations",
         "Support responsive layout and seamless browser-based demo mode"
-      ],
-      "localCommands": [
-        "git clone https://github.com/eduardosacahui/HR-CRM.git",
-        "npm install",
-        "npm run dev",
-        "npm test"
       ],
       "knownLimitations": [
         "Demo mode runs entirely on browser-bundled mock datasets and offline states.",

@@ -24,7 +24,36 @@ export interface Project {
   aliases?: string[];
   liveUrl?: string;
   sourceUrl?: string;
+  category?: 'customer-ai-product' | 'ai-platform' | 'enterprise-transformation';
+  maturity?: string;
+  industry?: string;
+  primaryUsers?: string[];
+  buyerOrStakeholder?: string[];
+  customerProblem?: string;
+  productSurface?: string[];
+  myRole?: string;
+  teamContext?: string;
+  discovery?: string[];
+  productDecisions?: string[];
+  tradeoffs?: string[];
+  architectureSummary?: string;
+  aiBehavior?: string[];
+  evaluation?: string[];
+  safetyAndHumanControl?: string[];
+  delivery?: string[];
+  adoptionOrFeedback?: string[];
+  businessOutcome?: string[];
+  technicalOutcome?: string[];
+  evidence?: ProjectEvidence[];
+  nextStage?: string;
   caseStudy?: ProjectCaseStudy;
+}
+
+export interface ProjectEvidence {
+  label: string;
+  href?: string;
+  kind: 'live-demo' | 'source' | 'repository' | 'portfolio-record' | 'artifact';
+  publiclySafe: boolean;
 }
 
 export interface ProjectCaseStudyStatus {

@@ -1,153 +1,109 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Download, Mail, MapPin, Trophy } from "lucide-react";
-import { awards } from "@/lib/data";
-import { useLanguage } from "@/components/context/LanguageContext";
+import { ArrowDownRight, Download, Layers3, Route, Sparkles } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { useLanguage } from '@/components/context/LanguageContext';
+import { withBasePath } from '@/lib/site';
 
-const heroInfo = {
-  name: "Eduardo Sacahui",
-  emailUser: ["eduardo", ".sacahui"].join(""),
-  emailDomain: ["gmail", ".com"].join(""),
-  certBadges: [
-    "UiPath RPA Solution Architect",
-    "Microsoft Certified App Maker",
-    "Microsoft Data Analyst",
-    "Professional Python Developer",
-    "Harvard ManageMentor — Coaching"
-  ],
-};
-
-const heroEmail = `${heroInfo.emailUser}@${heroInfo.emailDomain}`;
-
-// Quantified outcomes pulled from the experience record; labels live in i18n.
-const impactStats = [
-  { value: "10+", labelKey: "years" },
-  { value: "3+", labelKey: "ai" },
-  { value: "300%", labelKey: "roi" },
-  { value: "$120K+", labelKey: "savings" },
-  { value: "99.9%", labelKey: "uptime" },
-  { value: "$50M+", labelKey: "transactions" },
-] as const;
-
-const HeroElementTile = ({
-  number,
-  symbol,
-}: {
-  number: string;
-  symbol: string;
-}) => {
-  return (
-    <span className="element-tile mr-1 px-[0.24em] py-[0.06em] leading-none overflow-hidden align-baseline rounded-lg">
-      <span className="absolute left-[0.16em] top-[0.12em] text-[0.22em] font-bold leading-none text-primary/90">
-        {number}
-      </span>
-      <span className="relative z-10 leading-none">{symbol}</span>
-    </span>
-  );
-};
+const HeroElementTile = ({ number, symbol }: { number: string; symbol: string }) => (
+  <span className="element-tile h-9 w-9 text-sm font-bold" aria-hidden="true">
+    <span className="element-tile-number text-[8px]">{number}</span>
+    {symbol}
+  </span>
+);
 
 const Hero = () => {
   const { dict } = useLanguage();
+  const pillars = [
+    { label: dict.hero.pillars.products, icon: Sparkles },
+    { label: dict.hero.pillars.platforms, icon: Layers3 },
+    { label: dict.hero.pillars.transformation, icon: Route },
+  ];
 
   return (
-    <section id="hero" className="bg-background relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-emerald-950/60 via-emerald-950/10 to-transparent"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+    <section id="hero" className="relative overflow-hidden border-b border-border/50 bg-background">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_12%,hsl(var(--primary)/0.16),transparent_32%),radial-gradient(circle_at_82%_20%,rgba(34,211,238,0.1),transparent_30%)]" />
+      <div className="pointer-events-none absolute inset-0 opacity-[0.035] [background-image:linear-gradient(hsl(var(--foreground))_1px,transparent_1px),linear-gradient(90deg,hsl(var(--foreground))_1px,transparent_1px)] [background-size:48px_48px]" />
 
-        <div className="container relative z-10 pt-20 pb-16 text-center">
-            <h1
-                aria-label={heroInfo.name}
-                className="text-[clamp(2.25rem,5vw,3.75rem)] font-bold tracking-tight text-foreground"
-            >
-                <span aria-hidden="true" className="inline-flex flex-wrap items-center justify-center gap-x-4 gap-y-4">
-                    <span className="inline-flex items-center">
-                        <HeroElementTile number="99" symbol="Ed" />
-                        <span>uardo</span>
-                    </span>
-                    <span className="inline-flex items-center">
-                        <HeroElementTile number="16" symbol="Sa" />
-                        <span>cahui</span>
-                    </span>
-                </span>
-            </h1>
-            <p className="mt-6 max-w-3xl mx-auto text-lg text-muted-foreground sm:text-xl">
-                {dict.hero.title}
-            </p>
-            <div className="mt-8 max-w-4xl mx-auto rounded-lg border border-border/60 bg-card/40 p-5 text-left">
-                <h2 className="text-base font-semibold text-primary">{dict.hero.summaryHeading}</h2>
-                <p className="mt-3 text-sm leading-6 text-muted-foreground sm:text-base">
-                    {dict.hero.summary}
-                </p>
+      <div className="container relative z-10 grid min-h-[calc(100svh-3.5rem)] items-center gap-10 py-14 lg:grid-cols-[1.08fr_0.92fr] lg:py-20">
+        <div>
+          <div className="mb-7 flex items-center gap-3">
+            <HeroElementTile number="99" symbol="Ed" />
+            <div>
+              <p className="font-semibold text-foreground">Eduardo Sacahui</p>
+              <p className="font-code text-[11px] uppercase tracking-[0.16em] text-muted-foreground">{dict.hero.location}</p>
             </div>
+          </div>
 
-            <div className="mt-8 max-w-4xl mx-auto">
-                <p className="mb-4 font-code text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-                    {dict.hero.statsHeading}
-                </p>
-                <dl className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
-                    {impactStats.map(stat => (
-                        <div
-                            key={stat.labelKey}
-                            className="rounded-md border border-primary/30 bg-card/60 px-3 py-4 transition-colors hover:border-primary/70"
-                        >
-                            <dd className="font-code text-2xl font-bold text-primary [text-shadow:0_0_14px_hsl(var(--primary)/0.5)]">
-                                {stat.value}
-                            </dd>
-                            <dt className="mt-1 text-xs leading-4 text-muted-foreground">
-                                {dict.hero.stats[stat.labelKey]}
-                            </dt>
-                        </div>
-                    ))}
-                </dl>
-            </div>
+          <p className="font-code text-xs font-bold uppercase tracking-[0.18em] text-primary">
+            {dict.hero.eyebrow}
+          </p>
+          <h1 className="mt-5 max-w-4xl text-4xl font-bold leading-[1.04] tracking-[-0.04em] text-foreground sm:text-5xl lg:text-6xl">
+            {dict.hero.title}
+          </h1>
+          <p className="mt-6 max-w-3xl text-lg leading-8 text-foreground/85 sm:text-xl">
+            {dict.hero.summary}
+          </p>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-muted-foreground sm:text-base">
+            {dict.hero.differentiator}
+          </p>
 
-            <div className="mt-8 flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
-                <div className="flex items-center gap-2">
-                    <MapPin className="h-4 w-4" aria-hidden="true" />
-                    <span>{dict.hero.location}</span>
-                </div>
-                <div className="flex items-center gap-2">
-                    <Mail className="h-4 w-4" aria-hidden="true" />
-                    <a href={`mailto:${heroEmail}`} className="hover:text-primary">{heroEmail}</a>
-                </div>
-            </div>
-            <div className="mt-4 flex justify-center gap-2">
-                {dict.hero.languages.map(lang => (
-                    <Badge key={lang} variant="secondary">{lang}</Badge>
-                ))}
-            </div>
-            <div className="mt-10 flex gap-4 justify-center">
-                <Button size="lg" asChild>
-                    <a href="/Eduardo_Sacahui_Resume.pdf" download>
-                        <Download className="mr-2 h-5 w-5" aria-hidden="true" />
-                        {dict.hero.downloadCv}
-                    </a>
-                </Button>
-                <Button size="lg" variant="outline" asChild>
-                    <a href="#contact">{dict.hero.contactMe}</a>
-                </Button>
-            </div>
-             <div className="mt-8 max-w-4xl mx-auto border-t border-border/60 pt-6">
-                <p className="text-sm font-semibold text-muted-foreground mb-4">{dict.hero.awardsAndCertifications}</p>
-                <div className="flex flex-wrap justify-center gap-2">
-                    {awards.map(award => (
-                        <Badge
-                            key={award.title}
-                            variant="outline"
-                            className="border-hazmat/60 text-xs text-hazmat [box-shadow:0_0_10px_hsl(var(--hazmat)/0.25)]"
-                        >
-                            <Trophy className="mr-1 h-3 w-3" aria-hidden="true" />
-                            {`${award.title} (${award.date})`}
-                        </Badge>
-                    ))}
-                    {heroInfo.certBadges.map(badge => (
-                        <Badge key={badge} variant="outline" className="text-xs">{badge}</Badge>
-                    ))}
-                </div>
-            </div>
+          <div className="mt-7 flex flex-wrap gap-2">
+            {pillars.map(({ label, icon: Icon }) => (
+              <span key={label} className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/[0.07] px-3 py-1.5 text-xs font-semibold text-foreground">
+                <Icon className="h-3.5 w-3.5 text-primary" aria-hidden="true" />
+                {label}
+              </span>
+            ))}
+          </div>
+
+          <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <Button size="lg" asChild className="justify-center shadow-[0_0_28px_hsl(var(--primary)/0.18)]">
+              <a href="#products">
+                {dict.hero.exploreProducts}
+                <ArrowDownRight className="ml-2 h-4 w-4" aria-hidden="true" />
+              </a>
+            </Button>
+            <Button size="lg" variant="outline" asChild className="justify-center">
+              <a href="#leadership">{dict.hero.viewLeadership}</a>
+            </Button>
+            <Button size="lg" variant="ghost" asChild className="justify-center text-muted-foreground hover:text-foreground">
+              <a href={withBasePath('/Eduardo_Sacahui_Resume.pdf')} download>
+                <Download className="mr-2 h-4 w-4" aria-hidden="true" />
+                {dict.hero.downloadResume}
+              </a>
+            </Button>
+          </div>
         </div>
+
+        <aside className="relative mx-auto w-full max-w-xl lg:max-w-none" aria-label={dict.hero.proofLabel}>
+          <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-primary/20 via-transparent to-cyan-300/10 blur-2xl" />
+          <div className="relative overflow-hidden rounded-2xl border border-primary/25 bg-card/85 p-5 shadow-2xl backdrop-blur sm:p-7">
+            <div className="flex items-center justify-between border-b border-border/60 pb-4">
+              <p className="font-code text-xs font-bold uppercase tracking-[0.18em] text-primary">{dict.hero.proofLabel}</p>
+              <span className="flex items-center gap-2 text-[10px] uppercase tracking-[0.14em] text-emerald-300">
+                <span className="h-2 w-2 rounded-full bg-emerald-300 shadow-[0_0_10px_rgba(110,231,183,0.8)]" aria-hidden="true" />
+                {dict.hero.proofStatus}
+              </span>
+            </div>
+            <ol className="mt-5 space-y-3">
+              {dict.hero.proofItems.map((item, index) => (
+                <li key={item} className="grid grid-cols-[2.25rem_1fr] items-center gap-3 rounded-xl border border-border/60 bg-background/55 p-3.5">
+                  <span className="flex h-9 w-9 items-center justify-center rounded-lg border border-primary/25 bg-primary/10 font-code text-xs font-bold text-primary">
+                    0{index + 1}
+                  </span>
+                  <span className="text-sm font-medium leading-5 text-foreground/90">{item}</span>
+                </li>
+              ))}
+            </ol>
+            <div className="mt-5 grid grid-cols-3 gap-2 border-t border-border/60 pt-5 text-center">
+              <div><strong className="block font-code text-lg text-primary">AI</strong><span className="text-[10px] text-muted-foreground">{dict.hero.proofTags.products}</span></div>
+              <div><strong className="block font-code text-lg text-cyan-200">HITL</strong><span className="text-[10px] text-muted-foreground">{dict.hero.proofTags.control}</span></div>
+              <div><strong className="block font-code text-lg text-hazmat">0→1</strong><span className="text-[10px] text-muted-foreground">{dict.hero.proofTags.delivery}</span></div>
+            </div>
+          </div>
+        </aside>
+      </div>
     </section>
   );
 };

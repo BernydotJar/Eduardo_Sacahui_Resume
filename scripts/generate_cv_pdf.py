@@ -1,228 +1,248 @@
+"""Generate the downloadable résumé PDF from the portfolio data files."""
+
 import json
-import textwrap
-import unicodedata
 from pathlib import Path
 
-PAGE_WIDTH = 612
-PAGE_HEIGHT = 792
-MARGIN_X = 72
-MARGIN_TOP = 72
-MARGIN_BOTTOM = 72
-
-FONT_BODY = "F1"
-FONT_BOLD = "F2"
-
-MAX_CHARS_BY_SIZE = {
-    10: 100,
-    11: 90,
-    12: 82,
-    14: 72,
-    16: 64,
-    18: 58,
-}
+from reportlab.lib import colors
+from reportlab.lib.enums import TA_CENTER
+from reportlab.lib.pagesizes import LETTER
+from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
+from reportlab.lib.units import inch
+from reportlab.platypus import (
+    BaseDocTemplate,
+    Frame,
+    KeepTogether,
+    PageTemplate,
+    Paragraph,
+    Spacer,
+)
 
 
-def normalize_text(text: str) -> str:
-    text = (
-        text.replace("\u2013", "-")
-        .replace("\u2014", "-")
-        .replace("\u2019", "'")
-        .replace("\u201c", "\"")
-        .replace("\u201d", "\"")
-        .replace("\u2026", "...")
+INK = colors.HexColor("#10231A")
+MUTED = colors.HexColor("#50655B")
+ACCENT = colors.HexColor("#137A4A")
+RULE = colors.HexColor("#CDE5D6")
+PAPER = colors.HexColor("#FBFDFB")
+
+
+def load_json(path: Path):
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def page_chrome(canvas, doc) -> None:
+    width, height = LETTER
+    canvas.saveState()
+    canvas.setFillColor(PAPER)
+    canvas.rect(0, 0, width, height, fill=1, stroke=0)
+    canvas.setFillColor(ACCENT)
+    canvas.rect(0, height - 0.12 * inch, width, 0.12 * inch, fill=1, stroke=0)
+    canvas.setStrokeColor(RULE)
+    canvas.line(doc.leftMargin, 0.46 * inch, width - doc.rightMargin, 0.46 * inch)
+    canvas.setFont("Helvetica", 7.5)
+    canvas.setFillColor(MUTED)
+    canvas.drawString(doc.leftMargin, 0.27 * inch, "EDUARDO SACAHUI · AI PRODUCT & PLATFORM ENGINEERING")
+    canvas.drawRightString(width - doc.rightMargin, 0.27 * inch, f"PAGE {doc.page}")
+    canvas.restoreState()
+
+
+def build_styles():
+    styles = getSampleStyleSheet()
+    styles.add(
+        ParagraphStyle(
+            "Name",
+            parent=styles["Title"],
+            fontName="Helvetica-Bold",
+            fontSize=24,
+            leading=27,
+            textColor=INK,
+            alignment=TA_CENTER,
+            spaceAfter=5,
+        )
     )
-    text = unicodedata.normalize("NFKD", text)
-    text = text.encode("ascii", "ignore").decode("ascii")
-    return text
+    styles.add(
+        ParagraphStyle(
+            "Role",
+            parent=styles["Normal"],
+            fontName="Helvetica-Bold",
+            fontSize=10.5,
+            leading=13,
+            textColor=ACCENT,
+            alignment=TA_CENTER,
+            spaceAfter=4,
+        )
+    )
+    styles.add(
+        ParagraphStyle(
+            "Contact",
+            parent=styles["Normal"],
+            fontSize=8.5,
+            leading=11,
+            textColor=MUTED,
+            alignment=TA_CENTER,
+            spaceAfter=12,
+        )
+    )
+    styles.add(
+        ParagraphStyle(
+            "Section",
+            parent=styles["Heading2"],
+            fontName="Helvetica-Bold",
+            fontSize=10,
+            leading=12,
+            textColor=ACCENT,
+            spaceBefore=7,
+            spaceAfter=5,
+            borderColor=RULE,
+            borderWidth=0,
+            borderPadding=(0, 0, 3, 0),
+        )
+    )
+    styles.add(
+        ParagraphStyle(
+            "BodySmall",
+            parent=styles["BodyText"],
+            fontSize=8.5,
+            leading=11.6,
+            textColor=INK,
+            spaceAfter=4,
+        )
+    )
+    styles.add(
+        ParagraphStyle(
+            "Job",
+            parent=styles["BodyText"],
+            fontName="Helvetica-Bold",
+            fontSize=9,
+            leading=11.5,
+            textColor=INK,
+            spaceBefore=4,
+            spaceAfter=2,
+        )
+    )
+    styles.add(
+        ParagraphStyle(
+            "BulletSmall",
+            parent=styles["BodyText"],
+            fontSize=8.15,
+            leading=10.7,
+            leftIndent=11,
+            firstLineIndent=-7,
+            bulletIndent=2,
+            textColor=INK,
+            spaceAfter=2.5,
+        )
+    )
+    styles.add(
+        ParagraphStyle(
+            "Compact",
+            parent=styles["BodyText"],
+            fontSize=7.8,
+            leading=10.2,
+            textColor=INK,
+            spaceAfter=2.5,
+        )
+    )
+    return styles
 
 
-def escape_pdf(text: str) -> str:
-    return text.replace("\\", "\\\\").replace("(", "\\(").replace(")", "\\)")
+def section(title: str, styles) -> list:
+    return [Paragraph(title.upper(), styles["Section"])]
 
 
-class PDFBuilder:
-    def __init__(self) -> None:
-        self.pages = []
-        self._start_page()
-
-    def _start_page(self) -> None:
-        self.current_y = PAGE_HEIGHT - MARGIN_TOP
-        self.current_page_lines = []
-
-    def _commit_page(self) -> None:
-        self.pages.append("\n".join(self.current_page_lines))
-        self._start_page()
-
-    def _ensure_space(self, line_height: float) -> None:
-        if self.current_y - line_height < MARGIN_BOTTOM:
-            self._commit_page()
-
-    def add_line(self, text: str, size: int = 11, bold: bool = False, spacing: int = 4) -> None:
-        text = normalize_text(text)
-        if not text:
-            self.current_y -= size + spacing
-            return
-        font = FONT_BOLD if bold else FONT_BODY
-        max_chars = MAX_CHARS_BY_SIZE.get(size, 90)
-        for line in textwrap.wrap(text, width=max_chars):
-            self._ensure_space(size + spacing)
-            escaped = escape_pdf(line)
-            self.current_page_lines.append(
-                f"BT /{font} {size} Tf 1 0 0 1 {MARGIN_X} {self.current_y:.2f} Tm ({escaped}) Tj ET"
-            )
-            self.current_y -= size + spacing
-
-    def add_heading(self, text: str) -> None:
-        self.add_line(text, size=14, bold=True, spacing=8)
-
-    def add_subheading(self, text: str) -> None:
-        self.add_line(text, size=12, bold=True, spacing=6)
-
-    def add_bullets(self, items, size: int = 11) -> None:
-        for item in items:
-            bullet_text = f"- {item}"
-            self.add_line(bullet_text, size=size, bold=False, spacing=3)
-
-    def finalize(self) -> list:
-        if self.current_page_lines:
-            self.pages.append("\n".join(self.current_page_lines))
-        return self.pages
-
-
-class PDFWriter:
-    def __init__(self) -> None:
-        self.objects = []
-
-    def add_object(self, content: str) -> int:
-        self.objects.append(content)
-        return len(self.objects)
-
-    def write(self, output_path: Path, pages_content: list) -> None:
-        font_body = self.add_object("<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>")
-        font_bold = self.add_object("<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>")
-
-        page_objects = []
-        content_objects = []
-
-        for content in pages_content:
-            stream_data = content.encode("utf-8")
-            stream_obj = (
-                f"<< /Length {len(stream_data)} >>\nstream\n{content}\nendstream"
-            )
-            content_obj_id = self.add_object(stream_obj)
-            content_objects.append(content_obj_id)
-
-        pages_kids = []
-        for content_obj_id in content_objects:
-            page_obj = (
-                f"<< /Type /Page /Parent 3 0 R /MediaBox [0 0 {PAGE_WIDTH} {PAGE_HEIGHT}] "
-                f"/Resources << /Font << /{FONT_BODY} {font_body} 0 R /{FONT_BOLD} {font_bold} 0 R >> >> "
-                f"/Contents {content_obj_id} 0 R >>"
-            )
-            page_obj_id = self.add_object(page_obj)
-            page_objects.append(page_obj_id)
-            pages_kids.append(f"{page_obj_id} 0 R")
-
-        pages_obj = f"<< /Type /Pages /Kids [{' '.join(pages_kids)}] /Count {len(page_objects)} >>"
-        pages_id = self.add_object(pages_obj)
-
-        catalog_obj = f"<< /Type /Catalog /Pages {pages_id} 0 R >>"
-        catalog_id = self.add_object(catalog_obj)
-
-        # Reorder objects to keep Catalog as object 1 and Pages as object 2
-        # We built fonts/contents/pages first, so rebuild in correct order.
-        objects = [
-            self.objects[catalog_id - 1],
-            self.objects[pages_id - 1],
-        ]
-
-        # Add remaining objects excluding those already added
-        for i, obj in enumerate(self.objects, start=1):
-            if i in (catalog_id, pages_id):
-                continue
-            objects.append(obj)
-
-        # Write PDF
-        offsets = []
-        with output_path.open("wb") as f:
-            f.write(b"%PDF-1.4\n")
-            for idx, obj in enumerate(objects, start=1):
-                offsets.append(f.tell())
-                f.write(f"{idx} 0 obj\n".encode("utf-8"))
-                f.write(obj.encode("utf-8"))
-                f.write(b"\nendobj\n")
-
-            xref_start = f.tell()
-            f.write(f"xref\n0 {len(objects) + 1}\n".encode("utf-8"))
-            f.write(b"0000000000 65535 f \n")
-            for offset in offsets:
-                f.write(f"{offset:010d} 00000 n \n".encode("utf-8"))
-
-            f.write(
-                (
-                    "trailer\n"
-                    f"<< /Size {len(objects) + 1} /Root 1 0 R >>\n"
-                    "startxref\n"
-                    f"{xref_start}\n"
-                    "%%EOF\n"
-                ).encode("utf-8")
-            )
+def bullet(text: str, styles) -> Paragraph:
+    return Paragraph(f"• {text}", styles["BulletSmall"])
 
 
 def main() -> None:
     root = Path(__file__).resolve().parents[1]
     data_dir = root / "src" / "data"
-
-    experience = json.loads((data_dir / "experience.json").read_text())
-    education = json.loads((data_dir / "education.json").read_text())
-    certifications = json.loads((data_dir / "certifications.json").read_text())
-    awards = json.loads((data_dir / "awards.json").read_text())
-
-    builder = PDFBuilder()
-
-    name = "Eduardo Sacahui"
-    title = "AI Solution Architect & Technical Product Owner (Hands-on)"
-    location = "Remote - Colombia / Guatemala (AMER)"
-    email = "eduardo.sacahui@gmail.com"
-
-    builder.add_line(name, size=18, bold=True, spacing=8)
-    builder.add_line(title, size=12, bold=False, spacing=6)
-    builder.add_line(f"{location} | {email}", size=10, bold=False, spacing=10)
-
-    builder.add_heading("Professional Summary")
-    summary = (
-        "AI Solution Architect and Technical Product Owner focused on secure LLM systems, "
-        "governed orchestration, and production-grade AI delivery. Lead cross-functional "
-        "execution for executive decision-support platforms, translating stakeholder feedback "
-        "into reliable product increments, structured AI workflows, and measurable business outcomes."
-    )
-    builder.add_line(summary, size=11, bold=False, spacing=8)
-
-    builder.add_heading("Experience")
-    for exp in experience[:6]:
-        role_line = f"{exp['role']} - {exp['company']} | {exp['when']}"
-        builder.add_subheading(role_line)
-        highlights = exp.get("highlights", [])[:3]
-        builder.add_bullets(highlights, size=11)
-        builder.add_line("", size=11, spacing=6)
-
-    builder.add_heading("Education")
-    for edu in education:
-        edu_line = f"{edu['title']} - {edu['school']} ({edu['status']})"
-        builder.add_line(edu_line, size=11, bold=False, spacing=4)
-
-    builder.add_heading("Certifications")
-    builder.add_line(", ".join(certifications[:10]), size=10, bold=False, spacing=6)
-
-    if awards:
-        builder.add_heading("Awards")
-        for award in awards:
-            builder.add_line(f"{award['title']} ({award['date']})", size=11, bold=False, spacing=4)
-
-    pages = builder.finalize()
-    writer = PDFWriter()
     output_path = root / "public" / "Eduardo_Sacahui_Resume.pdf"
-    writer.write(output_path, pages)
+
+    experience = load_json(data_dir / "experience.json")
+    education = load_json(data_dir / "education.json")
+    certifications = load_json(data_dir / "certifications.json")
+    awards = load_json(data_dir / "awards.json")
+    styles = build_styles()
+
+    doc = BaseDocTemplate(
+        str(output_path),
+        pagesize=LETTER,
+        title="Eduardo Sacahui — AI Product & Platform Engineering Leader",
+        author="Eduardo Sacahui",
+        subject="AI product, agentic platform, and engineering leadership résumé",
+        leftMargin=0.58 * inch,
+        rightMargin=0.58 * inch,
+        topMargin=0.45 * inch,
+        bottomMargin=0.58 * inch,
+    )
+    frame = Frame(
+        doc.leftMargin,
+        doc.bottomMargin,
+        doc.width,
+        doc.height,
+        id="resume",
+        leftPadding=0,
+        rightPadding=0,
+        topPadding=0,
+        bottomPadding=0,
+    )
+    doc.addPageTemplates([PageTemplate(id="resume", frames=[frame], onPage=page_chrome)])
+
+    story = [
+        Spacer(1, 0.06 * inch),
+        Paragraph("Eduardo Sacahui", styles["Name"]),
+        Paragraph("AI PRODUCT &amp; PLATFORM ENGINEERING LEADER", styles["Role"]),
+        Paragraph(
+            "Remote · Colombia / Guatemala (AMER) &nbsp;|&nbsp; "
+            "eduardo.sacahui@gmail.com &nbsp;|&nbsp; linkedin.com/in/eduardosacahui &nbsp;|&nbsp; github.com/BernydotJar",
+            styles["Contact"],
+        ),
+    ]
+
+    story += section("Leadership profile", styles)
+    story.append(
+        Paragraph(
+            "AI product and platform engineering leader who turns ambiguous workflows into governed, "
+            "customer-facing AI systems. Combines product discovery, hands-on architecture, evaluation, "
+            "secure delivery, operations, and human-centered adoption—connecting AI behavior and platform "
+            "decisions to measurable business outcomes.",
+            styles["BodySmall"],
+        )
+    )
+
+    story += section("Selected AI product evidence", styles)
+    evidence = [
+        "<b>Executive AI Assistant Pilot:</b> 0→1 delivery across web, PWA, browser extension, and API surfaces with approval-gated actions.",
+        "<b>LA Muni RAG:</b> public evidence-first Procedure Workflow Advisor MVP with citations, confidence, document checklists, gaps, and feedback controls.",
+        "<b>AI Recruiting Copilot:</b> interactive product demo that exposes candidate evidence and preserves recruiter-controlled review.",
+    ]
+    story.extend(bullet(item, styles) for item in evidence)
+
+    story += section("Experience", styles)
+    for exp in experience:
+        job = Paragraph(
+            f"{exp['role']} · {exp['company']} <font color='#50655B'>| {exp['when']}</font>",
+            styles["Job"],
+        )
+        highlights = [bullet(item, styles) for item in exp.get("highlights", [])[:2]]
+        story.append(KeepTogether([job, *highlights]))
+
+    story += section("Education", styles)
+    for item in education:
+        story.append(
+            Paragraph(
+                f"<b>{item['title']}</b> · {item['school']} · {item['status']}",
+                styles["Compact"],
+            )
+        )
+
+    story += section("Credentials & recognition", styles)
+    story.append(Paragraph(" · ".join(certifications), styles["Compact"]))
+    for award in awards:
+        story.append(Paragraph(f"<b>{award['title']}</b> · {award['date']}", styles["Compact"]))
+
+    doc.build(story)
+    print(f"Generated {output_path}")
 
 
 if __name__ == "__main__":

@@ -1,112 +1,99 @@
 %PDF-1.4
+%“Œ‹ž ReportLab Generated PDF document (opensource)
 1 0 obj
-<< /Type /Catalog /Pages 7 0 R >>
+<<
+/F1 2 0 R /F2 3 0 R /F3 4 0 R
+>>
 endobj
 2 0 obj
-<< /Type /Pages /Kids [5 0 R 6 0 R] /Count 2 >>
+<<
+/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font
+>>
 endobj
 3 0 obj
-<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+<<
+/BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font
+>>
 endobj
 4 0 obj
-<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+<<
+/BaseFont /Symbol /Name /F3 /Subtype /Type1 /Type /Font
+>>
 endobj
 5 0 obj
-<< /Length 3905 >>
-stream
-BT /F2 18 Tf 1 0 0 1 72 720.00 Tm (Eduardo Sacahui) Tj ET
-BT /F1 12 Tf 1 0 0 1 72 694.00 Tm (AI Solution Architect & Technical Product Owner \(Hands-on\)) Tj ET
-BT /F1 10 Tf 1 0 0 1 72 676.00 Tm (Remote - Colombia / Guatemala \(AMER\) | eduardo.sacahui@gmail.com) Tj ET
-BT /F2 14 Tf 1 0 0 1 72 656.00 Tm (Professional Summary) Tj ET
-BT /F1 11 Tf 1 0 0 1 72 634.00 Tm (AI Solution Architect and Technical Product Owner focused on secure LLM systems, governed) Tj ET
-BT /F1 11 Tf 1 0 0 1 72 615.00 Tm (orchestration, and production-grade AI delivery. Lead cross-functional execution for) Tj ET
-BT /F1 11 Tf 1 0 0 1 72 596.00 Tm (executive decision-support platforms, translating stakeholder feedback into reliable) Tj ET
-BT /F1 11 Tf 1 0 0 1 72 577.00 Tm (product increments, structured AI workflows, and measurable business outcomes.) Tj ET
-BT /F2 14 Tf 1 0 0 1 72 558.00 Tm (Experience) Tj ET
-BT /F2 12 Tf 1 0 0 1 72 536.00 Tm (AI Solution Architect + Technical Product Owner \(Hands-on, Principal FDE scope\) -) Tj ET
-BT /F2 12 Tf 1 0 0 1 72 518.00 Tm (Rice AI Center | 2026) Tj ET
-BT /F1 11 Tf 1 0 0 1 72 500.00 Tm (- Leading the technical architecture and delivery of an enterprise AI platform for) Tj ET
-BT /F1 11 Tf 1 0 0 1 72 486.00 Tm (executive decision support, focused on secure LLM systems, governed orchestration, and) Tj ET
-BT /F1 11 Tf 1 0 0 1 72 472.00 Tm (production-grade AI operations.) Tj ET
-BT /F1 11 Tf 1 0 0 1 72 458.00 Tm (- Architected a secure, enterprise-ready AI command platform integrating Google Workspace,) Tj ET
-BT /F1 11 Tf 1 0 0 1 72 444.00 Tm (backend-governed orchestration, and structured LLM output controls.) Tj ET
-BT /F1 11 Tf 1 0 0 1 72 430.00 Tm (- Converted executive and product requirements into a deployable MVP and a scalable) Tj ET
-BT /F1 11 Tf 1 0 0 1 72 416.00 Tm (architecture roadmap.) Tj ET
-BT /F2 12 Tf 1 0 0 1 72 385.00 Tm (AI Software Engineer & Architect - Python Financial Automation - Credito Directo) Tj ET
-BT /F2 12 Tf 1 0 0 1 72 367.00 Tm (\(Argentina\) | 2026) Tj ET
-BT /F1 11 Tf 1 0 0 1 72 349.00 Tm (- Architected and delivered Python-based financial automation engines for monthly) Tj ET
-BT /F1 11 Tf 1 0 0 1 72 335.00 Tm (accounting and tax processes, covering IVA, liquidations, accruals, reversals, and IIBB) Tj ET
-BT /F1 11 Tf 1 0 0 1 72 321.00 Tm (support.) Tj ET
-BT /F1 11 Tf 1 0 0 1 72 307.00 Tm (- Designed hybrid execution patterns across API, FTP, Power Automate, and local runtime) Tj ET
-BT /F1 11 Tf 1 0 0 1 72 293.00 Tm (flows to process high-volume financial datasets reliably under strict monthly close) Tj ET
-BT /F1 11 Tf 1 0 0 1 72 279.00 Tm (deadlines.) Tj ET
-BT /F1 11 Tf 1 0 0 1 72 265.00 Tm (- Formalized business rules from functional documentation into resilient rule engines with) Tj ET
-BT /F1 11 Tf 1 0 0 1 72 251.00 Tm (schema validation, template orchestration, accounting output generation, and regression-) Tj ET
-BT /F1 11 Tf 1 0 0 1 72 237.00 Tm (safe delivery.) Tj ET
-BT /F2 12 Tf 1 0 0 1 72 206.00 Tm (Backend Software Engineer \(Python\) - Accounting Models / GST Directo | 2025-2026) Tj ET
-BT /F1 11 Tf 1 0 0 1 72 188.00 Tm (- Ingeniero de Software Backend \(Python\) enfocado en automatizacion contable, responsable) Tj ET
-BT /F1 11 Tf 1 0 0 1 72 174.00 Tm (del diseno y evolucion de motores de procesamiento para liquidaciones, altas e IIBB.) Tj ET
-BT /F1 11 Tf 1 0 0 1 72 160.00 Tm (- Implemente pipelines robustos de ingestion y validacion de archivos \(XLSX/XLS XML\),) Tj ET
-BT /F1 11 Tf 1 0 0 1 72 146.00 Tm (reglas contables, generacion de outputs compatibles con Tango, e integracion con FTP/SFTP) Tj ET
-BT /F1 11 Tf 1 0 0 1 72 132.00 Tm (y Power Automate.) Tj ET
-BT /F1 11 Tf 1 0 0 1 72 118.00 Tm (- Lidere practicas de delivery con Docker, FastAPI, CI \(pytest/ruff\), logging estructurado) Tj ET
-BT /F1 11 Tf 1 0 0 1 72 104.00 Tm (y enfoque fail-soft para mejorar resiliencia operativa.) Tj ET
-endstream
+<<
+/Contents 10 0 R /MediaBox [ 0 0 612 792 ] /Parent 9 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
 endobj
 6 0 obj
-<< /Length 3067 >>
-stream
-BT /F2 12 Tf 1 0 0 1 72 720.00 Tm (Platform Architect - Edwards Lifesciences | 2023-Present) Tj ET
-BT /F1 11 Tf 1 0 0 1 72 702.00 Tm (- Remediated mission-critical bots with ABBYY engineers; restored throughput and) Tj ET
-BT /F1 11 Tf 1 0 0 1 72 688.00 Tm (stability.) Tj ET
-BT /F1 11 Tf 1 0 0 1 72 674.00 Tm (- UiPath-Power Platform convergence strategy; optimized license spend & platform fit.) Tj ET
-BT /F1 11 Tf 1 0 0 1 72 660.00 Tm (- Power Automate governance \(security, naming, exception strategy\) and Power BI capacity) Tj ET
-BT /F1 11 Tf 1 0 0 1 72 646.00 Tm (dashboards.) Tj ET
-BT /F2 12 Tf 1 0 0 1 72 615.00 Tm (CEO & Principal Python Engineer - LCH \(Low Code Human\) | 2023-Present) Tj ET
-BT /F1 11 Tf 1 0 0 1 72 597.00 Tm (- Led offshore Python team in building backend services using FastAPI and vector databases) Tj ET
-BT /F1 11 Tf 1 0 0 1 72 583.00 Tm (for RAG applications.) Tj ET
-BT /F1 11 Tf 1 0 0 1 72 569.00 Tm (- Published SDKs for React development teams and managed API lifecycle with cost and) Tj ET
-BT /F1 11 Tf 1 0 0 1 72 555.00 Tm (latency SLOs.) Tj ET
-BT /F1 11 Tf 1 0 0 1 72 541.00 Tm (- Implemented advanced deployment strategies like canary and blue-green releases, with) Tj ET
-BT /F1 11 Tf 1 0 0 1 72 527.00 Tm (comprehensive telemetry.) Tj ET
-BT /F2 12 Tf 1 0 0 1 72 496.00 Tm (Technical Delivery Manager - UiPath \(United States\) | 2022-2023) Tj ET
-BT /F1 11 Tf 1 0 0 1 72 478.00 Tm (- Managed Orchestrator deployments on AKS/EKS and on-prem using custom Helm charts,) Tj ET
-BT /F1 11 Tf 1 0 0 1 72 464.00 Tm (ensuring HA, autoscaling, and DR readiness.) Tj ET
-BT /F1 11 Tf 1 0 0 1 72 450.00 Tm (- Engineered robust observability stacks \(Prometheus/Grafana/ELK\) with SLOs, reducing MTTR) Tj ET
-BT /F1 11 Tf 1 0 0 1 72 436.00 Tm (in heavily regulated healthcare client environments.) Tj ET
-BT /F1 11 Tf 1 0 0 1 72 422.00 Tm (- Enforced stringent security controls including RBAC, CyberArk/Key Vault integration for) Tj ET
-BT /F1 11 Tf 1 0 0 1 72 408.00 Tm (secrets management, TLS rotation, and network policies.) Tj ET
-BT /F2 14 Tf 1 0 0 1 72 377.00 Tm (Education) Tj ET
-BT /F1 11 Tf 1 0 0 1 72 355.00 Tm (Master of Business Psychology - Franklin University \(In progress \(expected 2026\)\)) Tj ET
-BT /F1 11 Tf 1 0 0 1 72 340.00 Tm (Bachelor of Business Administration - Franklin University \(2024\)) Tj ET
-BT /F2 14 Tf 1 0 0 1 72 325.00 Tm (Certifications) Tj ET
-BT /F1 10 Tf 1 0 0 1 72 303.00 Tm (UiPath RPA Solution Architect, Microsoft Certified App Maker, Microsoft Data Analyst Training,) Tj ET
-BT /F1 10 Tf 1 0 0 1 72 287.00 Tm (Professional Python Developer, Python Data Structures - University of Michigan, Scrum Professional -) Tj ET
-BT /F1 10 Tf 1 0 0 1 72 271.00 Tm (Platzi, Harvard ManageMentor - Coaching, EF SET English Certificate - C1 Advanced \(67/100\), Workato) Tj ET
-BT /F1 10 Tf 1 0 0 1 72 255.00 Tm (Certificate of Completion, WorkFusion Diploma \(SAP\)) Tj ET
-BT /F2 14 Tf 1 0 0 1 72 239.00 Tm (Awards) Tj ET
-BT /F1 11 Tf 1 0 0 1 72 217.00 Tm (Winner - UiPath AI Automation Contest \(May 2025\)) Tj ET
-endstream
+<<
+/Contents 11 0 R /MediaBox [ 0 0 612 792 ] /Parent 9 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
 endobj
 7 0 obj
-<< /Type /Page /Parent 3 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 3 0 R >>
+<<
+/PageMode /UseNone /Pages 9 0 R /Type /Catalog
+>>
 endobj
 8 0 obj
-<< /Type /Page /Parent 3 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 4 0 R >>
+<<
+/Author (Eduardo Sacahui) /CreationDate (D:20260715125349-06'00') /Creator (\(unspecified\)) /Keywords () /ModDate (D:20260715125349-06'00') /Producer (ReportLab PDF Library - \(opensource\)) 
+  /Subject (AI product, agentic platform, and engineering leadership r\351sum\351) /Title (Eduardo Sacahui \204 AI Product & Platform Engineering Leader) /Trapped /False
+>>
+endobj
+9 0 obj
+<<
+/Count 2 /Kids [ 5 0 R 6 0 R ] /Type /Pages
+>>
+endobj
+10 0 obj
+<<
+/Filter [ /ASCII85Decode /FlateDecode ] /Length 3629
+>>
+stream
+GauHMgN):E&q05PaJT>jf#UA`A9M8pg\A(6gFU]-4V>=@;?=0W<#T'/An!rQ:R3V@\)#tVHc$HX<[CaXSs+FTAQ&td[e]BqM,'sjHsr6+cu_QsgM52Z8;$0=5MfPVPI>89am/O=]Alc]3Ea(Sbk<YIGs-oq8W04u=Y6i5Z,pa-]SnD>f<TbZC:/9F>&Mr.3O-0_C<oJpm5YYZ-Tup6=+%Be1qpo*[V^:qEa9'"f$s4nQI@HNL,=0W*o+(_I.CThCs04lcfpPQp:;jE"L"Ba8_<'6@"V`'?X2=Q=`'P<VT.Ql;h'1D99]?Xs6A&jc((q,rG*=2DpLY=:$F#D%K"V4g[P^^5$hQF*"9j=+"uO#oY36]R;]]Ym7nTjCuYfUbE)Ld"1!-:rs.t?GS[L3Z()IqjJh%,PO^X8V:B_HB<mJar5r?S+5,6iQZ%8!i=LA@pGa5ka6n+&#OZBT1k<t>/s8KK7/15VX6OrS#HQ'WT/`"iWfQf1^(,p.9stET[G,S=&_lEZo4bGRK^2dF:h-]`BfP=K&'!Aq5.K3##O_:Hh`ig]l.DQt]QS:$)d"\Pq^ebG0pZUGaT=513n3K+&p-g6\]Ei8KS!fqrlnh5HV\14h"[pp+d,7oXL&8K^QrZ/6He!HDcVTBqB?"VnW1^?3\GWB)o#Oi<7ranS&M9\M)Kq1r[j;8_ffmFc<m0VK=U04rQp`CjQr2S,n<#A;$:ZTFZn`g?<e!G%s[T^S_]U^INdF9Y#PP;%[h0<?#p#(.8FuHq\b5=TK!Y=676Q3d8ED2-7W1s-q,6l\mK0ong$h!+H"?Ik:,6QjNAaspF3'ie$RVKn>HbUaNr=/Y@Z-e#bS;OqkT\q0i'CZ!;e"/<d1]?D?MH^q$NT9>2_;P;b&)GJ#+pbj3I4OjIHPW*MoMU8u7U;.$1,Pp?5U*k-t!((phB:,&6s0b%)[u&qQ)=f9tZD^5aCBZTQoGY/HmZ$1Fl);nF68^.S4$":NgZUj40HTqlt*Z5"hQ49Ls]C@-p"]\\)He4^(a_:`pL^70c\^L!NC5+_/Z:T)gQ]Pj2J:4qhdlV4RYH->ce7(:@XoGlkh0sa$HTGjH3g<gab7@5huL_&69;jCr=b%RS;Sc,m"^:cgb>30sGrEXQ-`m![h^Y)KaC=c!!i?oO`\X2n4)ZA5OU3Qfr!lFMD-DT(`LB5gF!L7p3L]WP08.-\P?kO;l/s2b+);i6/%]oE\XO-3XQM[IrD&54o%@fNHdnLl4)YYnWnn"?;6fiqW.ZfcGRgYLWE.+I/Ue">F\!"GS&+3C(r87E5.fA5*XC;g@Z7,Dg;5!l8%6fohP5^dZZ,D6jLeGT:U^ZD&s746:%9t)MFL[Y[SPIAnr]e4*8<0O=jN;"b1EA]89#WfDd/Y.fq(b3LUMM53^adna+QUEH.KFL(QPW4NOT=8Z(*plDO;:KUKE,/,`Ua")N4F-!U*%N$K?ke+KgRVMh6H>8B`ji3$N\`2(C)pIU;NLp7K"^Bdm%LqrDfY@&McD,GAlpp&9cX7.LQ9EN+1kK(i(bL#D>\]9?7=4/B5gkq;oi]qBF;D;^HpUdrN$H$u_b_FfIR*eF#*jW>np3[t*KMAX-\jXX%JcrO_aJTVp(MH@aCQ/;t7-)M@?"Kn"V]Q"m@_L$TSq3m!EO4"<#$`nqMRF#^h39(LA>_H(fL1eo:E/1F50JS#Q<Hu:PM#Qm91[drj]Ge;_1F6$Ob[0@@Yn']^\*N(b.G^[JB7`et$O?CbW-(BIQ>\^q\MZfHfJl<cS2&QSBn$rXpEYGt@Ys[3tO9ooud@nYnU>7kU<Sf=5H\&sC8nj%b@S9!&75W_/.feWs706-b)#H<]S2%6In1[R&"e@/S1;#rd-VHE8)aMADU7L\b:uVBR6FQg/Vo&Ao>VK"j[1gL0$&'j(%GTHij!nTEiTiT]W8Yp2i[[q1M?4NDX63b3U9B'#%LLZ-3>Vs"=W_,V(J8][@M:5C9N(JJ06qtoH<N%K+)9S;bA+_IpR3]#DtdM$O8I@jk;$%1k/(jh:K1.:+?1hd)&UDr66X=@[#X?Z3^OV6pOHQV/6Nf,C<h25HZ:X:kU1n`dZ(V3b>n-DAV5K6_ZDb@:`1)":dL1].aPKsJ<a()Lg(Z,;ZYrZaSZV2)M&\jaPkq?;m1%\?AjZ<736`+NjD1U^oF@+\%oT&5\\Aho42$gmkD=q_!LIiZuau.?0:$rG1R<=Kp%:Ihm^U,hUo)=7]9>NeaTH5hOeI*B5Z=\9_RQ8Mb0)OTTNs-i#P/U.'^eC["8,V>,j0ahcaY2lga['kmEB+[?B=[`Zc!08U]Na)(\,4N20n@?DQ5e2j+SDVR>U>hNiTAlSt-1`b-o'@'!gOcqK:fF7[Z-U8BM>UIn$m#b?s[XEKP")g>CGCO@0u4s/f,ID-TEhQq]u+UkOoc9bl-/:t@CMi,Mief_Wb<P8<&,#1S6e>U;cRGA/t-\gXfro&M@e&,LA\(]`3>J5]XUIkgY<^lLs&-/^r8jg"JWNTFTV[&C2Ab(g_r^YW_;]Ma\c:aj0[70uW2[3.]AX_>\8m*)kr<-sJ-f2DZb4`;oHM[O-p$=()Kh9;.6!7D<3a]$l^_BC2bZ1UIc%0_ij0bHk1U#?^I8V;PXc0RqId0`2>puOBdu#$F-C:3/M!%$=od@sMHRpDkJi)U@o[Ahl<nX1DFZN<@rI5?1B7jE[ldhV%WQ;M*JcRko])l>pkhFE[([-as>R/HUQU&t^g$(A$*Kic*d>LH)!l-9Q1FZF^dl^^*BoYg=:#%ua-6<]RQ?4:uN2JUn`B15WM9uDVh$S9_mU,N=#OrN^)<!Q8D=uc2j:Mo5dM31_S:;pt.YX9:grWC5B"#Q?8<%2:X'!MR:)+uMp_t<oXr,OLZsY'X$Zp<#1;#d&aB#cNfKY>ID<H@S26&UtfHjW-C'(T2,/r5JP2X4@_/ONhq;UhYWdXFs.du>I]."tE>;pth3#RKt__FfpYO6n-*"P5,9N7*[j$^%CZkgPu\rn3ldRkcI2+-*>9k/-r^4:?$$6S8KTnq%8PaLt@o^@?.[Ca_RG1KY'ie`pt(o6?=b-DRt8asL!O;K9i/[L_de)SV>/E")!_=.ONDLfniAT8=Ck./:PF?4$NYGA[,OQK@[H"b>7^'V-2cRR<QeP<QQ:*lYsQ0?<aJ"KQAgYLIsVRPgc%%/CPbs;.CdNpS'SYDGlO89"\Y(SIkE6Fdb-?GN#@/PpSd,&E3gNpDbIp'W(Og-HlXZIc(P2qSW7g0`Kkarl^W\0="pmh"(IC+S>:dL*u"CV?-Hh`GE>S/$9H/SG9Z\$((5*oqAAagg(oAbbEkeUChIe@8WNlb9Df<I6ER,O$ZP9ogD,(q:e\L`?X[ME?u_7BcrJC_S;$MNY6b%C)QF?n0QbLI-@qME&TXDsrJb+OStIXOW?U4H(?#5'/P92Ic4'ZGFG$]4Xf!W8[3CI%Op7d,]9I\t/\qFiJ!je+nm\_J5%BJXnT;8*T>c;iCnO<u?W%>AhZ<)>dc7F6)t>Y$<0R5.hLO9V`dd5P40H;[QRHbSq)ae8O.SU*HL&]?QK1tW>9dR@#[T(?nM5JG+FPb5CPM0+lsNCX.Q,$u^:C,'M;4WBl\:d82O64dMb;pHlh=8(lg+47_#!?b+/lM~>endstream
+endobj
+11 0 obj
+<<
+/Filter [ /ASCII85Decode /FlateDecode ] /Length 2096
+>>
+stream
+Gau0DD,8nW&H9tYQqp^q_=:arQqA_D-U:FX\4I73PV7s$8bQW^VX$)rVpkV<S$c`3P[%)mKSjPlG<O9r1XF9QJVcTlq)c[ucH";EYe[PQ49Nba>T!4/4$NL\A-?c$Z!8u7^p[E1eG"!4`67NhDXmlK,_aq7,K'00Q3E$/lXaJVJS>9o^"RBdL?"P'g4neAHeP>1fJXT65lV@uG\_RY]YmOIAb[<+Ne)O4B_eN6]:7Oh7RnE8IA<Vj%lS#=Nog%Z$OeEP9YZS=QIkgMD$Fm^2W1X2Xh\lfD?c)<k;F<'"u$CZnERFe'AN+%lp3`RFDdj.I"JjMN\:USCZsV[p27It@IN@L(rh'App9tdf%DVk9m"d9kMtUlZ4$BWno*aKQaZ[,gTW@SpgWP?'5S+2"3]-E4sIEme/9+#B;<5X.,jHlp9oZ7TeVKn(fQS`T9:W[@73*h&j#Z9VIDu*"g;1Yj,-H('GI"4:g1B`K@'AuCst9i[dE&H-(m1>3>Sp"KXBLfD7#V*iKe_2AC2Q3BJ%^&2>0rj=,j-)Qrq'56c)+k'secNBJU9,+FFNQi-CG7`ojRh,Z4@)/)6>!R>Q:#5gkm[S3f-['MKEp1.dp3b*(lRC3".?O>``bKadRks"ItbBP)]C3'8t(JFg.@&5/=%-ZI7<U)#*f(.r+KclhE8`s%b#"R^qJ?5,C`4FpTs@[Q2?W0raW0j^o7W;Lc]8OaeAm0O1iZD?blVupIT6"&@6aO0.ic4(c)K;_.W0@o,JE`r^2dq`a"5:V?L"\ViO,E+/N8#L$gq$"i<fQ(M/P_rr(m*L-Z`9IK%-\e\k-9RZKT%>aO^I2STbhAlH`,2j\0/OsV[#<2:jZ9YI.9YO9Z-9ra,,0.8_3tH(=_^G6@GK%',#^NMaVqb.3'S*Db;>`5,h.Q5;5F;H.kQ2o/ZML,aatt1W/=T;Quc<B\GCs-d!7rh\q\Tn>@F\9Tc[T:NXoWje_[OUgrDH,?f$RC/gC%+[RQp2b#&2])%<5_K]hOU^VcBi+i0Y["]9QT>#hgpn1^-o!AdL?HU6^,p%-NI>+Q=R>TscO#`)S;`C`%&KYtq%=XiO3Q0uE.WE4EA'f(=`(/bqN/c?PeOsL?sdsNWPmn(g1-9j"cZP;M&MDsHMAUFgInGjZ`R]NL0mMWhl].>Z316Re&WTdF4[+]l*fkQ"I9a`$[7M6Rfl'19[U6<JrkXkp%;Dql1^l"+?8IM?f8)9T+J%3W3ejf;Ja(8CGUc=!p'O90>>gQFT:C5)M3@";E.<7h3c_a)BXOpTa%D>:hSjPfNSk@ME&26LBY&g_%GP(kljW_"!du89IP3t#=\Jo:/ql&U=<N6Rca3,5V-4&iEEi$)F3<M;'>0T<A(SN=Te&h9XcnE;qTs;CFrn$lA]o$\%T^,Mr7a:@D5<OQq5=GMN&XZLu5bEQTKci(![cIu8r+ic8-upee,;Dlu`j'ksHc`]G$8s(Y@pj(oH=2WIEGog&-hK$OIDMBm/ghn9Q<eRa7ulqUehtR7Y#-ukY]B*2nf6Y:SLdSXkNgQZC*G2>C/i-kI[;]Bi,Hk^J]jHb="ek>-Nl/jqNOR(r`ilI:j-T^2`]_"bO]MSHj<d:,XDGC07egUSW11[,k-#o+UWE8#+R[1`)%Y&ZG-bD:9m,0)Kn3uRrL+JO-$E[DD\l9koE)"XKQP>_f<hH1(D\=bSDPSj-Dp36i:)H8S)>debrd[7#G6n'LYnM2IdSLh%!_SAZ^d790+K[:[0s+f[4J#.2Ts$bV33>mAZta=3=]2eVB*J`"GlhkA'1I)IK6jnlmh:,2hW#ClUl#H,qCr7J?:fjW6SErQV?"=%#5[l\669RF>s$2^.M\!?(TAF8#`*h(a$I4D">_G!Mc,Y\LS"jEo6oUK]@sDd'#p3i)N$<]BZT8[-ueDapKHOf_Mbacl_Ro1TK3[_a)?i/'GXClX/;DR:FP`b&*HR^Y<L`T(YXVY'ZarT99B=,-%LBb8$]ojhnsbeP'DYgdRcK]&,k.nM`QAA2HPkBEBto'4<1NofY#HQK)VD#9]Kkj>`]mjJclN,uRek(_`$Du8u'3:ePeWuX6@:"EJ\>-DasU]1=hM]d]~>endstream
 endobj
 xref
-0 9
+0 12
 0000000000 65535 f 
-0000000009 00000 n 
-0000000058 00000 n 
-0000000121 00000 n 
-0000000191 00000 n 
-0000000266 00000 n 
-0000004223 00000 n 
-0000007342 00000 n 
-0000007478 00000 n 
+0000000061 00000 n 
+0000000112 00000 n 
+0000000219 00000 n 
+0000000331 00000 n 
+0000000408 00000 n 
+0000000602 00000 n 
+0000000796 00000 n 
+0000000864 00000 n 
+0000001248 00000 n 
+0000001313 00000 n 
+0000005034 00000 n 
 trailer
-<< /Size 9 /Root 1 0 R >>
+<<
+/ID 
+[<700ff0916bb40086dc647a0c61d3b720><700ff0916bb40086dc647a0c61d3b720>]
+% ReportLab generated PDF document -- digest (opensource)
+
+/Info 8 0 R
+/Root 7 0 R
+/Size 12
+>>
 startxref
-7614
+7222
 %%EOF

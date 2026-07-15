@@ -23,20 +23,21 @@ jobs:
         with:
           node-version: "24"
           cache: "npm"
-      - run: npm install
+      - run: npm ci
       - name: Run quality checks
-        run: npm run typecheck && npm run lint
+        run: npm run typecheck && npm run lint && npm test
       - name: Build static site
         run: npm run build
         env:
           NEXT_PUBLIC_SITE_URL: https://bernydotjar.github.io/Eduardo_Sacahui_Resume
           NEXT_PUBLIC_PLAUSIBLE_DOMAIN: ${{ github.repository_owner }}.github.io
+      - name: Verify static export links and assets
+        run: npm run verify:export
       - name: Ensure _next assets are served
         run: touch out/.nojekyll
       - uses: actions/upload-pages-artifact@v4
         with:
           path: out
-          include-hidden-files: true
 
   deploy:
     needs: build

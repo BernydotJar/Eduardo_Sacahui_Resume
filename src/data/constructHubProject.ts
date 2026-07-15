@@ -3,125 +3,109 @@ import type { Project } from '@/lib/types';
 export const constructHubProject: Project = {
   id: 'constructhub-ai-procurement-platform',
   aliases: ['constructhub', 'construct-hub', 'construction-suppliers-agent'],
-  title: 'ConstructHub — AI Procurement Platform for Construction Suppliers',
+  title: 'ConstructHub — AWS Deployment Validation Demo',
   when: '2026',
-  client: 'Construction procurement and supplier operations platform',
+  client: 'Independent construction marketplace concept',
+  category: 'enterprise-transformation',
+  maturity: 'Staging infrastructure validated · Product UX rebuild required',
+  industry: 'Construction procurement',
   skills: [
     'architecture',
     'productownership',
-    'llmprod',
-    'prompteng',
     'typescript',
     'react',
     'next',
     'apidesign',
-    'jsonschema',
     'docker',
     'cicd',
     'monitoring',
-    'securetoken',
-    'accessibility'
+    'securetoken'
   ],
-  stack: 'Next.js, TypeScript, agentic supplier workflows, PostgreSQL/Prisma, Docker, AWS deployment path, CI/CD, structured product specs, admin UX, quote/order workflow automation',
-  summary: 'Designed and built an AI-native construction procurement platform that helps contractors discover suppliers, manage RFQs, compare quotes, and move supplier workflows through a controlled marketplace-style experience.',
+  stack: 'Next.js, TypeScript, PostgreSQL/Prisma, Docker, Amazon ECR, ECS Fargate, RDS, Secrets Manager, ALB, CloudWatch, AWS Budgets',
+  summary: 'Validated a gated local-to-AWS deployment path for a construction marketplace concept, including container delivery, managed data, secret injection, smoke tests, cost controls, and controlled shutdown.',
+  primaryUsers: ['Future contractor, supplier, and platform operations users'],
+  buyerOrStakeholder: ['Future marketplace operators'],
+  customerProblem: 'The underlying marketplace concept targets fragmented supplier and quote coordination, but current public evidence validates deployment operations rather than a finished customer product.',
+  productSurface: ['Functional deployment-validation frontend', 'AWS staging environment, currently scaled to zero'],
+  myRole: 'Architecture and gated deployment workflow design across application packaging, managed infrastructure, migrations, review evidence, and cost controls.',
+  teamContext: 'Independent staging/demo project executed through a spec-driven SDLC harness.',
+  productDecisions: [
+    'Separated deployment validation from product-readiness claims.',
+    'Ran database migration as an ECS one-off task inside the target IAM, network, runtime, and secret boundary.',
+    'Added explicit staged shutdown controls and a low-cost AWS Budget guard.'
+  ],
+  tradeoffs: [
+    'Staging is intentionally off to reduce compute cost, so the ALB may return 503.',
+    'The public frontend is a validation surface and requires a dedicated product/UX rebuild before user-facing claims are appropriate.'
+  ],
+  architectureSummary: 'Container images are published to ECR and run on ECS Fargate with RDS PostgreSQL, Secrets Manager, ALB routing, CloudWatch logs, controlled Prisma migrations, and staged cost controls.',
+  safetyAndHumanControl: [
+    'Sensitive infrastructure actions were separated into explicit approval and evidence gates.',
+    'Database credentials were not printed during migration execution.',
+    'Staging can be scaled to zero while preserving infrastructure state.'
+  ],
+  delivery: ['AWS staging path validated through gated preflight, deploy, migration, smoke-test, and Go/No-Go steps'],
+  technicalOutcome: ['Demo/staging/deployment path validated', 'Production readiness remains NO-GO', 'Staging currently OFF'],
+  evidence: [{ label: 'Public repository status', kind: 'repository', publiclySafe: true }],
+  nextStage: 'Define real customer workflows and rebuild the frontend before production hardening or marketplace claims.',
   outcomes: [
-    'Defined the product architecture for contractor, supplier, and admin workflows',
-    'Built a modern marketplace-style frontend for supplier discovery and procurement flow control',
-    'Structured the system around RFQs, quote comparison, supplier profiles, admin review, and operational traceability',
-    'Prepared the platform for cloud deployment with containerization, database migrations, and phased production gates'
+    'ECR, ECS Fargate, RDS, Secrets Manager, ALB, CloudWatch, and AWS Budgets validated',
+    'Controlled database migration completed inside the runtime boundary',
+    'Staging cost guard and explicit on/off controls established'
   ],
   caseStudy: {
     useCase: [
-      'Construction procurement is fragmented: contractors often coordinate suppliers, quotes, materials, approvals, and delivery updates through manual messages, spreadsheets, and disconnected vendor lists. ConstructHub centralizes those interactions into a platform workflow.',
-      'The product is designed as an AI-assisted marketplace and operations layer for construction suppliers. Contractors can discover providers, issue RFQs, compare responses, and keep procurement decisions traceable instead of relying only on informal communication.',
-      'The architecture separates customer-facing marketplace flows from administrative controls, supplier onboarding, quote lifecycle management, and deployment readiness so the platform can evolve from MVP to production without losing operational discipline.'
+      'ConstructHub currently proves an operational deployment path, not a production marketplace. The public frontend is functional only as a deployment-validation surface.',
+      'The work validates how a containerized Next.js/PostgreSQL application can move through ECR, ECS Fargate, RDS, Secrets Manager, ALB, migration, smoke testing, and Go/No-Go gates.',
+      'The environment is intentionally scaled down to zero to reduce compute cost. Production readiness remains NO-GO.'
     ],
     statusMatrix: [
       {
         key: 'CH-01',
-        functionality: 'Marketplace frontend and UX system',
-        status: 'Implemented',
-        currentState: 'Modern web frontend defines supplier discovery, platform positioning, responsive layout, and conversion-oriented entry points.',
-        next: 'Continue refining the front-end flow for RFQ creation, supplier details, and quote comparison.'
+        functionality: 'AWS staging deployment path',
+        status: 'Validated',
+        currentState: 'ECR, ECS Fargate, RDS, Secrets Manager, ALB, CloudWatch, migration, and smoke-test gates were exercised.',
+        next: 'Preserve the evidence while separating future product and production work.'
       },
       {
         key: 'CH-02',
-        functionality: 'Supplier and contractor workflow model',
-        status: 'Implemented',
-        currentState: 'Core product model separates contractors, suppliers, admin controls, RFQs, quote responses, and operational statuses.',
-        next: 'Add deeper supplier verification, ratings, service regions, and category-specific attributes.'
+        functionality: 'Cost control and staged shutdown',
+        status: 'Validated',
+        currentState: 'AWS Budget alerts exist and ECS desired/running counts are intentionally zero.',
+        next: 'Add stronger automated cost and environment lifecycle policy if staging resumes.'
       },
       {
         key: 'CH-03',
-        functionality: 'Admin management layer',
-        status: 'In progress',
-        currentState: 'Administrator flow has been adjusted to support platform oversight, data control, and operational governance.',
-        next: 'Expand admin dashboards for supplier approval, RFQ monitoring, exceptions, and marketplace quality controls.'
+        functionality: 'Customer-facing product experience',
+        status: 'Not ready',
+        currentState: 'Public README describes the frontend as a deployment-validation surface requiring a dedicated product/UX rebuild.',
+        next: 'Define customer workflows, connect real API/database behavior, and build a credible demo path.'
       },
       {
         key: 'CH-04',
-        functionality: 'AI-assisted procurement workflows',
-        status: 'Designed',
-        currentState: 'Agentic workflow direction is defined around supplier matching, RFQ summarization, quote comparison, and decision support.',
-        next: 'Implement grounded AI recommendations with source evidence, deterministic fallbacks, and human approval points.'
-      },
-      {
-        key: 'CH-05',
-        functionality: 'Database and backend readiness',
-        status: 'Implemented / evolving',
-        currentState: 'Platform uses a structured backend/data model suitable for marketplace entities and deployment migrations.',
-        next: 'Harden migrations, seed flows, production environment separation, and data lifecycle policies.'
-      },
-      {
-        key: 'CH-06',
-        functionality: 'Cloud deployment path',
-        status: 'In progress',
-        currentState: 'Docker and AWS deployment path have been explored, including registry push concerns and gated infrastructure execution.',
-        next: 'Complete production deployment with secret management, managed database, observability, rollback strategy, and phase gates.'
+        functionality: 'Production readiness',
+        status: 'NO-GO',
+        currentState: 'HTTPS/domain, CI/CD deployment, environment separation, WAF, autoscaling, SLOs, performance, and backup drills remain incomplete.',
+        next: 'Address each production gate only after product scope is validated.'
       }
     ],
-    implementationPlan: [
-      'Define contractor, supplier, and admin personas with clear procurement jobs-to-be-done.',
-      'Build the first marketplace-style frontend around supplier discovery, trust, and RFQ conversion.',
-      'Model RFQs, supplier responses, quote comparison, statuses, and administrative review as first-class platform entities.',
-      'Add AI-assisted workflows for RFQ generation, supplier matching, quote summarization, and procurement decision support.',
-      'Containerize the application and prepare the deployment path with environment separation and production gates.',
-      'Harden the admin experience so platform operations can review suppliers, monitor workflow quality, and control marketplace data.',
-      'Add observability, auditability, and deployment discipline before enabling sensitive production infrastructure changes.'
-    ],
     implementationHighlights: [
-      'Designed ConstructHub as a marketplace plus workflow platform rather than a static supplier directory.',
-      'Used Next.js and TypeScript to build a modern front-end experience for construction procurement users.',
-      'Structured product scope around contractors, suppliers, RFQs, quotes, admin workflows, and marketplace governance.',
-      'Applied an AI-native SDLC approach with explicit phase gates, deployment discipline, and evidence-based review of agent work.',
-      'Identified production reliability needs around command-level mutexes, clear polling states, output discipline, and hard stops before sensitive infrastructure operations.',
-      'Prepared the product for AWS-oriented deployment through Docker, registry flow, database readiness, and cloud architecture decisions.'
-    ],
-    localCommands: [
-      'npm install',
-      'npm run typecheck',
-      'npm run build',
-      'docker build -t constructhub .',
-      'Run database migrations and seed scripts only against the intended environment'
-    ],
-    testChecklist: [
-      'Verify the landing page clearly communicates the construction supplier marketplace value proposition.',
-      'Verify contractor flows can move from discovery to RFQ intent without ambiguity.',
-      'Verify supplier data, quote states, and admin actions are traceable and do not silently mutate production-like data.',
-      'Verify AI-assisted recommendations remain draft/decision-support outputs unless explicitly approved by a human.',
-      'Verify deployment scripts cannot duplicate long-running Docker, registry, migration, or infrastructure commands.',
-      'Verify production gates exist before secrets, managed database resources, ECS, ALB, or other sensitive AWS resources are touched.'
+      'Container image delivery through Amazon ECR and ECS Fargate.',
+      'Managed PostgreSQL through RDS with Secrets Manager runtime injection.',
+      'One-off ECS migration task kept database operations inside the target runtime boundary.',
+      'ALB routing, CloudWatch logging, smoke testing, and explicit Go/No-Go review.',
+      'Staging budget alerts and scale-to-zero controls.'
     ],
     validationProof: [
-      'The project has an active frontend implementation and ongoing admin workflow adjustments.',
-      'The architecture has been evaluated for Docker/AWS deployment and agentic SDLC reliability concerns.',
-      'The platform direction has been refined around supplier procurement, quote workflows, admin control, and AI-assisted operations.'
+      'Public README records demo-ready, staging-ready, and deployment-ready as GO while production-ready remains NO-GO.',
+      'Public README records the current staging state as OFF with zero desired and running ECS tasks.',
+      'Public README lists the validated AWS services, migration approach, cost guard, and remaining production gaps.'
     ],
     knownLimitations: [
-      'The case study reflects an actively evolving product, not a fully mature production marketplace snapshot.',
-      'AI supplier matching and quote comparison require careful grounding, evaluation, and business-rule validation before production use.',
-      'Production deployment still requires finalized secrets management, observability, rollback strategy, and infrastructure approval gates.',
-      'Supplier trust features such as verification, ratings, dispute handling, and service-area validation should be expanded before broad marketplace launch.'
+      'No finished customer-facing product experience is claimed.',
+      'Staging may return HTTP 503 because the ECS service is intentionally scaled to zero.',
+      'No HTTPS/custom domain, automated deployment pipeline, autoscaling, WAF, formal SLOs, load testing, or backup/restore drill is complete.',
+      'The repository should not be used as primary public product proof until the frontend and workflow behavior are rebuilt.'
     ]
   }
 };

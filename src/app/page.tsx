@@ -11,10 +11,11 @@ import Experience from '@/components/sections/Experience';
 import CaseStudies from '@/components/sections/CaseStudies';
 import Education from '@/components/sections/Education';
 import Contact from '@/components/sections/Contact';
+import OperatingModel from '@/components/sections/OperatingModel';
+import HumanSystems from '@/components/sections/HumanSystems';
 import DetailDrawer from '@/components/DetailDrawer';
 import { AnimatePresence } from 'framer-motion';
 import { projects } from '@/lib/data';
-import Tour from '@/components/Tour';
 
 type DrawerContent = {
   type: 'skill' | 'project';
@@ -23,7 +24,6 @@ type DrawerContent = {
 
 export default function Home() {
   const [drawerContent, setDrawerContent] = useState<DrawerContent | null>(null);
-  const [isTourActive, setIsTourActive] = useState(false);
 
   const parseHash = useCallback(() => {
     const hash = window.location.hash.slice(1);
@@ -81,23 +81,17 @@ export default function Home() {
   
   return (
     <div className="flex min-h-screen flex-col bg-background">
-      <Header onStartTour={() => setIsTourActive(true)} />
+      <Header />
       <main className="flex-grow">
         <Hero />
-        <div id="tour-step-1">
-          <Skills onTileClick={(id) => openDrawer('skill', id)} />
-        </div>
-        <div id="tour-step-2">
-          <Migrations onCardClick={(id) => openDrawer('project', id)} />
-        </div>
-        <div id="tour-step-3">
-          <Experience />
-        </div>
         <CaseStudies onCardClick={(id) => openDrawer('project', id)} />
+        <OperatingModel />
+        <Experience />
+        <HumanSystems />
+        <Skills onTileClick={(id) => openDrawer('skill', id)} />
+        <Migrations onCardClick={(id) => openDrawer('project', id)} />
         <Education />
-        <div id="tour-step-4">
-          <Contact />
-        </div>
+        <Contact />
       </main>
       <Footer />
       <AnimatePresence>
@@ -109,7 +103,6 @@ export default function Home() {
           />
         )}
       </AnimatePresence>
-      {isTourActive && <Tour onComplete={() => setIsTourActive(false)} />}
     </div>
   );
 }

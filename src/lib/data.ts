@@ -7,16 +7,22 @@ import awardsData from '@/data/awards.json';
 import { harnessSdlcProject } from '@/data/harnessProject';
 import { constructHubProject } from '@/data/constructHubProject';
 import { timeEstimatorProject } from '@/data/timeEstimatorProject';
+import { laMuniRagProject, productProfileEnhancements } from '@/data/productProfiles';
 
 import type { Skill, Project, Experience, Education, Award } from './types';
 
 export const skills: Skill[] = skillsData;
-export const projects: Project[] = [
+const baseProjects: Project[] = [
   timeEstimatorProject,
+  laMuniRagProject,
   ...(projectsData as Project[]),
   harnessSdlcProject,
   constructHubProject,
 ];
+export const projects: Project[] = baseProjects.map((project) => ({
+  ...project,
+  ...productProfileEnhancements[project.id],
+}));
 export const experience: Experience[] = experienceData;
 export const education: Education[] = educationData;
 export const certifications: string[] = certificationsData;
