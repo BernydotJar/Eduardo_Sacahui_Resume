@@ -133,7 +133,7 @@
   background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
 }
 .mesh-glow {
-  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(16, 185, 129, 0.08) 0%, transparent 60%);
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), hsl(var(--primary) / 0.08) 0%, transparent 60%);
 }
 .glow-card-hover {
   position: relative;
@@ -145,7 +145,7 @@
   inset: -1px;
   background: radial-gradient(
     400px circle at var(--mouse-x, 0) var(--mouse-y, 0),
-    rgba(16, 185, 129, 0.25),
+    hsl(var(--primary) / 0.22),
     transparent 40%
   );
   z-index: 0;
@@ -178,4 +178,25 @@
 .blueprint-cross-tr::before { top: -6px; right: -4px; }
 .blueprint-cross-bl::before { bottom: -6px; left: -4px; }
 .blueprint-cross-br::before { bottom: -6px; right: -4px; }
+
+/* Jesse Pinkman theme overrides */
+.theme-jesse {
+  --primary: 315 100% 70% !important; /* Magenta/pink */
+  --ring: 315 100% 70% !important;
+  --accent: 160 84% 39% !important; /* Green is accent */
+}
+
+/* View transitions configurations for circular theme toggling */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+::view-transition-old(root) {
+  z-index: 1;
+}
+::view-transition-new(root) {
+  z-index: 99999;
+}
+
 

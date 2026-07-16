@@ -13,6 +13,14 @@ export default {
     ...Array.from({ length: 7 }, (_, i) => `row-start-${i + 1}`),
   ],
   theme: {
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: '1rem',
+        sm: '2rem',
+        lg: '4rem',
+      },
+    },
     extend: {
       gridTemplateColumns: {
         '18': 'repeat(18, minmax(0, 1fr))',

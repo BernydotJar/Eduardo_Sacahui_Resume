@@ -5,6 +5,7 @@ import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { EasterEggProvider } from '@/components/context/EasterEggContext';
 import { LanguageProvider } from '@/components/context/LanguageContext';
+import { ThemeProvider } from '@/components/context/ThemeContext';
 import { PRODUCTION_SITE_URL } from '@/lib/site';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? PRODUCTION_SITE_URL;
@@ -85,10 +86,12 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <Script defer data-domain={process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN} src="https://plausible.io/js/script.js" />
         )}
         <EasterEggProvider>
-          <LanguageProvider>
-            {children}
-            <Toaster />
-          </LanguageProvider>
+          <ThemeProvider>
+            <LanguageProvider>
+              {children}
+              <Toaster />
+            </LanguageProvider>
+          </ThemeProvider>
         </EasterEggProvider>
       </body>
     </html>

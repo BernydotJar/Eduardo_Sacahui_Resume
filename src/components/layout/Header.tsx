@@ -1,16 +1,18 @@
 "use client";
 
 import { useState } from 'react';
-import { Menu } from 'lucide-react';
+import { Menu, FlaskConical, Crown, Cpu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useLanguage } from '@/components/context/LanguageContext';
+import { useTheme } from '@/components/context/ThemeContext';
 import { isLocale, localeLabels } from '@/lib/i18n';
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { locale, setLocale, dict } = useLanguage();
+  const { theme, toggleTheme } = useTheme();
 
   const navLinks = [
     { href: '#products', label: dict.header.nav.products },
@@ -20,6 +22,7 @@ const Header = () => {
     { href: '#engagements', label: dict.header.nav.engagements },
     { href: '#contact', label: dict.header.nav.contact },
   ];
+  const aiHarnessUrl = "https://github.com/BernydotJar/harness-sdlc.git";
 
   const handleLocaleChange = (value: string) => {
     if (isLocale(value)) setLocale(value);
@@ -45,9 +48,35 @@ const Header = () => {
               {link.label}
             </a>
           ))}
+          <a
+            href={aiHarnessUrl}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={dict.header.nav.aiHarnessAria}
+            className="ai-harness-link"
+          >
+            <span className="ai-harness-chip" aria-hidden="true">
+              <Cpu className="h-3 w-3" />
+            </span>
+            <span>{dict.header.nav.aiHarness}</span>
+          </a>
         </nav>
 
         <div className="ml-auto flex items-center gap-2">
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={toggleTheme}
+            className="h-9 w-9 rounded-md border border-white/5 bg-zinc-950/40 hover:bg-white/5 hover:border-white/10 transition-all"
+            aria-label={theme === 'heisenberg' ? 'Switch to Jesse Pinkman theme' : 'Switch to Heisenberg theme'}
+          >
+            {theme === 'heisenberg' ? (
+              <FlaskConical className="h-4.5 w-4.5 text-primary" />
+            ) : (
+              <Crown className="h-4.5 w-4.5 text-primary animate-pulse" />
+            )}
+          </Button>
+
           <div className="hidden md:block">
             <Select value={locale} onValueChange={handleLocaleChange}>
               <SelectTrigger className="h-9 w-[126px]" aria-label={dict.app.languageSelector}>
@@ -98,6 +127,19 @@ const Header = () => {
                     {link.label}
                   </a>
                 ))}
+                <a
+                  href={aiHarnessUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={dict.header.nav.aiHarnessAria}
+                  className="ai-harness-link w-fit text-sm"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <span className="ai-harness-chip" aria-hidden="true">
+                    <Cpu className="h-3 w-3" />
+                  </span>
+                  <span>{dict.header.nav.aiHarness}</span>
+                </a>
               </nav>
             </SheetContent>
           </Sheet>

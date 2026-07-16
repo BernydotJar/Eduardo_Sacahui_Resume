@@ -14,11 +14,11 @@ interface SkillTileProps {
 }
 
 const levelColorMap: { [key: string]: string } = {
-  expert: 'border-emerald-500/20 bg-emerald-950/5 text-emerald-400 hover:border-emerald-400 hover:text-emerald-300 hover:shadow-[0_0_15px_rgba(16,185,129,0.25)]',
-  advanced: 'border-cyan-500/20 bg-cyan-950/5 text-cyan-400 hover:border-cyan-400 hover:text-cyan-300 hover:shadow-[0_0_15px_rgba(6,182,212,0.25)]',
-  intermediate: 'border-pink-500/20 bg-pink-950/5 text-pink-400 hover:border-pink-400 hover:text-pink-300 hover:shadow-[0_0_15px_rgba(244,114,182,0.25)]',
-  education: 'border-white/5 bg-zinc-950/20 text-muted-foreground hover:border-white/20',
-  legacy: 'border-white/5 bg-zinc-950/20 text-muted-foreground hover:border-white/20'
+  expert: 'border-2 border-primary/90 bg-primary/15 text-primary shadow-[0_0_18px_hsl(var(--primary)/0.3),inset_0_0_14px_hsl(var(--primary)/0.15)] [text-shadow:0_0_12px_hsl(var(--primary)/0.6)] hover:border-primary hover:shadow-[0_0_24px_hsl(var(--primary)/0.5)]',
+  advanced: 'border-2 border-accent/90 bg-accent/15 text-accent shadow-[0_0_18px_hsl(var(--accent)/0.3),inset_0_0_14px_hsl(var(--accent)/0.15)] [text-shadow:0_0_12px_hsl(var(--accent)/0.6)] hover:border-accent hover:shadow-[0_0_24px_hsl(var(--accent)/0.5)]',
+  intermediate: 'border-2 border-white/10 bg-zinc-950/50 text-muted-foreground hover:border-white/30 hover:text-foreground hover:shadow-[0_0_14px_rgba(255,255,255,0.06)]',
+  education: 'border border-white/5 bg-zinc-950/20 text-muted-foreground/60 hover:border-white/20',
+  legacy: 'border border-white/5 bg-zinc-950/20 text-muted-foreground/60 hover:border-white/20'
 };
 
 const levelLabelMap: Record<Locale, Record<string, string>> = {
@@ -68,8 +68,8 @@ const SkillTile = ({ skill, onClick }: SkillTileProps) => {
         onClick={onClick}
         aria-label={`${dict.skills.ariaViewSkillDetails} ${skill.name}`}
         className={cn(
-          "relative w-full h-full p-2.5 rounded-lg border text-left transition-all duration-300 flex flex-col justify-between overflow-hidden bg-zinc-950/45",
-          levelColorMap[skill.level] || 'border-white/5',
+          "relative w-full h-full p-2.5 rounded-sm text-left transition-all duration-300 flex flex-col justify-between overflow-hidden",
+          levelColorMap[skill.level] || 'border border-white/5 bg-zinc-950/45',
           'focus:outline-none focus:ring-1 focus:ring-ring focus:ring-offset-1 focus:ring-offset-background'
         )}
         whileHover={
