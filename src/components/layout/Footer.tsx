@@ -20,10 +20,15 @@ const Footer = () => {
     }
 
     return (
-        <footer id="footer" className="border-t border-border/40">
-            <div className="container flex flex-col items-center justify-between gap-4 py-10 md:h-24 md:flex-row md:py-0">
-                <div className="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
-                    <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
+        <footer id="footer" className="border-t border-white/5 bg-zinc-950/30 py-10 relative overflow-hidden">
+            <div className="absolute inset-0 pixel-grid pointer-events-none opacity-20" />
+            
+            <div className="container relative z-10 flex flex-col items-center justify-between gap-4 md:h-12 md:flex-row md:py-0">
+                <div className="flex flex-col items-center gap-4 md:flex-row md:gap-2 md:px-0">
+                    <div className="font-code text-[9px] text-muted-foreground/40 mr-4 select-none hidden md:block">
+                        [CORE.SYS // REV_2026]
+                    </div>
+                    <p className="text-center text-xs text-muted-foreground md:text-left">
                         © {new Date().getFullYear()} Eduardo Sacahui. {dict.footer.rightsReserved}
                     </p>
                 </div>

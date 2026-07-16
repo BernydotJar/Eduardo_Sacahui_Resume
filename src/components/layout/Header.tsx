@@ -26,22 +26,22 @@ const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/90 backdrop-blur-xl supports-[backdrop-filter]:bg-background/72">
-      <div className="container flex h-14 max-w-screen-2xl items-center">
+    <header className="sticky top-3 z-50 mx-auto w-[calc(100%-1.5rem)] max-w-7xl rounded-xl border border-white/10 bg-zinc-950/65 backdrop-blur-md transition-all shadow-xl">
+      <div className="container flex h-14 items-center px-4 sm:px-6">
         <a href="#hero" className="mr-6 flex items-center gap-2.5" aria-label={dict.header.goToTop}>
           <span className="element-tile h-8 w-8 text-sm font-bold" aria-hidden="true">
             <span className="element-tile-number text-[8px]">99</span>
             Ed
           </span>
-          <span className="hidden leading-tight sm:block">
-            <strong className="block text-sm">Eduardo Sacahui</strong>
+          <span className="hidden leading-tight sm:block text-left">
+            <strong className="block text-sm font-semibold tracking-tight text-foreground">Eduardo Sacahui</strong>
             <span className="block font-code text-[9px] uppercase tracking-[0.12em] text-muted-foreground">{dict.header.brandTagline}</span>
           </span>
         </a>
 
-        <nav className="hidden items-center gap-4 text-xs xl:flex" aria-label={dict.header.primaryNavLabel}>
+        <nav className="hidden items-center gap-5 text-xs xl:flex font-code uppercase tracking-wider" aria-label={dict.header.primaryNavLabel}>
           {navLinks.map((link) => (
-            <a key={link.href} href={link.href} className="font-medium text-foreground/70 transition-colors hover:text-foreground">
+            <a key={link.href} href={link.href} className="font-medium text-muted-foreground transition-colors hover:text-foreground">
               {link.label}
             </a>
           ))}

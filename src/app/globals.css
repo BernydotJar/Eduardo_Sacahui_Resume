@@ -4,41 +4,41 @@
 
 @layer base {
   .dark {
-    /* Breaking Bad palette: lab green on smoke-black, lime hover glow, hazmat yellow highlights */
-    --background: 160 30% 6%;
-    --foreground: 150 20% 97%;
-    --card: 158 26% 9%;
-    --card-foreground: 150 20% 97%;
-    --popover: 158 26% 9%;
-    --popover-foreground: 150 20% 97%;
-    --primary: 145 65% 45%;
-    --primary-foreground: 160 30% 6%;
-    --secondary: 155 18% 14%;
-    --secondary-foreground: 150 20% 97%;
-    --muted: 155 18% 13%;
-    --muted-foreground: 150 12% 66%;
-    --accent: 84 70% 50%;
-    --accent-foreground: 160 30% 6%;
-    --destructive: 0 63% 31%;
-    --destructive-foreground: 150 20% 97%;
-    --border: 155 16% 20%;
-    --input: 155 18% 17%;
-    --ring: 145 65% 45%;
-    --hazmat: 48 96% 53%;
-    --radius: 0.5rem;
-    --chart-1: 145 65% 45%;
-    --chart-2: 84 70% 50%;
+    /* Premium Cinematic Obsidian & Slate Palette */
+    --background: 240 10% 3.9%;      /* #070708 - Ultra-dark obsidian zinc */
+    --foreground: 240 5% 96%;        /* #f4f4f5 - Crisp near-white */
+    --card: 240 10% 5.5%;            /* #0e0e11 - Lighter card obsidian */
+    --card-foreground: 240 5% 96%;
+    --popover: 240 10% 5.5%;
+    --popover-foreground: 240 5% 96%;
+    --primary: 160 84% 39%;          /* #10b981 - Cyber green */
+    --primary-foreground: 240 10% 3.9%;
+    --secondary: 240 6% 10%;         /* #18181b - Sleek zinc secondary */
+    --secondary-foreground: 240 5% 96%;
+    --muted: 240 5% 9.6%;
+    --muted-foreground: 240 5% 64.9%;/* #a1a1aa - Muted zinc body */
+    --accent: 315 100% 70%;          /* #ffb1ee - Tech cyber pink */
+    --accent-foreground: 240 10% 3.9%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 240 5% 96%;
+    --border: 240 6% 12%;            /* #1f1f23 - Clean border line */
+    --input: 240 6% 12%;
+    --ring: 160 84% 39%;
+    --hazmat: 48 96% 53%;            /* #f5a623 - Gold/Amber accent */
+    --radius: 0.75rem;
+    --chart-1: 160 84% 39%;
+    --chart-2: 315 100% 70%;
     --chart-3: 48 96% 53%;
-    --chart-4: 172 63% 52%;
-    --chart-5: 30 80% 55%;
-    --sidebar-background: 160 30% 6%;
-    --sidebar-foreground: 150 20% 97%;
-    --sidebar-primary: 145 65% 40%;
-    --sidebar-primary-foreground: 160 30% 6%;
-    --sidebar-accent: 155 18% 14%;
-    --sidebar-accent-foreground: 150 20% 97%;
-    --sidebar-border: 155 18% 14%;
-    --sidebar-ring: 145 65% 40%;
+    --chart-4: 190 100% 58%;
+    --chart-5: 280 85% 60%;
+    --sidebar-background: 240 10% 3.9%;
+    --sidebar-foreground: 240 5% 96%;
+    --sidebar-primary: 160 84% 39%;
+    --sidebar-primary-foreground: 240 10% 3.9%;
+    --sidebar-accent: 240 6% 10%;
+    --sidebar-accent-foreground: 240 5% 96%;
+    --sidebar-border: 240 6% 12%;
+    --sidebar-ring: 160 84% 39%;
   }
 }
 
@@ -122,3 +122,60 @@
     transition: none;
   }
 }
+
+/* Custom Blueprint & Cinematic visual elements */
+.pixel-grid {
+  background-size: 20px 20px;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+}
+.pixel-grid-strong {
+  background-size: 32px 32px;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+}
+.mesh-glow {
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(16, 185, 129, 0.08) 0%, transparent 60%);
+}
+.glow-card-hover {
+  position: relative;
+  overflow: hidden;
+}
+.glow-card-hover::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: radial-gradient(
+    400px circle at var(--mouse-x, 0) var(--mouse-y, 0),
+    rgba(16, 185, 129, 0.25),
+    transparent 40%
+  );
+  z-index: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  opacity: 0;
+}
+.glow-card-hover:hover::before {
+  opacity: 1;
+}
+.glass-panel {
+  background: rgba(9, 9, 11, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.blueprint-cross {
+  position: relative;
+}
+.blueprint-cross::before {
+  content: '+';
+  position: absolute;
+  font-family: monospace;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.2);
+  pointer-events: none;
+  z-index: 10;
+}
+.blueprint-cross-tl::before { top: -6px; left: -4px; }
+.blueprint-cross-tr::before { top: -6px; right: -4px; }
+.blueprint-cross-bl::before { bottom: -6px; left: -4px; }
+.blueprint-cross-br::before { bottom: -6px; right: -4px; }
+

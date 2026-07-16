@@ -14,11 +14,11 @@ interface SkillTileProps {
 }
 
 const levelColorMap: { [key: string]: string } = {
-  expert: 'border-primary shadow-primary/20',
-  advanced: 'border-accent shadow-accent/20',
-  intermediate: 'border-secondary',
-  education: 'border-muted/30',
-  legacy: 'border-muted/50'
+  expert: 'border-emerald-500/20 bg-emerald-950/5 text-emerald-400 hover:border-emerald-400 hover:text-emerald-300 hover:shadow-[0_0_15px_rgba(16,185,129,0.25)]',
+  advanced: 'border-cyan-500/20 bg-cyan-950/5 text-cyan-400 hover:border-cyan-400 hover:text-cyan-300 hover:shadow-[0_0_15px_rgba(6,182,212,0.25)]',
+  intermediate: 'border-pink-500/20 bg-pink-950/5 text-pink-400 hover:border-pink-400 hover:text-pink-300 hover:shadow-[0_0_15px_rgba(244,114,182,0.25)]',
+  education: 'border-white/5 bg-zinc-950/20 text-muted-foreground hover:border-white/20',
+  legacy: 'border-white/5 bg-zinc-950/20 text-muted-foreground hover:border-white/20'
 };
 
 const levelLabelMap: Record<Locale, Record<string, string>> = {
@@ -68,21 +68,24 @@ const SkillTile = ({ skill, onClick }: SkillTileProps) => {
         onClick={onClick}
         aria-label={`${dict.skills.ariaViewSkillDetails} ${skill.name}`}
         className={cn(
-          "relative w-full h-full p-2 rounded-lg border-2 text-left transition-all duration-300 flex flex-col justify-between overflow-hidden",
-          levelColorMap[skill.level] || 'border-muted',
-          'hover:bg-accent/10 hover:border-accent hover:shadow-[0_0_15px_hsl(var(--accent))] focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background'
+          "relative w-full h-full p-2.5 rounded-lg border text-left transition-all duration-300 flex flex-col justify-between overflow-hidden bg-zinc-950/45",
+          levelColorMap[skill.level] || 'border-white/5',
+          'focus:outline-none focus:ring-1 focus:ring-ring focus:ring-offset-1 focus:ring-offset-background'
         )}
         whileHover={
           shouldReduceMotion
             ? undefined
-            : { scale: 1.08, y: -4, transition: { type: 'spring', stiffness: 400, damping: 20 } }
+            : { scale: 1.05, y: -2, transition: { type: 'spring', stiffness: 450, damping: 22 } }
         }
         whileTap={
           shouldReduceMotion
             ? undefined
-            : { scale: 0.96, transition: { type: 'spring', stiffness: 600, damping: 15 } }
+            : { scale: 0.97, transition: { type: 'spring', stiffness: 600, damping: 15 } }
         }
       >
+        {/* Subtle grid pattern inside each tile */}
+        <div className="absolute inset-0 pixel-grid pointer-events-none opacity-[0.08]" />
+
         {isEasterEggActive && !shouldReduceMotion && (
            <motion.div 
               className="absolute inset-0 animate-pulse-emerald rounded-lg"
@@ -91,20 +94,20 @@ const SkillTile = ({ skill, onClick }: SkillTileProps) => {
         )}
         <span
           aria-hidden="true"
-          className="absolute right-2 top-2 font-code text-[10px] font-bold text-primary/70"
+          className="absolute right-2 top-2 font-code text-[9px] font-bold text-muted-foreground/35 select-none"
         >
           {(skill.row - 1) * 18 + skill.col}
         </span>
         <div className="relative min-w-0 w-full flex-1 flex flex-col justify-between">
           <div className="relative min-w-0">
-            <div className="text-[10px] text-muted-foreground capitalize leading-none truncate pr-4">
+            <div className="font-code text-[8px] uppercase tracking-wider text-muted-foreground/50 leading-none truncate pr-4">
               {displayLevel}
             </div>
-            <span className="font-code text-2xl sm:text-3xl font-bold text-foreground/80 block mt-1 leading-none">
+            <span className="font-code text-2xl sm:text-3.5xl font-bold block mt-1.5 leading-none">
               {skill.symbol}
             </span>
           </div>
-          <div className="relative min-w-0 w-full mt-2">
+          <div className="relative min-w-0 w-full mt-2.5">
             <p className="text-xs sm:text-sm font-semibold truncate text-foreground">
               {skill.name}
             </p>

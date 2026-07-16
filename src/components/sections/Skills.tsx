@@ -42,59 +42,66 @@ const Skills = ({ onTileClick }: SkillsProps) => {
   const isFiltering = searchTerm || activeTags.length > 0;
 
   return (
-    <section id="skills" className="container">
-      <div className="text-center">
-        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">{dict.skills.title}</h2>
-        <p className="mt-4 text-lg text-muted-foreground">{dict.skills.subtitle}</p>
-      </div>
-
-      <div className="my-8 flex flex-col md:flex-row gap-4 items-center">
-        <div className="relative w-full md:max-w-xs">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-          <Input 
-            type="search" 
-            placeholder={dict.skills.searchPlaceholder}
-            className="pl-10"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
+    <section id="skills" className="relative bg-background pixel-grid py-20 border-b border-border/60">
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-64 bg-[radial-gradient(circle_at_50%_100%,rgba(16,185,129,0.02),transparent_70%)]" />
+      
+      <div className="container relative z-10">
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <p className="font-code text-xs font-bold uppercase tracking-[0.2em] text-primary mb-2">[SYS.COMPETENCIES // SKILLS_MATRIX]</p>
+          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">{dict.skills.title}</h2>
+          <p className="mt-4 text-base text-muted-foreground leading-7">{dict.skills.subtitle}</p>
         </div>
-        <div className="flex flex-wrap gap-2 justify-center">
-          {allTags.map(tag => (
-            <button 
-              key={tag}
-              type="button"
-              onClick={() => toggleTag(tag)}
-              className={`px-3 py-1 text-sm rounded-full border transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background ${
-                activeTags.includes(tag)
-                  ? 'bg-primary text-primary-foreground border-primary'
-                  : 'bg-secondary text-secondary-foreground border-secondary hover:bg-muted'
-              }`}
-            >
-              {tag}
-            </button>
-          ))}
+
+        {/* Console control header */}
+        <div className="glass-panel border-white/5 rounded-t-xl border-x border-t p-4 flex flex-col md:flex-row gap-4 items-center justify-between">
+          <div className="relative w-full md:max-w-xs">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground/60" />
+            <Input 
+              type="search" 
+              placeholder={dict.skills.searchPlaceholder}
+              className="pl-9 h-9 font-code text-xs bg-zinc-950/60 border-white/5 focus-visible:ring-primary/45 rounded-md"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+          </div>
+          <div className="flex flex-wrap gap-1.5 justify-center">
+            {allTags.map(tag => (
+              <button 
+                key={tag}
+                type="button"
+                onClick={() => toggleTag(tag)}
+                className={`px-3 py-1 font-code text-[10px] uppercase tracking-wider rounded border transition-all duration-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary ${
+                  activeTags.includes(tag)
+                    ? 'bg-primary/20 text-primary border-primary/50'
+                    : 'bg-white/[0.02] text-muted-foreground border-white/5 hover:border-white/20 hover:text-foreground'
+                }`}
+              >
+                [{tag}]
+              </button>
+            ))}
+          </div>
         </div>
-      </div>
 
-      <p className="text-center text-xs text-muted-foreground -mt-4 mb-3">
-        {dict.skills.filterBehavior}
-      </p>
-
-      <div className="mb-6 flex flex-wrap items-center justify-center gap-4 text-xs text-muted-foreground">
-        <span className="inline-flex items-center gap-2">
-          <span className="h-2.5 w-2.5 rounded-full bg-primary" />
-          {dict.skills.legend.expert}
-        </span>
-        <span className="inline-flex items-center gap-2">
-          <span className="h-2.5 w-2.5 rounded-full bg-accent" />
-          {dict.skills.legend.advanced}
-        </span>
-        <span className="inline-flex items-center gap-2">
-          <span className="h-2.5 w-2.5 rounded-full bg-secondary" />
-          {dict.skills.legend.intermediate}
-        </span>
-      </div>
+        {/* Dashboard filter details banner */}
+        <div className="border-x border-white/5 bg-zinc-950/20 py-2.5 px-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-[10px] font-code text-muted-foreground/60 border-b">
+          <span>
+            {dict.skills.filterBehavior}
+          </span>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <span className="inline-flex items-center gap-1.5">
+              <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
+              {dict.skills.legend.expert}
+            </span>
+            <span className="inline-flex items-center gap-1.5">
+              <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+              {dict.skills.legend.advanced}
+            </span>
+            <span className="inline-flex items-center gap-1.5">
+              <span className="h-1.5 w-1.5 rounded-full bg-secondary border border-white/10" />
+              {dict.skills.legend.intermediate}
+            </span>
+          </div>
+        </div>
       
       <div className={cn("relative", !isFiltering && "overflow-x-auto pb-2")}>
         <div className={cn(
@@ -135,6 +142,7 @@ const Skills = ({ onTileClick }: SkillsProps) => {
           </button>
         </div>
       )}
+      </div>
     </section>
   );
 };
