@@ -1,0 +1,270 @@
+{
+  "schema": "meridian.wcag.audit.v1",
+  "provenance": "Observed independent Chromium axe-core matrix (temporary predecessor script)",
+  "recordedAt": "2026-10-10T03:13:04+00:00",
+  "scans": 36,
+  "failed": 0,
+  "tags": [
+    "wcag2a",
+    "wcag2aa"
+  ],
+  "limitations": [
+    "Automated checks are not full WCAG certification",
+    "Portable CI runner needs independent verification",
+    "WebKit and physical Safari pending"
+  ],
+  "results": [
+    {
+      "theme": "light",
+      "viewport": "desktop",
+      "route": "login",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "theme": "light",
+      "viewport": "desktop",
+      "route": "dashboard",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "theme": "light",
+      "viewport": "desktop",
+      "route": "candidates",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "theme": "light",
+      "viewport": "desktop",
+      "route": "jobs",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "theme": "light",
+      "viewport": "desktop",
+      "route": "automations",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "theme": "light",
+      "viewport": "desktop",
+      "route": "reports",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "theme": "light",
+      "viewport": "desktop",
+      "route": "candidate-detail",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "theme": "light",
+      "viewport": "desktop",
+      "route": "job-detail",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "theme": "light",
+      "viewport": "desktop",
+      "route": "optical-lab",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "theme": "light",
+      "viewport": "mobile",
+      "route": "login",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "theme": "light",
+      "viewport": "mobile",
+      "route": "dashboard",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "theme": "light",
+      "viewport": "mobile",
+      "route": "candidates",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "theme": "light",
+      "viewport": "mobile",
+      "route": "jobs",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "theme": "light",
+      "viewport": "mobile",
+      "route": "automations",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "theme": "light",
+      "viewport": "mobile",
+      "route": "reports",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "theme": "light",
+      "viewport": "mobile",
+      "route": "candidate-detail",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "theme": "light",
+      "viewport": "mobile",
+      "route": "job-detail",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "theme": "light",
+      "viewport": "mobile",
+      "route": "optical-lab",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "theme": "dark",
+      "viewport": "desktop",
+      "route": "login",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "theme": "dark",
+      "viewport": "desktop",
+      "route": "dashboard",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "theme": "dark",
+      "viewport": "desktop",
+      "route": "candidates",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "theme": "dark",
+      "viewport": "desktop",
+      "route": "jobs",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "theme": "dark",
+      "viewport": "desktop",
+      "route": "automations",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "theme": "dark",
+      "viewport": "desktop",
+      "route": "reports",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "theme": "dark",
+      "viewport": "desktop",
+      "route": "candidate-detail",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "theme": "dark",
+      "viewport": "desktop",
+      "route": "job-detail",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "theme": "dark",
+      "viewport": "desktop",
+      "route": "optical-lab",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "theme": "dark",
+      "viewport": "mobile",
+      "route": "login",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "theme": "dark",
+      "viewport": "mobile",
+      "route": "dashboard",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "theme": "dark",
+      "viewport": "mobile",
+      "route": "candidates",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "theme": "dark",
+      "viewport": "mobile",
+      "route": "jobs",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "theme": "dark",
+      "viewport": "mobile",
+      "route": "automations",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "theme": "dark",
+      "viewport": "mobile",
+      "route": "reports",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "theme": "dark",
+      "viewport": "mobile",
+      "route": "candidate-detail",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "theme": "dark",
+      "viewport": "mobile",
+      "route": "job-detail",
+      "status": "PASS",
+      "violations": []
+    },
+    {
+      "theme": "dark",
+      "viewport": "mobile",
+      "route": "optical-lab",
+      "status": "PASS",
+      "violations": []
+    }
+  ]
+}

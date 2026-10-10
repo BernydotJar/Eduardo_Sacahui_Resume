@@ -1,0 +1,48 @@
+name: Meridian Optical v4 Gate
+
+on:
+  pull_request:
+    paths:
+      - 'public/recruiting-demo/**'
+      - 'tests/meridian-*.test.mjs'
+      - 'scripts/meridian-optical-audit.mjs'
+      - 'scripts/meridian-wcag-audit.cjs'
+      - '.github/workflows/meridian-optical-v4.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  optical-verification:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+          cache: npm
+      - name: Install project dependencies
+        run: npm ci
+      - name: Validate Meridian contracts and portfolio integrity
+        run: npm test
+      - name: Install isolated browser test dependencies
+        run: |
+          npm install --no-save playwright@1.63.0 @axe-core/playwright@4.10.2
+          npx playwright install --with-deps chromium webkit
+      - name: Run Meridian optical, accessibility-preference and workflow gates
+        run: node scripts/meridian-optical-audit.mjs
+        env:
+          MERIDIAN_TEST_WEBKIT: '1'
+      - name: Run WCAG A/AA route matrix
+        run: node scripts/meridian-wcag-audit.cjs
+      - name: Attach browser audit evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: meridian-optical-v4-browser
+          path: |
+            evidence/meridian/optical-v4-browser.json
+            evidence/meridian/optical-v4-wcag.json
+          if-no-files-found: warn

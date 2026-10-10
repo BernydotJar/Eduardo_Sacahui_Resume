@@ -1,0 +1,448 @@
+{
+  "createdAt": "2026-10-10T03:13:45.723Z",
+  "revision": "meridian-optical-v4",
+  "scenarios": 48,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "route:light/desktop/dashboard",
+      "title": "Dashboard · Meridian Talent Operations",
+      "route": "dashboard",
+      "chars": 100,
+      "preview": "Dashboard\n\nRecruiting operations at a glance.\n\nLoading…\nLoading…\nLoading…\nLoading…\nLoading…\nLoading…",
+      "panels": 6,
+      "blurredPanels": 0,
+      "nestedGlass": 0,
+      "sidebarFilter": "none",
+      "overflow": 0
+    },
+    {
+      "name": "route:light/desktop/candidates",
+      "title": "Candidates · Meridian Talent Operations",
+      "route": "candidates",
+      "chars": 513,
+      "preview": "Candidates\n\nFind people, review evidence, and track the next step in their hiring journey.\n\nAdd candidate\nSearch candidates\nStatus\nAll statuses\nNew\nScreening in",
+      "panels": 2,
+      "blurredPanels": 0,
+      "nestedGlass": 0,
+      "sidebarFilter": "none",
+      "overflow": 0
+    },
+    {
+      "name": "route:light/desktop/jobs",
+      "title": "Jobs · Meridian Talent Operations",
+      "route": "jobs",
+      "chars": 128,
+      "preview": "Jobs\n\nYour open positions, hiring teams, and evaluation criteria.\n\nNew job\nLoading…\nLoading…\nLoading…\nLoading…\nLoading…\nLoading…",
+      "panels": 6,
+      "blurredPanels": 0,
+      "nestedGlass": 0,
+      "sidebarFilter": "none",
+      "overflow": 0
+    },
+    {
+      "name": "route:light/desktop/automations",
+      "title": "Automations · Meridian Talent Operations",
+      "route": "automations",
+      "chars": 188,
+      "preview": "Automations\n\nBuild workflows in plain language and monitor the platform automations behind the pipeline — 6 platform flows, 1 needing attention, 6 items queued.",
+      "panels": 3,
+      "blurredPanels": 0,
+      "nestedGlass": 0,
+      "sidebarFilter": "none",
+      "overflow": 0
+    },
+    {
+      "name": "route:light/desktop/reports",
+      "title": "Reports · Meridian Talent Operations",
+      "route": "reports",
+      "chars": 89,
+      "preview": "Reports\n\nHiring funnel health and automation impact.\n\nLoading…\nLoading…\nLoading…\nLoading…",
+      "panels": 4,
+      "blurredPanels": 0,
+      "nestedGlass": 0,
+      "sidebarFilter": "none",
+      "overflow": 0
+    },
+    {
+      "name": "route:light/desktop/candidate-detail",
+      "title": "Candidate · Meridian Talent Operations",
+      "route": "candidate-detail",
+      "chars": 3574,
+      "preview": "All candidates\nMaya Lindqvist\n\nStaff Engineer at Fernvale Systems · Applying for Senior Backend Engineer\n\nML\nPending recruiter review\nApplied Jun 2, 2026 · Sour",
+      "panels": 6,
+      "blurredPanels": 0,
+      "nestedGlass": 0,
+      "sidebarFilter": "none",
+      "overflow": 0
+    },
+    {
+      "name": "route:light/desktop/job-detail",
+      "title": "Role · Meridian Talent Operations",
+      "route": "job-detail",
+      "chars": 1833,
+      "preview": "All jobs\nSenior Backend Engineer\n\nEngineering · Austin, TX · Hybrid · Hiring manager: Priya Nair\n\nOpen\nConfigure screening\nAbout this role\n\nPosted May 4, 2026 ·",
+      "panels": 5,
+      "blurredPanels": 0,
+      "nestedGlass": 0,
+      "sidebarFilter": "none",
+      "overflow": 0
+    },
+    {
+      "name": "decision:light/desktop",
+      "modal": "true",
+      "closed": true
+    },
+    {
+      "name": "optical-lab:light/desktop",
+      "theme": "light",
+      "ready": "true",
+      "material": "content",
+      "filter": "none",
+      "widthOverflow": 0
+    },
+    {
+      "name": "reduced-transparency:light/desktop",
+      "lensReady": "false",
+      "filter": "none"
+    },
+    {
+      "name": "high-contrast:light/desktop",
+      "tabsFilter": "none"
+    },
+    {
+      "name": "page-errors:light/desktop",
+      "count": 0
+    },
+    {
+      "name": "route:light/mobile/dashboard",
+      "title": "Dashboard · Meridian Talent Operations",
+      "route": "dashboard",
+      "chars": 100,
+      "preview": "Dashboard\n\nRecruiting operations at a glance.\n\nLoading…\nLoading…\nLoading…\nLoading…\nLoading…\nLoading…",
+      "panels": 6,
+      "blurredPanels": 0,
+      "nestedGlass": 0,
+      "sidebarFilter": "none",
+      "overflow": 0
+    },
+    {
+      "name": "route:light/mobile/candidates",
+      "title": "Candidates · Meridian Talent Operations",
+      "route": "candidates",
+      "chars": 513,
+      "preview": "Candidates\n\nFind people, review evidence, and track the next step in their hiring journey.\n\nAdd candidate\nSearch candidates\nStatus\nAll statuses\nNew\nScreening in",
+      "panels": 2,
+      "blurredPanels": 0,
+      "nestedGlass": 0,
+      "sidebarFilter": "none",
+      "overflow": 0
+    },
+    {
+      "name": "route:light/mobile/jobs",
+      "title": "Jobs · Meridian Talent Operations",
+      "route": "jobs",
+      "chars": 128,
+      "preview": "Jobs\n\nYour open positions, hiring teams, and evaluation criteria.\n\nNew job\nLoading…\nLoading…\nLoading…\nLoading…\nLoading…\nLoading…",
+      "panels": 6,
+      "blurredPanels": 0,
+      "nestedGlass": 0,
+      "sidebarFilter": "none",
+      "overflow": 0
+    },
+    {
+      "name": "route:light/mobile/automations",
+      "title": "Automations · Meridian Talent Operations",
+      "route": "automations",
+      "chars": 188,
+      "preview": "Automations\n\nBuild workflows in plain language and monitor the platform automations behind the pipeline — 6 platform flows, 1 needing attention, 6 items queued.",
+      "panels": 3,
+      "blurredPanels": 0,
+      "nestedGlass": 0,
+      "sidebarFilter": "none",
+      "overflow": 0
+    },
+    {
+      "name": "route:light/mobile/reports",
+      "title": "Reports · Meridian Talent Operations",
+      "route": "reports",
+      "chars": 89,
+      "preview": "Reports\n\nHiring funnel health and automation impact.\n\nLoading…\nLoading…\nLoading…\nLoading…",
+      "panels": 4,
+      "blurredPanels": 0,
+      "nestedGlass": 0,
+      "sidebarFilter": "none",
+      "overflow": 0
+    },
+    {
+      "name": "route:light/mobile/candidate-detail",
+      "title": "Candidate · Meridian Talent Operations",
+      "route": "candidate-detail",
+      "chars": 3574,
+      "preview": "All candidates\nMaya Lindqvist\n\nStaff Engineer at Fernvale Systems · Applying for Senior Backend Engineer\n\nML\nPending recruiter review\nApplied Jun 2, 2026 · Sour",
+      "panels": 6,
+      "blurredPanels": 0,
+      "nestedGlass": 0,
+      "sidebarFilter": "none",
+      "overflow": 0
+    },
+    {
+      "name": "route:light/mobile/job-detail",
+      "title": "Role · Meridian Talent Operations",
+      "route": "job-detail",
+      "chars": 1833,
+      "preview": "All jobs\nSenior Backend Engineer\n\nEngineering · Austin, TX · Hybrid · Hiring manager: Priya Nair\n\nOpen\nConfigure screening\nAbout this role\n\nPosted May 4, 2026 ·",
+      "panels": 5,
+      "blurredPanels": 0,
+      "nestedGlass": 0,
+      "sidebarFilter": "none",
+      "overflow": 0
+    },
+    {
+      "name": "decision:light/mobile",
+      "modal": "true",
+      "closed": true
+    },
+    {
+      "name": "optical-lab:light/mobile",
+      "theme": "light",
+      "ready": "true",
+      "material": "content",
+      "filter": "none",
+      "widthOverflow": 0
+    },
+    {
+      "name": "reduced-transparency:light/mobile",
+      "lensReady": "false",
+      "filter": "none"
+    },
+    {
+      "name": "high-contrast:light/mobile",
+      "tabsFilter": "none"
+    },
+    {
+      "name": "page-errors:light/mobile",
+      "count": 0
+    },
+    {
+      "name": "route:dark/desktop/dashboard",
+      "title": "Dashboard · Meridian Talent Operations",
+      "route": "dashboard",
+      "chars": 100,
+      "preview": "Dashboard\n\nRecruiting operations at a glance.\n\nLoading…\nLoading…\nLoading…\nLoading…\nLoading…\nLoading…",
+      "panels": 6,
+      "blurredPanels": 0,
+      "nestedGlass": 0,
+      "sidebarFilter": "none",
+      "overflow": 0
+    },
+    {
+      "name": "route:dark/desktop/candidates",
+      "title": "Candidates · Meridian Talent Operations",
+      "route": "candidates",
+      "chars": 513,
+      "preview": "Candidates\n\nFind people, review evidence, and track the next step in their hiring journey.\n\nAdd candidate\nSearch candidates\nStatus\nAll statuses\nNew\nScreening in",
+      "panels": 2,
+      "blurredPanels": 0,
+      "nestedGlass": 0,
+      "sidebarFilter": "none",
+      "overflow": 0
+    },
+    {
+      "name": "route:dark/desktop/jobs",
+      "title": "Jobs · Meridian Talent Operations",
+      "route": "jobs",
+      "chars": 128,
+      "preview": "Jobs\n\nYour open positions, hiring teams, and evaluation criteria.\n\nNew job\nLoading…\nLoading…\nLoading…\nLoading…\nLoading…\nLoading…",
+      "panels": 6,
+      "blurredPanels": 0,
+      "nestedGlass": 0,
+      "sidebarFilter": "none",
+      "overflow": 0
+    },
+    {
+      "name": "route:dark/desktop/automations",
+      "title": "Automations · Meridian Talent Operations",
+      "route": "automations",
+      "chars": 188,
+      "preview": "Automations\n\nBuild workflows in plain language and monitor the platform automations behind the pipeline — 6 platform flows, 1 needing attention, 6 items queued.",
+      "panels": 3,
+      "blurredPanels": 0,
+      "nestedGlass": 0,
+      "sidebarFilter": "none",
+      "overflow": 0
+    },
+    {
+      "name": "route:dark/desktop/reports",
+      "title": "Reports · Meridian Talent Operations",
+      "route": "reports",
+      "chars": 89,
+      "preview": "Reports\n\nHiring funnel health and automation impact.\n\nLoading…\nLoading…\nLoading…\nLoading…",
+      "panels": 4,
+      "blurredPanels": 0,
+      "nestedGlass": 0,
+      "sidebarFilter": "none",
+      "overflow": 0
+    },
+    {
+      "name": "route:dark/desktop/candidate-detail",
+      "title": "Candidate · Meridian Talent Operations",
+      "route": "candidate-detail",
+      "chars": 3574,
+      "preview": "All candidates\nMaya Lindqvist\n\nStaff Engineer at Fernvale Systems · Applying for Senior Backend Engineer\n\nML\nPending recruiter review\nApplied Jun 2, 2026 · Sour",
+      "panels": 6,
+      "blurredPanels": 0,
+      "nestedGlass": 0,
+      "sidebarFilter": "none",
+      "overflow": 0
+    },
+    {
+      "name": "route:dark/desktop/job-detail",
+      "title": "Role · Meridian Talent Operations",
+      "route": "job-detail",
+      "chars": 1833,
+      "preview": "All jobs\nSenior Backend Engineer\n\nEngineering · Austin, TX · Hybrid · Hiring manager: Priya Nair\n\nOpen\nConfigure screening\nAbout this role\n\nPosted May 4, 2026 ·",
+      "panels": 5,
+      "blurredPanels": 0,
+      "nestedGlass": 0,
+      "sidebarFilter": "none",
+      "overflow": 0
+    },
+    {
+      "name": "decision:dark/desktop",
+      "modal": "true",
+      "closed": true
+    },
+    {
+      "name": "optical-lab:dark/desktop",
+      "theme": "dark",
+      "ready": "true",
+      "material": "content",
+      "filter": "none",
+      "widthOverflow": 0
+    },
+    {
+      "name": "reduced-transparency:dark/desktop",
+      "lensReady": "false",
+      "filter": "none"
+    },
+    {
+      "name": "high-contrast:dark/desktop",
+      "tabsFilter": "none"
+    },
+    {
+      "name": "page-errors:dark/desktop",
+      "count": 0
+    },
+    {
+      "name": "route:dark/mobile/dashboard",
+      "title": "Dashboard · Meridian Talent Operations",
+      "route": "dashboard",
+      "chars": 100,
+      "preview": "Dashboard\n\nRecruiting operations at a glance.\n\nLoading…\nLoading…\nLoading…\nLoading…\nLoading…\nLoading…",
+      "panels": 6,
+      "blurredPanels": 0,
+      "nestedGlass": 0,
+      "sidebarFilter": "none",
+      "overflow": 0
+    },
+    {
+      "name": "route:dark/mobile/candidates",
+      "title": "Candidates · Meridian Talent Operations",
+      "route": "candidates",
+      "chars": 513,
+      "preview": "Candidates\n\nFind people, review evidence, and track the next step in their hiring journey.\n\nAdd candidate\nSearch candidates\nStatus\nAll statuses\nNew\nScreening in",
+      "panels": 2,
+      "blurredPanels": 0,
+      "nestedGlass": 0,
+      "sidebarFilter": "none",
+      "overflow": 0
+    },
+    {
+      "name": "route:dark/mobile/jobs",
+      "title": "Jobs · Meridian Talent Operations",
+      "route": "jobs",
+      "chars": 128,
+      "preview": "Jobs\n\nYour open positions, hiring teams, and evaluation criteria.\n\nNew job\nLoading…\nLoading…\nLoading…\nLoading…\nLoading…\nLoading…",
+      "panels": 6,
+      "blurredPanels": 0,
+      "nestedGlass": 0,
+      "sidebarFilter": "none",
+      "overflow": 0
+    },
+    {
+      "name": "route:dark/mobile/automations",
+      "title": "Automations · Meridian Talent Operations",
+      "route": "automations",
+      "chars": 188,
+      "preview": "Automations\n\nBuild workflows in plain language and monitor the platform automations behind the pipeline — 6 platform flows, 1 needing attention, 6 items queued.",
+      "panels": 3,
+      "blurredPanels": 0,
+      "nestedGlass": 0,
+      "sidebarFilter": "none",
+      "overflow": 0
+    },
+    {
+      "name": "route:dark/mobile/reports",
+      "title": "Reports · Meridian Talent Operations",
+      "route": "reports",
+      "chars": 89,
+      "preview": "Reports\n\nHiring funnel health and automation impact.\n\nLoading…\nLoading…\nLoading…\nLoading…",
+      "panels": 4,
+      "blurredPanels": 0,
+      "nestedGlass": 0,
+      "sidebarFilter": "none",
+      "overflow": 0
+    },
+    {
+      "name": "route:dark/mobile/candidate-detail",
+      "title": "Candidate · Meridian Talent Operations",
+      "route": "candidate-detail",
+      "chars": 3574,
+      "preview": "All candidates\nMaya Lindqvist\n\nStaff Engineer at Fernvale Systems · Applying for Senior Backend Engineer\n\nML\nPending recruiter review\nApplied Jun 2, 2026 · Sour",
+      "panels": 6,
+      "blurredPanels": 0,
+      "nestedGlass": 0,
+      "sidebarFilter": "none",
+      "overflow": 0
+    },
+    {
+      "name": "route:dark/mobile/job-detail",
+      "title": "Role · Meridian Talent Operations",
+      "route": "job-detail",
+      "chars": 1833,
+      "preview": "All jobs\nSenior Backend Engineer\n\nEngineering · Austin, TX · Hybrid · Hiring manager: Priya Nair\n\nOpen\nConfigure screening\nAbout this role\n\nPosted May 4, 2026 ·",
+      "panels": 5,
+      "blurredPanels": 0,
+      "nestedGlass": 0,
+      "sidebarFilter": "none",
+      "overflow": 0
+    },
+    {
+      "name": "decision:dark/mobile",
+      "modal": "true",
+      "closed": true
+    },
+    {
+      "name": "optical-lab:dark/mobile",
+      "theme": "dark",
+      "ready": "true",
+      "material": "content",
+      "filter": "none",
+      "widthOverflow": 0
+    },
+    {
+      "name": "reduced-transparency:dark/mobile",
+      "lensReady": "false",
+      "filter": "none"
+    },
+    {
+      "name": "high-contrast:dark/mobile",
+      "tabsFilter": "none"
+    },
+    {
+      "name": "page-errors:dark/mobile",
+      "count": 0
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="description" content="Meridian Unified Optical System v4 - isolated, accessible materials and SVG refraction lab." />
+    <title>Meridian | Optical Lab v4</title>
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <script>
+      (function () {
+        try {
+          const chosen = localStorage.getItem('meridian.theme') || 'system';
+          const dark = chosen === 'dark' || (chosen === 'system' && matchMedia('(prefers-color-scheme: dark)').matches);
+          document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+        } catch (_) { document.documentElement.dataset.theme = 'light'; }
+      })();
+    </script>
+    <link rel="stylesheet" href="./assets/index-CdCIC7Ls.css" />
+    <link rel="stylesheet" href="./assets/meridian-liquid-glass.css" />
+    <link rel="stylesheet" href="./assets/meridian-optical-v4.css" />
+    <link rel="stylesheet" href="./assets/meridian-optical-lab.css" />
+    <script src="./assets/meridian-optical-lab.js" defer></script>
+  </head>
+  <body class="meridian-lab-body">
+    <main class="meridian-lab-shell">
+      <header class="meridian-lab-topline">
+        <a href="./index.html#/" class="meridian-lab-back"><span aria-hidden="true">&#8592;</span> Back to Meridian</a>
+        <span class="meridian-lab-version">SYSTEM EXPERIMENT  /  V4</span>
+      </header>
+      <section class="meridian-lab-hero" aria-labelledby="lab-title">
+        <p class="meridian-lab-kicker">MERIDIAN  /  OPTICAL MATERIAL STUDY</p>
+        <h1 id="lab-title">Clarity is a design feature.</h1>
+        <p>Operational information stays solid. Functional controls gain depth. Refraction stays bounded, measurable and optional.</p>
+      </section>
+      <section class="meridian-lab-settings" aria-label="Material control">
+        <div>
+          <h2>Choose a material</h2>
+          <p id="meridian-material-description">Regular: legible, softly translucent controls.</p>
+        </div>
+        <div class="meridian-lab-tabs" role="group" aria-label="Choose optical material">
+          <button type="button" data-select-material="regular" aria-pressed="true">Regular</button>
+          <button type="button" data-select-material="clear" aria-pressed="false">Clear</button>
+          <button type="button" data-select-material="content" aria-pressed="false">Content</button>
+        </div>
+      </section>
+      <div class="meridian-lab-grid">
+        <section class="meridian-lab-panel" aria-labelledby="material-heading">
+          <header><h2 id="material-heading">Functional material</h2><span>01  /  CONTROL</span></header>
+          <div class="meridian-lab-scene" data-meridian-specimen>
+            <div class="meridian-lab-scene-word" aria-hidden="true">MERIDIAN</div>
+            <div class="meridian-lab-scene-circle" aria-hidden="true"></div>
+            <div class="meridian-lab-sample" data-material="regular">
+              <span class="meridian-lab-check" aria-hidden="true">&#10003;</span>
+              <div><strong>Review ready</strong><span>Three candidate records need your attention.</span></div>
+            </div>
+          </div>
+          <p class="meridian-lab-caption">The sample material changes. Text never receives refraction or chromatic distortion.</p>
+        </section>
+        <section class="meridian-lab-panel" aria-labelledby="refraction-heading">
+          <header><h2 id="refraction-heading">Bounded refraction</h2><span>02  /  SVG + DOM</span></header>
+          <div class="meridian-lab-stage" data-optical-stage>
+            <div class="meridian-lab-art" data-optical-art aria-hidden="true">
+              <span class="meridian-lab-art-halo"></span><span class="meridian-lab-art-line"></span>
+              <span class="meridian-lab-art-dot"></span><span class="meridian-lab-art-title">M</span>
+              <span class="meridian-lab-art-caption">TALENT OPERATIONS</span>
+            </div>
+            <div class="meridian-lab-lens" data-optical-lens data-refraction-ready="false" aria-hidden="true">
+              <div class="meridian-lab-lens-clip"><div class="meridian-lab-refracted" data-optical-refracted><div class="meridian-lab-clone" data-optical-clone></div></div></div>
+              <span class="meridian-lab-lens-rim"></span>
+            </div>
+            <svg class="meridian-lab-filter" aria-hidden="true" focusable="false"><defs><filter id="meridian-refract-v4" x="0" y="0" width="1" height="1" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feImage result="optical-map" preserveAspectRatio="none"/><feDisplacementMap in="SourceGraphic" in2="optical-map" scale="27" xChannelSelector="R" yChannelSelector="G"/></filter></defs></svg>
+          </div>
+          <p class="meridian-lab-caption">A static local scene is cloned under one optical lens. No global WebGPU dependency.</p>
+        </section>
+      </div>
+      <section class="meridian-lab-diagnostics" aria-label="Capabilities and accessibility">
+        <div><strong>Transparency</strong><span id="meridian-lab-transparency" role="status">Checking preference</span></div>
+        <div><strong>Graphics adapter</strong><span id="meridian-lab-webgpu" role="status">Checking browser capability</span></div>
+        <div><strong>Runtime</strong><span>Production CSS/SVG. WebGPU engine not installed.</span></div>
+      </section>
+      <footer class="meridian-lab-footer">Meridian Optical System v4. Experimental reference; not a candidate-scoring interface.</footer>
+    </main>
+  </body>
+</html>

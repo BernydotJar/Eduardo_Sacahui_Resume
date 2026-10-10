@@ -1,0 +1,187 @@
+/* Meridian Optical Design System v4. Material is functional, not decoration.
+   Layered after Experience 2.0 to preserve the compiled Vite app and its events. */
+:root {
+  /* Readability contrast tokens override the original 3.68:1 muted copy. */
+  --color-ink-tertiary: #53647b;
+  --color-ink-muted: #58677b;
+  --meridian-content-fill: #ffffff;
+  --meridian-regular-fill: rgba(249, 252, 255, .84);
+  --meridian-clear-fill: rgba(245, 251, 255, .38);
+  --meridian-popover-fill: rgba(255, 255, 255, .97);
+  --meridian-optical-rim: rgba(255, 255, 255, .83);
+  --meridian-optical-blur: 12px;
+  --meridian-optical-saturation: 1.08;
+  --meridian-focus-ring: #2457cb;
+  --meridian-radius-control: 12px;
+  --meridian-radius-panel: 17px;
+}
+:root[data-theme="dark"] {
+  --meridian-content-fill: #202c3e;
+  --meridian-regular-fill: rgba(36, 50, 72, .85);
+  --meridian-clear-fill: rgba(50, 69, 99, .42);
+  --meridian-popover-fill: rgba(30, 42, 61, .97);
+  --meridian-optical-rim: rgba(188, 205, 232, .19);
+  --meridian-optical-blur: 11px;
+  --meridian-optical-saturation: 1.04;
+  --meridian-focus-ring: #a3beff;
+}
+/* A content card must not sample/refract underlying content. Retain the
+   legacy .glass-panel selector because the original React sources are absent. */
+.glass-panel, .meridian-content-surface,
+#main .glass-panel, .auth-card, .meridian-review-dialog {
+  background: var(--meridian-content-fill);
+  border-color: var(--color-line);
+  border-radius: var(--meridian-radius-panel);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  box-shadow: var(--shadow-panel), inset 0 1px 0 color-mix(in srgb, var(--meridian-optical-rim) 32%, transparent);
+}
+:root[data-theme="dark"] .glass-panel,
+:root[data-theme="dark"] .auth-card,
+:root[data-theme="dark"] .meridian-content-surface {
+  background: var(--meridian-content-fill);
+  border-color: var(--color-line);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+:root[data-meridian-route="dashboard"] #main > .grid:first-of-type .glass-panel:first-child {
+  background: linear-gradient(125deg, #eaf1ff, #fdfefe 80%);
+}
+:root[data-theme="dark"][data-meridian-route="dashboard"] #main > .grid:first-of-type .glass-panel:first-child {
+  background: linear-gradient(125deg, #314565, #1e2b3e 80%);
+}
+/* Glass lives on navigation chrome and isolated floating controls. */
+.glass-chrome, .meridian-functional-glass {
+  background: var(--meridian-regular-fill);
+  border-color: var(--meridian-optical-rim);
+  -webkit-backdrop-filter: blur(var(--meridian-optical-blur)) saturate(var(--meridian-optical-saturation));
+  backdrop-filter: blur(var(--meridian-optical-blur)) saturate(var(--meridian-optical-saturation));
+  box-shadow: var(--shadow-panel), inset 0 1px 0 var(--meridian-optical-rim);
+}
+/* The long vertical sidebar is an architectural anchor, not a huge blur layer. */
+aside.glass-chrome, :root[data-theme="dark"] aside.glass-chrome {
+  background: #192d49;
+  border-color: rgba(226, 236, 250, .16);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+header.glass-chrome {
+  background: var(--meridian-regular-fill);
+  -webkit-backdrop-filter: blur(var(--meridian-optical-blur));
+  backdrop-filter: blur(var(--meridian-optical-blur));
+}
+button.glass-chrome.fixed.right-5.bottom-5 {
+  -webkit-backdrop-filter: blur(var(--meridian-optical-blur));
+  backdrop-filter: blur(var(--meridian-optical-blur));
+  border-radius: var(--meridian-radius-control);
+}
+/* Auth and recruiter decision evidence are solid, high-legibility information. */
+:root[data-theme="dark"] .auth-card,
+:root[data-theme="dark"] .meridian-review-dialog {
+  background: var(--meridian-content-fill);
+}
+.meridian-review-overlay {
+  background: rgba(13, 24, 42, .64);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+.meridian-review-dialog {
+  background: var(--meridian-content-fill);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+input:not([type="checkbox"]):not([type="radio"]), textarea, select {
+  background-color: var(--meridian-content-fill);
+}
+:where(button, a, input, select, textarea, summary):focus-visible {
+  outline: 3px solid var(--meridian-focus-ring) !important;
+  outline-offset: 3px !important;
+}
+/* Explicit fallbacks. High contrast and reduced transparency beat optics. */
+@supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+  .glass-chrome, .meridian-functional-glass, header.glass-chrome {
+    background: var(--meridian-popover-fill);
+  }
+}
+@media (prefers-reduced-transparency: reduce), (prefers-contrast: more) {
+  .glass-panel, .glass-chrome, .auth-card, .meridian-review-dialog,
+  .meridian-functional-glass, .meridian-review-overlay, header.glass-chrome {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+  .glass-panel, .auth-card, .meridian-review-dialog { background: var(--meridian-content-fill) !important; }
+  .glass-chrome, .meridian-functional-glass, header.glass-chrome { background: var(--meridian-popover-fill) !important; }
+  aside.glass-chrome { background: #192d49 !important; }
+}
+@media (forced-colors: active) {
+  .glass-panel, .glass-chrome, .auth-card, .meridian-review-dialog {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+    background: Canvas !important;
+    color: CanvasText !important;
+    border: 1px solid CanvasText !important;
+  }
+  :where(button, a, input, select, textarea, summary):focus-visible { outline-color: Highlight !important; }
+}
+@media (max-width: 639px) {
+  #main .glass-panel { -webkit-backdrop-filter: none; backdrop-filter: none; }
+}
+/* Mobile assistant remains discoverable without covering a full metric label. */
+@media (max-width: 639px) {
+  button.glass-chrome.fixed.right-5.bottom-5 {
+    width: 50px;
+    height: 50px;
+    min-height: 50px;
+    right: 13px;
+    bottom: calc(13px + env(safe-area-inset-bottom, 0px));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    padding: 0;
+    border-radius: 16px;
+    font-size: 0;
+    line-height: 0;
+  }
+  button.glass-chrome.fixed.right-5.bottom-5 svg { width: 21px; height: 21px; }
+  button.glass-chrome.fixed.right-5.bottom-5 kbd { display: none; }
+  #main { padding-bottom: 110px; }
+}
+
+/* v4 independent contrast findings: initials and keyboard shortcut must
+   remain legible over their actual dark/filled substrates. */
+aside.glass-chrome .rounded-full.size-8.bg-fill {
+  background: #325079 !important;
+  color: #f2f6ff !important;
+}
+button.glass-chrome.fixed.right-5.bottom-5 kbd {
+  color: #e4efff !important;
+  border-color: rgba(228, 239, 255, .36) !important;
+}
+/* Dark-mode approval actions: white label on the previous bright blue
+   fell below WCAG AA for normal-size text. */
+:root[data-theme="dark"] button.bg-action,
+:root[data-theme="dark"] button[class*="bg-action"]:not([disabled]) {
+  background: #3157b3 !important;
+  border-color: #3157b3 !important;
+  color: #fff !important;
+}
+:root[data-theme="dark"] button.bg-action:hover,
+:root[data-theme="dark"] button[class*="bg-action"]:not([disabled]):hover {
+  background: #254498 !important;
+}
+/* Secondary recruiter-evidence asides use inverse (dark) semantic surfaces.
+   Keep them opaque, but preserve their original light-on-dark typography. */
+:root[data-meridian-route="candidate-detail"] #main aside.glass-panel,
+:root[data-meridian-route="job-detail"] #main aside.glass-panel {
+  background: #213751;
+  border-color: #38516d;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  box-shadow: 0 15px 34px rgba(13, 30, 53, .18), inset 0 1px 0 rgba(226, 239, 255, .08);
+}
+:root[data-theme="dark"][data-meridian-route="candidate-detail"] #main aside.glass-panel,
+:root[data-theme="dark"][data-meridian-route="job-detail"] #main aside.glass-panel {
+  background: #23364f;
+  border-color: #405875;
+}
