@@ -40,6 +40,8 @@ export type TranslationDictionary = {
     contactMe: string;
     goToTop: string;
     menuToggle: string;
+    themeSwitchToJesse: string;
+    themeSwitchToHeisenberg: string;
   };
   hero: {
     eyebrow: string;
@@ -227,11 +229,10 @@ export type TranslationDictionary = {
     namePlaceholder: string;
     emailPlaceholder: string;
     messagePlaceholder: string;
-    sending: string;
     sendMessage: string;
     preferDirectEmail: string;
-    toastSuccessTitle: string;
-    toastSuccessDescription: string;
+    toastDraftTitle: string;
+    toastDraftDescription: string;
     toastErrorTitle: string;
     toastErrorDescription: string;
     validation: {
@@ -303,6 +304,8 @@ export const translations: Record<Locale, TranslationDictionary> = {
       contactMe: 'Contact Me',
       goToTop: 'Go to top',
       menuToggle: 'Toggle menu',
+      themeSwitchToJesse: 'Switch to Jesse theme',
+      themeSwitchToHeisenberg: 'Switch to Heisenberg theme',
     },
     hero: {
       eyebrow: 'Build AI products · Engineer platforms · Lead transformation',
@@ -511,19 +514,18 @@ export const translations: Record<Locale, TranslationDictionary> = {
       title: 'Contact Me',
       subtitle: 'Have a question or want to work together?',
       staticSiteNote:
-        'This static site opens your email client to send your message.',
+        'This static site prepares an email draft. You must send it from your email app.',
       name: 'Name',
       email: 'Email',
       message: 'Message',
       namePlaceholder: 'Your Name',
       emailPlaceholder: 'your.email@example.com',
       messagePlaceholder: 'Tell me how I can help',
-      sending: 'Sending...',
-      sendMessage: 'Send Message',
+      sendMessage: 'Open Email Draft',
       preferDirectEmail: 'Prefer direct email?',
-      toastSuccessTitle: 'Message Sent!',
-      toastSuccessDescription:
-        'Your email client should open shortly to send the message.',
+      toastDraftTitle: 'Finish sending in your email app',
+      toastDraftDescription:
+        'An email draft should open. Press Send in your email app; if nothing opens, use the address below. Your message stays here.',
       toastErrorTitle: 'Uh oh! Something went wrong.',
       toastErrorDescription: 'There was a problem with your request.',
       validation: {
@@ -624,6 +626,8 @@ export const translations: Record<Locale, TranslationDictionary> = {
       contactMe: 'Contáctame',
       goToTop: 'Ir al inicio',
       menuToggle: 'Abrir o cerrar menú',
+      themeSwitchToJesse: 'Cambiar al tema Jesse',
+      themeSwitchToHeisenberg: 'Cambiar al tema Heisenberg',
     },
     hero: {
       eyebrow: 'Construyo productos AI · Diseño plataformas · Lidero transformación',
@@ -834,19 +838,18 @@ export const translations: Record<Locale, TranslationDictionary> = {
       title: 'Contáctame',
       subtitle: '¿Tienes una pregunta o quieres trabajar conmigo?',
       staticSiteNote:
-        'Este sitio estático abre tu cliente de correo para enviar el mensaje.',
+        'Este sitio prepara un borrador. Debes enviar el mensaje desde tu aplicación de correo.',
       name: 'Nombre',
       email: 'Correo',
       message: 'Mensaje',
       namePlaceholder: 'Tu Nombre',
       emailPlaceholder: 'tu.correo@ejemplo.com',
       messagePlaceholder: 'Cuéntame cómo puedo ayudarte',
-      sending: 'Enviando...',
-      sendMessage: 'Enviar Mensaje',
+      sendMessage: 'Abrir borrador de correo',
       preferDirectEmail: '¿Prefieres correo directo?',
-      toastSuccessTitle: '¡Mensaje enviado!',
-      toastSuccessDescription:
-        'Tu cliente de correo debería abrirse en breve para enviar el mensaje.',
+      toastDraftTitle: 'Completa el envío en tu correo',
+      toastDraftDescription:
+        'Se debería abrir un borrador. Pulsa Enviar en tu correo; si no se abre, usa la dirección de abajo. Tu mensaje permanece aquí.',
       toastErrorTitle: 'Algo salió mal.',
       toastErrorDescription: 'Hubo un problema con tu solicitud.',
       validation: {
@@ -947,6 +950,8 @@ export const translations: Record<Locale, TranslationDictionary> = {
       contactMe: 'Contato',
       goToTop: 'Voltar ao topo',
       menuToggle: 'Abrir ou fechar menu',
+      themeSwitchToJesse: 'Mudar para o tema Jesse',
+      themeSwitchToHeisenberg: 'Mudar para o tema Heisenberg',
     },
     hero: {
       eyebrow: 'Construo produtos de IA · Projeto plataformas · Lidero transformação',
@@ -1158,19 +1163,18 @@ export const translations: Record<Locale, TranslationDictionary> = {
       title: 'Contato',
       subtitle: 'Tem uma pergunta ou quer trabalhar comigo?',
       staticSiteNote:
-        'Este site estático abre seu cliente de e-mail para enviar a mensagem.',
+        'Este site prepara um rascunho. Você precisa enviá-lo pelo seu aplicativo de e-mail.',
       name: 'Nome',
       email: 'E-mail',
       message: 'Mensagem',
       namePlaceholder: 'Seu Nome',
       emailPlaceholder: 'seu.email@exemplo.com',
       messagePlaceholder: 'Conte como posso ajudar',
-      sending: 'Enviando...',
-      sendMessage: 'Enviar Mensagem',
+      sendMessage: 'Abrir rascunho de e-mail',
       preferDirectEmail: 'Prefere e-mail direto?',
-      toastSuccessTitle: 'Mensagem enviada!',
-      toastSuccessDescription:
-        'Seu cliente de e-mail deve abrir em instantes para enviar a mensagem.',
+      toastDraftTitle: 'Conclua o envio no seu e-mail',
+      toastDraftDescription:
+        'Um rascunho deve abrir. Toque em Enviar no aplicativo; se nada abrir, use o endereço abaixo. Sua mensagem fica aqui.',
       toastErrorTitle: 'Algo deu errado.',
       toastErrorDescription: 'Houve um problema com sua solicitação.',
       validation: {

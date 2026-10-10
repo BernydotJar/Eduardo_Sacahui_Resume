@@ -34,7 +34,12 @@ export const LanguageProvider = ({ children }: LanguageProviderProps) => {
   const [locale, setLocaleState] = useState<Locale>(defaultLocale);
 
   useEffect(() => {
-    const storedLocale = window.localStorage.getItem(STORAGE_KEY);
+    let storedLocale: string | null = null;
+    try {
+      storedLocale = window.localStorage.getItem(STORAGE_KEY);
+    } catch {
+      // Language selection remains available when storage is blocked.
+    }
     if (storedLocale && isLocale(storedLocale)) {
       setLocaleState(storedLocale);
       return;
@@ -47,7 +52,11 @@ export const LanguageProvider = ({ children }: LanguageProviderProps) => {
   }, []);
 
   useEffect(() => {
-    window.localStorage.setItem(STORAGE_KEY, locale);
+    try {
+      window.localStorage.setItem(STORAGE_KEY, locale);
+    } catch {
+      // The language still changes without persistence.
+    }
     document.documentElement.lang = locale;
   }, [locale]);
 

@@ -15,7 +15,12 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   const [theme, setTheme] = useState<Theme>('heisenberg');
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem('portfolio-theme') as Theme;
+    let savedTheme: string | null = null;
+    try {
+      savedTheme = localStorage.getItem('portfolio-theme');
+    } catch {
+      // Theme preference remains usable when browser storage is disabled.
+    }
     if (savedTheme === 'jesse') {
       setTheme('jesse');
       document.documentElement.classList.add('theme-jesse');
@@ -29,7 +34,11 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
 
     const switchTheme = () => {
       setTheme(nextTheme);
-      localStorage.setItem('portfolio-theme', nextTheme);
+      try {
+        localStorage.setItem('portfolio-theme', nextTheme);
+      } catch {
+        // The visual toggle still works without persistent browser storage.
+      }
       if (nextTheme === 'jesse') {
         document.documentElement.classList.add('theme-jesse');
       } else {
@@ -41,7 +50,13 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
       startViewTransition?: (cb: () => void) => { ready: Promise<void> };
     };
 
-    if (!docWithTransition.startViewTransition) {
+    // Keyboard activation and reduced-motion requests should not trigger a
+    // pointer-originating cinematic transition.
+    if (
+      !docWithTransition.startViewTransition ||
+      event.detail === 0 ||
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    ) {
       switchTheme();
       return;
     }
@@ -58,6 +73,7 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
     });
 
     transition.ready.then(() => {
+      if (!document.documentElement.animate) return;
       const clipPath = [
         `circle(0px at ${x}px ${y}px)`,
         `circle(${endRadius}px at ${x}px ${y}px)`,
@@ -72,6 +88,8 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
           pseudoElement: '::view-transition-new(root)',
         }
       );
+    }).catch(() => {
+      // An interrupted view transition must not become an unhandled rejection.
     });
   };
 

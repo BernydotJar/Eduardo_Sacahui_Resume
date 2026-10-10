@@ -26,15 +26,12 @@ type ContactFormValues = {
   message: string;
 };
 
-const simulateContactSubmit = async (
-  values: ContactFormValues
-): Promise<{ success: boolean; message?: string }> => {
+const openEmailDraft = (values: ContactFormValues) => {
   const subject = encodeURIComponent(`Portfolio contact from ${values.name}`);
   const body = encodeURIComponent(
     `Name: ${values.name}\nEmail: ${values.email}\n\n${values.message}`
   );
   window.location.href = `mailto:${contactRecipient}?subject=${subject}&body=${body}`;
-  return { success: true };
 };
 
 const Contact = () => {
@@ -59,21 +56,21 @@ const Contact = () => {
         },
     });
 
-    const onSubmit = async (values: ContactFormValues) => {
-        const result = await simulateContactSubmit(values);
-        if (result.success) {
+    const onSubmit = (values: ContactFormValues) => {
+        try {
+            openEmailDraft(values);
             toast({
-                title: dict.contact.toastSuccessTitle,
-                description: dict.contact.toastSuccessDescription,
+                title: dict.contact.toastDraftTitle,
+                description: dict.contact.toastDraftDescription,
             });
-            form.reset();
-        } else {
+        } catch {
             toast({
                 variant: "destructive",
                 title: dict.contact.toastErrorTitle,
-                description: result.message || dict.contact.toastErrorDescription,
+                description: dict.contact.toastErrorDescription,
             });
         }
+        // Do not reset: opening a mail app cannot prove that an email was sent.
     };
 
     return (
@@ -155,7 +152,7 @@ const Contact = () => {
                                         disabled={form.formState.isSubmitting}
                                         className="w-full sm:w-auto px-6 h-10 border border-primary hover:bg-primary/95 shadow-[0_0_15px_rgba(16,185,129,0.15)] transition-all font-code text-xs uppercase tracking-wider"
                                     >
-                                        {form.formState.isSubmitting ? dict.contact.sending : dict.contact.sendMessage}
+                                        {dict.contact.sendMessage}
                                     </Button>
                                     <p className="text-xs text-muted-foreground text-center sm:text-right font-code">
                                       {dict.contact.preferDirectEmail}{" "}

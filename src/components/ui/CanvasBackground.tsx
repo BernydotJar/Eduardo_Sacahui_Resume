@@ -22,9 +22,9 @@ export const CanvasBackground = ({
     if (!ctx) return;
 
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (mediaQuery.matches) return;
 
-    let animationFrameId: number;
+    let animationFrameId: number | null = null;
+    let isIntersecting = true;
     let width = (canvas.width = canvas.offsetWidth);
     let height = (canvas.height = canvas.offsetHeight);
 
@@ -81,6 +81,10 @@ export const CanvasBackground = ({
     container.addEventListener("mouseleave", handleMouseLeave as EventListener);
 
     const draw = () => {
+      if (mediaQuery.matches || document.hidden || !isIntersecting) {
+        animationFrameId = null;
+        return;
+      }
       ctx.clearRect(0, 0, width, height);
 
       const maxDistance = 110;
@@ -137,10 +141,41 @@ export const CanvasBackground = ({
       animationFrameId = requestAnimationFrame(draw);
     };
 
-    draw();
+    const stopAnimation = () => {
+      if (animationFrameId !== null) cancelAnimationFrame(animationFrameId);
+      animationFrameId = null;
+      ctx.clearRect(0, 0, width, height);
+    };
+
+    const startAnimation = () => {
+      if (animationFrameId === null && !mediaQuery.matches && !document.hidden && isIntersecting) {
+        animationFrameId = requestAnimationFrame(draw);
+      }
+    };
+
+    const refreshAnimation = () => {
+      if (mediaQuery.matches || document.hidden || !isIntersecting) stopAnimation();
+      else startAnimation();
+    };
+
+    // Pause costly particle rendering offscreen, in background tabs and on motion changes.
+    const observer =
+      typeof IntersectionObserver === 'undefined'
+        ? null
+        : new IntersectionObserver(([entry]) => {
+            isIntersecting = entry.isIntersecting;
+            refreshAnimation();
+          });
+    observer?.observe(canvas);
+    document.addEventListener('visibilitychange', refreshAnimation);
+    mediaQuery.addEventListener('change', refreshAnimation);
+    startAnimation();
 
     return () => {
-      cancelAnimationFrame(animationFrameId);
+      stopAnimation();
+      observer?.disconnect();
+      document.removeEventListener('visibilitychange', refreshAnimation);
+      mediaQuery.removeEventListener('change', refreshAnimation);
       window.removeEventListener("resize", handleResize);
       container.removeEventListener("mousemove", handleMouseMove as EventListener);
       container.removeEventListener("mouseleave", handleMouseLeave as EventListener);

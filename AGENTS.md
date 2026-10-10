@@ -2,9 +2,10 @@
 
 ## Run And Verify
 - `npm run dev` starts the Next.js app on `http://localhost:9002` with Turbopack.
-- Match CI before considering work done: `npm run typecheck && npm run lint && npm run build`.
-- `npm run build` is not a full quality gate here: `next.config.ts` sets `typescript.ignoreBuildErrors` and `eslint.ignoreDuringBuilds`, so build success can hide broken TS or ESLint.
-- There is no checked-in test suite or `test` script right now; focused verification is typecheck, lint, and build.
+- Match CI before considering work done: `npm run typecheck && npm run lint && npm test && npm run build && npm run verify:export`.
+- The build does not bypass TypeScript or ESLint; keep those explicit gates and the static export verifier.
+- Node's built-in test suite lives in `tests/*.test.mjs`, including recruiter/CX regression tests. Source-level tests do not replace browser E2E verification.
+- The Granite adversarial runner is `node scripts/granite-adversarial.mjs baseline`; it requires a running local Ollama server and enough memory for IBM Granite.
 - Genkit work is separate from the site: use `npm run genkit:dev` or `npm run genkit:watch` to load `src/ai/dev.ts`.
 
 ## Structure

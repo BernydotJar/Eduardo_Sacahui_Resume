@@ -68,7 +68,7 @@ const Header = () => {
             size="icon"
             onClick={toggleTheme}
             className="h-9 w-9 rounded-md border border-white/5 bg-zinc-950/40 hover:bg-white/5 hover:border-white/10 transition-all"
-            aria-label={theme === 'heisenberg' ? 'Switch to Jesse Pinkman theme' : 'Switch to Heisenberg theme'}
+            aria-label={theme === 'heisenberg' ? dict.header.themeSwitchToJesse : dict.header.themeSwitchToHeisenberg}
           >
             {theme === 'heisenberg' ? (
               <FlaskConical className="h-4.5 w-4.5 text-primary" />
