@@ -202,23 +202,34 @@ def main() -> None:
     story += section("Leadership profile", styles)
     story.append(
         Paragraph(
-            "AI product and platform engineering leader who turns ambiguous workflows into governed, "
-            "customer-facing AI systems. Combines product discovery, hands-on architecture, evaluation, "
-            "secure delivery, operations, and human-centered adoption—connecting AI behavior and platform "
-            "decisions to measurable business outcomes.",
+            "Client-facing AI product architect and hands-on engineer who turns ambiguous stakeholder needs into governed, "
+            "AI products and automation platforms. Combines stakeholder discovery, problem framing, solution trade-offs, pilot evaluation, "
+            "hands-on engineering, secure delivery, operations, and adoption—connecting technical and product "
+            "decisions to concrete business outcomes.",
             styles["BodySmall"],
         )
     )
 
+    story += section("Client discovery to delivery", styles)
+    story.extend(
+        bullet(item, styles) for item in [
+            "<b>Frame:</b> Facilitate discovery with business and technical stakeholders; clarify workflows, constraints, and success criteria before choosing a solution.",
+            "<b>Build and evaluate:</b> Translate needs into product scope, architecture, working pilots, human approval boundaries, tests, and release decisions.",
+            "<b>Operate and improve:</b> Connect reliability, observability, costs, feedback, and adoption to business value; distinguish proven production operations from pilots.",
+        ]
+    )
+
     story += section("Selected AI product evidence", styles)
     evidence = [
-        "<b>Executive AI Assistant Pilot:</b> 0→1 delivery across web, PWA, browser extension, and API surfaces with approval-gated actions.",
-        "<b>LA Muni RAG:</b> public evidence-first Procedure Workflow Advisor MVP with citations, confidence, document checklists, gaps, and feedback controls.",
-        "<b>AI Recruiting Copilot:</b> interactive product demo that exposes candidate evidence and preserves recruiter-controlled review.",
+        "<b>Executive AI Assistant Pilot:</b> Executive/EA workflow discovery and 0-to-1 product delivery across web, PWA, browser extension, and API surfaces with approval-gated actions.",
+        "<b>LA Muni RAG:</b> Public evidence-first procedure workflow MVP; user guidance, cited sources, document checklists, and feedback controls.",
+        "<b>Agentic engineering:</b> Controlled orchestration and evaluation patterns with schema contracts, deterministic checks, and independent review; not claimed as high-concurrency production scale.",
     ]
     story.extend(bullet(item, styles) for item in evidence)
 
     story += section("Experience", styles)
+    priority = ["Rice AI Center", "UiPath (United States)", "Haceb (via LCH Consulting)", "Fragomen", "Team International"]
+    experience = sorted(experience, key=lambda exp: (exp['company'] not in priority, priority.index(exp['company']) if exp['company'] in priority else len(priority)))
     for exp in experience:
         job = Paragraph(
             f"{exp['role']} · {exp['company']} <font color='#50655B'>| {exp['when']}</font>",
