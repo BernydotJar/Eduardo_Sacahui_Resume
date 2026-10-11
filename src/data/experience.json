@@ -345,9 +345,10 @@
     "role": "RPA Senior Lead Developer / RPA Developer",
     "when": "2016–2018",
     "highlights": [
-      "Avianca: redispatch automation for flight tickets (operational events).",
-      "Claro: front-office helper to surface customer data, AHT reduction.",
-      "Pepsi: finance automations—invoice sending, inventory integration, payments."
+      "Avianca: discovered the hidden cost of disrupted-flight handling, then built context-aware IVR-to-agent HTML offers and a UiPath handoff to Amadeus ticket changes; engineer-reported rollout to approximately 150 desktops and roughly two minutes saved per interaction.",
+      "Avianca: demonstrated a working branded HTML-modal-to-RPA integration to technology/finance/operations leaders in approximately 20–25 minutes; later engineered booking, complex multi-leg itinerary, host and SQL workflows.",
+      "Pepsi: delivered finance automation for invoices and payments, with inventory and production-material reconciliation for beverage operations.",
+      "Led stakeholder-facing, deterministic front-office and finance RPA before generative AI; exact licensing and monetary savings remain to be validated."
     ],
     "metrics": [
       "−60% processing costs on key workflows",
@@ -356,6 +357,8 @@
     "projects": [
       "avianca-redispatch",
       "claro-front-office",
+      "pepsi-finance-rpa",
+      "avianca-redispatch",
       "pepsi-finance-rpa"
     ],
     "skills": [
