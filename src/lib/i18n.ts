@@ -310,7 +310,7 @@ export const translations: Record<Locale, TranslationDictionary> = {
     hero: {
       eyebrow: 'Build AI products · Engineer platforms · Lead transformation',
       title: 'AI Product & Platform Engineering Leader',
-      differentiator: 'Hands-on product leadership across customer experience, agent behavior, platform architecture, delivery systems, and the human work of adoption.',
+      differentiator: 'I work with business stakeholders to clarify the real problem, define measurable outcomes, and personally engineer the AI product—from pilot and evaluation to release and iteration.',
       exploreProducts: 'Explore Products',
       viewLeadership: 'View Leadership & Impact',
       downloadResume: 'Download Resume',
@@ -325,7 +325,7 @@ export const translations: Record<Locale, TranslationDictionary> = {
       },
       summaryHeading: 'Professional Summary',
       summary:
-        'I build customer-facing AI products, agentic platforms, and AI-native delivery systems—from product discovery and architecture through evaluation, production, and adoption.',
+        'I turn ambiguous stakeholder needs into focused AI product decisions, working pilots, evaluation criteria, and hands-on delivery—balancing business value, reliability, security, and adoption.',
       statsHeading: 'Proven Impact — By the Numbers',
       stats: {
         years: 'years in enterprise automation',
@@ -632,7 +632,7 @@ export const translations: Record<Locale, TranslationDictionary> = {
     hero: {
       eyebrow: 'Construyo productos AI · Diseño plataformas · Lidero transformación',
       title: 'Líder de Ingeniería de Productos y Plataformas AI',
-      differentiator: 'Liderazgo hands-on que conecta experiencia de usuario, comportamiento del agente, arquitectura de plataforma, sistemas de entrega y el trabajo humano de adopción.',
+      differentiator: 'Trabajo con stakeholders para descubrir el problema real, definir resultados medibles y construir personalmente la solución de IA, desde el piloto hasta la evaluación, entrega e iteración.',
       exploreProducts: 'Explorar Productos',
       viewLeadership: 'Ver Liderazgo e Impacto',
       downloadResume: 'Descargar CV',
@@ -647,7 +647,7 @@ export const translations: Record<Locale, TranslationDictionary> = {
       },
       summaryHeading: 'Resumen Profesional',
       summary:
-        'Construyo productos AI orientados a usuarios, plataformas de agentes y sistemas de entrega AI-native: desde descubrimiento y arquitectura hasta evaluación, producción y adopción.',
+        'Convierto necesidades ambiguas del negocio en decisiones de producto, pilotos funcionales, criterios de evaluación e ingeniería aplicada, conectando valor, seguridad y adopción.',
       statsHeading: 'Impacto Comprobado — En Números',
       stats: {
         years: 'años en automatización enterprise',
@@ -956,7 +956,7 @@ export const translations: Record<Locale, TranslationDictionary> = {
     hero: {
       eyebrow: 'Construo produtos de IA · Projeto plataformas · Lidero transformação',
       title: 'Líder de Engenharia de Produtos e Plataformas de IA',
-      differentiator: 'Liderança hands-on conectando experiência do usuário, comportamento do agente, arquitetura de plataforma, sistemas de entrega e o trabalho humano da adoção.',
+      differentiator: 'Trabalho com stakeholders para identificar o problema real, definir resultados mensuráveis e construir pessoalmente soluções de IA, do piloto à avaliação, entrega e iteração.',
       exploreProducts: 'Explorar Produtos',
       viewLeadership: 'Ver Liderança e Impacto',
       downloadResume: 'Baixar Currículo',
@@ -971,7 +971,7 @@ export const translations: Record<Locale, TranslationDictionary> = {
       },
       summaryHeading: 'Resumo Profissional',
       summary:
-        'Construo produtos de IA voltados ao cliente, plataformas de agentes e sistemas de entrega AI-native — da descoberta e arquitetura à avaliação, produção e adoção.',
+        'Transformo necessidades ambíguas do negócio em decisões de produto, pilotos funcionais, critérios de avaliação e engenharia aplicada, conectando valor, segurança e adoção.',
       statsHeading: 'Impacto Comprovado — Em Números',
       stats: {
         years: 'anos em automação enterprise',

@@ -1,19 +1,33 @@
-
 [
   {
-    "id":"ops-second-brain",
-    "title":"Ops Second Brain",
-    "skills":["python","fastapi","pgvector","react","servicenow","jira","prometheus","grafana","elk","openai"],
-    "stack":"FastAPI, OpenAI/Azure OpenAI, pgvector, React, Jira/ServiceNow, Prometheus, Grafana, ELK",
-    "summary":"Semantic SOP guidance with context actions (Jira/ServiceNow) and SLOs.",
-    "outcomes":["MTTR ↓ 35%","FCR ↑","Calmer releases"]
+    "id": "ops-second-brain",
+    "title": "Ops Second Brain",
+    "skills": [
+      "python",
+      "fastapi",
+      "pgvector",
+      "react",
+      "servicenow",
+      "jira",
+      "prometheus",
+      "grafana",
+      "elk",
+      "openai"
+    ],
+    "stack": "FastAPI, OpenAI/Azure OpenAI, pgvector, React, Jira/ServiceNow, Prometheus, Grafana, ELK",
+    "summary": "Semantic SOP guidance with context actions (Jira/ServiceNow) and SLOs.",
+    "outcomes": [
+      "MTTR ↓ 35%",
+      "FCR ↑",
+      "Calmer releases"
+    ]
   },
   {
-    "id":"rice-command-center-demo-mode",
-    "title":"Rice Command Center - Multi-Surface Demo Mode Pilot",
-    "when":"2026",
-    "client":"Rice Command Center (Rice Brief)",
-    "skills":[
+    "id": "rice-command-center-demo-mode",
+    "title": "Rice Command Center - Multi-Surface Demo Mode Pilot",
+    "when": "2026",
+    "client": "Rice Command Center (Rice Brief)",
+    "skills": [
       "architecture",
       "productownership",
       "next",
@@ -34,141 +48,141 @@
       "enterpriseai",
       "cicd"
     ],
-    "stack":"Next.js web app + /digest PWA, Chrome extension overlay, Node/Express API, Google OAuth/Calendar, n8n (demoted orchestration)",
-    "summary":"Built a multi-surface executive assistant pilot with Live Data/Demo Mode, guided storyline, auditability, and read-only safety guardrails.",
-    "outcomes":[
+    "stack": "Next.js web app + /digest PWA, Chrome extension overlay, Node/Express API, Google OAuth/Calendar, n8n (demoted orchestration)",
+    "summary": "Built a multi-surface executive assistant pilot with Live Data/Demo Mode, guided storyline, auditability, and read-only safety guardrails.",
+    "outcomes": [
       "Multi-surface delivery shipped (web app + PWA + extension)",
       "Pilot APIs, RBAC-lite, and audit export implemented",
       "Demo mode is clearly labeled and no write-back is allowed"
     ],
-    "caseStudy":{
-      "useCase":[
+    "caseStudy": {
+      "useCase": [
         "This is a multi-surface web product: primary web app in Next.js, mobile PWA view at /digest on iPhone, Chrome extension overlay companion, and Node/Express backend APIs.",
         "It is not a native iPhone app in the current phase; mobile delivery is web plus PWA.",
         "Demo Mode design: top-bar Live Data / Demo Mode toggle, first-open guided demo, scripted storyline (morning brief, updates, meeting prep, action center, EA triage), timed alert cards in /digest, optional local notifications for installed PWA, explicit Demo Data and Draft/Concept truth labels, and read-only behavior."
       ],
-      "statusMatrix":[
+      "statusMatrix": [
         {
-          "key":"RCC-01",
-          "functionality":"Google OAuth + session auth",
-          "status":"Done",
-          "currentState":"OAuth start/callback/me/logout live; domain allowlist enforced; backend owns tokens.",
-          "next":"Add admin UI for allowed domains and env validation."
+          "key": "RCC-01",
+          "functionality": "Google OAuth + session auth",
+          "status": "Done",
+          "currentState": "OAuth start/callback/me/logout live; domain allowlist enforced; backend owns tokens.",
+          "next": "Add admin UI for allowed domains and env validation."
         },
         {
-          "key":"RCC-02",
-          "functionality":"Token security",
-          "status":"Done",
-          "currentState":"OAUTH_TOKEN_ENCRYPTION_KEY required; tokens encrypted at rest.",
-          "next":"Move key to managed secret store for cloud environments."
+          "key": "RCC-02",
+          "functionality": "Token security",
+          "status": "Done",
+          "currentState": "OAUTH_TOKEN_ENCRYPTION_KEY required; tokens encrypted at rest.",
+          "next": "Move key to managed secret store for cloud environments."
         },
         {
-          "key":"RCC-03",
-          "functionality":"Calendar integration",
-          "status":"Done",
-          "currentState":"Google Calendar read works; fallback to demo dataset if API is unavailable.",
-          "next":"Add better calendar error telemetry in UI."
+          "key": "RCC-03",
+          "functionality": "Calendar integration",
+          "status": "Done",
+          "currentState": "Google Calendar read works; fallback to demo dataset if API is unavailable.",
+          "next": "Add better calendar error telemetry in UI."
         },
         {
-          "key":"RCC-04",
-          "functionality":"Today Brief (executive panels)",
-          "status":"Done",
-          "currentState":"Meetings, prep context, generated summary, decisions, and follow-ups are rendered.",
-          "next":"Tighten ranking and wording for decision quality."
+          "key": "RCC-04",
+          "functionality": "Today Brief (executive panels)",
+          "status": "Done",
+          "currentState": "Meetings, prep context, generated summary, decisions, and follow-ups are rendered.",
+          "next": "Tighten ranking and wording for decision quality."
         },
         {
-          "key":"RCC-05",
-          "functionality":"Action Center (hygiene checks)",
-          "status":"Done",
-          "currentState":"Deterministic checks implemented for meeting quality and conflicts.",
-          "next":"Add per-rule tuning from pilot feedback."
+          "key": "RCC-05",
+          "functionality": "Action Center (hygiene checks)",
+          "status": "Done",
+          "currentState": "Deterministic checks implemented for meeting quality and conflicts.",
+          "next": "Add per-rule tuning from pilot feedback."
         },
         {
-          "key":"RCC-06",
-          "functionality":"EA Triage",
-          "status":"Done",
-          "currentState":"Availability and conflict suggestions with rationale and draft-only actions in UI.",
-          "next":"Add explicit export draft email action."
+          "key": "RCC-06",
+          "functionality": "EA Triage",
+          "status": "Done",
+          "currentState": "Availability and conflict suggestions with rationale and draft-only actions in UI.",
+          "next": "Add explicit export draft email action."
         },
         {
-          "key":"RCC-07",
-          "functionality":"Attention Queue (Next 2 + Top 10)",
-          "status":"Done",
-          "currentState":"/api/attention-queue implemented and used in Overview and Meeting Mode.",
-          "next":"Add personalization weights from onboarding preferences."
+          "key": "RCC-07",
+          "functionality": "Attention Queue (Next 2 + Top 10)",
+          "status": "Done",
+          "currentState": "/api/attention-queue implemented and used in Overview and Meeting Mode.",
+          "next": "Add personalization weights from onboarding preferences."
         },
         {
-          "key":"RCC-08",
-          "functionality":"Morning Digest (mobile-first)",
-          "status":"Done",
-          "currentState":"/api/morning-digest and /digest shipped; auto-refresh every five minutes in working hours.",
-          "next":"Add push notification layer if still in scope."
+          "key": "RCC-08",
+          "functionality": "Morning Digest (mobile-first)",
+          "status": "Done",
+          "currentState": "/api/morning-digest and /digest shipped; auto-refresh every five minutes in working hours.",
+          "next": "Add push notification layer if still in scope."
         },
         {
-          "key":"RCC-09",
-          "functionality":"Meetings Hub",
-          "status":"Partially done",
-          "currentState":"UX exists; live transcript is simulated and clearly not production capture.",
-          "next":"Integrate real transcript stream provider."
+          "key": "RCC-09",
+          "functionality": "Meetings Hub",
+          "status": "Partially done",
+          "currentState": "UX exists; live transcript is simulated and clearly not production capture.",
+          "next": "Integrate real transcript stream provider."
         },
         {
-          "key":"RCC-10",
-          "functionality":"Email ingestion (secure artifacts)",
-          "status":"Done",
-          "currentState":"/api/email/ingest supports label/forwarded modes, retention, audit event, and artifact storage.",
-          "next":"Add UI controls for ingest mode and retention summary."
+          "key": "RCC-10",
+          "functionality": "Email ingestion (secure artifacts)",
+          "status": "Done",
+          "currentState": "/api/email/ingest supports label/forwarded modes, retention, audit event, and artifact storage.",
+          "next": "Add UI controls for ingest mode and retention summary."
         },
         {
-          "key":"RCC-11",
-          "functionality":"Onboarding preferences API",
-          "status":"Done (API)",
-          "currentState":"/api/onboarding GET/POST exists for VIPs, urgent phrases, delegate rules, and preferences.",
-          "next":"Build onboarding UI screen."
+          "key": "RCC-11",
+          "functionality": "Onboarding preferences API",
+          "status": "Done (API)",
+          "currentState": "/api/onboarding GET/POST exists for VIPs, urgent phrases, delegate rules, and preferences.",
+          "next": "Build onboarding UI screen."
         },
         {
-          "key":"RCC-12",
-          "functionality":"n8n demoted orchestration",
-          "status":"Done",
-          "currentState":"Backend fetches Google data; n8n is used for orchestration and repair loops only.",
-          "next":"Add n8n workflow health dashboard."
+          "key": "RCC-12",
+          "functionality": "n8n demoted orchestration",
+          "status": "Done",
+          "currentState": "Backend fetches Google data; n8n is used for orchestration and repair loops only.",
+          "next": "Add n8n workflow health dashboard."
         },
         {
-          "key":"RCC-13",
-          "functionality":"Extension overlay (all pages)",
-          "status":"Done",
-          "currentState":"Floating overlay injects on all pages, compact iframe mode, and open full app action.",
-          "next":"Add performance guardrails and optional domain allowlist for injection."
+          "key": "RCC-13",
+          "functionality": "Extension overlay (all pages)",
+          "status": "Done",
+          "currentState": "Floating overlay injects on all pages, compact iframe mode, and open full app action.",
+          "next": "Add performance guardrails and optional domain allowlist for injection."
         },
         {
-          "key":"RCC-14",
-          "functionality":"Observability + safeguards",
-          "status":"Done",
-          "currentState":"Correlation IDs, request logging, rate limiting, and Google retry/backoff are in place.",
-          "next":"Add centralized log sink and alerts."
+          "key": "RCC-14",
+          "functionality": "Observability + safeguards",
+          "status": "Done",
+          "currentState": "Correlation IDs, request logging, rate limiting, and Google retry/backoff are in place.",
+          "next": "Add centralized log sink and alerts."
         },
         {
-          "key":"RCC-15",
-          "functionality":"Data layer abstraction",
-          "status":"Done (P0)",
-          "currentState":"IDataStore plus JsonDataStore wired; API decoupled from direct db.ts imports.",
-          "next":"Implement PostgresDataStore adapter."
+          "key": "RCC-15",
+          "functionality": "Data layer abstraction",
+          "status": "Done (P0)",
+          "currentState": "IDataStore plus JsonDataStore wired; API decoupled from direct db.ts imports.",
+          "next": "Implement PostgresDataStore adapter."
         },
         {
-          "key":"RCC-16",
-          "functionality":"QA coverage",
-          "status":"In progress",
-          "currentState":"Contract tests exist and pass.",
-          "next":"Add integration tests and key UI end-to-end flows."
+          "key": "RCC-16",
+          "functionality": "QA coverage",
+          "status": "In progress",
+          "currentState": "Contract tests exist and pass.",
+          "next": "Add integration tests and key UI end-to-end flows."
         },
         {
-          "key":"RCC-17",
-          "functionality":"Native iPhone app",
-          "status":"Not started / out of scope",
-          "currentState":"Current mobile delivery is responsive web plus PWA route (/digest), not native iOS.",
-          "next":"Decide whether native iOS is a separate phase."
+          "key": "RCC-17",
+          "functionality": "Native iPhone app",
+          "status": "Not started / out of scope",
+          "currentState": "Current mobile delivery is responsive web plus PWA route (/digest), not native iOS.",
+          "next": "Decide whether native iOS is a separate phase."
         }
       ],
-      "implementationPlan":[
+      "implementationPlan": [
         "Add pilot APIs: doc-finder, meeting-prep, gmail/sync (incremental), executive-pulse, and audit.",
         "Keep OAuth and token ownership in backend; keep n8n demoted and out of token lifecycle.",
         "Enforce pilot RBAC-lite roles (executive, ea, viewer), with viewer limited to audit export.",
@@ -180,7 +194,7 @@
         "Upgrade demo dataset with Rice public source-backed document evidence.",
         "Keep strict schema validation, tests, and build pipeline green."
       ],
-      "implementationHighlights":[
+      "implementationHighlights": [
         "types.ts, schemas.ts, examples.ts, validators.ts: new contract types, schemas, and validators for doc-finder, meeting-prep, executive-pulse, and audit.",
         "demoData.ts and demo-dataset.json: expanded documents and richer public source evidence.",
         "config.ts and .env.example: provider config for document finder and RBAC-lite role settings.",
@@ -191,31 +205,31 @@
         "index.ts: new endpoints, RBAC-lite enforcement, leader access checks, and audit logging.",
         "contracts.test.ts plus docs (api-contracts, pilot-scope, security-notes, smoke-tests) updated for pilot scope."
       ],
-      "localCommands":[
+      "localCommands": [
         "npm install",
         "Set OAUTH_TOKEN_ENCRYPTION_KEY in .env (minimum 32 chars).",
         "npm run dev:reset",
         "npm run typecheck",
         "npm run build"
       ],
-      "testChecklist":[
+      "testChecklist": [
         "Open http://localhost:3000 and verify Executive Pulse shows morning and during-day items with classification and source chips.",
         "Use Calendar and Prep: select a meeting, search docs, and verify suggested docs and source links.",
         "Use Prepare Next Meeting panel and confirm suggested docs plus why-it-matters text.",
         "Trigger Export audit and verify JSON export works through pilot viewer path."
       ],
-      "apiChecks":[
+      "apiChecks": [
         "GET /api/doc-finder?query=ai&scope=shared&limit=6",
         "GET /api/meeting-prep?meetingId=mtg-101&date=2026-02-16",
         "POST /api/gmail/sync?mode=incremental&date=2026-02-16",
         "GET /api/executive-pulse?date=2026-02-16",
         "GET /api/audit?from=2026-02-16T00:00:00.000Z&to=2026-02-16T23:59:59.000Z&limit=200&role=viewer"
       ],
-      "validationProof":[
+      "validationProof": [
         "npm run typecheck passed.",
         "npm run build passed."
       ],
-      "knownLimitations":[
+      "knownLimitations": [
         "No write-back execution: all actions are draft-only.",
         "Document Finder is Drive-folder scoped; if unavailable it falls back to demo docs and may require review.",
         "Gmail ingest and sync stores metadata artifacts only, not full email body by default.",
@@ -225,11 +239,11 @@
     }
   },
   {
-    "id":"laura-ai-agent-rag-workflow",
-    "title":"Laura AI Agent - Multi-Channel RAG Workflow",
-    "when":"2026",
-    "client":"Customer Service and Pricing Operations",
-    "skills":[
+    "id": "laura-ai-agent-rag-workflow",
+    "title": "Laura AI Agent - Multi-Channel RAG Workflow",
+    "when": "2026",
+    "client": "Customer Service and Pricing Operations",
+    "skills": [
       "llmprod",
       "architecture",
       "apidesign",
@@ -240,78 +254,78 @@
       "securetoken",
       "cicd"
     ],
-    "stack":"WordPress embedded chat, API Gateway/Webhooks, n8n orchestration, RAG over SOP corpus, LLM reasoning and response controls",
-    "summary":"Designed an end-to-end AI agent workflow for Web, WhatsApp, and Voice channels using retrieval-grounded responses and a security-first gateway.",
-    "outcomes":[
+    "stack": "WordPress embedded chat, API Gateway/Webhooks, n8n orchestration, RAG over SOP corpus, LLM reasoning and response controls",
+    "summary": "Designed an end-to-end AI agent workflow for Web, WhatsApp, and Voice channels using retrieval-grounded responses and a security-first gateway.",
+    "outcomes": [
       "Replaced static pricing logic with dynamic SOP-grounded answers",
       "Unified intake for Web, WhatsApp, and Voice user channels",
       "Security controls enforced before any LLM processing"
     ],
-    "caseStudy":{
-      "useCase":[
+    "caseStudy": {
+      "useCase": [
         "Automation starts from a client-facing Web Chat interface embedded in the company WordPress portal.",
         "To ensure pricing and service accuracy, the workflow uses Retrieval-Augmented Generation instead of hardcoded static values.",
         "The agent dynamically queries Standard Operating Procedures (SOP) to produce precise, policy-aligned responses."
       ],
-      "statusMatrix":[
+      "statusMatrix": [
         {
-          "key":"LRA-01",
-          "functionality":"User and channel intake",
-          "status":"Designed",
-          "currentState":"Defined Start phase and multi-channel entry points (Web, WhatsApp, Voice).",
-          "next":"Implement channel adapters and unified intake validation."
+          "key": "LRA-01",
+          "functionality": "User and channel intake",
+          "status": "Designed",
+          "currentState": "Defined Start phase and multi-channel entry points (Web, WhatsApp, Voice).",
+          "next": "Implement channel adapters and unified intake validation."
         },
         {
-          "key":"LRA-02",
-          "functionality":"API gateway and security filter",
-          "status":"Designed",
-          "currentState":"Defined receive, credential validation, rate limiting, sensitive-data masking, and security decision checks.",
-          "next":"Implement webhook gateway policies and threat logging."
+          "key": "LRA-02",
+          "functionality": "API gateway and security filter",
+          "status": "Designed",
+          "currentState": "Defined receive, credential validation, rate limiting, sensitive-data masking, and security decision checks.",
+          "next": "Implement webhook gateway policies and threat logging."
         },
         {
-          "key":"LRA-03",
-          "functionality":"Session, language, and intent",
-          "status":"Designed",
-          "currentState":"Defined session context creation/loading as the first step in conversation intelligence.",
-          "next":"Add language detection and intent routing."
+          "key": "LRA-03",
+          "functionality": "Session, language, and intent",
+          "status": "Designed",
+          "currentState": "Defined session context creation/loading as the first step in conversation intelligence.",
+          "next": "Add language detection and intent routing."
         },
         {
-          "key":"LRA-04",
-          "functionality":"RAG retrieval over SOPs",
-          "status":"Designed",
-          "currentState":"Defined retrieval stage to query current SOP/pricing documentation.",
-          "next":"Connect indexed document store and freshness controls."
+          "key": "LRA-04",
+          "functionality": "RAG retrieval over SOPs",
+          "status": "Designed",
+          "currentState": "Defined retrieval stage to query current SOP/pricing documentation.",
+          "next": "Connect indexed document store and freshness controls."
         },
         {
-          "key":"LRA-05",
-          "functionality":"LLM response orchestration",
-          "status":"Designed",
-          "currentState":"Defined generation stage driven by retrieved evidence and business constraints.",
-          "next":"Add output schema validation and response guardrails."
+          "key": "LRA-05",
+          "functionality": "LLM response orchestration",
+          "status": "Designed",
+          "currentState": "Defined generation stage driven by retrieved evidence and business constraints.",
+          "next": "Add output schema validation and response guardrails."
         },
         {
-          "key":"LRA-06",
-          "functionality":"Business console and process actions",
-          "status":"Designed",
-          "currentState":"Defined operational handoff surfaces in architecture.",
-          "next":"Implement action logging and operator approvals."
+          "key": "LRA-06",
+          "functionality": "Business console and process actions",
+          "status": "Designed",
+          "currentState": "Defined operational handoff surfaces in architecture.",
+          "next": "Implement action logging and operator approvals."
         },
         {
-          "key":"LRA-07",
-          "functionality":"RPA app integration",
-          "status":"Designed",
-          "currentState":"Defined integration lane for downstream enterprise process execution.",
-          "next":"Connect selected RPA/API targets and retry strategy."
+          "key": "LRA-07",
+          "functionality": "RPA app integration",
+          "status": "Designed",
+          "currentState": "Defined integration lane for downstream enterprise process execution.",
+          "next": "Connect selected RPA/API targets and retry strategy."
         },
         {
-          "key":"LRA-08",
-          "functionality":"Monitoring and auditability",
-          "status":"Designed",
-          "currentState":"Defined decision logging path for errors and threat events.",
-          "next":"Add observability dashboards and retention policies."
+          "key": "LRA-08",
+          "functionality": "Monitoring and auditability",
+          "status": "Designed",
+          "currentState": "Defined decision logging path for errors and threat events.",
+          "next": "Add observability dashboards and retention policies."
         }
       ],
-      "implementationPlan":[
+      "implementationPlan": [
         "Implement a single intake contract for Web, WhatsApp, and Voice channels.",
         "Enforce API Gateway security checks before message processing.",
         "Create session context and conversation state persistence.",
@@ -321,7 +335,7 @@
         "Wire downstream execution through approved RPA and API connectors.",
         "Ship observability, audit logs, and anti-abuse controls as first-class features."
       ],
-      "knownLimitations":[
+      "knownLimitations": [
         "Current definition is architecture and process design, not a full production deployment snapshot.",
         "RAG quality depends on SOP indexing freshness and content governance.",
         "Voice/WhatsApp adapters require provider-specific implementation and compliance review."
@@ -501,397 +515,1585 @@
     }
   },
   {
-    "id":"rag-knowledge-services",
-    "title":"RAG Knowledge Services",
-    "skills":["python","fastapi","pgvector","openai","postgres"],
-    "stack":"FastAPI, embeddings, guardrails, evals, Postgres/pgvector",
-    "summary":"Policy-aware retrieval, prompt evals & guardrails; published SDKs and Postman collections.",
-    "outcomes":["Answer accuracy ↑","Latency SLO met"]
+    "id": "rag-knowledge-services",
+    "title": "RAG Knowledge Services",
+    "skills": [
+      "python",
+      "fastapi",
+      "pgvector",
+      "openai",
+      "postgres"
+    ],
+    "stack": "FastAPI, embeddings, guardrails, evals, Postgres/pgvector",
+    "summary": "Policy-aware retrieval, prompt evals & guardrails; published SDKs and Postman collections.",
+    "outcomes": [
+      "Answer accuracy ↑",
+      "Latency SLO met"
+    ]
   },
   {
-    "id":"orchestrator-k8s",
-    "title":"UiPath Orchestrator on Kubernetes",
-    "skills":["uipath","kubernetes","helm","prometheus","grafana","elk","azure","aws"],
-    "stack":"AKS/EKS/on-prem, custom Helm, HA, autoscaling, blue/green, DR runbooks",
-    "summary":"Enterprise-grade deploys with observability + SLOs; RBAC, cert rotation, policies.",
-    "outcomes":["Availability ↑","MTTR ↓","Upgrade risk ↓"]
+    "id": "orchestrator-k8s",
+    "title": "UiPath Orchestrator on Kubernetes",
+    "skills": [
+      "uipath",
+      "kubernetes",
+      "helm",
+      "prometheus",
+      "grafana",
+      "elk",
+      "azure",
+      "aws"
+    ],
+    "stack": "AKS/EKS/on-prem, custom Helm, HA, autoscaling, blue/green, DR runbooks",
+    "summary": "Enterprise-grade deploys with observability + SLOs; RBAC, cert rotation, policies.",
+    "outcomes": [
+      "Availability ↑",
+      "MTTR ↓",
+      "Upgrade risk ↓"
+    ]
   },
   {
-    "id":"pentaho-to-powerbi",
-    "title":"Pentaho ➜ Power BI / Fabric",
-    "skills":["fabric","powerbi","powerquery","snowflake","spark"],
-    "stack":"Fabric Pipelines, Power BI Dataflows, DAX/RLS",
-    "summary":"Rebuilt Pentaho ETL into Fabric+Power BI with governed semantic models.",
-    "outcomes":["TCO ↓ ~30%","Refresh time ↓ ~40%"]
+    "id": "pentaho-to-powerbi",
+    "title": "Pentaho to Power BI — Reporting Modernization",
+    "skills": [
+      "fabric",
+      "powerbi",
+      "powerquery",
+      "snowflake",
+      "spark"
+    ],
+    "stack": "Fabric Pipelines, Power BI Dataflows, DAX/RLS",
+    "summary": "Migrated legacy Pentaho-oriented data transformation and reporting processes to Power BI with clearer semantic definitions and governance; separate Microsoft Fabric modernization work is recorded independently.",
+    "outcomes": [
+      "Modernized reporting and reusable semantic models",
+      "Governed refresh and access patterns",
+      "Cost and refresh improvements require independent measurement"
+    ],
+    "category": "enterprise-transformation",
+    "maturity": "Historical migration · measurement records pending",
+    "industry": "Enterprise analytics",
+    "myRole": "Migration solution architect and hands-on engineer across ETL mapping, BI reports and validation.",
+    "customerProblem": "Legacy ETL and reporting made trusted metrics, data lineage and downstream updates difficult to maintain.",
+    "discovery": [
+      "Inventory existing Pentaho transformations, consumers and semantic definitions before migrating."
+    ],
+    "productDecisions": [
+      "Map legacy calculations and dependencies before reshaping the reporting model.",
+      "Preserve reconciliation between source and report aggregates before decommissioning old paths."
+    ],
+    "architectureSummary": "Legacy Pentaho ETL/reporting -> source/transform validation -> Power BI datasets and governed semantic models; Fabric work handled as a subsequent data-platform modernization effort, not retroactively claimed as part of every Pentaho report.",
+    "evaluation": [
+      "Row-count, aggregate and metric-definition parity are the appropriate verification gates; source-specific measurements are not attached."
+    ],
+    "evidence": [
+      {
+        "label": "Career record; client evidence pending",
+        "kind": "portfolio-record",
+        "publiclySafe": true
+      }
+    ],
+    "caseStudy": {
+      "useCase": [
+        "Enterprise teams needed to move reporting away from legacy Pentaho dependencies while preserving trusted business definitions.",
+        "The engineering challenge was data parity and stakeholder adoption, not merely redrawing dashboards."
+      ],
+      "implementationHighlights": [
+        "Legacy transformation and dependency inventory.",
+        "Power BI semantic model/report migration.",
+        "Data parity and governance review."
+      ],
+      "knownLimitations": [
+        "Previously advertised 30% TCO and 40% refresh improvements are omitted until supporting reports are available."
+      ],
+      "validationProof": [
+        "Migration described in career record and first-person account; quantitative metrics not independently substantiated."
+      ]
+    }
   },
   {
-    "id":"alteryx-to-powerautomate",
-    "title":"Alteryx ➜ Power Automate Cloud + Power BI",
-    "skills":["alteryx","powerplatform","powerbi","fabric","sql"],
-    "stack":"PAC orchestrations feeding Power BI models; error handling + alerts",
-    "summary":"License reduction and SLA improvements through re-platforming from Alteryx to Power Platform.",
-    "outcomes":["License cost ↓","SLA attainment ↑","Manual steps eliminated"]
+    "id": "alteryx-to-powerautomate",
+    "title": "Alteryx ➜ Power Automate Cloud + Power BI",
+    "skills": [
+      "alteryx",
+      "powerplatform",
+      "powerbi",
+      "fabric",
+      "sql"
+    ],
+    "stack": "PAC orchestrations feeding Power BI models; error handling + alerts",
+    "summary": "License reduction and SLA improvements through re-platforming from Alteryx to Power Platform.",
+    "outcomes": [
+      "License cost ↓",
+      "SLA attainment ↑",
+      "Manual steps eliminated"
+    ]
   },
   {
-    "id":"autotask-to-jira-fabric",
-    "title":"Autotask ➜ Jira + Fabric Lakehouse + Power BI",
-    "skills":["jira","fabric","powerbi","druid","sqlserver"],
-    "stack":"Jira REST, Fabric Lakehouse (Medallion), Power BI",
-    "summary":"Unified KPIs and self-service analytics across engineering & service.",
-    "outcomes":["Cycle time to insight ↓","Adoption ↑ 2–3×"]
+    "id": "autotask-to-jira-fabric",
+    "title": "Autotask ➜ Jira + Fabric Lakehouse + Power BI",
+    "skills": [
+      "jira",
+      "fabric",
+      "powerbi",
+      "druid",
+      "sqlserver"
+    ],
+    "stack": "Jira REST, Fabric Lakehouse (Medallion), Power BI",
+    "summary": "Unified KPIs and self-service analytics across engineering & service.",
+    "outcomes": [
+      "Cycle time to insight ↓",
+      "Adoption ↑ 2–3×"
+    ]
   },
   {
-    "id":"roboyo-portfolio",
-    "title":"Power Automate at Scale (200+ automations)",
-    "skills":["powerplatform","sap","sqlserver","powerbi"],
-    "stack":"Power Automate Cloud/Desktop (SAP HANA), governance & CoE playbooks",
-    "summary":"Large-scale maintenance and new automations with enterprise standards.",
-    "outcomes":["Cycle time ↓","Defects ↓"]
+    "id": "roboyo-portfolio",
+    "title": "Power Automate at Scale (200+ automations)",
+    "skills": [
+      "powerplatform",
+      "sap",
+      "sqlserver",
+      "powerbi"
+    ],
+    "stack": "Power Automate Cloud/Desktop (SAP HANA), governance & CoE playbooks",
+    "summary": "Large-scale maintenance and new automations with enterprise standards.",
+    "outcomes": [
+      "Cycle time ↓",
+      "Defects ↓"
+    ]
   },
   {
-    "id":"haceb-enablement",
-    "title":"Haceb Training & Enablement",
-    "skills":["powerplatform","powerbi","copilotstudio"],
-    "stack":"Workshops, hands-on labs (invoice approvals, onboarding, Copilot integrations)",
-    "summary":"Tailored learning paths for IT & citizen developers."
+    "id": "haceb-enablement",
+    "title": "Haceb Training & Enablement",
+    "skills": [
+      "powerplatform",
+      "powerbi",
+      "copilotstudio"
+    ],
+    "stack": "Workshops, hands-on labs (invoice approvals, onboarding, Copilot integrations)",
+    "summary": "Tailored learning paths for IT & citizen developers."
   },
   {
-    "id":"legacy-cases",
-    "title":"Legacy RPA Cases (2016–2020)",
-    "skills":["uipath","automationanywhere","blueprism","sqlserver","abbyenlp","whatsapp","sap"],
-    "stack":"ABBYY OCR → ERP posts; WhatsApp notifications; SAP automations",
-    "summary":"Finance/HR/IT automations across Newell, KBS, Engeform, Avianca, Claro, OneLink, Capgemini."
+    "id": "legacy-cases",
+    "title": "Legacy RPA Cases (2016–2020)",
+    "skills": [
+      "uipath",
+      "automationanywhere",
+      "blueprism",
+      "sqlserver",
+      "abbyenlp",
+      "whatsapp",
+      "sap"
+    ],
+    "stack": "ABBYY OCR → ERP posts; WhatsApp notifications; SAP automations",
+    "summary": "Finance/HR/IT automations across Newell, KBS, Engeform, Avianca, Claro, OneLink, Capgemini."
   },
   {
-    "id":"avianca-redispatch",
-    "title":"Avianca – Ticket Re-dispatch Automation",
-    "when":"2017–2018",
-    "client":"Avianca Airlines (Onelink BPO, Colombia)",
-    "skills":["uipath","sqlserver","vsts","powerbi"],
-    "summary":"Robotized redispatch of international/national/commercial flights when an operational event occurs.",
-    "methodology":"Scrum",
-    "outcomes":["AHT –3 min per consultant","≈$20k/month savings","Faster customer resolution"]
+    "id": "avianca-redispatch",
+    "title": "Avianca — Context-Aware Flight Reaccommodation Automation",
+    "when": "2017–2018",
+    "client": "Avianca Airlines (Onelink BPO, Colombia)",
+    "skills": [
+      "uipath",
+      "sqlserver",
+      "vsts",
+      "powerbi"
+    ],
+    "summary": "Turned fragmented flight disruption handling into a human-in-the-loop, context-aware agent desktop workflow with dynamic HTML offers, UiPath execution in Amadeus, and SQL traceability.",
+    "methodology": "Scrum",
+    "outcomes": [
+      "About 2 minutes less average handling time per interaction (5 to 3 minutes; engineer recollection)",
+      "Rolled out around 150 agent desktops (engineer recollection)",
+      "Reduced the need for direct Amadeus seats; precise license savings not independently verified"
+    ],
+    "category": "enterprise-transformation",
+    "maturity": "Historical production engagement · first-person account",
+    "industry": "Airline operations and contact centers",
+    "primaryUsers": [
+      "Contact center agents",
+      "Airline travelers requiring reaccommodation"
+    ],
+    "buyerOrStakeholder": [
+      "Airline operations",
+      "Technology and finance leadership",
+      "BPO operations managers"
+    ],
+    "customerProblem": "Agents handling disrupted bookings needed to interpret IVR context, compare feasible alternative itineraries, operate a legacy reservation terminal, and issue new tickets under time pressure.",
+    "productSurface": [
+      "Dynamically composed, movable HTML modal on agent desktops",
+      "Agent-selected rebooking option",
+      "UiPath workflow to reservation host",
+      "SQL event records"
+    ],
+    "myRole": "Hands-on automation architect and engineer: on-the-spot working prototype, then production workflow architecture, integration and rollout.",
+    "teamContext": "Onelink BPO engagement serving Avianca in a Medellín contact-center operation; outcomes and demonstration timing are engineer-reported memories.",
+    "discovery": [
+      "Started with call-center AHT, agent usability, reservation access costs, and complex flight-connection handling rather than an abstract RPA requirement.",
+      "Used an on-site leadership request as an opportunity to validate the smallest end-to-end interaction in a live demonstration."
+    ],
+    "productDecisions": [
+      "Reuse passenger and booking context already captured by IVR rather than force agents to re-enter it.",
+      "Generate an HTML modal with contextual alternatives, passenger details, branded styling, radio-button selection and explicit submit, retaining the human decision.",
+      "Execute the selected action via centralized UiPath automation against Amadeus rather than requiring each agent to operate the host directly.",
+      "Handle multi-leg itinerary and connection constraints with appropriate operational checks, rather than assuming every disruption is a simple one-leg swap."
+    ],
+    "tradeoffs": [
+      "This was pre-generative-AI deterministic automation; no AI model made booking decisions.",
+      "Amadeus is the confirmed reservation system; the exact underlying host/AS400 characterization remains unverified.",
+      "Reported financial savings and individual-seat licensing counts require contemporaneous records."
+    ],
+    "architectureSummary": "IVR/call-context handoff -> on-the-fly HTML agent desktop modal -> agent-selected itinerary -> attended UiPath handoff -> back-office host automation against Amadeus -> booking/ticket update -> SQL records. A first working integration was demonstrated in approximately 20–25 minutes, followed by operational hardening and broader rollout (all times self-reported).",
+    "evaluation": [
+      "Engineer-reported AHT reduction from approximately five to three minutes per interaction; no public measurement export is attached.",
+      "Multi-leg itinerary and connection validation formed part of the operational complexity."
+    ],
+    "safetyAndHumanControl": [
+      "An agent reviewed and selected the proposed itinerary.",
+      "Changes to passenger bookings required constrained host execution rather than autonomous AI decisions."
+    ],
+    "delivery": [
+      "Rapid proof-of-concept during stakeholder meeting; subsequent engineering, integration and rollout across about 150 desktops, according to first-person account."
+    ],
+    "businessOutcome": [
+      "Approximately two minutes of handling time saved per interaction (self-reported); the aggregate dollar impact is not verified.",
+      "Reservation-seat licensing optimization was a business driver, but the precise license count or savings have not been audited."
+    ],
+    "technicalOutcome": [
+      "Contextual HTML agent experience",
+      "Attended-to-back-office UiPath workflow",
+      "Amadeus host integration",
+      "SQL operational traceability"
+    ],
+    "evidence": [
+      {
+        "label": "First-person technical account (2026); artifacts and media citation pending",
+        "kind": "portfolio-record",
+        "publiclySafe": true
+      }
+    ],
+    "nextStage": "Locate the publication, original AHT report, license invoices, and architecture artifacts to verify financial claims.",
+    "caseStudy": {
+      "useCase": [
+        "Before generative AI, disrupted-flight calls reached agents with information already collected by the IVR. Yet agents still had to work through alternate routes and reservation-system operations while the customer waited.",
+        "A movable, Avianca-branded HTML modal was generated on the fly with passenger context and proposed alternatives. The agent explicitly selected an itinerary and submitted it; UiPath completed the controlled host interaction in Amadeus and wrote operational records to SQL.",
+        "During a meeting with business and technology leadership, a working integration was demonstrated in roughly 20–25 minutes (engineer recollection). The value came next: hardening the solution, addressing multi-leg connections, and deploying across a reported 150 agent stations."
+      ],
+      "implementationHighlights": [
+        "IVR context reuse and dynamic generation of a branded, movable HTML agent modal.",
+        "Radio-button selection and explicit submit preserved human-in-the-loop decision authority.",
+        "Attended agent-desktop workflow passed the selected itinerary to centralized host-system automation.",
+        "Amadeus booking/ticket workflow integration and SQL persistence.",
+        "Exception-sensitive, multi-leg flight-connection handling."
+      ],
+      "validationProof": [
+        "First-person account reports approximately 150 workstations and average handling time falling from about 5 to 3 minutes.",
+        "Media feature, dollar savings, exact Amadeus seat-license reductions, and reservation-host technology have not been independently verified."
+      ],
+      "knownLimitations": [
+        "No public source code or operational customer data is provided.",
+        "The recollected US$2,000-per-minute cost is not used as a verified financial outcome.",
+        "Avoid attributing this pre-AI solution to LLMs or modern multi-agent systems."
+      ]
+    }
   },
   {
-    "id":"claro-front-office",
-    "title":"Claro – Front-Office Advisor Helper",
-    "when":"2017",
-    "client":"Claro Communications (Onelink BPO, Colombia)",
-    "skills":["automationanywhere","sqlserver","vsts","powerbi","htmlcss"],
-    "summary":"Advisor console to surface relevant account info in one view.",
-    "methodology":"Scrum",
-    "outcomes":["Advisor response time ↓","AHT ↓","First-contact experience ↑"]
+    "id": "claro-front-office",
+    "title": "Claro – Front-Office Advisor Helper",
+    "when": "2017",
+    "client": "Claro Communications (Onelink BPO, Colombia)",
+    "skills": [
+      "automationanywhere",
+      "sqlserver",
+      "vsts",
+      "powerbi",
+      "htmlcss"
+    ],
+    "summary": "Advisor console to surface relevant account info in one view.",
+    "methodology": "Scrum",
+    "outcomes": [
+      "Advisor response time ↓",
+      "AHT ↓",
+      "First-contact experience ↑"
+    ]
   },
   {
-    "id":"pepsi-finance-rpa",
-    "title":"Pepsi – Finance Process Automations",
-    "when":"2016–2017",
-    "client":"Pepsi (Onelink BPO, Guatemala)",
-    "skills":["uipath","sqlserver","vsts","powerbi"],
-    "summary":"Automated invoice sending, inventory/product integrations, and invoice payments.",
-    "methodology":"Scrum",
-    "outcomes":["Cycle time ↓","Error rate ↓","Cash-flow visibility ↑"]
+    "id": "pepsi-finance-rpa",
+    "title": "Pepsi — Finance and Beverage Materials Reconciliation",
+    "when": "2016–2017",
+    "client": "Pepsi (Onelink BPO, Guatemala)",
+    "skills": [
+      "uipath",
+      "sqlserver",
+      "vsts",
+      "powerbi"
+    ],
+    "summary": "Automated finance workflows and connected inventory/material reconciliation with invoicing and payment operations in beverage supply-chain processes.",
+    "methodology": "Scrum",
+    "outcomes": [
+      "Reduced manual finance and materials reconciliation steps (qualitative, self-reported)",
+      "Connected invoicing, inventory integration and payment workflows",
+      "Audit-ready handling and exception review; quantified savings pending"
+    ],
+    "category": "enterprise-transformation",
+    "maturity": "Historical client engagement · qualitative impact",
+    "industry": "Beverage manufacturing and finance operations",
+    "primaryUsers": [
+      "Finance and accounts-payable teams",
+      "Inventory and materials operations"
+    ],
+    "buyerOrStakeholder": [
+      "Finance stakeholders",
+      "Supply-chain operations"
+    ],
+    "customerProblem": "Invoice dispatch, payment-related tasks, inventory records and reconciliation of production materials required substantial manual checking across systems.",
+    "productSurface": [
+      "RPA finance workflows",
+      "Inventory and production-material matching",
+      "Operational review of discrepancies"
+    ],
+    "myRole": "Hands-on RPA engineer translating finance and material-movement workflows into repeatable integration and reconciliation logic.",
+    "discovery": [
+      "Mapped invoice workflows alongside mismatches between inventory/material records and finance.",
+      "Separated expected matches from discrepancies that require an operator to review."
+    ],
+    "productDecisions": [
+      "Treat raw-material and production-material reconciliation as a distinct business problem, not simply invoicing automation.",
+      "Keep discrepancies reviewable, with deterministic matching logic and clear handoff to finance/operations."
+    ],
+    "tradeoffs": [
+      "The first-person account spans beverage material workflows, including soft drinks and beer-related operations; it does not establish that Pepsi manufactures beer.",
+      "Underlying ERP interfaces, reconciliation rules, and throughput need artifact-level confirmation."
+    ],
+    "architectureSummary": "UiPath-based workflow integration across finance records, inventory and material movements, with rule-based reconciliation, exception handling, and invoice/payment process automation. Exact upstream ERP interfaces are not independently documented.",
+    "evaluation": [
+      "Qualitative improvements in manual handling and reconciliation visibility; no validated volume, savings or accuracy score is published."
+    ],
+    "businessOutcome": [
+      "Less repetitive reconciliation and invoice handling; financial impact unquantified."
+    ],
+    "technicalOutcome": [
+      "Rule-based financial and material matching",
+      "RPA handoffs between inventory and finance workflows"
+    ],
+    "evidence": [
+      {
+        "label": "First-person engagement account; external records not yet attached",
+        "kind": "portfolio-record",
+        "publiclySafe": true
+      }
+    ],
+    "nextStage": "Add representative anonymized process maps, exception taxonomy and approved before/after measurements.",
+    "caseStudy": {
+      "useCase": [
+        "Finance teams needed to reconcile invoices and payment processes with the stock and materials moving through beverage operations.",
+        "The scope went beyond automating messages: material inputs and inventory positions had to be compared with financial records, with nonmatching cases made visible for review.",
+        "The work predated the current agentic AI wave; the core pattern was deterministic business-rule automation tied to operational controls."
+      ],
+      "implementationHighlights": [
+        "Invoice dispatch and payment workflow automation.",
+        "Inventory/product integrations and materials reconciliation.",
+        "Human review of exceptions in finance/operations."
+      ],
+      "knownLimitations": [
+        "No public client-specific code, plants, suppliers, or figures are disclosed.",
+        "References to beer-related beverage operations do not assert they were Pepsi-owned breweries."
+      ],
+      "validationProof": [
+        "Career record and first-person account; quantified financial metrics still require evidence."
+      ]
+    }
   },
   {
-    "id":"intlpaper-statements",
-    "title":"International Paper – Statement Dispatch",
-    "when":"2016",
-    "client":"International Paper (Capgemini BPO)",
-    "skills":["java","vba","uipath","sqlserver"],
-    "summary":"Automated statement sending for customers with past-due invoices.",
-    "methodology":"Scrum",
-    "outcomes":["≈$75k/month collections lift"]
+    "id": "intlpaper-statements",
+    "title": "International Paper – Statement Dispatch",
+    "when": "2016",
+    "client": "International Paper (Capgemini BPO)",
+    "skills": [
+      "java",
+      "vba",
+      "uipath",
+      "sqlserver"
+    ],
+    "summary": "Automated statement sending for customers with past-due invoices.",
+    "methodology": "Scrum",
+    "outcomes": [
+      "≈$75k/month collections lift"
+    ]
   },
   {
-    "id":"avon-sla-bpm",
-    "title":"Avon APAC/EMLA – SLA & Attendance Automation",
-    "when":"2015–2016",
-    "client":"Avon Finance & Shared Services (Capgemini BPO)",
-    "skills":["uipath","sqlserver","as400"],
-    "summary":"Automated SLA tracking for >90-day invoices and attendance for ~250 employees.",
-    "methodology":"Scrum",
-    "outcomes":["SLA compliance ↑","Back-office effort ↓"]
+    "id": "avon-sla-bpm",
+    "title": "Avon APAC/EMLA – SLA & Attendance Automation",
+    "when": "2015–2016",
+    "client": "Avon Finance & Shared Services (Capgemini BPO)",
+    "skills": [
+      "uipath",
+      "sqlserver",
+      "as400"
+    ],
+    "summary": "Automated SLA tracking for >90-day invoices and attendance for ~250 employees.",
+    "methodology": "Scrum",
+    "outcomes": [
+      "SLA compliance ↑",
+      "Back-office effort ↓"
+    ]
   },
   {
-    "id":"generalmills-sl-web",
-    "title":"General Mills – Service-Level Web Portal",
-    "when":"2015",
-    "client":"General Mills",
-    "skills":["sqlserver","htmlcss","php","javascript"],
-    "summary":"Web portal for service-level and response-time queries used by management.",
-    "methodology":"Scrum",
-    "outcomes":["Self-service reporting ↑","Manager time saved"]
+    "id": "generalmills-sl-web",
+    "title": "General Mills – Service-Level Web Portal",
+    "when": "2015",
+    "client": "General Mills",
+    "skills": [
+      "sqlserver",
+      "htmlcss",
+      "php",
+      "javascript"
+    ],
+    "summary": "Web portal for service-level and response-time queries used by management.",
+    "methodology": "Scrum",
+    "outcomes": [
+      "Self-service reporting ↑",
+      "Manager time saved"
+    ]
   },
   {
-    "id":"officedepot-ar",
-    "title":"Office Depot – AR Invoice Retrieval",
-    "when":"2015",
-    "client":"Office Depot",
-    "skills":["uipath","sqlserver","java","htmlcss","as400"],
-    "summary":"On-demand & batch retrieval for +60/+90 day invoices < $1,000.",
-    "methodology":"Scrum",
-    "outcomes":["Collector time ↓","Collections rate ↑"]
+    "id": "officedepot-ar",
+    "title": "Office Depot – AR Invoice Retrieval",
+    "when": "2015",
+    "client": "Office Depot",
+    "skills": [
+      "uipath",
+      "sqlserver",
+      "java",
+      "htmlcss",
+      "as400"
+    ],
+    "summary": "On-demand & batch retrieval for +60/+90 day invoices < $1,000.",
+    "methodology": "Scrum",
+    "outcomes": [
+      "Collector time ↓",
+      "Collections rate ↑"
+    ]
   },
   {
-    "id":"generalmills-reminders",
-    "title":"General Mills – Outstanding Balance Reminders",
-    "when":"2014",
-    "client":"General Mills",
-    "skills":["uipath","sqlserver"],
-    "summary":"Automated reminder emails every 15 days for balances under $1,000.",
-    "methodology":"Scrum",
-    "outcomes":["≈$1M annual collections estimated"]
+    "id": "generalmills-reminders",
+    "title": "General Mills – Outstanding Balance Reminders",
+    "when": "2014",
+    "client": "General Mills",
+    "skills": [
+      "uipath",
+      "sqlserver"
+    ],
+    "summary": "Automated reminder emails every 15 days for balances under $1,000.",
+    "methodology": "Scrum",
+    "outcomes": [
+      "≈$1M annual collections estimated"
+    ]
   },
   {
-    "id":"nokia-pos-download",
-    "title":"Nokia – POS Download Robot",
-    "when":"2014",
-    "client":"Nokia",
-    "skills":["uipath","sqlserver","citrix"],
-    "summary":"Automated PoS downloads for analyst teams.",
-    "methodology":"Scrum",
-    "outcomes":["Transaction throughput ↑ ~60%","Turnaround time ↓"]
+    "id": "nokia-pos-download",
+    "title": "Nokia – POS Download Robot",
+    "when": "2014",
+    "client": "Nokia",
+    "skills": [
+      "uipath",
+      "sqlserver",
+      "citrix"
+    ],
+    "summary": "Automated PoS downloads for analyst teams.",
+    "methodology": "Scrum",
+    "outcomes": [
+      "Transaction throughput ↑ ~60%",
+      "Turnaround time ↓"
+    ]
   },
   {
-    "id":"cabify-driver-onboarding",
-    "aliases": ["cabify-agent-onboarding"],
-    "title":"Cabify Argentina — Driver Onboarding (OCR + APIs)",
-    "when":"2019–2020",
-    "client":"Cabify (Argentina) — Cognition HQ (formerly Symphony LAM)",
-    "skills":["blueprism","abbyenlp","whatsappapi","sqlserver","javascript","powerbi"],
-    "stack":"Blue Prism; ABBYY OCR for documents; Web/API integration; WhatsApp notifications; reporting in Power BI.",
-    "summary":"End-to-end driver onboarding automation: OCR extraction, validation, system updates, and WhatsApp notifications.",
-    "outcomes":["Onboarding time ↓","Capture errors ↓","Traceability ↑"]
+    "id": "cabify-driver-onboarding",
+    "aliases": [
+      "cabify-agent-onboarding"
+    ],
+    "title": "Cabify Argentina — Driver Onboarding (OCR + APIs)",
+    "when": "2019–2020",
+    "client": "Cabify (Argentina) — Cognition HQ (formerly Symphony LAM)",
+    "skills": [
+      "blueprism",
+      "abbyenlp",
+      "whatsappapi",
+      "sqlserver",
+      "javascript",
+      "powerbi"
+    ],
+    "stack": "Blue Prism; ABBYY OCR for documents; Web/API integration; WhatsApp notifications; reporting in Power BI.",
+    "summary": "End-to-end driver onboarding automation: OCR extraction, validation, system updates, and WhatsApp notifications.",
+    "outcomes": [
+      "Onboarding time ↓",
+      "Capture errors ↓",
+      "Traceability ↑"
+    ]
   },
   {
-    "id":"bancociudad-blueprism",
-    "title":"Banco Ciudad — Back-Office Automations (Blue Prism)",
-    "when":"2019",
-    "client":"Banco Ciudad (Argentina) — Cognition HQ (formerly Symphony LAM)",
-    "skills":["blueprism","sqlserver","javascript","powerbi"],
-    "stack":"Blue Prism for back-office processes (validations, reconciliations/entries), integration with internal apps, and reporting.",
-    "summary":"Banking automations for operational support and compliance; execution monitoring and metrics.",
-    "outcomes":["Cycle times ↓","Manual tasks ↓","Data quality ↑"]
+    "id": "bancociudad-blueprism",
+    "title": "Banco Ciudad — Back-Office Automations (Blue Prism)",
+    "when": "2019",
+    "client": "Banco Ciudad (Argentina) — Cognition HQ (formerly Symphony LAM)",
+    "skills": [
+      "blueprism",
+      "sqlserver",
+      "javascript",
+      "powerbi"
+    ],
+    "stack": "Blue Prism for back-office processes (validations, reconciliations/entries), integration with internal apps, and reporting.",
+    "summary": "Banking automations for operational support and compliance; execution monitoring and metrics.",
+    "outcomes": [
+      "Cycle times ↓",
+      "Manual tasks ↓",
+      "Data quality ↑"
+    ]
   },
   {
-    "id":"kbs-netsuite-aa",
-    "title":"KBS — Automations on NetSuite (AA360)",
-    "when":"2021–2022",
-    "client":"KBS (Team International)",
-    "skills":["automationanywhere","netsuite","sqlserver","jira","powerbi"],
-    "stack":"Automation Anywhere 360 with connectors and scripts; queue orchestration; audit and reports.",
-    "summary":"Automation of financial processes in NetSuite: transaction ingestion, reconciliations, and notifications.",
-    "outcomes":["AHT ↓","SLA attainment ↑","Errors ↓"]
+    "id": "kbs-netsuite-aa",
+    "title": "KBS — Automations on NetSuite (AA360)",
+    "when": "2021–2022",
+    "client": "KBS (Team International)",
+    "skills": [
+      "automationanywhere",
+      "netsuite",
+      "sqlserver",
+      "jira",
+      "powerbi"
+    ],
+    "stack": "Automation Anywhere 360 with connectors and scripts; queue orchestration; audit and reports.",
+    "summary": "Automation of financial processes in NetSuite: transaction ingestion, reconciliations, and notifications.",
+    "outcomes": [
+      "AHT ↓",
+      "SLA attainment ↑",
+      "Errors ↓"
+    ]
   },
   {
-    "id":"newell-ptp-integration",
-    "title":"Newell — PTP/AP Integration (SAP + Email)",
-    "when":"2020",
-    "client":"Newell (Team International)",
-    "skills":["blueprism","visualstudio","jira","sap","email","scrum"],
-    "stack":"Blue Prism; SAP web automation + email processing; Scrum delivery.",
-    "summary":"Automated procure-to-pay vendor flows integrating SAP web steps and email handling.",
-    "outcomes":["AHT ↓","Error rate ↓"]
+    "id": "newell-ptp-integration",
+    "title": "Newell — PTP/AP Integration (SAP + Email)",
+    "when": "2020",
+    "client": "Newell (Team International)",
+    "skills": [
+      "blueprism",
+      "visualstudio",
+      "jira",
+      "sap",
+      "email",
+      "scrum"
+    ],
+    "stack": "Blue Prism; SAP web automation + email processing; Scrum delivery.",
+    "summary": "Automated procure-to-pay vendor flows integrating SAP web steps and email handling.",
+    "outcomes": [
+      "AHT ↓",
+      "Error rate ↓"
+    ]
   },
   {
-    "id":"haceb-rpa-suite",
-    "title":"Haceb — RPA Suite (via LCH)",
-    "when":"2022–2024",
-    "client":"Haceb (Medellín, Colombia)",
-    "skills":["uipath","powerautomatecloud","powerapps","sap","sharepoint","browserautomation","sqlserver","powerbi"],
-    "stack":"UiPath Orchestrator & Robots; Power Automate Cloud; Power Apps; integrations with SAP, SharePoint and web portals; reporting in Power BI.",
-    "summary":"RPA program for financial/operational tasks: UiPath bots and PAC flows; internal apps in Power Apps; operational metrics in Power BI.",
-    "outcomes":["AHT ↓","SLA attainment ↑","Manual work ↓","Traceability and auditability ↑"]
+    "id": "haceb-rpa-suite",
+    "title": "Haceb — RPA Suite (via LCH)",
+    "when": "2022–2024",
+    "client": "Haceb (Medellín, Colombia)",
+    "skills": [
+      "uipath",
+      "powerautomatecloud",
+      "powerapps",
+      "sap",
+      "sharepoint",
+      "browserautomation",
+      "sqlserver",
+      "powerbi"
+    ],
+    "stack": "UiPath Orchestrator & Robots; Power Automate Cloud; Power Apps; integrations with SAP, SharePoint and web portals; reporting in Power BI.",
+    "summary": "RPA program for financial/operational tasks: UiPath bots and PAC flows; internal apps in Power Apps; operational metrics in Power BI.",
+    "outcomes": [
+      "AHT ↓",
+      "SLA attainment ↑",
+      "Manual work ↓",
+      "Traceability and auditability ↑"
+    ]
   },
   {
-    "id":"haceb-sap-invoice-bot",
-    "title":"Haceb — SAP Invoice & Documents Bot",
-    "when":"2022–2023",
-    "client":"Haceb",
-    "skills":["uipath","sap","sqlserver","browserautomation"],
-    "stack":"UiPath + SAP GUI/Web; queues and retries; validations and structured logs.",
-    "summary":"Automation of document reading/registration and integration with SAP and web sources.",
-    "outcomes":["Errors ↓","Cycle time ↓","Traceability ↑"]
+    "id": "haceb-sap-invoice-bot",
+    "title": "Haceb — SAP Invoice & Documents Bot",
+    "when": "2022–2023",
+    "client": "Haceb",
+    "skills": [
+      "uipath",
+      "sap",
+      "sqlserver",
+      "browserautomation"
+    ],
+    "stack": "UiPath + SAP GUI/Web; queues and retries; validations and structured logs.",
+    "summary": "Automation of document reading/registration and integration with SAP and web sources.",
+    "outcomes": [
+      "Errors ↓",
+      "Cycle time ↓",
+      "Traceability ↑"
+    ]
   },
   {
-    "id":"haceb-sharepoint-workflows",
-    "title":"Haceb — SharePoint Workflows + PAC",
-    "when":"2023",
-    "client":"Haceb",
-    "skills":["sharepoint","powerautomatecloud","powerapps","powerbi"],
-    "stack":"SharePoint lists/libraries; Power Automate (approvals, notifications, SLA); Power Apps (capture and self-service); Power BI dashboards.",
-    "summary":"Digitization of document flows with approvals, metadata, and dashboards.",
-    "outcomes":["Faster approvals","Status visibility ↑","User satisfaction ↑"]
+    "id": "haceb-sharepoint-workflows",
+    "title": "Haceb — SharePoint Workflows + PAC",
+    "when": "2023",
+    "client": "Haceb",
+    "skills": [
+      "sharepoint",
+      "powerautomatecloud",
+      "powerapps",
+      "powerbi"
+    ],
+    "stack": "SharePoint lists/libraries; Power Automate (approvals, notifications, SLA); Power Apps (capture and self-service); Power BI dashboards.",
+    "summary": "Digitization of document flows with approvals, metadata, and dashboards.",
+    "outcomes": [
+      "Faster approvals",
+      "Status visibility ↑",
+      "User satisfaction ↑"
+    ]
   },
   {
-    "id":"haceb-web-automation",
-    "title":"Haceb — Web Automation & Integrations",
-    "when":"2022–2024",
-    "client":"Haceb",
-    "skills":["browserautomation","uipath","powerautomatecloud","powerapps"],
-    "stack":"UiPath + robust selectors; PAC for events; Power Apps as an internal front-end.",
-    "summary":"Automations on portals and web forms: extraction, validations, and posting.",
-    "outcomes":["Throughput ↑","Rework ↓","Operation SLA ↑"]
+    "id": "haceb-web-automation",
+    "title": "Haceb — Web Automation & Integrations",
+    "when": "2022–2024",
+    "client": "Haceb",
+    "skills": [
+      "browserautomation",
+      "uipath",
+      "powerautomatecloud",
+      "powerapps"
+    ],
+    "stack": "UiPath + robust selectors; PAC for events; Power Apps as an internal front-end.",
+    "summary": "Automations on portals and web forms: extraction, validations, and posting.",
+    "outcomes": [
+      "Throughput ↑",
+      "Rework ↓",
+      "Operation SLA ↑"
+    ]
   },
   {
-    "id":"engeform-rpa-coe",
-    "title":"Engeform Brasil — RPA CoE & Delivery",
-    "when":"2018–2019",
-    "client":"Engeform Brasil (Symphony LAM)",
-    "skills":["blueprism","visualstudio","sqlserver","vsts","powerbi","bpm"],
-    "stack":"Blue Prism, VS, SQL Server, VSTS, Power BI; CoE playbooks and training.",
-    "summary":"Solution architect for an enterprise RPA CoE; trained team and delivered scalable robots across HR, Finance & IT.",
-    "outcomes":["Governed delivery model","Faster release cadence","Defects ↓"]
+    "id": "engeform-rpa-coe",
+    "title": "Engeform Brasil — RPA CoE & Delivery",
+    "when": "2018–2019",
+    "client": "Engeform Brasil (Symphony LAM)",
+    "skills": [
+      "blueprism",
+      "visualstudio",
+      "sqlserver",
+      "vsts",
+      "powerbi",
+      "bpm"
+    ],
+    "stack": "Blue Prism, VS, SQL Server, VSTS, Power BI; CoE playbooks and training.",
+    "summary": "Solution architect for an enterprise RPA CoE; trained team and delivered scalable robots across HR, Finance & IT.",
+    "outcomes": [
+      "Governed delivery model",
+      "Faster release cadence",
+      "Defects ↓"
+    ]
   },
   {
-    "id":"kbs-finance-12-automations",
-    "title":"KBS — 12 Finance Automations",
-    "when":"2021–2022",
-    "client":"KBS (Team International)",
-    "skills":["automationanywhere","visualstudio","excel","javascript","powerquery","jira","security"],
-    "stack":"AA360, VS, Excel/Power Query, JavaScript; governance + security baked in.",
-    "summary":"Automated a dozen finance processes and ERP integrations using AA360; set up governance and design reviews.",
-    "outcomes":["Cycle time ↓","SLA attainment ↑","Manual work eliminated"]
+    "id": "kbs-finance-12-automations",
+    "title": "KBS — 12 Finance Automations",
+    "when": "2021–2022",
+    "client": "KBS (Team International)",
+    "skills": [
+      "automationanywhere",
+      "visualstudio",
+      "excel",
+      "javascript",
+      "powerquery",
+      "jira",
+      "security"
+    ],
+    "stack": "AA360, VS, Excel/Power Query, JavaScript; governance + security baked in.",
+    "summary": "Automated a dozen finance processes and ERP integrations using AA360; set up governance and design reviews.",
+    "outcomes": [
+      "Cycle time ↓",
+      "SLA attainment ↑",
+      "Manual work eliminated"
+    ]
   },
   {
-    "id":"zebra-uipath-testmgr",
-    "title":"Zebra — QA in RPA with UiPath Test Manager",
-    "when":"2022–2023",
-    "client":"Zebra Technologies",
-    "skills":["uipath","uipathtestmgr","azure","jira","ci"],
-    "stack":"UiPath Test Manager + CI pipelines; case→defect traceability; quality gates.",
-    "summary":"Implementation of orchestrated tests for critical robots, with coverage/defect reporting.",
-    "outcomes":["Regression defects ↓","Test coverage ↑","Release lead time ↓"]
+    "id": "zebra-uipath-testmgr",
+    "title": "Zebra — QA in RPA with UiPath Test Manager",
+    "when": "2022–2023",
+    "client": "Zebra Technologies",
+    "skills": [
+      "uipath",
+      "uipathtestmgr",
+      "azure",
+      "jira",
+      "ci"
+    ],
+    "stack": "UiPath Test Manager + CI pipelines; case→defect traceability; quality gates.",
+    "summary": "Implementation of orchestrated tests for critical robots, with coverage/defect reporting.",
+    "outcomes": [
+      "Regression defects ↓",
+      "Test coverage ↑",
+      "Release lead time ↓"
+    ]
   },
   {
-    "id":"loves-retail-rpa",
-    "title":"Love’s — Retail Automations (RPA)",
-    "when":"2022–2023",
-    "client":"Love’s",
-    "skills":["uipath","powerautomatecloud","sqlserver","email","monitoring"],
-    "stack":"UiPath bots + PAC flows; queues, retries, structured logging; SLO alarms.",
-    "summary":"Retail back-office (validations, reconciliations, notifications).",
-    "outcomes":["AHT ↓","Errors ↓","SLA attainment ↑"]
+    "id": "loves-retail-rpa",
+    "title": "Love’s — Retail Automations (RPA)",
+    "when": "2022–2023",
+    "client": "Love’s",
+    "skills": [
+      "uipath",
+      "powerautomatecloud",
+      "sqlserver",
+      "email",
+      "monitoring"
+    ],
+    "stack": "UiPath bots + PAC flows; queues, retries, structured logging; SLO alarms.",
+    "summary": "Retail back-office (validations, reconciliations, notifications).",
+    "outcomes": [
+      "AHT ↓",
+      "Errors ↓",
+      "SLA attainment ↑"
+    ]
   },
   {
-    "id":"dfci-coe-advancement",
-    "title":"Dana-Farber Cancer Institute — CoE Acceleration",
-    "when":"2022–2023",
-    "client":"DFCI",
-    "skills":["uipath","governance","security","powerbi","ci"],
-    "stack":"Coding standards; reviews; quality metrics; security and audit.",
-    "summary":"CoE maturity: governance, reusable libraries, and value dashboards.",
-    "outcomes":["Velocity ↑","Defects ↓","Component reuse ↑"]
+    "id": "dfci-coe-advancement",
+    "title": "Dana-Farber Cancer Institute — CoE Acceleration",
+    "when": "2022–2023",
+    "client": "DFCI",
+    "skills": [
+      "uipath",
+      "governance",
+      "security",
+      "powerbi",
+      "ci"
+    ],
+    "stack": "Coding standards; reviews; quality metrics; security and audit.",
+    "summary": "CoE maturity: governance, reusable libraries, and value dashboards.",
+    "outcomes": [
+      "Velocity ↑",
+      "Defects ↓",
+      "Component reuse ↑"
+    ]
   },
   {
-    "id":"ucare-payer-rpa",
-    "title":"UCare — RPA Payer Ops",
-    "when":"2022–2023",
-    "client":"UCare",
-    "skills":["uipath","queues","sqlserver","email"],
-    "stack":"UiPath REFramework with queues and exceptions; reconciliations and communications.",
-    "summary":"Automations for payer operations.",
-    "outcomes":["Cycle time ↓","Backlog ↓"]
+    "id": "ucare-payer-rpa",
+    "title": "UCare — RPA Payer Ops",
+    "when": "2022–2023",
+    "client": "UCare",
+    "skills": [
+      "uipath",
+      "queues",
+      "sqlserver",
+      "email"
+    ],
+    "stack": "UiPath REFramework with queues and exceptions; reconciliations and communications.",
+    "summary": "Automations for payer operations.",
+    "outcomes": [
+      "Cycle time ↓",
+      "Backlog ↓"
+    ]
   },
   {
-    "id":"regeneron-rpa",
-    "title":"Regeneron — Operational Support with RPA",
-    "when":"2022–2023",
-    "client":"Regeneron",
-    "skills":["uipath","security","monitoring"],
-    "stack":"Bots with audit and observability; compliance in a regulated environment.",
-    "summary":"Operational processes with control and traceability.",
-    "outcomes":["Traceability ↑","MTTR ↓"]
+    "id": "regeneron-rpa",
+    "title": "Regeneron — Operational Support with RPA",
+    "when": "2022–2023",
+    "client": "Regeneron",
+    "skills": [
+      "uipath",
+      "security",
+      "monitoring"
+    ],
+    "stack": "Bots with audit and observability; compliance in a regulated environment.",
+    "summary": "Operational processes with control and traceability.",
+    "outcomes": [
+      "Traceability ↑",
+      "MTTR ↓"
+    ]
   },
   {
-    "id":"adapthealth-order-intake",
-    "title":"AdaptHealth — Intake & Finance",
-    "when":"2022–2023",
-    "client":"AdaptHealth",
-    "skills":["uipath","email","sap","sqlserver"],
-    "stack":"Order extraction/validation, reconciliations, and ERP posting.",
-    "summary":"Reduction of manual work in intake and finance.",
-    "outcomes":["AHT ↓","Errors ↓"]
+    "id": "adapthealth-order-intake",
+    "title": "AdaptHealth — Intake & Finance",
+    "when": "2022–2023",
+    "client": "AdaptHealth",
+    "skills": [
+      "uipath",
+      "email",
+      "sap",
+      "sqlserver"
+    ],
+    "stack": "Order extraction/validation, reconciliations, and ERP posting.",
+    "summary": "Reduction of manual work in intake and finance.",
+    "outcomes": [
+      "AHT ↓",
+      "Errors ↓"
+    ]
   },
   {
-    "id":"mclaren-revenue-cycle",
-    "title":"McLaren — Automated Revenue Cycle",
-    "when":"2022–2023",
-    "client":"McLaren Health",
-    "skills":["uipath","security","powerbi"],
-    "stack":"Bots with controls; operational dashboards.",
-    "summary":"Automations geared towards revenue cycle.",
-    "outcomes":["Faster collections","Exceptions ↓"]
+    "id": "mclaren-revenue-cycle",
+    "title": "McLaren — Automated Revenue Cycle",
+    "when": "2022–2023",
+    "client": "McLaren Health",
+    "skills": [
+      "uipath",
+      "security",
+      "powerbi"
+    ],
+    "stack": "Bots with controls; operational dashboards.",
+    "summary": "Automations geared towards revenue cycle.",
+    "outcomes": [
+      "Faster collections",
+      "Exceptions ↓"
+    ]
   },
   {
-    "id":"tarpon-health-rpa",
-    "title":"Tarpon Health — Automated Operations",
-    "when":"2022–2023",
-    "client":"Tarpon Health",
-    "skills":["uipath","email","queues"],
-    "stack":"Orchestration with queues, idempotency, and alerts.",
-    "summary":"Operational processes with resilience and alerting.",
-    "outcomes":["SLA ↑","Rework ↓"]
+    "id": "tarpon-health-rpa",
+    "title": "Tarpon Health — Automated Operations",
+    "when": "2022–2023",
+    "client": "Tarpon Health",
+    "skills": [
+      "uipath",
+      "email",
+      "queues"
+    ],
+    "stack": "Orchestration with queues, idempotency, and alerts.",
+    "summary": "Operational processes with resilience and alerting.",
+    "outcomes": [
+      "SLA ↑",
+      "Rework ↓"
+    ]
   },
   {
-    "id":"carecentrix-auth",
-    "title":"CareCentrix — Authorizations & Notifications",
-    "when":"2022–2023",
-    "client":"CareCentrix",
-    "skills":["uipath","email","monitoring"],
-    "stack":"Authorization management with notifications and audit.",
-    "summary":"Automation of authorization flows.",
-    "outcomes":["Response time ↓","Errors ↓"]
+    "id": "carecentrix-auth",
+    "title": "CareCentrix — Authorizations & Notifications",
+    "when": "2022–2023",
+    "client": "CareCentrix",
+    "skills": [
+      "uipath",
+      "email",
+      "monitoring"
+    ],
+    "stack": "Authorization management with notifications and audit.",
+    "summary": "Automation of authorization flows.",
+    "outcomes": [
+      "Response time ↓",
+      "Errors ↓"
+    ]
   },
   {
-    "id":"help-at-home-rpa",
-    "title":"Help at Home — RPA for Operations",
-    "when":"2022–2023",
-    "client":"Help at Home",
-    "skills":["uipath","queues","powerbi"],
-    "stack":"Bots with queues and capacity reporting.",
-    "summary":"Digitization of repetitive tasks for operations.",
-    "outcomes":["Throughput ↑","Visibility ↑"]
+    "id": "help-at-home-rpa",
+    "title": "Help at Home — RPA for Operations",
+    "when": "2022–2023",
+    "client": "Help at Home",
+    "skills": [
+      "uipath",
+      "queues",
+      "powerbi"
+    ],
+    "stack": "Bots with queues and capacity reporting.",
+    "summary": "Digitization of repetitive tasks for operations.",
+    "outcomes": [
+      "Throughput ↑",
+      "Visibility ↑"
+    ]
   },
   {
-    "id":"verniext-arcgis",
-    "title":"Verniext — ArcGIS Automation",
-    "when":"2021–2022",
-    "client":"Verniext",
-    "skills":["arcgis","python","arcpy","powerautomatecloud"],
-    "stack":"ArcPy for GeoValidation models; layer publication; alerts and logs.",
-    "summary":"Automation of GIS update/publication (layers/locators) with Python + PAC.",
-    "outcomes":["Process time ↓ 80%","Detailed monitoring via logs"],
-    "notes":"Based on PDD: permission checks, sequential execution, publication, notifications." 
+    "id": "verniext-arcgis",
+    "title": "Verniext — ArcGIS Automation",
+    "when": "2021–2022",
+    "client": "Verniext",
+    "skills": [
+      "arcgis",
+      "python",
+      "arcpy",
+      "powerautomatecloud"
+    ],
+    "stack": "ArcPy for GeoValidation models; layer publication; alerts and logs.",
+    "summary": "Automation of GIS update/publication (layers/locators) with Python + PAC.",
+    "outcomes": [
+      "Process time ↓ 80%",
+      "Detailed monitoring via logs"
+    ],
+    "notes": "Based on PDD: permission checks, sequential execution, publication, notifications."
   },
   {
-    "id":"claro-andinas-frontoffice",
-    "title":"Claro Andinas — Front-Office Helper",
-    "when":"2017",
-    "client":"Claro Andinas",
-    "skills":["automationanywhere","sqlserver","htmlcss","powerbi"],
-    "stack":"AA + web console; KPIs in Power BI.",
-    "summary":"360 view for advisors; lower AHT.",
-    "outcomes":["AHT ↓","FCR ↑"]
+    "id": "claro-andinas-frontoffice",
+    "title": "Claro Andinas — Front-Office Helper",
+    "when": "2017",
+    "client": "Claro Andinas",
+    "skills": [
+      "automationanywhere",
+      "sqlserver",
+      "htmlcss",
+      "powerbi"
+    ],
+    "stack": "AA + web console; KPIs in Power BI.",
+    "summary": "360 view for advisors; lower AHT.",
+    "outcomes": [
+      "AHT ↓",
+      "FCR ↑"
+    ]
   },
   {
-    "id":"dynamics-gp-automation",
-    "title":"Automations on Microsoft Dynamics GP",
-    "when":"2019–2021",
-    "client":"—",
-    "skills":["dynamicsgp","uipath","powerautomatecloud","sqlserver"],
-    "stack":"Robots and flows for postings, reconciliations, and reports.",
-    "summary":"Secure and auditable execution on GP.",
-    "outcomes":["Errors ↓","Cycles ↓"]
+    "id": "dynamics-gp-automation",
+    "title": "Automations on Microsoft Dynamics GP",
+    "when": "2019–2021",
+    "client": "—",
+    "skills": [
+      "dynamicsgp",
+      "uipath",
+      "powerautomatecloud",
+      "sqlserver"
+    ],
+    "stack": "Robots and flows for postings, reconciliations, and reports.",
+    "summary": "Secure and auditable execution on GP.",
+    "outcomes": [
+      "Errors ↓",
+      "Cycles ↓"
+    ]
   },
   {
-    "id":"fragomen-sol-arch-2022",
-    "title":"Fragomen — Solution Architect (Fixed-term)",
-    "when":"2022",
-    "client":"Fragomen",
-    "skills":["architecture","uipath","powerplatform","governance"],
-    "stack":"Discovery, development standards, reviews, and roadmap.",
-    "summary":"Automation architecture and governance in a short-term engagement.",
-    "outcomes":["Quality ↑","Delivery speed ↑"]
+    "id": "fragomen-sol-arch-2022",
+    "title": "Fragomen — Solution Architect (Fixed-term)",
+    "when": "2022",
+    "client": "Fragomen",
+    "skills": [
+      "architecture",
+      "uipath",
+      "powerplatform",
+      "governance"
+    ],
+    "stack": "Discovery, development standards, reviews, and roadmap.",
+    "summary": "Automation architecture and governance in a short-term engagement.",
+    "outcomes": [
+      "Quality ↑",
+      "Delivery speed ↑"
+    ]
+  },
+  {
+    "id": "luma-learning-intelligence",
+    "title": "LUMA — Learning Intelligence Platform",
+    "when": "2026",
+    "client": "Seres de Excelencia / institutional product",
+    "category": "customer-ai-product",
+    "maturity": "Client showcase on Firebase App Hosting · enterprise gates pending",
+    "industry": "Premium education",
+    "skills": [
+      "next",
+      "typescript",
+      "firebase",
+      "rag",
+      "agentic",
+      "productownership"
+    ],
+    "stack": "Next.js, React, Firebase App Hosting, Firebase Auth, structured tutor/RAG, Graph Harness",
+    "summary": "Translated a premium education business workflow into a learning-intelligence product: learner practice, evidence of capability, and a coach-only Learning Twin.",
+    "primaryUsers": [
+      "Learners",
+      "Coaches",
+      "Institutional operators"
+    ],
+    "buyerOrStakeholder": [
+      "Seres de Excelencia leadership and coaches"
+    ],
+    "customerProblem": "A premium coaching business needs credible evidence of progress and timely human intervention beyond course-navigation metrics.",
+    "productSurface": [
+      "Learner onboarding and adaptive next action",
+      "Practice evidence receipt",
+      "Coach Studio and coach-only Learning Twin",
+      "Content Intelligence"
+    ],
+    "myRole": "Product architect and hands-on engineer across discovery, behavior contracts, Next.js product experience and release controls.",
+    "discovery": [
+      "Translated coach/learner requirements into an evidence-first learning flow and clear division of responsibilities."
+    ],
+    "productDecisions": [
+      "Keep Learning Twin interpretation in the coach workspace.",
+      "Make practice evidence and next action visible to learners.",
+      "Keep tenant activation separate from product showcases until commercial gates close."
+    ],
+    "tradeoffs": [
+      "GRUV remains a proposed vertical, not a deployed client product.",
+      "Institutional palette is provisional pending brand owner approval."
+    ],
+    "architectureSummary": "Next.js/React product on Firebase App Hosting with protected coach/learner views, evidence receipts, governed tutor/RAG routes, institution draft controls and Graph Harness review artifacts.",
+    "evaluation": [
+      "Repository documents product QA and independent release gates; no verified enterprise-scale adoption metrics."
+    ],
+    "safetyAndHumanControl": [
+      "Coach reviews inferred learner needs.",
+      "High-stakes tutoring claims are bounded and grounded."
+    ],
+    "delivery": [
+      "Client-facing showcase deployed to Firebase App Hosting; separate institutional activation gates remain."
+    ],
+    "evidence": [
+      {
+        "label": "LUMA public repository",
+        "kind": "source",
+        "href": "https://github.com/BernydotJar/LUMA",
+        "publiclySafe": true
+      }
+    ],
+    "sourceUrl": "https://github.com/BernydotJar/LUMA",
+    "nextStage": "Close institution-level isolation, deployment and adoption gates before claiming commercial SaaS scale.",
+    "caseStudy": {
+      "useCase": [
+        "Seres de Excelencia's high-touch learning model requires learning evidence and coach intervention, not just a catalog of recorded lessons.",
+        "I mapped the user journeys and delivered a client-showcase platform with learner practice, visible progress, coach intelligence and evidence-bound personalization."
+      ],
+      "implementationHighlights": [
+        "Next.js and Firebase delivery",
+        "Coach-only proprietary Learning Twin",
+        "Guided practice and learning-event receipt",
+        "Tutor grounding and human intervention"
+      ],
+      "knownLimitations": [
+        "No self-service production tenant activation is claimed.",
+        "No verified learner adoption figures are claimed."
+      ],
+      "validationProof": [
+        "Public GitHub repository documents routes, product scope, deployment posture and remaining enterprise gates."
+      ]
+    }
+  },
+  {
+    "id": "meridian-talent-intelligence",
+    "title": "Meridian — Enterprise Recruiting CRM",
+    "when": "2026",
+    "client": "LCH Technologies",
+    "category": "customer-ai-product",
+    "maturity": "Private QA runtime · not approved for applicant production",
+    "industry": "Recruiting",
+    "skills": [
+      "next",
+      "typescript",
+      "firebase",
+      "architecture",
+      "security"
+    ],
+    "stack": "Next.js 15, React 19, Firestore Spark, Firebase Auth, tenant-scoped APIs",
+    "summary": "Built a multi-organization recruiting CRM with applicant and job workflows, scoped access, audit trails and human-led screening; kept AI and sensitive uploads gated.",
+    "primaryUsers": [
+      "Recruiters",
+      "Hiring managers"
+    ],
+    "buyerOrStakeholder": [
+      "Talent operations and organization administrators"
+    ],
+    "customerProblem": "Multiple organizations need controlled recruiting workflows, traceable stage changes and tenant isolation without exposing applicant data to unvalidated AI features.",
+    "productSurface": [
+      "Candidates and jobs",
+      "Applications and controlled stages",
+      "Team assignment and audit events",
+      "Liquid Glass enterprise UI"
+    ],
+    "myRole": "Product architect and hands-on engineer for domain contracts, tenant boundaries, product experience and private deployment path.",
+    "productDecisions": [
+      "Use tenant-scoped business APIs and deny-by-default client data rules.",
+      "Disable applicant CV uploads and AI analysis until scanning, consent, retention and review gates are met."
+    ],
+    "architectureSummary": "Next.js standalone runtime in Cloud Sandbox, Firebase Authentication, Firestore Spark, server-verified tenant roles and audit events. A proposed Django service evolution is not an active production cutover.",
+    "evaluation": [
+      "Internal health and access checks reported in repository; public DNS/production authorization not complete."
+    ],
+    "safetyAndHumanControl": [
+      "No use of live applicant documents until privacy and malware controls pass.",
+      "Recruiter remains final decision-maker."
+    ],
+    "delivery": [
+      "Private runtime prepared; public activation and commercial readiness are blocked."
+    ],
+    "evidence": [
+      {
+        "label": "Private engineering record; public source link withheld",
+        "kind": "portfolio-record",
+        "publiclySafe": true
+      }
+    ],
+    "nextStage": "Dedicated service identity, ingress and data-protection gates before deployment to real customers.",
+    "caseStudy": {
+      "useCase": [
+        "I developed a recruiting product whose main engineering constraint is safe multi-organization data handling, not an AI demo.",
+        "The software supports jobs, candidates, applications, role controls and operational audit history; privacy-critical uploads and model extraction remain disabled."
+      ],
+      "implementationHighlights": [
+        "Tenant-scoped API membership checks",
+        "Controlled stage transitions and audit events",
+        "Firestore-backed business entities",
+        "Standalone cloud workstation runtime"
+      ],
+      "knownLimitations": [
+        "Private source repository; do not imply external source inspection.",
+        "Not live-applicant production ready."
+      ],
+      "validationProof": [
+        "Internal repository README documents private QA and explicit production blockers."
+      ]
+    }
+  },
+  {
+    "id": "lch-technologies-business-site",
+    "title": "LCH Technologies — Business-to-Engineering Website",
+    "when": "2026",
+    "client": "LCH Technologies",
+    "category": "customer-ai-product",
+    "maturity": "Public code implementation · live site not independently confirmed",
+    "industry": "Enterprise software consulting",
+    "skills": [
+      "react",
+      "typescript",
+      "productownership",
+      "cloud"
+    ],
+    "stack": "React 19, TypeScript, Vite 6, Tailwind CSS 4",
+    "summary": "Built LCH's corporate experience around operational problems, AI and automation capabilities, trust architecture, and a lead-to-discovery conversation.",
+    "primaryUsers": [
+      "Potential enterprise clients",
+      "Sales and consulting teams"
+    ],
+    "customerProblem": "Prospects need a clear connection between an operational pain point and what an engineering consulting engagement would actually deliver.",
+    "productSurface": [
+      "Positioning and service overview",
+      "Trust and governance messaging",
+      "Demonstration request flow"
+    ],
+    "myRole": "Product owner and hands-on frontend engineer, connecting business positioning with implementation and UX.",
+    "productDecisions": [
+      "Lead with operational outcomes rather than a stack list.",
+      "Make evidence, governance and clear next actions visible."
+    ],
+    "architectureSummary": "Responsive React/TypeScript marketing application with structured metadata, brand assets, form validation and deployment-ready static build.",
+    "evaluation": [
+      "Repository includes typecheck and build instructions; live domain response was not independently confirmed during portfolio update."
+    ],
+    "evidence": [
+      {
+        "label": "LCH Technologies public repository",
+        "kind": "source",
+        "href": "https://github.com/BernydotJar/LCH-Technologies",
+        "publiclySafe": true
+      }
+    ],
+    "sourceUrl": "https://github.com/BernydotJar/LCH-Technologies",
+    "nextStage": "Validate live lead-delivery telemetry and conversion before publishing business impact metrics.",
+    "caseStudy": {
+      "useCase": [
+        "The business needed to communicate enterprise AI and automation without forcing clients to define the solution upfront.",
+        "The site offers a clear journey from pain point to capabilities, governance and demo request."
+      ],
+      "implementationHighlights": [
+        "Responsive React/TS corporate frontend",
+        "Operational messaging and CTA design",
+        "Branded asset system and SEO"
+      ],
+      "knownLimitations": [
+        "Code availability does not prove production lead-delivery reliability."
+      ],
+      "validationProof": [
+        "Public README describes architecture and quality checks."
+      ]
+    }
+  },
+  {
+    "id": "lch-app-cloud-delivery",
+    "title": "LCH App Cloud — Multi-App Delivery Architecture",
+    "when": "2026",
+    "client": "LCH platform operations",
+    "category": "ai-platform",
+    "maturity": "Shared application ingress · hostname health requires per-app verification",
+    "industry": "Cloud delivery and internal platform",
+    "skills": [
+      "architecture",
+      "cloud",
+      "docker",
+      "cicd"
+    ],
+    "stack": "Cloudflare Tunnel, Caddy reverse proxy, Firebase App Hosting, Cloud Sandbox workstation",
+    "summary": "Designed shared hostname routing and ingress for multiple products while keeping each application's actual runtime and release gates explicit.",
+    "primaryUsers": [
+      "Engineering operators",
+      "Product demonstration stakeholders"
+    ],
+    "customerProblem": "Multiple product showcases and services require secure, reusable domain and routing control without implying a single backend or duplicating infrastructure.",
+    "productSurface": [
+      "Subdomain routing",
+      "TLS/ingress boundary",
+      "Upstream service mapping and health checks"
+    ],
+    "myRole": "Architecture and engineering across domain strategy, release paths, proxy routing and runtime boundaries.",
+    "productDecisions": [
+      "Treat Cloudflare Tunnel and Caddy as ingress, not as the compute runtime for every application.",
+      "Keep LUMA's Firebase runtime distinct from Meridian's private workstation runtime."
+    ],
+    "architectureSummary": "Cloudflare DNS/Tunnel -> Caddy hostname routes -> product-specific upstreams (such as Firebase App Hosting or a gated standalone Next.js runtime). The domain is an infrastructure surface, not a commercial SaaS product.",
+    "evaluation": [
+      "Per-host DNS, TLS, proxy and runtime checks required; no blanket uptime claim."
+    ],
+    "evidence": [
+      {
+        "label": "Internal deployment architecture and operator handoff; no public runtime proof",
+        "kind": "portfolio-record",
+        "publiclySafe": true
+      }
+    ],
+    "nextStage": "Publish verified per-app health and ownership runbooks before linking customer production URLs.",
+    "caseStudy": {
+      "useCase": [
+        "A growing set of client and internal products needed consistent, low-duplication delivery without relocating their app runtimes.",
+        "I designed shared ingress that can route to a managed runtime or to a workstation service, depending on the product's release posture."
+      ],
+      "implementationHighlights": [
+        "Host-based reverse proxy",
+        "Cloudflare Tunnel/TLS",
+        "Per-application upstream definitions and release gates"
+      ],
+      "knownLimitations": [
+        "Public root-domain fetch was unavailable during this review.",
+        "Do not conflate a route being configured with a released commercial app."
+      ],
+      "validationProof": [
+        "Deployment decisions summarized from engineering records; health requires independent site checks."
+      ]
+    }
+  },
+  {
+    "id": "argos-dotacion-operations",
+    "title": "ARGOS Dotación — Operational Portal",
+    "when": "2026",
+    "client": "Workforce supply and distribution operations",
+    "category": "customer-ai-product",
+    "maturity": "Functional MVP + demo fallback · backend integration dependent",
+    "industry": "Workforce logistics and operations",
+    "skills": [
+      "next",
+      "typescript",
+      "powerplatform",
+      "azure",
+      "architecture"
+    ],
+    "stack": "Next.js, TypeScript, Fluent UI, Entra ID, .NET 8 API contract, Azure SQL, Power Automate",
+    "summary": "Turned uniform entitlement, inventory, requests and fulfillment workflows into an operational portal with access roles, API contracts and approval/SAP integration points.",
+    "primaryUsers": [
+      "Workers",
+      "Warehouse and operations staff",
+      "Quality, maintenance and site admins"
+    ],
+    "customerProblem": "Workforce supplies need traceable requests, eligibility, fulfillment, stock and quality processes across locations.",
+    "productSurface": [
+      "Orders and inventory",
+      "Quality and maintenance",
+      "Role-based admin",
+      "API and Power Automate handoffs"
+    ],
+    "myRole": "Solution architect and hands-on product engineer mapping end-to-end business processes to portal, authorization and integration contracts.",
+    "discovery": [
+      "Modeled ordering, handoffs and exception handling across warehouse, site and approvals."
+    ],
+    "productDecisions": [
+      "Use Entra and role/site scope for operational authorization.",
+      "Keep business system of record behind a .NET/Azure SQL API contract, with explicit demo fallback."
+    ],
+    "architectureSummary": "Next.js App Router frontend/BFF calls a separate .NET 8 Web API with Azure SQL as source of truth when configured; Power Automate is an integration orchestrator for approvals and SAP.",
+    "evaluation": [
+      "Repository offers typecheck, lint, test, build and health probes; no public client acceptance metric is claimed."
+    ],
+    "safetyAndHumanControl": [
+      "Access constrained by role and location.",
+      "Demo mode is distinguished from live backend transactions."
+    ],
+    "evidence": [
+      {
+        "label": "ARGOS public repository",
+        "kind": "source",
+        "href": "https://github.com/BernydotJar/ARG_Plataforma_Integral_Dotacion",
+        "publiclySafe": true
+      }
+    ],
+    "sourceUrl": "https://github.com/BernydotJar/ARG_Plataforma_Integral_Dotacion",
+    "nextStage": "Validate end-to-end real-backend environment and customer acceptance before calling it production.",
+    "caseStudy": {
+      "useCase": [
+        "A workforce supply operation needs to know who is eligible, what inventory is available, which orders are approved and how items were actually delivered.",
+        "The system puts those workflows into a common portal with roles, operational modules and explicit backend/integration contracts."
+      ],
+      "implementationHighlights": [
+        "Next.js BFF and Fluent UI operational screens",
+        "Entra ID role and site boundaries",
+        "Orders, inventory, quality and maintenance flows",
+        "Separate .NET/Azure SQL backend contract; Power Automate/SAP hooks"
+      ],
+      "knownLimitations": [
+        "The backend lives outside this public frontend repo.",
+        "Demo fallback is not proof of a connected production environment."
+      ],
+      "validationProof": [
+        "Public README lists implemented modules and integration contracts."
+      ]
+    }
+  },
+  {
+    "id": "constructhub-aws-delivery",
+    "title": "ConstructHub — Governed AWS Delivery",
+    "when": "2026",
+    "client": "Construction marketplace concept",
+    "category": "ai-platform",
+    "maturity": "AWS staging validated and OFF · customer UX production NO-GO",
+    "industry": "Construction and cloud delivery",
+    "skills": [
+      "aws",
+      "docker",
+      "terraform",
+      "architecture",
+      "cicd"
+    ],
+    "stack": "ECR, ECS Fargate, RDS PostgreSQL, Secrets Manager, ALB, Prisma, CloudWatch",
+    "summary": "Built and validated a gated AWS deployment path with secure migrations, staged infrastructure, cost controls and explicit production blockers.",
+    "primaryUsers": [
+      "Platform engineers",
+      "Future marketplace operators"
+    ],
+    "customerProblem": "An early product concept needed repeatable, auditable cloud delivery and budget containment before a customer-facing launch.",
+    "productSurface": [
+      "Deployment harness and gating",
+      "ECS/Fargate staging runtime",
+      "Release smoke tests and staged shutdown"
+    ],
+    "myRole": "Hands-on solution architect across infrastructure, deployment sequencing, migration, audit evidence and cost controls.",
+    "productDecisions": [
+      "Deploy migrations inside the same private runtime/IAM boundary as the application.",
+      "Scale staging services to zero when not in use.",
+      "Explicitly declare customer experience and production readiness as NO-GO."
+    ],
+    "architectureSummary": "Container -> ECR -> ECS Fargate -> RDS PostgreSQL (controlled Prisma migration task), ALB, Secrets Manager, CloudWatch and AWS Budgets with staged runbooks.",
+    "evaluation": [
+      "Documented preflight-to-Go/No-Go gates and staging checks; load/performance/security production gates remain open."
+    ],
+    "evidence": [
+      {
+        "label": "Private engineering source; public source link withheld",
+        "kind": "portfolio-record",
+        "publiclySafe": true
+      }
+    ],
+    "nextStage": "Rebuild functional marketplace UX, then close HTTPS, CI/CD, WAF, autoscaling, load and recovery gates.",
+    "caseStudy": {
+      "useCase": [
+        "The engineering problem was to validate a secure, cost-aware route to AWS before treating a staging frontend as a product.",
+        "I built an evidence-led infrastructure runbook and deliberately switched staging off after verification."
+      ],
+      "implementationHighlights": [
+        "ECR/ECS/RDS/Secrets deployment",
+        "Prisma migrations through one-off Fargate task",
+        "Budget warning guard and scale-to-zero staging"
+      ],
+      "knownLimitations": [
+        "Staging intentionally stopped; no live product is claimed.",
+        "Frontend still needs a product/UX rebuild."
+      ],
+      "validationProof": [
+        "Private project README identifies infrastructure validation and explicit NO-GO production status."
+      ]
+    }
+  },
+  {
+    "id": "graph-harness-engineering",
+    "title": "Graph Harness SDLC — Governed Agentic Engineering",
+    "when": "2026",
+    "client": "Reusable engineering foundation",
+    "category": "ai-platform",
+    "maturity": "Public executable runtime · adoption scope project-specific",
+    "industry": "AI software engineering",
+    "skills": [
+      "python",
+      "agentic",
+      "cicd",
+      "architecture"
+    ],
+    "stack": "Python, typed graph state, append-only SHA-256 evidence ledger, policy adapters",
+    "summary": "Engineered a provider-neutral, graph-driven software delivery runtime with independent critics, deterministic gates, audit evidence and localized repair.",
+    "primaryUsers": [
+      "AI-assisted engineering teams",
+      "Independent QA/release owners"
+    ],
+    "customerProblem": "Autonomous coding work loses context and evidence across long-running tasks and can prematurely claim a release complete.",
+    "productSurface": [
+      "Typed graph state",
+      "Producer/critic/verifier workflow",
+      "Audit ledger and release gates"
+    ],
+    "myRole": "Architect and hands-on developer of graph execution, verification and policy-based autonomy.",
+    "productDecisions": [
+      "Make agents replaceable executors, not authorities to deploy or spend.",
+      "Preserve append-only proof and repair only the affected graph substructure."
+    ],
+    "architectureSummary": "Requirement -> spec -> approved task graph -> executor -> independent verification -> evidence ledger -> release gate, with policy hierarchy and resumable state.",
+    "evaluation": [
+      "Public repository documents runtime validation and deterministic verification controls; no generalized production-concurrency metric claimed."
+    ],
+    "safetyAndHumanControl": [
+      "Human approval owns deployment, merge, billing, secrets and external effects."
+    ],
+    "evidence": [
+      {
+        "label": "Graph Harness public repository",
+        "kind": "source",
+        "href": "https://github.com/BernydotJar/Graph-harness-sdlc",
+        "publiclySafe": true
+      }
+    ],
+    "sourceUrl": "https://github.com/BernydotJar/Graph-harness-sdlc",
+    "nextStage": "Publish workload-level metrics and third-party adoption evidence before claiming scale.",
+    "caseStudy": {
+      "useCase": [
+        "Agentic delivery needed execution semantics that do not depend on a chat transcript or an AI agent's assertion that a feature is complete.",
+        "I designed typed dependencies, evidence hashes, release gates and a localized repair loop."
+      ],
+      "implementationHighlights": [
+        "Executable Python graph runtime",
+        "SHA-256 evidence chain",
+        "Independent critic/verifier",
+        "Preflight policy hierarchy"
+      ],
+      "knownLimitations": [
+        "Not a published multi-tenant hosted SaaS.",
+        "No concurrency/SLO metrics published."
+      ],
+      "validationProof": [
+        "Public repository describes commands, runtime, policy and evidence semantics."
+      ]
+    }
+  },
+  {
+    "id": "cloud-sandbox-workstation",
+    "title": "Cloud Sandbox MCP V2 — Persistent AI Engineering Workstation",
+    "when": "2026",
+    "client": "Developer infrastructure",
+    "category": "ai-platform",
+    "maturity": "Workstation mode repository · local operator-dependent",
+    "industry": "Developer tools",
+    "skills": [
+      "python",
+      "docker",
+      "cloud",
+      "playwright",
+      "architecture"
+    ],
+    "stack": "Docker workstation, Python/Node, Git, MCP, nested Docker, Playwright",
+    "summary": "Built a persistent isolated workstation bridge for agent-led engineering, giving tools a controlled way to inspect code, run builds and collect release evidence.",
+    "primaryUsers": [
+      "AI software engineers",
+      "Delivery and QA agents"
+    ],
+    "customerProblem": "Code assistants need reproducible, persistent execution with explicit tool scopes and audit boundaries, not ephemeral transcripts.",
+    "productSurface": [
+      "Repository/terminal tools",
+      "Persistent container workstation",
+      "Dedicated audited Git push boundary"
+    ],
+    "myRole": "Architecture and engineering of tool interface, workspace persistence and execution controls.",
+    "productDecisions": [
+      "Keep Git push a dedicated audited action and prevent direct host Docker socket exposure inside workstations.",
+      "Retain workspace state across runtime recreation."
+    ],
+    "architectureSummary": "MCP controller orchestrates a root-access Docker workstation with private nested Docker and persistent project/home/cache volumes; Git push remains host-mediated.",
+    "evaluation": [
+      "Public README provides workstation upgrade and verification commands; no hosted service availability claim."
+    ],
+    "safetyAndHumanControl": [
+      "Network, push and host access require operator-approved boundaries."
+    ],
+    "evidence": [
+      {
+        "label": "Cloud Sandbox public repository",
+        "kind": "source",
+        "href": "https://github.com/BernydotJar/cloud-sandbox-mcp-v2",
+        "publiclySafe": true
+      }
+    ],
+    "sourceUrl": "https://github.com/BernydotJar/cloud-sandbox-mcp-v2",
+    "nextStage": "Document repeatable operator security tests and workload evidence before broader team rollout.",
+    "caseStudy": {
+      "useCase": [
+        "A coding agent is useful only when it can validate changes in a persistent, inspectable environment.",
+        "I built a sandbox with test/build capabilities and separated privileged host effects from in-container execution."
+      ],
+      "implementationHighlights": [
+        "Persistent Linux workstation",
+        "Private nested Docker",
+        "MCP Git/files/terminal tools",
+        "Audited host-mediated push"
+      ],
+      "knownLimitations": [
+        "Designed for operator-controlled environments, not an externally hosted SaaS."
+      ],
+      "validationProof": [
+        "Public README describes capabilities and workstation security boundaries."
+      ]
+    }
+  },
+  {
+    "id": "microsoft-fabric-modernization",
+    "title": "Microsoft Fabric — Enterprise Data Modernization",
+    "when": "2023–2026",
+    "client": "Enterprise analytics engagements",
+    "category": "enterprise-transformation",
+    "maturity": "Historical migration account · metrics pending",
+    "industry": "Enterprise analytics",
+    "skills": [
+      "fabric",
+      "powerbi",
+      "sql",
+      "dataarchitecture"
+    ],
+    "stack": "Microsoft Fabric, Power BI, governed semantic models, data integration",
+    "summary": "Modernized enterprise data integration and analytics into Microsoft Fabric, connecting data pipelines, governed reporting models and stakeholder KPI definitions.",
+    "primaryUsers": [
+      "Business analysts",
+      "Operational management"
+    ],
+    "buyerOrStakeholder": [
+      "IT/data leadership",
+      "Business reporting owners"
+    ],
+    "customerProblem": "Disconnected data transformation tools and reports made it hard to maintain reconciled, trusted enterprise metrics.",
+    "productSurface": [
+      "Data integration workflows",
+      "Fabric analytics foundation",
+      "Governed Power BI reporting"
+    ],
+    "myRole": "Data modernization architect and hands-on engineer across requirements, platform choices and reporting validation.",
+    "discovery": [
+      "Clarified metric ownership, migration dependencies and source-system parity rather than selecting a data platform by tool preference."
+    ],
+    "productDecisions": [
+      "Separate platform migration from dashboard presentation.",
+      "Require reconciliation and access boundaries before declaring an old data process replaced."
+    ],
+    "architectureSummary": "Migration from legacy data integration/reporting estates toward Microsoft Fabric analytics services and governed Power BI semantic consumption. Specific engine components and performance measurements require source artifacts.",
+    "evaluation": [
+      "Parity and refresh reliability are central; no external benchmark or savings amount published."
+    ],
+    "evidence": [
+      {
+        "label": "First-person career record; migration artifacts pending",
+        "kind": "portfolio-record",
+        "publiclySafe": true
+      }
+    ],
+    "nextStage": "Attach anonymized architecture, data lineage and parity checklist for independently reviewable case study.",
+    "caseStudy": {
+      "useCase": [
+        "Modern analytics is a business-semantics problem as much as a tooling migration.",
+        "The engagement covered migrating data workflows to Fabric while keeping Power BI reporting meaning and governance aligned."
+      ],
+      "implementationHighlights": [
+        "Source-system inventory and migration mapping",
+        "Fabric-oriented analytical architecture",
+        "Power BI semantic and KPI validation"
+      ],
+      "knownLimitations": [
+        "No specific Fabric service or cost reduction is claimed without client artifact."
+      ],
+      "validationProof": [
+        "First-person migration record and career documentation."
+      ]
+    }
   }
 ]

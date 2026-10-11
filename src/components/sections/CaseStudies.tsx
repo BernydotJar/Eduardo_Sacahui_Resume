@@ -14,6 +14,9 @@ const customerProducts: Array<{ id: string; copyKey: CardKey }> = [
   { id: 'ai-recruiting-copilot', copyKey: 'recruiting' },
 ];
 
+const currentBuilds = ['luma-learning-intelligence', 'meridian-talent-intelligence', 'argos-dotacion-operations', 'lch-technologies-business-site', 'lch-app-cloud-delivery', 'graph-harness-engineering', 'cloud-sandbox-workstation', 'constructhub-aws-delivery'];
+const businessStories = ['avianca-redispatch', 'pepsi-finance-rpa', 'pentaho-to-powerbi', 'microsoft-fabric-modernization'];
+
 const platformProducts: Array<{ id: string; copyKey: CardKey }> = [
   { id: 'harness-sdlc-agentic-delivery', copyKey: 'harness' },
   { id: 'rag-made-easy', copyKey: 'rag' },
@@ -154,7 +157,42 @@ const CaseStudies = ({ onCardClick }: CaseStudiesProps) => {
         </div>
       </section>
 
-      <section id="platforms" className="relative bg-background pixel-grid border-b border-border/60">
+      <section id="selected-builds" className="border-b border-border/60 bg-background py-16">
+        <div className="container">
+          <p className="font-code text-xs font-bold uppercase tracking-widest text-primary">01 / Current Engineering</p>
+          <h2 className="mt-3 text-3xl font-bold text-foreground">{dict.header.nav.platforms} — Selected 2026 Builds</h2>
+          <p className="mt-3 max-w-3xl text-muted-foreground">Repository-backed products and architectures. Every case study distinguishes implemented capabilities from pilot, preview and production gates.</p>
+          <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {currentBuilds.map(id => { const project = getProject(id); return project ? (
+              <article key={id} className="rounded-xl border border-border/70 bg-card/70 p-6">
+                <p className="text-xs font-semibold uppercase tracking-wide text-primary">{project.maturity}</p>
+                <h3 className="mt-3 text-xl font-bold">{project.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-muted-foreground">{project.summary}</p>
+                <button type="button" onClick={() => onCardClick(id)} className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline">Read architecture and decisions <ArrowRight className="h-4 w-4" /></button>
+              </article>
+            ) : null; })}
+          </div>
+        </div>
+      </section>
+      <section id="transformation-stories" className="border-b border-border/60 bg-secondary/30 py-16">
+        <div className="container">
+          <p className="font-code text-xs font-bold uppercase tracking-widest text-primary">02 / Before the generative AI wave</p>
+          <h2 className="mt-3 text-3xl font-bold">Business Discovery → Working Architecture → Operational Value</h2>
+          <p className="mt-3 max-w-3xl text-muted-foreground">Real consulting and transformation work: frontline agents, finance teams and data owners. Recalled metrics are labeled until independently verified.</p>
+          <div className="mt-8 grid gap-5 md:grid-cols-2">
+            {businessStories.map(id => { const project = getProject(id); return project ? (
+              <article key={id} className="rounded-xl border border-border/70 bg-card/70 p-6">
+                <p className="text-xs font-semibold uppercase tracking-wide text-primary">{project.maturity}</p>
+                <h3 className="mt-3 text-xl font-bold">{project.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-muted-foreground">{project.summary}</p>
+                <button type="button" onClick={() => onCardClick(id)} className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline">Read the story <ArrowRight className="h-4 w-4" /></button>
+              </article>
+            ) : null; })}
+          </div>
+        </div>
+      </section>
+
+            <section id="platforms" className="relative bg-background pixel-grid border-b border-border/60">
         <div className="pointer-events-none absolute inset-x-0 top-0 h-64 bg-[radial-gradient(circle_at_50%_0%,rgba(16,185,129,0.03),transparent_70%)]" />
         
         <div className="container relative z-10">

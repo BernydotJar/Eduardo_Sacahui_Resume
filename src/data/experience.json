@@ -4,8 +4,8 @@
     "role": "AI Solution Architect + Technical Product Owner (Hands-on, Principal FDE scope)",
     "when": "2026",
     "highlights": [
-      "Leading the technical architecture and delivery of an enterprise AI platform for executive decision support, focused on secure LLM systems, governed orchestration, and production-grade AI operations.",
-      "Architected a secure, enterprise-ready AI command platform integrating Google Workspace, backend-governed orchestration, and structured LLM output controls.",
+      "Worked with executive and EA stakeholders to translate ambiguous decision-support workflows into prioritized product journeys, acceptance criteria, and a bounded AI pilot.",
+      "Personally architected and built the 0-to-1, multi-surface executive AI pilot with Google Workspace integrations, controlled orchestration, schema validation, and human approval boundaries.",
       "Converted executive and product requirements into a deployable MVP and a scalable architecture roadmap.",
       "Built hardened backend foundations (Next.js + Node/Express) with backend-owned OAuth 2.0, least-privilege scope enforcement, encrypted token lifecycle handling, and audit-grade observability.",
       "Defined operational guardrails for LLM reliability: JSON contract enforcement, schema validation and repair, escalation paths, source traceability, and prompt governance standards.",
@@ -14,7 +14,7 @@
       "Directed QA governance and release readiness across functional, visual, and accessibility standards."
     ],
     "metrics": [
-      "0→1 production executive AI assistant",
+      "0→1 executive AI assistant pilot",
       "6 Google Workspace surfaces integrated",
       "100% approval-gated AI actions"
     ],
@@ -156,8 +156,8 @@
     "role": "Technical Delivery Manager",
     "when": "2022–2023",
     "highlights": [
-      "Managed Orchestrator deployments on AKS/EKS and on-prem using custom Helm charts, ensuring HA, autoscaling, and DR readiness.",
-      "Engineered robust observability stacks (Prometheus/Grafana/ELK) with SLOs, reducing MTTR in heavily regulated healthcare client environments.",
+      "Worked directly with enterprise clients across healthcare and retail to translate operational priorities, constraints, and adoption risks into delivery plans and measurable automation outcomes.",
+      "Owned hands-on UiPath Orchestrator delivery on AKS/EKS and on-prem, including availability, observability, security controls, and release readiness.",
       "Enforced stringent security controls including RBAC, CyberArk/Key Vault integration for secrets management, TLS rotation, and network policies.",
       "Architected and delivered complex RPA portfolios for numerous clients including **Zebra Technologies, Love's, Dana-Farber Cancer Institute, UCare, Regeneron, AdaptHealth, McLaren Health, Tarpon Health, CareCentrix, and Help at Home**, focusing on compliance, auditability, and integration with clinical systems in the challenging healthcare sector."
     ],
@@ -202,8 +202,8 @@
     "display_role_override": "RPA Principal Consultant (via LCH)",
     "when": "2022–2024",
     "highlights": [
-      "Led an RPA pod focused on UiPath and Power Platform (PAC/Power Apps) for SAP, SharePoint, and web portals.",
-      "Defined development standards (exceptions, idempotency, retries, structured logging) and governance (versioning, audit).",
+      "Partnered with operations stakeholders to turn process friction into a prioritized UiPath and Power Platform delivery backlog across SAP, SharePoint, and web workflows.",
+      "Led the pod from workflow discovery through implementation and governance, with exception handling, retries, audit trails, Power BI reporting, and continuous improvement.",
       "Orchestrated PAC flows for approvals and notifications; created internal apps in Power Apps for self-service.",
       "Published metrics and KPIs in Power BI (SLA, AHT, throughput) and managed continuous improvement with stakeholders."
     ],
@@ -234,8 +234,8 @@
     "role": "Solution Architect (Fixed-term, 6 months)",
     "when": "2022",
     "highlights": [
-      "Led discovery sessions to identify high-value automation opportunities in document-heavy legal workflows, such as petition drafting and evidence management.",
-      "Designed a scalable architecture using UiPath and Power Platform to handle sensitive client data, incorporating OCR for document intake and validation.",
+      "Led stakeholder discovery to clarify real document-intake, petition, and evidence-management needs before selecting legal-workflow automation opportunities.",
+      "Translated discovery findings into a phased OCR, UiPath, and Power Platform architecture with privacy controls and an adoption roadmap.",
       "Established governance standards for automation in a highly regulated legal environment, ensuring compliance and data privacy.",
       "Developed a strategic roadmap for phasing in automations, starting with internal case management and expanding to client-facing portals."
     ],
@@ -254,8 +254,8 @@
     "role": "RPA Team Lead / Senior Developer",
     "when": "2020–2022",
     "highlights": [
-      "Ran RPA office/CoE and consulting practice; backlog and release mgmt (Jira/ClickUp).",
-      "Hands-on with Blue Prism, UiPath, Automation Anywhere, WorkFusion, Power Platform, Python RPA Framework, Rocketbot.",
+      "Led client-facing discovery, backlog prioritization, and release management for an enterprise RPA consulting practice and 12-engineer CoE.",
+      "Directed hands-on delivery of 50+ automation solutions across financial and operational workflows, using UiPath, Automation Anywhere, Blue Prism, and Python.",
       "KBS: delivered 12 finance automations; governance & security standards.",
       "Newell: PTP/AP integration (SAP + email automation).",
       "KBS: financial automations on NetSuite with Automation Anywhere (AA360): queues, validations, reconciliations."
@@ -345,9 +345,10 @@
     "role": "RPA Senior Lead Developer / RPA Developer",
     "when": "2016–2018",
     "highlights": [
-      "Avianca: redispatch automation for flight tickets (operational events).",
-      "Claro: front-office helper to surface customer data, AHT reduction.",
-      "Pepsi: finance automations—invoice sending, inventory integration, payments."
+      "Avianca: discovered the hidden cost of disrupted-flight handling, then built context-aware IVR-to-agent HTML offers and a UiPath handoff to Amadeus ticket changes; engineer-reported rollout to approximately 150 desktops and roughly two minutes saved per interaction.",
+      "Avianca: demonstrated a working branded HTML-modal-to-RPA integration to technology/finance/operations leaders in approximately 20–25 minutes; later engineered booking, complex multi-leg itinerary, host and SQL workflows.",
+      "Pepsi: delivered finance automation for invoices and payments, with inventory and production-material reconciliation for beverage operations.",
+      "Led stakeholder-facing, deterministic front-office and finance RPA before generative AI; exact licensing and monetary savings remain to be validated."
     ],
     "metrics": [
       "−60% processing costs on key workflows",
@@ -356,6 +357,8 @@
     "projects": [
       "avianca-redispatch",
       "claro-front-office",
+      "pepsi-finance-rpa",
+      "avianca-redispatch",
       "pepsi-finance-rpa"
     ],
     "skills": [
