@@ -162,6 +162,7 @@ def main() -> None:
     education = load_json(data_dir / "education.json")
     certifications = load_json(data_dir / "certifications.json")
     awards = load_json(data_dir / "awards.json")
+    projects = {p["id"]: p for p in load_json(data_dir / "projects.json")}
     styles = build_styles()
 
     doc = BaseDocTemplate(
@@ -227,8 +228,23 @@ def main() -> None:
     ]
     story.extend(bullet(item, styles) for item in evidence)
 
+    story += section("Selected product and transformation stories", styles)
+    for project_id, label in [
+        ("luma-learning-intelligence", "LUMA"),
+        ("meridian-talent-intelligence", "Meridian"),
+        ("argos-dotacion-operations", "ARGOS Dotacion"),
+        ("lch-app-cloud-delivery", "LCH App Cloud"),
+        ("graph-harness-engineering", "Graph Harness SDLC"),
+        ("avianca-redispatch", "Avianca"),
+        ("pepsi-finance-rpa", "Pepsi"),
+        ("pentaho-to-powerbi", "Pentaho to Power BI"),
+        ("microsoft-fabric-modernization", "Microsoft Fabric"),
+    ]:
+        p = projects[project_id]
+        story.append(bullet(f"<b>{label}:</b> {p['summary']}", styles))
+
     story += section("Experience", styles)
-    priority = ["Rice AI Center", "UiPath (United States)", "Haceb (via LCH Consulting)", "Fragomen", "Team International"]
+    priority = ["Rice AI Center", "Onelink BPO — Colombia & Guatemala", "UiPath (United States)", "Haceb (via LCH Consulting)", "Fragomen", "Team International"]
     experience = sorted(experience, key=lambda exp: (exp['company'] not in priority, priority.index(exp['company']) if exp['company'] in priority else len(priority)))
     for exp in experience:
         job = Paragraph(
